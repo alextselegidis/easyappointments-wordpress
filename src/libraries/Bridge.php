@@ -20,7 +20,7 @@ use EAWP\Core\Plugin;
  * 
  * @todo Implement Bridge Operation
  */
-class Bridge implements LibrariesInterface {
+class Bridge implements EAWP\Core\Interfaces\LibraryInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      * 

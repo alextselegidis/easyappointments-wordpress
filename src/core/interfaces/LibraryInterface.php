@@ -8,7 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Libraries;
+namespace EAWP\Core\Interfaces;
 
 /**
  * Libraries Interface
@@ -16,7 +16,7 @@ namespace EAWP\Libraries;
  * Defines a solid interface for all plugin interfaces so that they have the 
  * same internal API. 
  */
-interface LibrariesInterface {
+interface LibraryInterface {
     /**
      * Invoke Library 
      * 

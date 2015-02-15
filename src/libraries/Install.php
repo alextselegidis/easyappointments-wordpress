@@ -22,7 +22,7 @@ use EAWP\Core\Plugin;
  * 
  * @todo Implement Install Operation
  */
-class Install implements LibrariesInterface {
+class Install implements EAWP\Core\Interfaces\LibraryInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      * 

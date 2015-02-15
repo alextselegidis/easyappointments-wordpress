@@ -22,7 +22,7 @@ use EAWP\Core\Plugin;
  * 
  * @todo Implement Widget Operation
  */
-class Widget implements LibrariesInterface {
+class Widget implements EAWP\Core\Interfaces\LibraryInterface {
     /**
      * Easy!Appointments WordPress Plugin Instance
      * 
