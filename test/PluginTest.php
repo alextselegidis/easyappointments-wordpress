@@ -8,10 +8,17 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+require_once __DIR__ . '/bootstrap.php';
 require_once __DIR__ . '/../src/core/Plugin.php';
 
 class PluginTest extends PHPUnit_Framework_TestCase {   
-    public function testSample() {
-        $this->assertTrue(true);
+    // ------------------------------------------------------------------------
+    // TEST OBJECT INSTANTIATION
+    // ------------------------------------------------------------------------
+    public function testObjectInstantiation() {
+        $wpdb = $this->getMock('wpdb'); 
+        $route = $this->getMock('EAWP\Core\Route');
+        $plugin = new EAWP\Core\Plugin($wpdb, $route);
+        $this->assertInstanceOf('EAWP\Core\Plugin', $plugin);
     }
 }
