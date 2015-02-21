@@ -54,4 +54,18 @@ class Route {
     public function style($url) {
         
     }
+
+    /**  
+     * Route view display on a specific hook. 
+     * 
+     * Example: 
+     *     $route->view('some_hook', 'admin');
+     * 
+     * @param string $hook The hook to enable the view. 
+     * @param string $view View file name (without .php extension) to be included 
+     * directly from the "views" directory.
+     */
+    public function view($hook, $view) {
+        
+    }
 }

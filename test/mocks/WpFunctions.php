@@ -15,6 +15,13 @@
  * by the tests in order to mock the WP global functions ecosystem. 
  */
 class WpFunctions {
+	/**
+	 * Register a WordPress function 
+	 * 
+	 * This method will register a function and return a handle which can be used to 
+	 * assert the the certain method is called. It simulates the PHPUnit mocking 
+	 * behavior but for the WP functionality.
+	 */
     public static function register($name, $returnValue) {
         
     }
