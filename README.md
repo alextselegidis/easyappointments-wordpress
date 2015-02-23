@@ -15,4 +15,4 @@ Minimum Requirements: WordPress v4.1 & PHP 5.3
 5. Implement Booking ShortCode >> A.Tselegidis
 6. Implement Booking Widget (Optional)
 7. ~~Produce Code Documentation with ApiGen~~ **[DONE]**
-8. Create Package Script (Linux & Windows)
+8. ~~Create Package Script (Linux)~~ **[DONE]**
