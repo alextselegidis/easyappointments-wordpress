@@ -67,14 +67,5 @@ class Plugin {
      */
     public function uninstall() {
         
-    }
-    
-    /**
-     * Handle Plugin View
-     * 
-     * Prepares plugin's admin view file (UI for executing the operations). 
-     */
-    public function view() {
-        
-    }    
+    } 
 }

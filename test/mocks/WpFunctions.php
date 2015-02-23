@@ -9,20 +9,30 @@
  * ---------------------------------------------------------------------------- */
 
 /**
- * WpFunctions Class
- *  
- * This class will register global functions that will return assigned results used 
- * by the tests in order to mock the WP global functions ecosystem. 
+ * Mock WordPress Functions
+ * 
+ * Append this file with extra functions that need to be mocked. The 
+ * methods must only register their execution in the WpMock class and
+ * to nothing else. 
+ * 
+ * Important: 
+ *      Except from the mocking mecahnism this file provides a useful 
+ *      list of the WordPress methods that are required by the plugin. 
  */
-class WpFunctions {
-	/**
-	 * Register a WordPress function 
-	 * 
-	 * This method will register a function and return a handle which can be used to 
-	 * assert the the certain method is called. It simulates the PHPUnit mocking 
-	 * behavior but for the WP functionality.
-	 */
-    public static function register($name, $returnValue) {
-        
-    }
-} 
+require_once __DIR__ . '/WpMock.php';
+
+function add_action() {
+    WpMock::registerExecution(__FUNCTION__, func_get_args());
+}
+
+function add_filter() {
+    WpMock::registerExecution(__FUNCTION__, func_get_args());
+}
+
+function wp_enqueue_script() {
+    WpMock::registerExecution(__FUNCTION__, func_get_args());
+}
+
+function wp_enqueue_style() {
+    WpMock::registerExecution(__FUNCTION__, func_get_args());
+}
