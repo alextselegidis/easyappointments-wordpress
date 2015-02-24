@@ -13,3 +13,18 @@
  * information about the plugin and the supported operations. 
  */
 
+echo 'hi!!!';
+
+?>
+
+<script src="../assets/js/admin.js"></script>
+<script>
+    $(document).ready(function() {
+        var admin = new Admin(); 
+        admin.events();
+    }); 
+</script>
+
+<link rel="stylesheet" href="../assets/css/style.css" />
+
+

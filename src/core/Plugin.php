@@ -24,7 +24,7 @@ class Plugin {
      * 
      * @var WPDB
      */
-    protected $db; 
+    protected $wpdb; 
     
     /**
      * Handles WordPress Action + Filters Routing
@@ -39,7 +39,8 @@ class Plugin {
      * @param \WPDB $wpdb WordPress database handler.
      */
     public function __construct(wpdb $wpdb, Route $route) {
-        
+        $this->wpdb = $wpdb; 
+        $this->route = $route;
     }
     
     /**
@@ -48,6 +49,22 @@ class Plugin {
      * Bind necessary actions and filters, register WP admin menu. 
      */
     public function initialize() {
+        $this->route->view('Easy!Appointments', 'Easy!Appointments', 'admin');
+        
+        $this->route->ajax('install', function() {
+            $library = new EAWP\Libraries\Install($path, $url); 
+            $library->invoke();
+        });
+        
+        $this->route->ajax('bridge', function() {
+            $library = new EAWP\Libraries\Bridge($path, $url); 
+            $library->invoke();
+        });
+        
+        $this->route->shortcode('easyappointments', function() {
+            $library = new EAWP\Libraries\Shortcode(); 
+            $library->invoke();
+        }); 
         
     }
     
@@ -57,7 +74,7 @@ class Plugin {
      * Performs the required actions for installing this plugin.
      */
     public function install() {
-        
+        // Add the required commands here ... 
     }
     
     /**
@@ -66,6 +83,6 @@ class Plugin {
      * Performs the required actions for uninstalling this plugin.
      */
     public function uninstall() {
-        
+        // Add the required commands here ... 
     } 
 }

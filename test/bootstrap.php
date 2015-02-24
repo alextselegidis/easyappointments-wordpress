@@ -8,9 +8,12 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-// @todo Define autoloader for the plugin classes so that the PHPUnit mock builder
-// automatically finds the original classes that need to be mocked.
-
 // Load required libraries and classes for the tests.
 require_once __DIR__ . '/mocks/WpMock.php';
 require_once __DIR__ . '/mocks/WpFunctions.php';
+require_once __DIR__ . '/../src/core/Autoload.php'; 
+
+$loader = new EAWP\Core\Autoload; 
+$loader->register();
+$loader->addNamespace('EAWP\Core', __DIR__ . '/../src/core');
+$loader->addNamespace('EAWP\Libraries', __DIR__ . '/../src/libraries'); 
