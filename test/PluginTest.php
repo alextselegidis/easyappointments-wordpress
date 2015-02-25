@@ -2,7 +2,7 @@
 /* ----------------------------------------------------------------------------
  * Easy!Appointments - WordPress Plugin
  *
- * @license GPL2+
+ * @license GPLv3
  * @copyright A.Tselegidis (C) 2015
  * @link http://easyappointments.org
  * @since v1.0.0

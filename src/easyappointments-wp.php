@@ -7,7 +7,7 @@
  * Author: A.Tselegidis
  * Author URI: http://alextselegidis.com
  * Text Domain: easyappointments-wp
- * License: GPL2+
+ * License: GPLv3
  */
 
 /** Base Plugin Path */
