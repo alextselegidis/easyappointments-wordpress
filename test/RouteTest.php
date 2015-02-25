@@ -117,6 +117,13 @@ class RouteTest extends PHPUnit_Framework_TestCase {
     // TEST AJAX METHOD
     // ------------------------------------------------------------------------
     public function testAjaxMustRouteAnAjaxCallback() {
-        
+        $this->markTestIncomplete();
+    }
+    
+    // ------------------------------------------------------------------------
+    // TEST SHORTCODE METHOD
+    // ------------------------------------------------------------------------
+    public function testShortcodeMustRegisterAValidWpShortcode() {
+        $this->markTestIncomplete();
     }
 }

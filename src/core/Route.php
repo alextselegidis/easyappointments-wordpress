@@ -80,7 +80,9 @@ class Route {
      * @todo Implement Method
      */
     public function shortcode($name, $callback) {
-        
+        add_action('init', function() use($name, $callback) {
+            add_shortcode($name, $callback); 
+        });
     }
 
     /**
@@ -91,18 +93,19 @@ class Route {
      * 
      * @param string $pageTitle The settings page meta title. 
      * @param string $menuTitle WP admin menu title (will be displayed in the "Settings" menu).
+     * @param string $menuSlug WP admin menu slug (used internally by WordPress).
      * @param string $viewFile View file name (without .php extension) to be included 
      * directly from the "views" directory.
      *
      * @throws InvalidArgumentException If argument is invalid.
      */
-    public function view($pageTitle, $menuTitle, $viewFile) {
-        add_action('admin_menu', function() use($pageTitle, $menuTitle, $viewFile) {
+    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile) {
+        add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile) {
             add_options_page(
                     $pageTitle, 
                     $menuTitle, 
                     'manage_options', 
-                    'eawp-plugin', 
+                    $menuSlug, 
                     function() use($viewFile) {
                         include EAWP_BASEPATH . '/views/' . $viewFile . '.php';
                     }

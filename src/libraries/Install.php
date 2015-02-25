@@ -17,8 +17,13 @@ use EAWP\Core\Plugin;
  * 
  * This class implements the Easy!Appointments installation procedure. It will 
  * copy and configure an installation directly through WordPress. The file will
- * use the create a new Easy!Appointments configuration.php file and set the 
- * WordPress credentials to it. 
+ * create a new Easy!Appointments configuration.php file and set the WordPress 
+ * database credentials to it. In the end it must store the "eawp_path" and 
+ * "eawp_url" settings to WordPress. 
+ * 
+ * Important: 
+ *      This method does not have to check for Easy!Appointments compatibility 
+ *      because it will install the latest supported version of project. 
  * 
  * @todo Implement Install Operation
  */
@@ -68,7 +73,8 @@ class Install implements EAWP\Core\Interfaces\LibraryInterface {
      * 
      * Copy E!A files to desired location (after checking for writable permissions)
      * and create a new configuration file with the WordPress DB credentials and 
-     * the provided $base_url value. 
+     * the provided $base_url value. After that store the path and the url to "eawp_path"
+     * and "eawp_url" settings respectively.
      */
     public function invoke() {
         

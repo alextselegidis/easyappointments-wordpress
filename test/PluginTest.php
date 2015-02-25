@@ -29,11 +29,31 @@ class PluginTest extends PHPUnit_Framework_TestCase {
         $wpdb = $this->getMock('wpdb');
         $route = $this->getMock('EAWP\Core\Route');
         
-        $route->expects($this->once())->method('view'); 
-        $route->expects($this->exactly(2))->method('ajax'); 
-        $route->expects($this->once())->method('shortcode');
+        $route->expects($this->once())->method('view')->with(
+                $this->anything(),
+                $this->anything(),
+                $this->anything(),
+                $this->equalTo('admin')); 
+        
+        $route->expects($this->at(1))->method('ajax')->with(
+                $this->equalTo('install'),
+                $this->anything()); 
+        
+        $route->expects($this->at(2))->method('ajax')->with(
+                $this->equalTo('bridge'),
+                $this->anything()); 
         
         $plugin = new EAWP\Core\Plugin($wpdb, $route);
         $plugin->initialize();
+    }
+    
+    // ------------------------------------------------------------------------
+    // TEST INITIALIZE METHOD
+    // ------------------------------------------------------------------------
+    public function testGetDatabaseMustReturnTheWpDatabaseObject() {
+        $wpdb = $this->getMock('wpdb'); 
+        $route = $this->getMock('EAWP\Core\Route'); 
+        $plugin = new EAWP\Core\Plugin($wpdb, $route);
+        $this->assertSame($wpdb, $plugin->getDatabase());
     }
 }
