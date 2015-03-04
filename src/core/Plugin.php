@@ -49,7 +49,8 @@ class Plugin {
      * Bind necessary actions and filters, register WP admin menu. 
      */
     public function initialize() {
-        $this->route->view('Easy!Appointments', 'Easy!Appointments', 'eawp-settings', 'admin');
+        $this->route->view('Easy!Appointments', 'Easy!Appointments', 
+                'eawp-settings', 'admin', array('admin.js', 'style.css'));
         
         $plugin = $this; // Closure Argument
         

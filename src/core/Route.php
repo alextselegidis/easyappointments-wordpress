@@ -99,17 +99,19 @@ class Route {
      * @param string $pageTitle The settings page meta title. 
      * @param string $menuTitle WP admin menu title (will be displayed in the "Settings" menu).
      * @param string $menuSlug WP admin menu slug (used internally by WordPress).
-     * @param string $viewFile View file name (without .php extension) to be included 
-     * directly from the "views" directory.
+     * @param string $viewFile View file name (without .php extension) to be included  directly 
+     * from the "views" directory.
+     * @param array $assets This array must include the name of the file (with extensions)from 
+     * the assets directory for the assets to be loaded (JavaScript or CSS, eg array('admin.js', 'style.css').
      *
      * @throws InvalidArgumentException If argument is invalid.
      */
-    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile) {
+    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile, array $assets = array()) {
         if (!is_string($pageTitle) || empty($pageTitle))
             throw new \InvalidArgumentException('Invalid $pageTitle argument: ' . print_r($pageTitle, true));
         
         if (!is_string($menuTitle) || empty($menuTitle))
-            throw new \InvalidArgumentException('Invalid $pa$menuTitlegeTitle argument: ' . print_r($menuTitle, true));
+            throw new \InvalidArgumentException('Invalid $menuTitle argument: ' . print_r($menuTitle, true));
         
         if (!is_string($menuSlug) || empty($menuSlug))
             throw new \InvalidArgumentException('Invalid $menuSlug argument: ' . print_r($menuSlug, true));
@@ -117,13 +119,22 @@ class Route {
         if (!is_string($viewFile) || empty($viewFile))
             throw new \InvalidArgumentException('Invalid $viewFile argument: ' . print_r($viewFile, true));
         
-        \add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile) {
+        \add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile, $assets) {
             add_options_page(
                     $pageTitle, 
                     $menuTitle, 
                     'manage_options', 
                     $menuSlug, 
-                    function() use($viewFile) {
+                    function() use($viewFile, $assets) {
+                        // Enqueue required assets. 
+                        foreach($assets as $file) {
+                            if (substr($file, -3) == '.js') 
+                                wp_enqueue_script(md5($file), plugins_url('../assets/js/' . $file, __FILE__));
+                            else if (substr($file, -4) == '.css') {
+                                wp_enqueue_style(md5($file), plugins_url('../assets/css/' . $file, __FILE__));
+                            } 
+                        }
+                        // Include view file (loaded from views directory).
                         include EAWP_BASEPATH . '/views/' . $viewFile . '.php';
                     }
             );
