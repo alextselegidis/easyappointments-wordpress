@@ -24,13 +24,23 @@ var Admin = function() {
 }; 
 
 Admin.prototype.events = function() {
+    jquery('#install').click(function(event) {
+        Admin.prototype.install(); 
+    });
     
+    jquery('#bridge').click(function(event) {
+        Admin.prototype.bridge(); 
+    });    
 };
 
 Admin.prototype.install = function() {
-    
+    jquery.post('wp-ajax.php', data, function(response) {
+        // @todo Handle ajax response. 
+    }, 'json'); 
 };
 
 Admin.prototype.bridge = function() {
-    
+    jquery.post('wp-ajax.php', data, function(response) {
+        // @todo Handle ajax response.
+    }, 'json'); 
 };
