@@ -54,14 +54,21 @@ class Plugin {
         $plugin = $this; // Closure Argument
         
         $this->route->ajax('install', function() use($plugin) {
-            // @todo fetch $path and $url arguments
-            $library = new EAWP\Libraries\Install($plugin, $path, $url); 
-            $library->invoke();
+            try {
+                $library = new EAWP\Libraries\Install($plugin, $_POST['path'], $_POST['url']); 
+                $library->invoke();
+            } catch(Exception $ex) {
+                echo json_encode($ex); 
+            }
         });
         
         $this->route->ajax('bridge', function() use($plugin) {
-            $library = new EAWP\Libraries\Bridge($plugin, $path, $url); 
-            $library->invoke();
+            try {
+                $library = new EAWP\Libraries\Bridge($plugin, $_POST['path'], $_POST['url']); 
+                $library->invoke();
+            } catch(Exception $ex) {
+                echo json_encode($ex); 
+            }
         });
         
         $this->route->shortcode('easyappointments', function() use($plugin) {

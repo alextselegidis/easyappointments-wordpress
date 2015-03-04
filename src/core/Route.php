@@ -57,15 +57,22 @@ class Route {
      * Route AJAX request from JavaScript 
      * 
      * This method must set a rule in order to route a future request from 
-     * the user's browser. 
+     * the user's browser. Always return error responses in JSON format 
+     * back to client.
      * 
      * @param string $name The name of the request that will execute the callback. 
      * @param callable $callback Callable that will handle the ajax request.
      * 
-     * @todo Implement Method
+     * @throws InvalidArgumentException If arguments are invalid.
      */
     public function ajax($name, $callback) {
+        if (!is_string($name) || empty($name))
+            throw new \InvalidArgumentException('Invalid $name argument: ' . print_r($name, true));
+
+        if (!is_callable($callback))
+            throw new \InvalidArgumentException('Invalid $callback argument: ' . print_r($callback, true));
         
+        \add_action('wp_ajax_' . $name, $callback);
     }
 
     /**
@@ -76,11 +83,9 @@ class Route {
      * 
      * @param string $name Shortcode name to be registered.
      * @param callable $callback Callable that will handle the shortcode execution.
-     * 
-     * @todo Implement Method
      */
     public function shortcode($name, $callback) {
-        add_action('init', function() use($name, $callback) {
+        \add_action('init', function() use($name, $callback) {
             add_shortcode($name, $callback); 
         });
     }
@@ -100,7 +105,19 @@ class Route {
      * @throws InvalidArgumentException If argument is invalid.
      */
     public function view($pageTitle, $menuTitle, $menuSlug, $viewFile) {
-        add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile) {
+        if (!is_string($pageTitle) || empty($pageTitle))
+            throw new \InvalidArgumentException('Invalid $pageTitle argument: ' . print_r($pageTitle, true));
+        
+        if (!is_string($menuTitle) || empty($menuTitle))
+            throw new \InvalidArgumentException('Invalid $pa$menuTitlegeTitle argument: ' . print_r($menuTitle, true));
+        
+        if (!is_string($menuSlug) || empty($menuSlug))
+            throw new \InvalidArgumentException('Invalid $menuSlug argument: ' . print_r($menuSlug, true));
+        
+        if (!is_string($viewFile) || empty($viewFile))
+            throw new \InvalidArgumentException('Invalid $viewFile argument: ' . print_r($viewFile, true));
+        
+        \add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile) {
             add_options_page(
                     $pageTitle, 
                     $menuTitle, 

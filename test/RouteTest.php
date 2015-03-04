@@ -9,7 +9,6 @@
  * ---------------------------------------------------------------------------- */
 
 require_once __DIR__ . '/bootstrap.php';
-require_once __DIR__ . '/../src/core/Route.php';
 
 class RouteTest extends PHPUnit_Framework_TestCase {
 
@@ -102,28 +101,55 @@ class RouteTest extends PHPUnit_Framework_TestCase {
     // TEST VIEW METHOD
     // ------------------------------------------------------------------------
     public function testViewMustCallTheWpMethodCorrectly() {
-        $this->markTestIncomplete();
+        $this->route->view('Page Title', 'Menu Title', 'Menu Slug', 'view-file');
+        $this->assertTrue(WpMock::isExecuted('add_action'));
     }
 
-    public function testViewMustThrowAnExceptionOnInvalidHookArgument() {
-        $this->markTestIncomplete();
+    public function testViewMustThrowAnExceptionOnInvalidPageTitleArgument() {
+        $this->setExpectedException('InvalidArgumentException'); 
+        $this->route->view(null, 'Menu Title', 'Menu Slug', 'view-file');
+    }
+    
+    public function testViewMustThrowAnExceptionOnInvalidMenuTitleArgument() {
+        $this->setExpectedException('InvalidArgumentException'); 
+        $this->route->view('Page Title', null, 'Menu Slug', 'view-file');
+    }
+    
+    public function testViewMustThrowAnExceptionOnInvalidMenuSlugArgument() {
+        $this->setExpectedException('InvalidArgumentException'); 
+        $this->route->view('Page Title', 'Menu Title', null, 'view-file');
     }
 
-    public function testViewMustThrowAnExceptionOnInvalidViewArgument() {
-        $this->markTestIncomplete();
+    public function testViewMustThrowAnExceptionOnInvalidViewFileArgument() {
+        $this->setExpectedException('InvalidArgumentException'); 
+        $this->route->view('Page Title', 'Menu Title', 'Menu Slug', null);
     }
     
     // ------------------------------------------------------------------------
     // TEST AJAX METHOD
     // ------------------------------------------------------------------------
     public function testAjaxMustRouteAnAjaxCallback() {
-        $this->markTestIncomplete();
+        $arguments = array('wp_ajax_install', array($this, 'setUp'));
+        $this->route->ajax('install', array($this, 'setUp'));
+        $this->assertTrue(WpMock::isExecuted('add_action', $arguments));
+    }
+    
+    public function testAjaxMustThrowAnExceptionOnInvalidActionArgument() {
+        $this->setExpectedException('InvalidArgumentException'); 
+        $this->route->ajax(null, array($this, 'setUp'));
+    }
+    
+    public function testAjaxMustThrowAnExceptionOnInvalidCallbackArgument() {
+        $this->setExpectedException('InvalidArgumentException'); 
+        $this->route->ajax('install', null);
     }
     
     // ------------------------------------------------------------------------
     // TEST SHORTCODE METHOD
     // ------------------------------------------------------------------------
     public function testShortcodeMustRegisterAValidWpShortcode() {
-        $this->markTestIncomplete();
+        $arguments = array('wp_ajax_install', array($this, 'setUp'));
+        $this->route->ajax('install', array($this, 'setUp'));
+        $this->assertTrue(WpMock::isExecuted('add_action', $arguments));
     }
 }
