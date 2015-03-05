@@ -1,0 +1,102 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
+"POT-Creation-Date: 2015-03-05 22:58+0100\n"
+"PO-Revision-Date: 2015-03-05 22:58+0100\n"
+"Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
+"Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../../views\n"
+
+#: ../../views/admin.php:28
+msgid ""
+"This plugin aims to bridge an Easy!Appointments installation with an "
+"existing WordPress system and make them work together. It features useful "
+"functions such as the integration of the booking wizard inside the WordPress "
+"pages through a shortcode and the creation of a new E!A installation "
+"directly from the WordPress backend."
+msgstr ""
+"Αυτό το plugin έχει ως στόχο την σύνδεση μιας εγκατάστασης Easy!Appointments "
+"με ένα υπάρχον WordPress σύστημα και την επίτευξή της σωστής λειτουργίας "
+"τους. Προσφέρει χρήσιμες λειτουργίες όπως η ενσωμάτωση μια σελίδας κράτησης "
+"ραντεβού μέσα σε μια σελίδα του WordPress μέσω ενός shortcode και την "
+"δημιουργία μια νέας εγκατάστασης του E!A απευθείας μέσα από το διαχειριστικό "
+"τμήμα του WordPress."
+
+#: ../../views/admin.php:35
+msgid "Installation"
+msgstr "Εγκατάσταση"
+
+#: ../../views/admin.php:37
+msgid ""
+"Set the installation path and URL for your Easy!Appointments installation "
+"press either the \"Install\" or \"Bridge\" button in order to complete the "
+"operation. "
+msgstr ""
+"Συμπληρώστε την διαδρομή (path) και διεύθυνση (URL) για την εγκατάσταση του "
+"Easy!Appointments και πατήστε είτε το κουμπί \"Εγκατάσταση\" ή το κουμπί "
+"\"Σύνδεση\" έτσι ώστε να ολοκληρώσετε την αντίστοιχη λειτουργία.  "
+
+#: ../../views/admin.php:45
+msgid "Path"
+msgstr "Διαδρομή (Path)"
+
+#: ../../views/admin.php:51
+msgid "URL"
+msgstr "Διεύθυνση (URL)"
+
+#: ../../views/admin.php:58 ../../views/admin.php:68
+msgid "Install"
+msgstr "Εγκατάσταση"
+
+#: ../../views/admin.php:59 ../../views/admin.php:74
+msgid "Bridge"
+msgstr "Σύνδεση"
+
+#: ../../views/admin.php:65
+msgid "Hints"
+msgstr "Συμβουλές"
+
+#: ../../views/admin.php:69
+msgid ""
+"This operation will create a new installation by placing and configuring the "
+"Easy!Appointments files into the requested directory. You will have to "
+"complete the E!A installation by visiting the provided URL."
+msgstr ""
+"Αυτή η λειτουργία θα δημιουργήσει μια νέα εγκατάσταση τοποθετόντας και "
+"ρυθμίζοντας τα αρχεία του Easy!Appointments στην ζητούμενη διαδρομή. Θα "
+"πρέπει να ολοκληρώσετε την εγκατάσταση του E!A ακολουθώντας την διεύθυνση "
+"που καταχωρήσατε."
+
+#: ../../views/admin.php:75
+#, fuzzy
+msgid ""
+"This operation will bridge an existing Easy!Appointments installation with "
+"your WordPress website. Make sure that will you set the correct Easy!"
+"Appointments installation path and URL."
+msgstr ""
+"Η λειτουργία αυτή θα συνδέσει μια υπάρχουσα εγκατάσταση Easy!Appointments με "
+"την WordPress ιστοσελίδα σας. Σιγουρευτείτε ότι θα θέσετε την σωστή διαδρομή "
+"(Path) και διεύθυνση (URL) για το Easy!Appointments. "
+
+#: ../../views/admin.php:80
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../../views/admin.php:81
+msgid ""
+"If you want the Easy!Appointments booking wizard to be available in your "
+"website, create a new page and add the [easyappointments] shortcode in it. "
+"When you launch the page you will see the appointment booking guide."
+msgstr ""
+"Εάν θέλετε ο οδηγός κράτησης ραντεβού του Easy!Appointments να είναι "
+"διαθέσιμος στην σελίδα σας, δημιουργείστε μια νέα σελίδα και προσθέστε το "
+"[easyappointments] shortcode σε αυτήν. Όταν πληγηθείτε σε αυτήν την σελίδα "
+"θα δείτε τον οδηγό κράτησης του Easy!Appointments."

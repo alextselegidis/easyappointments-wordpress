@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
+"POT-Creation-Date: 2015-03-05 22:59+0100\n"
+"PO-Revision-Date: 2015-03-05 23:04+0100\n"
+"Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
+"Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
+"Language: English\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../../views\n"
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:28
+msgid ""
+"This plugin aims to bridge an Easy!Appointments installation with an "
+"existing WordPress system and make them work together. It features useful "
+"functions such as the integration of the booking wizard inside the WordPress "
+"pages through a shortcode and the creation of a new E!A installation "
+"directly from the WordPress backend."
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:35
+msgid "Installation"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:37
+msgid ""
+"Set the installation path and URL for your Easy!Appointments installation "
+"press either the \"Install\" or \"Bridge\" button in order to complete the "
+"operation. "
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:45
+msgid "Path"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:51
+msgid "URL"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:58
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:68
+msgid "Install"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:59
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:74
+msgid "Bridge"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:65
+msgid "Hints"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:69
+msgid ""
+"This operation will create a new installation by placing and configuring the "
+"Easy!Appointments files into the requested directory. You will have to "
+"complete the E!A installation by visiting the provided URL."
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:75
+msgid ""
+"This operation will bridge an existing Easy!Appointments installation with "
+"your WordPress website. Make sure that will you set the correct Easy!"
+"Appointments installation path and URL."
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:80
+msgid "Shortcode"
+msgstr ""
+
+#: /home/alex/Dev/external/easyappointments-wp-plugin/src/views/admin.php:81
+msgid ""
+"If you want the Easy!Appointments booking wizard to be available in your "
+"website, create a new page and add the [easyappointments] shortcode in it. "
+"When you launch the page you will see the appointment booking guide."
+msgstr ""
