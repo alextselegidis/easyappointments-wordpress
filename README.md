@@ -9,7 +9,7 @@ Minimum Requirements: WordPress v4.1 & PHP 5.3
 ### Tasks
 
 1. ~~Setup Plugin Structure~~ **[DONE]**
-2. Implement Plugin Core >> A.Tselegidis
+2. ~~Implement Plugin Core~~ **[DONE]**
 3. Implement Easy!Appointments Installation >> G.Chatzimichail
 4. Implement Easy!Appointments Bridge
 5. Implement Booking ShortCode >> A.Tselegidis
