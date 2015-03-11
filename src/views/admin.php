@@ -18,7 +18,7 @@
 <script>
     jQuery(document).ready(function($) {
         var admin = new Admin(); 
-        admin.events();
+        admin.events(); // bind events
     }); 
 </script>
 
@@ -44,7 +44,7 @@
             <tr>
                 <th scope="row"><label for="path"><?php _e('Path', 'eawp'); ?></label></th>
                 <td><input type="text" id="path" class="regular-text" 
-                        placeholder="<?php echo dirname(dirname(EAWP_BASEPATH)); ?>" 
+                        placeholder="<?php echo ABSPATH . 'easyappointments'; ?>" 
                         value="<?php echo get_option('eawp_path'); ?>" /></td>
             </tr>
             <tr>
@@ -73,7 +73,7 @@
         <li>
             <strong><?php _e('Bridge', 'eawp'); ?>:</strong>
             <?php _e('This operation will bridge an existing Easy!Appointments installation with '
-                    . 'your WordPress website. Make sure that you set the correct Easy!Appointments '
+                    . 'your WordPress website. Make sure that will you set the correct Easy!Appointments '
                     . 'installation path and URL.', 'eawp'); ?>
         </li>
         <li>
@@ -83,4 +83,7 @@
                     . 'When you launch the page you will see the appointment booking guide.', 'eawp'); ?>
         </li>
     </ul>
+    
+    <?php _e('For more information visit the official website of the project at ' 
+            . '<a href="http://easyappointments.org">www.easyappointments.com</a>.', 'eawp'); ?>
 </div>

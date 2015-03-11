@@ -35,11 +35,11 @@ class PluginTest extends PHPUnit_Framework_TestCase {
                 $this->anything(),
                 $this->equalTo('admin')); 
         
-        $route->expects($this->at(1))->method('ajax')->with(
+        $route->expects($this->at(2))->method('ajax')->with(
                 $this->equalTo('install'),
                 $this->anything()); 
         
-        $route->expects($this->at(2))->method('ajax')->with(
+        $route->expects($this->at(3))->method('ajax')->with(
                 $this->equalTo('bridge'),
                 $this->anything()); 
         

@@ -7,10 +7,6 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-.eawp .form-table th {
-    width: 70px;
-}
-
 .eawp .form-table .button {
     min-width: 100px;
     margin-right: 10px;

@@ -13,7 +13,7 @@
 /** Base Plugin Path */
 define('EAWP_BASEPATH', __DIR__); 
 
-/** Supported Versiosn */
+/** Supported Versions */
 define('EAWP_MIN_VERSION', '1.0');
 define('EAWP_MAX_VERSION', '1.0');
 
