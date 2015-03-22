@@ -16,4 +16,5 @@ require_once __DIR__ . '/../src/core/Autoload.php';
 $loader = new EAWP\Core\Autoload; 
 $loader->register();
 $loader->addNamespace('EAWP\Core', __DIR__ . '/../src/core');
+$loader->addNamespace('EAWP\Core\ValueObjects', __DIR__ . '/../src/core/value-objects'); 
 $loader->addNamespace('EAWP\Libraries', __DIR__ . '/../src/libraries'); 

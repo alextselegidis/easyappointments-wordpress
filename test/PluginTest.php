@@ -29,20 +29,23 @@ class PluginTest extends PHPUnit_Framework_TestCase {
         $wpdb = $this->getMock('wpdb');
         $route = $this->getMock('EAWP\Core\Route');
         
-        $route->expects($this->once())->method('view')->with(
-                $this->anything(),
-                $this->anything(),
-                $this->anything(),
-                $this->equalTo('admin')); 
-        
-        $route->expects($this->at(2))->method('ajax')->with(
+        $route->expects($this->at(0))->method('action')->with(
+                $this->equalTo('plugins_loaded'),
+                $this->anything()); 
+
+
+        $route->expects($this->at(1))->method('ajax')->with(
                 $this->equalTo('install'),
                 $this->anything()); 
         
-        $route->expects($this->at(3))->method('ajax')->with(
+        $route->expects($this->at(2))->method('ajax')->with(
                 $this->equalTo('bridge'),
                 $this->anything()); 
         
+        $route->expects($this->at(3))->method('shortcode')->with(
+                $this->equalTo('easyappointments'),
+                $this->anything()); 
+
         $plugin = new EAWP\Core\Plugin($wpdb, $route);
         $plugin->initialize();
     }

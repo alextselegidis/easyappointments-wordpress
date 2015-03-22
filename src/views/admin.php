@@ -15,28 +15,22 @@
 
 ?>
 
-<script>
-    jQuery(document).ready(function($) {
-        var admin = new Admin(); 
-        admin.events(); // bind events
-    }); 
-</script>
-
 <div class="wrap eawp">
     <h2>Easy!Appointments - WordPress Plugin</h2>
     <p>
-        <?php _e('This plugin aims to bridge an Easy!Appointments installation with '
-                . 'an existing WordPress system and make them work together. It features '
-                . 'useful functions such as the integration of the booking wizard '
-                . 'inside the WordPress pages through a shortcode and the creation of a '
-                . 'new E!A installation directly from the WordPress backend.', 'eawp'); ?>
+        <?php _e('This plugin aims to bridge Easy!Appointments with WordPress and ' 
+                . 'facilitate users in the integration of the appointment booking ' 
+                . 'system to their WP pages. It offers useful functions such as the ' 
+                . 'installation of Easy!Appointments directly from the WordPress backend, ' 
+                . 'the bridge of an existing installation and of course the display of ' 
+                . 'the appointment booking wizard with the use of a simple shortcode.', 'eawp'); ?>
     </p>
     
     <h3 class="title"><?php _e('Installation', 'eawp'); ?></h3>
     <p>
-        <?php _e('Set the installation path and URL for your Easy!Appointments installation '
-                . 'press either the "Install" or "Bridge" button in order to complete the '
-                . 'operation. ', 'eawp'); ?>
+        <?php _e('Set the path and URL of your Easy!Appointments installation and '
+                . 'press either the "Install" or "Bridge" button in order to complete '
+                . 'the operation.', 'eawp'); ?>
     </p>
     
     <table class="form-table">
@@ -55,8 +49,8 @@
             </tr>
             <tr>
                 <td class="submit" colspan="2">
-                    <button class="button button-primary"><?php _e('Install', 'eawp'); ?></button>
-                    <button class="button"><?php _e('Bridge', 'eawp'); ?></button>
+                    <button id='install' class="button button-primary"><?php _e('Install', 'eawp'); ?></button>
+                    <button id='bridge' class="button"><?php _e('Bridge', 'eawp'); ?></button>
                 </td>
             </tr>
         </tbody>
@@ -67,20 +61,20 @@
         <li>
             <strong><?php _e('Install', 'eawp'); ?>:</strong>
             <?php _e('This operation will create a new installation by placing and configuring '
-                    . 'the Easy!Appointments files into the requested directory. You will '
+                    . 'Easy!Appointments files into the requested directory. You will '
                     . 'have to complete the E!A installation by visiting the provided URL.', 'eawp'); ?>
         </li>
         <li>
             <strong><?php _e('Bridge', 'eawp'); ?>:</strong>
             <?php _e('This operation will bridge an existing Easy!Appointments installation with '
-                    . 'your WordPress website. Make sure that will you set the correct Easy!Appointments '
+                    . 'your WordPress website. Make sure that you will set the correct '
                     . 'installation path and URL.', 'eawp'); ?>
         </li>
         <li>
             <strong><?php _e('Shortcode', 'eawp'); ?>:</strong>
             <?php _e('If you want the Easy!Appointments booking wizard to be available in your '
                     . 'website, create a new page and add the [easyappointments] shortcode in it. '
-                    . 'When you launch the page you will see the appointment booking guide.', 'eawp'); ?>
+                    . 'When you launch the page you will see the appointment booking wizard.', 'eawp'); ?>
         </li>
     </ul>
     

@@ -8,39 +8,108 @@
  * ---------------------------------------------------------------------------- */
 
 /**
- * Admin Class 
- * 
- * This class handles the functionality of the plugin's settings page.
+ * Admin Class
+ *
+ * This class handles the JavaScritp functionality of the plugin's settings page.
  * 
  * @class 
  */
-var Admin = function() {
+(function($) {
     /**
-     * Class Instance
+     * Module Reference Object
      * 
-     * @type Admin
+     * @type {object}
      */
-    var $this = this; 
-}; 
+    var $this = this;  
 
-Admin.prototype.events = function() {
-    jQuery('#install').click(function(event) {
-        Admin.prototype.install(); 
-    });
-    
-    jQuery('#bridge').click(function(event) {
-        Admin.prototype.bridge(); 
-    });    
-};
+    /**
+     * Bind page event handlers.
+     */
+    $this.events = function() {
+        $('#install').on('click', function(event) {
+            $this.install(); 
+        });
+        
+        $('#bridge').on('click', function(event) {
+            $this.bridge(); 
+        });
+    };
 
-Admin.prototype.install = function() {
-    jQuery.post('wp-ajax.php', data, function(response) {
-        // @todo Handle ajax response. 
-    }, 'json'); 
-};
+    /**
+     * Execute the install operation with the provided data.
+     */
+    $this.install = function() {
+        var data = {
+            action: 'install', 
+            path: $('#path').val(),
+            url: $('#url').val()
+        };
+        
+        $.post(window.ajaxurl, data, function(response) {
+            if (response.exception) 
+                Admin.prototype.handleException(response);
+            $('.eawp').prepend(
+                '<div class="updated">'
+                    + '<span class="dashicons dashicons-yes"></span>'
+                    + EAWP.Lang.InstallationSuccessMessage
+                + '</div>'
+            );
+        }, 'json'); 
+    }; 
 
-Admin.prototype.bridge = function() {
-    jQuery.post('wp-ajax.php', data, function(response) {
-        // @todo Handle ajax response.
-    }, 'json'); 
-};
+    /**
+     * Execute the bridge operation with the provided data.
+     */
+    $this.bridge = function() {
+        var data = {
+            action: 'bridge', 
+            path: $('#path').val(),
+            url: $('#url').val()
+        };
+
+        $.post(window.ajaxurl, data, function(response) {
+            if (response.exception) 
+                Admin.prototype.handleException(response);
+            $('.eawp').prepend(
+                '<div class="updated">'
+                    + '<span class="dashicons dashicons-yes"></span>'
+                    + EAWP.Lang.BridgeSuccessMessage 
+                + '</div>'
+            );
+        }, 'json');
+    }; 
+
+    /**
+     * Handle AJAX exception. 
+     *
+     * This method will display exception information to the user.
+     * 
+     * @param  {[type]} exception [description]
+     * @return {[type]}           [description]
+     */
+    $this.handleException = function(exception) {
+        // Remove previous message and display a new one with exception information. 
+        $('.eawp div.error').remove();
+        
+        var message = EAWP.Lang.AjaxExceptionMessage
+                .replace('%file%', exception.file)
+                .replace('%line%', exception.line)
+                .replace('%message%', exception.message);
+
+
+        $('.eawp').prepend(
+            '<div class="error">' 
+                + '<span class="dashicons dashicons-flag"></span>'
+                + exception
+            + '</div>'
+        );
+
+        console.log('AJAX Exception: ', exception);
+    };
+
+    // ------------------------------------------------------------------------
+    //  INITIALIZE PAGE
+    // ------------------------------------------------------------------------
+    $this.events(); 
+
+})(jQuery);

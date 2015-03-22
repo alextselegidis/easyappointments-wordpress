@@ -103,10 +103,11 @@ class Route {
      * from the "views" directory.
      * @param array $assets This array must include the name of the file (with extensions)from 
      * the assets directory for the assets to be loaded (JavaScript or CSS, eg array('admin.js', 'style.css').
+     * @param array $jsData Contains PHP values to be passed to the JavaScript code of the view file .
      *
      * @throws InvalidArgumentException If argument is invalid.
      */
-    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile, array $assets = array()) {
+    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile, array $assets = array(), array $jsData = array()) {
         if (!is_string($pageTitle) || empty($pageTitle))
             throw new \InvalidArgumentException('Invalid $pageTitle argument: ' . print_r($pageTitle, true));
         
@@ -118,25 +119,26 @@ class Route {
         
         if (!is_string($viewFile) || empty($viewFile))
             throw new \InvalidArgumentException('Invalid $viewFile argument: ' . print_r($viewFile, true));
-        
-        \add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile, $assets) {
+
+        \add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile, $assets, $jsData) {
             add_options_page(
-                    $pageTitle, 
-                    $menuTitle, 
-                    'manage_options', 
-                    $menuSlug, 
-                    function() use($viewFile, $assets) {
-                        // Enqueue required assets. 
-                        foreach($assets as $file) {
-                            if (substr($file, -3) == '.js') 
-                                wp_enqueue_script(md5($file), plugins_url('../assets/js/' . $file, __FILE__));
-                            else if (substr($file, -4) == '.css') {
-                                wp_enqueue_style(md5($file), plugins_url('../assets/css/' . $file, __FILE__));
-                            } 
-                        }
-                        // Include view file (loaded from views directory).
-                        include EAWP_BASEPATH . '/views/' . $viewFile . '.php';
+                $pageTitle, 
+                $menuTitle, 
+                'manage_options', 
+                $menuSlug, 
+                function() use($viewFile, $assets, $jsData) {
+                    // Enqueue required assets. 
+                    foreach($assets as $file) {
+                        if (substr($file, -3) === '.js') {
+                            wp_enqueue_script(md5($file), plugins_url('../assets/js/' . $file, __FILE__));
+                            wp_localize_script(md5($file), 'EAWP', $jsData);
+                        } else if (substr($file, -4) === '.css') {
+                            wp_enqueue_style(md5($file), plugins_url('../assets/css/' . $file, __FILE__));
+                        } 
                     }
+                    // Include view file (loaded from views directory).
+                    include EAWP_BASEPATH . '/views/' . $viewFile . '.php';
+                }
             );
         });
     }

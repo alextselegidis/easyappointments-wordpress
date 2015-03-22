@@ -36,3 +36,11 @@ function wp_enqueue_script() {
 function wp_enqueue_style() {
     WpMock::registerExecution(__FUNCTION__, func_get_args());
 }
+
+function __() {
+    WpMock::registerExecution(__FUNCTION__, func_get_args());
+}
+
+function _e() {
+    WpMock::registerExecution(__FUNCTION__, func_get_args());
+}

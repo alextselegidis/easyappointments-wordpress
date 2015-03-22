@@ -10,7 +10,7 @@
 
 namespace EAWP\Libraries;
 
-use EAWP\Core\Plugin;
+use \EAWP\Core\Plugin;
 
 /**
  * Install Class
@@ -27,7 +27,7 @@ use EAWP\Core\Plugin;
  * 
  * @todo Implement Install Operation
  */
-class Install implements EAWP\Core\Interfaces\LibraryInterface {
+class Install implements \EAWP\Core\Interfaces\LibraryInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      * 
@@ -56,12 +56,12 @@ class Install implements EAWP\Core\Interfaces\LibraryInterface {
      * @param string $path Easy!Appointments installation path (provided from user). 
      * @param string $url Easy!Appointments installation url (provided from user).
      */
-    public function __construct(Plugin $plugin, $path, $url) {
+    public function __construct(Plugin $plugin, Path $path, Url $url) {
         if (!is_string($path) || empty($path) || !dir($path))
-            throw new InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, TRUE));
+            throw new \InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, TRUE));
         
         if (!is_string($url) || empty($url))
-            throw new InvalidArgumentException('Invalid $url argument provided: ' . print_r($url, TRUE));
+            throw new \InvalidArgumentException('Invalid $url argument provided: ' . print_r($url, TRUE));
         
         $this->plugin = $plugin; 
         $this->path = $path; 
@@ -77,6 +77,6 @@ class Install implements EAWP\Core\Interfaces\LibraryInterface {
      * and "eawp_url" settings respectively.
      */
     public function invoke() {
-        
+        echo json_encode('SUCCESS');
     }
 }

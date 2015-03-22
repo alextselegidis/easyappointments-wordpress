@@ -22,6 +22,9 @@ require EAWP_BASEPATH . '/core/Autoload.php';
 $loader = new EAWP\Core\Autoload; 
 $loader->register();
 $loader->addNamespace('EAWP\Core', EAWP_BASEPATH . '/core');
+$loader->addNamespace('EAWP\Core\Interfaces', EAWP_BASEPATH . '/core/interfaces');
+$loader->addNamespace('EAWP\Core\Exceptions', EAWP_BASEPATH . '/core/exceptions');
+$loader->addNamespace('EAWP\Core\ValueObjects', EAWP_BASEPATH . '/core/value-objects');
 $loader->addNamespace('EAWP\Libraries', EAWP_BASEPATH . '/libraries'); 
 
 /** Initialize Plugin */
