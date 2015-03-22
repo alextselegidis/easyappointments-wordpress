@@ -10,7 +10,9 @@
 
 namespace EAWP\Core;
 
-use wpdb;
+use \wpdb;
+use \EAWP\Core\ValueObjects\Path;
+use \EAWP\Core\ValueObjects\Url;
 
 /**
  * EAWP Plugin Class
@@ -55,7 +57,7 @@ class Plugin {
             $jsData = array(
                 'Lang' => array(
                     'InstallationSuccessMessage' => __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
-                                                        . 'complete the configuration of the application.', 'eawp'),
+                                                      . 'complete the configuration of the application.', 'eawp'),
                     'BridgeSuccessMessage' => __('Easy!Appointments installation was bridged successfully! You can now use the '
                                                 . '[easyappointments] shortcode in your pages.', 'eawp'),
                     'AjaxExceptionMessage' => __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp') 
@@ -70,7 +72,9 @@ class Plugin {
         
         $this->route->ajax('install', function() use($plugin) {
             try {
-                $library = new \EAWP\Libraries\Install($plugin, $_POST['path'], $_POST['url']); 
+                $path = new Path($_POST['path']);
+                $url = new Url($_POST['url']);
+                $library = new \EAWP\Libraries\Install($plugin, $path, $url); 
                 $library->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response(); 
@@ -79,7 +83,9 @@ class Plugin {
         
         $this->route->ajax('bridge', function() use($plugin) {
             try {
-                $library = new \EAWP\Libraries\Bridge($plugin, $_POST['path'], $_POST['url']); 
+                $path = new Path($_POST['path']);
+                $url = new Url($_POST['url']);
+                $library = new \EAWP\Libraries\Bridge($plugin, $path, $url); 
                 $library->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response(); 
@@ -91,7 +97,7 @@ class Plugin {
             $library->invoke();
         }); 
     }
-    
+
     /**
      * Get WordPress Database Object. 
      * 
@@ -99,7 +105,7 @@ class Plugin {
      */
     public function getDatabase() {
         return $this->wpdb; 
-    }
+    }   
     
     /**
      * Install Plugin 
@@ -107,7 +113,7 @@ class Plugin {
      * Performs the required actions for installing this plugin.
      */
     public function install() {
-        // Add the required commands here ... 
+        // Add the required operations here ... 
         return;
     }
     
@@ -117,7 +123,7 @@ class Plugin {
      * Performs the required actions for uninstalling this plugin.
      */
     public function uninstall() {
-        // Add the required commands here ... 
+        // Add the required operations here ... 
         return;
     } 
 }

@@ -27,9 +27,4 @@ class PathTest extends PHPUnit_Framework_TestCase {
         $this->setExpectedException('InvalidArgumentException'); 
         new Path(null);
     }
-
-    public function testThrowsExceptionWhenPathDoesNotExistOnServer() {
-        $this->setExpectedException('InvalidArgumentException'); 
-        new Path(__DIR__ . '/dir-does-not-exist');
-    }
 }

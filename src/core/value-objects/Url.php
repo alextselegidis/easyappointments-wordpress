@@ -13,7 +13,6 @@ namespace EAWP\Core\ValueObjects;
 /**
  * URL Value Object
  *
- *
  * Use this value object to validate server URL strings.
  */
 class Url {
@@ -22,19 +21,20 @@ class Url {
      */
     protected $url; 
 
-
     /**
      * Class Constructor
      * 
-     * Validates the object value. 
+     * Validates the URL object value. 
+     * 
+     * @param string $url Provide the application base URL to be used for configuring E!A.
      * 
      * @throws \InvalidArgumentException When an invalid URL is provided.
      */
     public function __construct($url) {
         if (!is_string($url) || empty($url) || !filter_var($url, FILTER_VALIDATE_URL))
             throw new \InvalidArgumentException('Invalid $url argument provided: ' . print_r($url, TRUE));
-
-        $this->url = $url; 
+        
+        $this->url = rtrim($url, '/'); 
     }
 
     /**

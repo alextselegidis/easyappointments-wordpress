@@ -16,31 +16,31 @@
  * to nothing else. 
  * 
  * Important: 
- *      Except from the mocking mecahnism this file provides a useful 
+ *      Except from the mocking mechanism this file provides a useful 
  *      list of the WordPress methods that are required by the plugin. 
  */
 require_once __DIR__ . '/WpMock.php';
 
-function add_action() {
-    WpMock::registerExecution(__FUNCTION__, func_get_args());
-}
+// Appendwith Extra WP Functions
 
-function add_filter() {
-    WpMock::registerExecution(__FUNCTION__, func_get_args());
-}
+$functions = array(
+    'add_action',
+    'add_filter',
+    'wp_enqueue_script',
+    'wp_enqueue_style',
+    '__',
+    '_e',
+    'add_option',
+    'update_option',
+    'delete_option'
+);
 
-function wp_enqueue_script() {
-    WpMock::registerExecution(__FUNCTION__, func_get_args());
-}
+// Dynamic Declaration of Functions
 
-function wp_enqueue_style() {
-    WpMock::registerExecution(__FUNCTION__, func_get_args());
-}
-
-function __() {
-    WpMock::registerExecution(__FUNCTION__, func_get_args());
-}
-
-function _e() {
-    WpMock::registerExecution(__FUNCTION__, func_get_args());
+foreach($functions as $function) {
+    eval(
+        'function ' . $function . '() {
+            WpMock::registerExecution(__FUNCTION__, func_get_args());        
+        }'
+    );
 }

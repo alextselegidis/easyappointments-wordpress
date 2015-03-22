@@ -56,7 +56,7 @@ class Bridge implements EAWP\Core\Interfaces\LibraryInterface {
      * @param string $path Easy!Appointments installation path (provided from user). 
      * @param string $url Easy!Appointments installation URL (provided from user). 
      */
-    public function __construct(Plugin $plugin, $path, $url) {
+    public function __construct(Plugin $plugin, Path $path, Url $url) {
         if (!is_string($path) || empty($path) || !dir($path))
             throw new InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, TRUE));
         
