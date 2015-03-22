@@ -11,3 +11,9 @@
     min-width: 100px;
     margin-right: 10px;
 }
+
+.eawp .updated,
+.eawp .error {
+    padding: 15px;
+    max-width: 700px;
+}
