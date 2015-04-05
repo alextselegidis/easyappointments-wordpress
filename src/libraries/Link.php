@@ -13,21 +13,21 @@ namespace EAWP\Libraries;
 use EAWP\Core\Plugin;
 
 /**
- * Bridge Class
+ * Link Library
  * 
- * This class implements the "bridge" of WordPress and an existing Easy!Appointments 
+ * This class implements the "link" of WordPress and an existing Easy!Appointments 
  * installation. It will set the configuration information to the WordPress settings 
  * table ("eawp_path" and "eawp_url"). 
  * 
  * Important: 
  *      This operation should also check that the destination path contains a valid E!A 
  *      installation and it is compatible with the current plugin version (very important 
- *      for future releases ***). With this check we can ensure that the "bridged" E!A 
+ *      for future releases ***). With this check we can ensure that the "linked" E!A 
  *      version will work without defects.
  * 
- * @todo Implement Bridge Operation
+ * @todo Implement Link Operation
  */
-class Bridge implements EAWP\Core\Interfaces\LibraryInterface {
+class Link implements EAWP\Core\Interfaces\LibraryInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      * 
