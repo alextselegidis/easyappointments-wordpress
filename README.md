@@ -1,10 +1,10 @@
 ## Easy!Appointments - WordPress Plugin
 <img src="https://easyappointments.files.wordpress.com/2015/02/easyappointments-wp-plugin-banner.png">
 
-This plugin aims to link an Easy!Appointments installation with an existing WordPress system and make them work together. It will feature useful functions such as the integration of the booking wizard inside the WordPress pages 
+This plugin aims to link an Easy!Appointments installation with an existing WordPress system and make them work together. It will feature useful functions such as the integration of the booking wizard inside the WordPress pages
 through a shortcode and the creation of a new E!A installation directly from the WordPress backend.
 
-Minimum Requirements: WordPress v4.1 & PHP 5.3
+Minimum Requirements: WordPress v4.0 & PHP v5.3
 
 ### Tasks
 
