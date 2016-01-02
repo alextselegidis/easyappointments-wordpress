@@ -1,0 +1,31 @@
+{
+  "name": "easyappointments-wp-plugin",
+  "version": "1.0.0",
+  "description": "Easy!Appointments plugin for WordPress",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alextselegidis/easyappointments-wp-plugin.git"
+  },
+  "keywords": [
+    "easyappointments",
+    "wordpress",
+    "plugin"
+  ],
+  "author": "Alex Tselegidis <alextselegidis@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/alextselegidis/easyappointments-wp-plugin/issues"
+  },
+  "homepage": "https://github.com/alextselegidis/easyappointments-wp-plugin#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
