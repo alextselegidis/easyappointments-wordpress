@@ -1,6 +1,7 @@
+.tmp-package
 doc/apigen
 doc/coverage
 doc/testdox.txt
 easyappointments-wp.zip
-dist
-.fuse_hidden*
+node_modules
+vendor
