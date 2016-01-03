@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Plugin Name: Easy!Appointments - WordPress Plugin
  * Plugin URI: http://easyappointments.org
@@ -10,25 +10,21 @@
  * License: GPLv3
  */
 
-/** Base Plugin Path */
-define('EAWP_BASEPATH', __DIR__); 
+// Base Plugin Path
+define('EAWP_BASEPATH', __DIR__);
 
-/** Supported Versions */
-define('EAWP_MIN_VERSION', '1.0');
-define('EAWP_MAX_VERSION', '1.0');
+// Supported Versions
+define('EAWP_MIN_VERSION', '1.0.0');
+define('EAWP_MAX_VERSION', '1.1.0');
 
-/** Setup Autoloader */
-require EAWP_BASEPATH . '/core/Autoload.php'; 
-$loader = new EAWP\Core\Autoload; 
+// Setup Autoloader
+require EAWP_BASEPATH . '/core/Autoload.php';
+$loader = new EAWP\Core\Autoload;
 $loader->register();
 $loader->addNamespace('EAWP\Core', EAWP_BASEPATH . '/core');
-$loader->addNamespace('EAWP\Core\Interfaces', EAWP_BASEPATH . '/core/interfaces');
-$loader->addNamespace('EAWP\Core\Exceptions', EAWP_BASEPATH . '/core/exceptions');
-$loader->addNamespace('EAWP\Core\ValueObjects', EAWP_BASEPATH . '/core/value-objects');
-$loader->addNamespace('EAWP\Libraries', EAWP_BASEPATH . '/libraries'); 
 
-/** Initialize Plugin */
-global $wpdb; 
-$route = new EAWP\Core\Route(); 
+// Initialize Plugin
+global $wpdb;
+$route = new EAWP\Core\Route();
 $plugin = new EAWP\Core\Plugin($wpdb, $route);
 $plugin->initialize();
