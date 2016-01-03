@@ -52,7 +52,10 @@ class Plugin {
      * Bind necessary actions and filters, register WP admin menu.
      */
     public function initialize() {
-        $this->route->action('plugins_loaded', function() {
+        $plugin = $this; // Closure Argument
+        $route = $this->route;
+
+        $this->route->action('plugins_loaded', function() use ($plugin, $route) {
             load_plugin_textdomain('eawp', false, dirname(plugin_basename(__DIR__)) . '/assets/lang');
 
             $jsData = array(
@@ -65,11 +68,9 @@ class Plugin {
                 )
             );
 
-            $this->route->view('Easy!Appointments', 'Easy!Appointments',
+            $route->view('Easy!Appointments', 'Easy!Appointments',
                     'eawp-settings', 'admin', array('admin.js', 'style.css'), $jsData);
         });
-
-        $plugin = $this; // Closure Argument
 
         $this->route->ajax('install', function() use($plugin) {
             try {

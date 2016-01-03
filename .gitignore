@@ -1,4 +1,5 @@
 .tmp-package
+.vagrant
 doc/apigen
 doc/coverage
 doc/testdox.txt
