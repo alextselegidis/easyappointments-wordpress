@@ -29,7 +29,7 @@
     <h3 class="title"><?php _e('Installation', 'eawp'); ?></h3>
     <p>
         <?php _e('Set the path and URL of your Easy!Appointments installation and '
-                . 'press either the "Install" or "Bridge" button in order to complete '
+                . 'press either the "Install" or "Link" button in order to complete '
                 . 'the operation.', 'eawp'); ?>
     </p>
 
