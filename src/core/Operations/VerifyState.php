@@ -62,7 +62,7 @@ class VerifyState implements OperationInterface {
      * This method will reset the WordPress options which will automatically disable any
      * used shortcodes.
      */
-    public funtion invoke() {
+    public function invoke() {
 
     }
 }
