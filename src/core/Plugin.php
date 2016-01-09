@@ -62,7 +62,7 @@ class Plugin {
                 'Lang' => array(
                     'InstallationSuccessMessage' => __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
                                                       . 'complete the configuration of the application.', 'eawp'),
-                    'BridgeSuccessMessage' => __('Easy!Appointments installation was bridged successfully! You can now use the '
+                    'LinkSuccessMessage' => __('Easy!Appointments installation was linked successfully! You can now use the '
                                                 . '[easyappointments] shortcode in your pages.', 'eawp'),
                     'AjaxExceptionMessage' => __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp')
                 )

@@ -85,5 +85,5 @@
     </ul>
 
     <?php _e('For more information visit the official website of the project at '
-            . '<a href="http://easyappointments.org">www.easyappointments.org</a>.', 'eawp'); ?>
+            . '<a href="http://easyappointments.org">http://easyappointments.org</a>.', 'eawp'); ?>
 </div>
