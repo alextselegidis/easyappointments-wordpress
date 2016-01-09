@@ -6,5 +6,9 @@ The MySQL user has the root/root credentials and the WordPress installation the 
 
 1. Install Vagrant and start by executing the `vagrant up` command.
 2. Open your browser to the http://localhost:8080 address.
+3. Connect to the Vagrant machine with the `vagrant ssh` command.
+4. To close the machine execute the `vagrant destroy` command.
 
-In the future more WordPress installations will be provided for further testing. 
+In the future more WordPress installations will be provided for further testing.
+
+Find out more about Vagrant in the [official website](https://www.vagrantup.com/).
