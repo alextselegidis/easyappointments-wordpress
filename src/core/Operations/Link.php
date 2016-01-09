@@ -20,14 +20,15 @@ use EAWP\Core\Plugin;
  * table ("eawp_path" and "eawp_url").
  *
  * Important:
- *      This operation should also check that the destination path contains a valid E!A
- *      installation and it is compatible with the current plugin version (very important
- *      for future releases ***). With this check we can ensure that the "linked" E!A
- *      version will work without defects.
+ *
+ * This operation should also check that the destination path contains a valid E!A
+ * installation and it is compatible with the current plugin version (very important
+ * for future releases ***). With this check we can ensure that the "linked" E!A
+ * version will work without defects.
  *
  * @todo Implement Link Operation
  */
-class Link implements OperationInterface {
+class Link implements \EAWP\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *

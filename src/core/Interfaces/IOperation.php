@@ -16,7 +16,7 @@ namespace EAWP\Core\Operations;
  * Defines a solid interface for all plugin operations so that they have the
  * same public API.
  */
-interface OperationInterface {
+interface IOperation {
     /**
      * Invoke Library
      *

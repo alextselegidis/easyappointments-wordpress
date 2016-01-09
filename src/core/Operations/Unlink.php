@@ -22,7 +22,7 @@ use EAWP\Core\ValueObjects\Path;
  *
  * @todo Implement Operation
  */
-class Unlink implements OperationInterface {
+class Unlink implements \EAWP\Interfaces\IOperation {
     /**
      * Plugin Instance
      *

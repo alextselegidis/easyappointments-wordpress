@@ -20,7 +20,7 @@ use EAWP\Core\Plugin;
  *
  * @todo Implement Shortcode Operation
  */
-class Shortcode implements OperationInterface {
+class Shortcode implements \EAWP\Interfaces\IOperation {
     /**
      * Easy!Appointments WordPress Plugin Instance
      *

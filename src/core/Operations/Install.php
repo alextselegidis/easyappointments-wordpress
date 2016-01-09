@@ -24,10 +24,11 @@ use \EAWP\Core\ValueObjects\Url;
  * "eawp_url" settings to WordPress.
  *
  * Important:
- *      This method does not have to check for Easy!Appointments compatibility
- *      because it will install the latest supported version of project.
+ *
+ * This method does not have to check for Easy!Appointments compatibility
+ * because it will install the latest supported version of project.
  */
-class Install implements OperationInterface {
+class Install implements \EAWP\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *

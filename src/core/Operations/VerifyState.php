@@ -21,7 +21,7 @@ use EAWP\Core\ValueObjects\Path;
  *
  * @todo Implement Operation
  */
-class VerifyState implements OperationInterface {
+class VerifyState implements \EAWP\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *
