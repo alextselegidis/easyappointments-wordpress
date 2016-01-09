@@ -3,7 +3,7 @@
  * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
- * @copyright A.Tselegidis (C) 2015
+ * @copyright A.Tselegidis (C) 2016
  * @link http://easyappointments.org
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
@@ -22,7 +22,7 @@
                 . 'facilitate users in the integration of the appointment booking '
                 . 'system to their WP pages. It offers useful functions such as the '
                 . 'installation of Easy!Appointments directly from the WordPress backend, '
-                . 'the bridge of an existing installation and of course the display of '
+                . 'the link of an existing installation and of course the display of '
                 . 'the appointment booking wizard with the use of a simple shortcode.', 'eawp'); ?>
     </p>
 
@@ -50,7 +50,7 @@
             <tr>
                 <td class="submit" colspan="2">
                     <button id='install' class="button button-primary"><?php _e('Install', 'eawp'); ?></button>
-                    <button id='bridge' class="button"><?php _e('Bridge', 'eawp'); ?></button>
+                    <button id='link' class="button"><?php _e('Link', 'eawp'); ?></button>
                 </td>
             </tr>
         </tbody>
@@ -65,10 +65,16 @@
                     . 'have to complete the E!A installation by visiting the provided URL.', 'eawp'); ?>
         </li>
         <li>
-            <strong><?php _e('Bridge', 'eawp'); ?>:</strong>
-            <?php _e('This operation will bridge an existing Easy!Appointments installation with '
+            <strong><?php _e('Link', 'eawp'); ?>:</strong>
+            <?php _e('This operation will link an existing Easy!Appointments installation with '
                     . 'your WordPress website. Make sure that you will set the correct '
                     . 'installation path and URL.', 'eawp'); ?>
+        </li>
+        <li>
+            <strong><?php _e('Unlink', 'eawp'); ?>:</strong>
+            <?php _e('This operation will unlink an active connection between Easy!Appointments and '
+                    . 'your WordPress website. You might set whether you want the files and database '
+                    . 'tables removed as well.', 'eawp'); ?>
         </li>
         <li>
             <strong><?php _e('Shortcode', 'eawp'); ?>:</strong>
@@ -79,5 +85,5 @@
     </ul>
 
     <?php _e('For more information visit the official website of the project at '
-            . '<a href="http://easyappointments.org">www.easyappointments.com</a>.', 'eawp'); ?>
+            . '<a href="http://easyappointments.org">www.easyappointments.org</a>.', 'eawp'); ?>
 </div>
