@@ -67,11 +67,14 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
      sudo apt-get install -y apache2
-     sudo apt-get install -y php5 php5-dev php5-mysql php5-gd php5-mcrypt php5-curl php5-xdebug phpunit
+     sudo apt-get install -y php5 php5-dev php5-mysql php5-gd php5-mcrypt php5-curl php5-xdebug
      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
      sudo apt-get install -y mysql-server
      sudo service apache2 restart
+     wget https://phar.phpunit.de/phpunit-old.phar
+     chmod +x phpunit-old.phar
+     sudo mv phpunit-old.phar /usr/bin/phpunit
      cd /var/www
      sudo chown -R vagrant .
      wget https://wordpress.org/wordpress-4.0.tar.gz && tar xfz wordpress-4.0.tar.gz && rm wordpress-4.0.tar.gz && mv wordpress wp4_0

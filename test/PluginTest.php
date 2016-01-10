@@ -15,47 +15,50 @@ class PluginTest extends PHPUnit_Framework_TestCase {
     // ------------------------------------------------------------------------
     // TEST OBJECT INSTANTIATION
     // ------------------------------------------------------------------------
+
     public function testObjectInstantiation() {
         $wpdb = $this->getMock('wpdb');
         $route = $this->getMock('EAWP\Core\Route');
         $plugin = new EAWP\Core\Plugin($wpdb, $route);
         $this->assertInstanceOf('EAWP\Core\Plugin', $plugin);
     }
-    
+
     // ------------------------------------------------------------------------
     // TEST INITIALIZE METHOD
     // ------------------------------------------------------------------------
+
     public function testInitializeMustRegisterTheRequiredRoutes() {
         $wpdb = $this->getMock('wpdb');
         $route = $this->getMock('EAWP\Core\Route');
-        
+
         $route->expects($this->at(0))->method('action')->with(
                 $this->equalTo('plugins_loaded'),
-                $this->anything()); 
+                $this->anything());
 
 
         $route->expects($this->at(1))->method('ajax')->with(
                 $this->equalTo('install'),
-                $this->anything()); 
-        
+                $this->anything());
+
         $route->expects($this->at(2))->method('ajax')->with(
                 $this->equalTo('bridge'),
-                $this->anything()); 
-        
+                $this->anything());
+
         $route->expects($this->at(3))->method('shortcode')->with(
                 $this->equalTo('easyappointments'),
-                $this->anything()); 
+                $this->anything());
 
         $plugin = new EAWP\Core\Plugin($wpdb, $route);
         $plugin->initialize();
     }
-    
+
     // ------------------------------------------------------------------------
     // TEST INITIALIZE METHOD
     // ------------------------------------------------------------------------
+
     public function testGetDatabaseMustReturnTheWpDatabaseObject() {
-        $wpdb = $this->getMock('wpdb'); 
-        $route = $this->getMock('EAWP\Core\Route'); 
+        $wpdb = $this->getMock('wpdb');
+        $route = $this->getMock('EAWP\Core\Route');
         $plugin = new EAWP\Core\Plugin($wpdb, $route);
         $this->assertSame($wpdb, $plugin->getDatabase());
     }

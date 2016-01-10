@@ -11,7 +11,6 @@
 require_once __DIR__ . '/bootstrap.php';
 
 class RouteTest extends PHPUnit_Framework_TestCase {
-
     /**
      * @var EAWP\Core\Route
      */
@@ -106,25 +105,25 @@ class RouteTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testViewMustThrowAnExceptionOnInvalidPageTitleArgument() {
-        $this->setExpectedException('InvalidArgumentException'); 
+        $this->setExpectedException('InvalidArgumentException');
         $this->route->view(null, 'Menu Title', 'Menu Slug', 'view-file');
     }
-    
+
     public function testViewMustThrowAnExceptionOnInvalidMenuTitleArgument() {
-        $this->setExpectedException('InvalidArgumentException'); 
+        $this->setExpectedException('InvalidArgumentException');
         $this->route->view('Page Title', null, 'Menu Slug', 'view-file');
     }
-    
+
     public function testViewMustThrowAnExceptionOnInvalidMenuSlugArgument() {
-        $this->setExpectedException('InvalidArgumentException'); 
+        $this->setExpectedException('InvalidArgumentException');
         $this->route->view('Page Title', 'Menu Title', null, 'view-file');
     }
 
     public function testViewMustThrowAnExceptionOnInvalidViewFileArgument() {
-        $this->setExpectedException('InvalidArgumentException'); 
+        $this->setExpectedException('InvalidArgumentException');
         $this->route->view('Page Title', 'Menu Title', 'Menu Slug', null);
     }
-    
+
     // ------------------------------------------------------------------------
     // TEST AJAX METHOD
     // ------------------------------------------------------------------------
@@ -133,17 +132,17 @@ class RouteTest extends PHPUnit_Framework_TestCase {
         $this->route->ajax('install', array($this, 'setUp'));
         $this->assertTrue(WpMock::isExecuted('add_action', $arguments));
     }
-    
+
     public function testAjaxMustThrowAnExceptionOnInvalidActionArgument() {
-        $this->setExpectedException('InvalidArgumentException'); 
+        $this->setExpectedException('InvalidArgumentException');
         $this->route->ajax(null, array($this, 'setUp'));
     }
-    
+
     public function testAjaxMustThrowAnExceptionOnInvalidCallbackArgument() {
-        $this->setExpectedException('InvalidArgumentException'); 
+        $this->setExpectedException('InvalidArgumentException');
         $this->route->ajax('install', null);
     }
-    
+
     // ------------------------------------------------------------------------
     // TEST SHORTCODE METHOD
     // ------------------------------------------------------------------------
