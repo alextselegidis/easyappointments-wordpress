@@ -16,6 +16,7 @@ define('DB_PASSWORD', 'db_password');
 
 // Load required libraries and classes for the tests.
 require_once __DIR__ . '/includes/Filesystem.php';
+require_once __DIR__ . '/mocks/WPDB.php';
 require_once __DIR__ . '/mocks/WpMock.php';
 require_once __DIR__ . '/mocks/WpFunctions.php';
 require_once EAWP_BASEPATH . '/core/Autoload.php';
