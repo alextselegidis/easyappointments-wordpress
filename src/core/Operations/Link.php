@@ -8,9 +8,9 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Operations;
+namespace EAWP\Core\Operations;
 
-use EAWP\Core\Plugin;
+use \EAWP\Core\Plugin;
 
 /**
  * Link Library
@@ -28,7 +28,7 @@ use EAWP\Core\Plugin;
  *
  * @todo Implement Link Operation
  */
-class Link implements \EAWP\Interfaces\IOperation {
+class Link implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *

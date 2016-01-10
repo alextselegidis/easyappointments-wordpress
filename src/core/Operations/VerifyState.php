@@ -8,10 +8,10 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Operations;
+namespace EAWP\Core\Operations;
 
-use EAWP\Core\Plugin;
-use EAWP\Core\ValueObjects\Path;
+use \EAWP\Core\Plugin;
+use \EAWP\Core\ValueObjects\Path;
 
 /**
  * Verify State Operation
@@ -21,7 +21,7 @@ use EAWP\Core\ValueObjects\Path;
  *
  * @todo Implement Operation
  */
-class VerifyState implements \EAWP\Interfaces\IOperation {
+class VerifyState implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *

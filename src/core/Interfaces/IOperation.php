@@ -8,7 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Core\Operations;
+namespace EAWP\Core\Interfaces;
 
 /**
  * Operation Interface

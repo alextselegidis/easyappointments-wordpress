@@ -8,10 +8,10 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Operations;
+namespace EAWP\Core\Operations;
 
-use EAWP\Core\Plugin;
-use EAWP\Core\ValueObjects\Path;
+use \EAWP\Core\Plugin;
+use \EAWP\Core\ValueObjects\Path;
 
 /**
  * Unlink Operation
@@ -22,7 +22,7 @@ use EAWP\Core\ValueObjects\Path;
  *
  * @todo Implement Operation
  */
-class Unlink implements \EAWP\Interfaces\IOperation {
+class Unlink implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Plugin Instance
      *

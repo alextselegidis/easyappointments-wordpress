@@ -8,9 +8,9 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Operations;
+namespace EAWP\Core\Operations;
 
-use EAWP\Core\Plugin;
+use \EAWP\Core\Plugin;
 
 /**
  * Shortcode Class
@@ -20,7 +20,7 @@ use EAWP\Core\Plugin;
  *
  * @todo Implement Shortcode Operation
  */
-class Shortcode implements \EAWP\Interfaces\IOperation {
+class Shortcode implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Easy!Appointments WordPress Plugin Instance
      *

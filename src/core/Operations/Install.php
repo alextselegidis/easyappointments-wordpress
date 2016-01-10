@@ -8,7 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Libraries;
+namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
 use \EAWP\Core\ValueObjects\Path;
@@ -27,8 +27,10 @@ use \EAWP\Core\ValueObjects\Url;
  *
  * This method does not have to check for Easy!Appointments compatibility
  * because it will install the latest supported version of project.
+ *
+ * @todo This operation has to work with dynamic version number.
  */
-class Install implements \EAWP\Interfaces\IOperation {
+class Install implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *
@@ -87,7 +89,7 @@ class Install implements \EAWP\Interfaces\IOperation {
         if (!is_writable(dirname((string)$this->path)))
             throw new \Exception('Destination path is not writable.');
 
-        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-src', (string)$this->path);
+        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.0', (string)$this->path);
     }
 
     /**
