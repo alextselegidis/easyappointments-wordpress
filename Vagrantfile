@@ -67,7 +67,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
      sudo apt-get install -y apache2
-     sudo apt-get install -y php5 php5-dev php5-mysql php5-gd php5-mcrypt php5-curl php5-xdebug
+     sudo apt-get install -y php5 php5-dev php5-mysql php5-gd php5-mcrypt php5-curl php5-xdebug phpunit
      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
      sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
      sudo apt-get install -y mysql-server
