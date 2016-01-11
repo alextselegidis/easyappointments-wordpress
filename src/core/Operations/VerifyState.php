@@ -12,12 +12,14 @@ namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
 use \EAWP\Core\ValueObjects\Path;
+use \EAWP\Core\ValueObjects\Url;
 
 /**
  * Verify State Operation
  *
- * This class implements the "verify state" operation of the current connection. This operation
- * will check if Easy!Appointments is correctly connected to WordPress.
+ * This class implements the "verify state" operation of the current connection. It will check if
+ * Easy!Appointments is correctly connected to WordPress, whether the configuration.php file exists and
+ * if the E!A installation is reachable from the web.
  *
  * @todo Implement Operation
  */
@@ -63,6 +65,30 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * used shortcodes.
      */
     public function invoke() {
+        $this->_verifyConfigurationFile();
+        $this->_performTestRequest();
+    }
 
+    /**
+     * Verify that the configuration file is where it's supposed to be.
+     */
+    protected function _verifyConfigurationFile() {
+        if (!\file_exists((string)$this->path . '/configuration.php')
+                && !\file_exists((string)$this->path . '/config.php')) {
+            throw new \Exception('Configuration file of Easy!Appointments was not found on the given path.');
+        }
+    }
+
+    /**
+     * Get the headers of the provided installation.
+     *
+     * @todo Improve the verification done by this method.
+     */
+    protected function _performTestRequest() {
+        $headers = \get_headers((string)$this->url . '/index.php');
+
+        if ($headers === false || \strpos($headers[0], '200 OK') === false) {
+            throw new \Exception('The installation is not reachable from the web.');
+        }
     }
 }
