@@ -1,6 +1,6 @@
 <?php
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - WordPress Plugin 
+ * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
  * @copyright A.Tselegidis (C) 2016
@@ -10,14 +10,15 @@
 
 /**
  * Mock WordPress Functions
- * 
- * Append this file with extra functions that need to be mocked. The 
+ *
+ * Append this file with extra functions that need to be mocked. The
  * methods must only register their execution in the WpMock class and
- * to nothing else. 
- * 
- * Important: 
- *      Except from the mocking mechanism this file provides a useful 
- *      list of the WordPress methods that are required by the plugin. 
+ * to nothing else.
+ *
+ * Important:
+ *
+ * Except from the mocking mechanism this file provides a useful
+ * list of the WordPress methods that are required by the plugin.
  */
 require_once __DIR__ . '/WpMock.php';
 
@@ -40,7 +41,7 @@ $functions = array(
 foreach($functions as $function) {
     eval(
         'function ' . $function . '() {
-            WpMock::registerExecution(__FUNCTION__, func_get_args());        
+            WpMock::registerExecution(__FUNCTION__, func_get_args());
         }'
     );
 }
