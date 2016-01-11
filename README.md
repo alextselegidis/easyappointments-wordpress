@@ -11,9 +11,9 @@ Minimum Requirements: WordPress v4.0 & PHP v5.3
 1. ~~Setup Plugin Structure~~ **[DONE]**
 2. ~~Implement Plugin Core~~ **[DONE]**
 3. ~~Implement Easy!Appointments Installation~~ **[DONE]**
-4. **Implement Easy!Appointments Link**
-5. Implement Easy!Appointments Unlink
-6. Implement Link State Checks
+4. ~~Implement Easy!Appointments Link~~ **[DONE]**
+5. ~~Implement Easy!Appointments Unlink~~ **[DONE]**
+6. **Implement State Verification Checks**
 7. Implement Booking ShortCode
 8. ~~Produce Code Documentation with ApiGen~~ **[DONE]**
 9. ~~Create Package Script (Linux)~~ **[DONE]**
