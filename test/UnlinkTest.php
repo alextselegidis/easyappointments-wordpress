@@ -14,12 +14,29 @@ use \EAWP\Core\Operations\Unlink;
 
 class UnlinkTest extends PHPUnit_Framework_TestCase {
     /**
+     * Temporary Test Directory Path
+     *
+     * @var string
+     */
+    protected $tmpDirectory;
+
+    /**
      * Test Setup
      *
      * Will create sample copy of the installation files.
      */
     public function setUp() {
-        Filesystem::copy(__DIR__ . '/../src/ea-vendor/1.0', __DIR__ . '/tmp');
+        WpMock::setUp();
+        
+        $this->tmpDirectory = __DIR__ . '/tmp-dir';
+
+        if (file_exists($this->tmpDirectory)) {
+            Filesystem::delete($this->tmpDirectory);
+        }
+
+        mkdir($this->tmpDirectory);
+
+        Filesystem::copy(__DIR__ . '/../src/ea-vendor/1.0', $this->tmpDirectory);
     }
 
     /**
@@ -28,12 +45,10 @@ class UnlinkTest extends PHPUnit_Framework_TestCase {
      * Will make sure that the filesystem will remain clean after the test execution.
      */
     public function tearDown() {
-        Filesystem::delete(__DIR__ . '/tmp');
+        Filesystem::delete($this->tmpDirectory);
     }
 
     public function testUnlinkMustRemoveTheWordPressOptionsAndSeparateTheInstallations() {
-        $testPath = __DIR__ . '/tmp';
-
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -41,6 +56,7 @@ class UnlinkTest extends PHPUnit_Framework_TestCase {
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
                      ->disableOriginalConstructor()
                      ->getMock();
+        $testPath = $this->tmpDirectory;
         $path->method('__toString')->willReturn($testPath);
 
         $link = new Unlink($plugin, $path, false);
@@ -53,8 +69,6 @@ class UnlinkTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testUnlinkAndRemoveFilesMustSeparateTheTwoInstallationsAndRemoveAllTheDataFromEasyAppointments() {
-        $testPath = __DIR__ . '/tmp';
-
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -62,6 +76,7 @@ class UnlinkTest extends PHPUnit_Framework_TestCase {
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
                      ->disableOriginalConstructor()
                      ->getMock();
+        $testPath = $this->tmpDirectory;
         $path->method('__toString')->willReturn($testPath);
 
         // Mock the WPDB object.

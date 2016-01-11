@@ -14,27 +14,35 @@ use \EAWP\Core\Operations\Install;
 
 class InstallTest extends PHPUnit_Framework_TestCase {
     /**
+     * Temporary Test Directory Path
+     *
+     * @string
+     */
+    protected $tmpDirectory;
+
+    /**
      * Test Setup
      *
-     * Make sure that the "tmp" directory does not exist prior the test.
+     * Make sure that the "tmp-dir" directory does not exist prior the test.
      */
     public function setUp() {
-        Filesystem::delete(__DIR__ . '/tmp');
+        $this->tmpDirectory = __DIR__ . '/tmp-dir';
+
+        if (file_exists($this->tmpDirectory)) {
+            Filesystem::delete($this->tmpDirectory);
+        }
     }
 
     /**
      * Test Tear Down
      *
-     * Remove "tmp" directory (if needed).
+     * Remove "tmp-dir" directory after the test.
      */
     public function tearDown() {
-        Filesystem::delete(__DIR__ . '/tmp');
+        Filesystem::delete($this->tmpDirectory);
     }
 
     public function testInstallMustPlaceAndConfigureApplicationFiles() {
-        $testPath = __DIR__ . '/tmp';
-        $testUrl = 'http://wp/test-ea';
-
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -42,15 +50,16 @@ class InstallTest extends PHPUnit_Framework_TestCase {
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
                      ->disableOriginalConstructor()
                      ->getMock();
+        $testPath = $this->tmpDirectory;
         $path->method('__toString')->willReturn($testPath);
 
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
                      ->disableOriginalConstructor()
                      ->getMock();
+        $testUrl = 'http://wp/test/easyappointments';
         $url->method('__toString')->willReturn($testUrl);
 
         $install = new Install($plugin, $path, $url);
-
         $install->invoke();
 
         // Assert configuration file content.

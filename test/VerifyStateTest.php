@@ -24,10 +24,10 @@ class VerifyStateTest extends PHPUnit_Framework_TestCase {
      * Test Setup
      */
     public function setUp() {
-        $this->tmpDirectory = __DIR__ . '/tmp';
+        $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         if (file_exists($this->tmpDirectory)) {
-            $this->tearDown(); // clear files
+            Filesystem::delete($this->tmpDirectory);
         }
 
         mkdir($this->tmpDirectory);

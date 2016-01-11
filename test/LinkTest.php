@@ -14,41 +14,60 @@ use \EAWP\Core\Operations\Link;
 
 class LinkTest extends PHPUnit_Framework_TestCase {
     /**
+     * Temporary Test Directory Path
+     *
+     * @var string
+     */
+    protected $tmpDirectory;
+
+    /**
      * Test Setup
      *
-     * Will create temporary installation files that will be used for testing the
-     * Link operation class.
+     * Will create temporary installation files that will be used for testing the "Link"
+     * operation class.
      */
     public function setUp() {
+        WpMock::setUp();
+
+        $this->tmpDirectory = __DIR__ . '/tmp-dir';
+
         // Make sure the tmp directory is removed.
-        Filesystem::delete(__DIR__ . '/tmp');
+        if (file_exists($this->tmpDirectory)) {
+            Filesystem::delete($this->tmpDirectory));
+        }
 
         // Create temporary directory.
-        mkdir(__DIR__ . '/tmp');
+        mkdir($this->tmpDirectory);
 
-        // Enter some dummy data to the configuration file.
+        // Write some dummy data to the configuration.php file.
         $configText = '
             public static $db_host     = "http://test-installation.com";
             public static $db_name     = "test_database";
             public static $db_username = "test_username";
             public static $db_password = "test_password";
         ';
-        file_put_contents(__DIR__ . '/tmp/configuration.php', $configText);
+        file_put_contents($this->tmpDirectory . '/configuration.php', $configText);
+
+        // Write some dummy data to the config.php file.
+        $configText = '
+            const DB_HOST       = "http://test-installation.com";
+            const DB_NAME       = "test_database";
+            const DB_USERNAME   = "test_username";
+            const DB_PASSWORD   = "test_password";
+        ';
+        file_put_contents($this->tmpDirectory . '/config.php', $configText);
     }
 
     /**
      * Test Tear Down
      *
-     * Will clear the temporary files created by the tests of the Link operation.
+     * Will clear the temporary files created by the tests of the "Link" operation.
      */
     public function tearDown() {
-        Filesystem::delete(__DIR__ . '/tmp');
+        Filesystem::delete($this->tmpDirectory);
     }
 
     public function testLinkAnExistingInstallationMustParseAndCreateTheCorrectOptionsToWordPress() {
-        $testPath = __DIR__ . '/tmp';
-        $testUrl = 'http://wp/test-ea';
-
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
                         ->disableOriginalConstructor()
                         ->getMock();
@@ -56,11 +75,13 @@ class LinkTest extends PHPUnit_Framework_TestCase {
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
                      ->disableOriginalConstructor()
                      ->getMock();
+        $testPath = $this->tmpDirectory;
         $path->method('__toString')->willReturn($testPath);
 
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
                      ->disableOriginalConstructor()
                      ->getMock();
+        $testUrl = 'http://wp/test/easyappointments';
         $url->method('__toString')->willReturn($testUrl);
 
         $link = new Link($plugin, $path, $url);

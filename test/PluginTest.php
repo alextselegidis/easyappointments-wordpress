@@ -9,7 +9,8 @@
  * ---------------------------------------------------------------------------- */
 
 require_once __DIR__ . '/bootstrap.php';
-require_once __DIR__ . '/../src/core/Plugin.php';
+
+use \EAWP\Core\Plugin;
 
 class PluginTest extends PHPUnit_Framework_TestCase {
     // ------------------------------------------------------------------------
@@ -19,7 +20,7 @@ class PluginTest extends PHPUnit_Framework_TestCase {
     public function testObjectInstantiation() {
         $wpdb = $this->getMock('wpdb');
         $route = $this->getMock('EAWP\Core\Route');
-        $plugin = new EAWP\Core\Plugin($wpdb, $route);
+        $plugin = new Plugin($wpdb, $route);
         $this->assertInstanceOf('EAWP\Core\Plugin', $plugin);
     }
 
@@ -48,18 +49,18 @@ class PluginTest extends PHPUnit_Framework_TestCase {
                 $this->equalTo('easyappointments'),
                 $this->anything());
 
-        $plugin = new EAWP\Core\Plugin($wpdb, $route);
+        $plugin = new Plugin($wpdb, $route);
         $plugin->initialize();
     }
 
     // ------------------------------------------------------------------------
-    // TEST INITIALIZE METHOD
+    // TEST GET DATABASE METHOD
     // ------------------------------------------------------------------------
 
     public function testGetDatabaseMustReturnTheWpDatabaseObject() {
         $wpdb = $this->getMock('wpdb');
         $route = $this->getMock('EAWP\Core\Route');
-        $plugin = new EAWP\Core\Plugin($wpdb, $route);
+        $plugin = new Plugin($wpdb, $route);
         $this->assertSame($wpdb, $plugin->getDatabase());
     }
 }
