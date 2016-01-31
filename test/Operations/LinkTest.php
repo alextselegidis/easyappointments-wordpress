@@ -32,7 +32,7 @@ class LinkTest extends \PHPUnit_Framework_TestCase {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         // Make sure the tmp directory is removed.
-        if (file_exists($this->tmpDirectory)) {
+        if (\file_exists($this->tmpDirectory)) {
             \Filesystem::delete($this->tmpDirectory);
         }
 
@@ -84,7 +84,13 @@ class LinkTest extends \PHPUnit_Framework_TestCase {
         $testUrl = 'http://wp/test/easyappointments';
         $url->method('__toString')->willReturn($testUrl);
 
-        $link = new Link($plugin, $path, $url);
+        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        $linkInformation->method('getPath')->willReturn($path);
+        $linkInformation->method('getUrl')->willReturn($url);
+
+        $link = new Link($plugin, $linkInformation);
         $link->invoke();
 
         // Assert whether database options where successfully created.
