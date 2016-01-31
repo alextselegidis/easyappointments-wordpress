@@ -33,7 +33,7 @@ class LinkTest extends PHPUnit_Framework_TestCase {
 
         // Make sure the tmp directory is removed.
         if (file_exists($this->tmpDirectory)) {
-            Filesystem::delete($this->tmpDirectory));
+            Filesystem::delete($this->tmpDirectory);
         }
 
         // Create temporary directory.
