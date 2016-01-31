@@ -26,19 +26,19 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
-        if (file_exists($this->tmpDirectory)) {
+        if (\file_exists($this->tmpDirectory)) {
             \Filesystem::delete($this->tmpDirectory);
         }
 
         \mkdir($this->tmpDirectory);
-        \touch($this->tmpDirectory . '/configuration.php');
+        \touch($this->tmpDirectory . '/config.php');
     }
 
     /**
      * Test Tear Down
      */
     public function tearDown() {
-        \unlink($this->tmpDirectory . '/configuration.php');
+        \unlink($this->tmpDirectory . '/config.php');
         \rmdir($this->tmpDirectory);
     }
 
@@ -55,10 +55,16 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
                 ->disableOriginalConstructor()
                 ->getMock();
-        $url->method('__toString')->willReturn('http://easyappointments.org');
+        $url->method('__toString')->willReturn('http://localhost');
+
+        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        $linkInformation->method('getPath')->willReturn($path);
+        $linkInformation->method('getUrl')->willReturn($url);
 
         // Assert that the operation will be executed without throwing an exception.
-        $verifyState = new VerifyState($plugin, $path, $url);
+        $verifyState = new VerifyState($plugin, $linkInformation, 'index.php', '404');
         $verifyState->invoke();
     }
 
@@ -77,8 +83,14 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
                 ->getMock();
         $url->method('__toString')->willReturn('http://easyappointments.org');
 
+        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        $linkInformation->method('getPath')->willReturn($path);
+        $linkInformation->method('getUrl')->willReturn($url);
+
         // Assert that the operation will be executed without throwing an exception.
-        $verifyState = new VerifyState($plugin, $path, $url);
+        $verifyState = new VerifyState($plugin, $linkInformation);
         $this->setExpectedException('\Exception');
         $verifyState->invoke();
     }
@@ -98,8 +110,14 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
                 ->getMock();
         $url->method('__toString')->willReturn('http://easyappointments.org/this-one-does-not-exist');
 
+        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        $linkInformation->method('getPath')->willReturn($path);
+        $linkInformation->method('getUrl')->willReturn($url);
+
         // Assert that the operation will be executed without throwing an exception.
-        $verifyState = new VerifyState($plugin, $path, $url);
+        $verifyState = new VerifyState($plugin, $linkInformation);
         $this->setExpectedException('\Exception');
         $verifyState->invoke();
     }

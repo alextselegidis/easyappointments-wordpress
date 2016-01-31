@@ -36,14 +36,44 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
     protected $linkInformation;
 
     /**
+     * File name to be hit by the request validation.
+     *
+     * @var string
+     */
+    protected $filename;
+
+    /**
+     * Expected response status code.
+     *
+     * @var string
+     */
+    protected $expectedStatusCode;
+
+    /**
      * Class Constructor
      *
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
      * @param \EAWP\Core\ValueObjects\LinkInformation $linkInformation Easy!Appointments Link Information
+     * @param string $filename (optional) The filename to be hit by the request validation.
+     * @param string $expectedStatusCode (optional) The expected status code of the request response.
      */
-    public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation, $filename = 'index.php',
+            $expectedStatusCode = '200') {
+
+        if (!is_string($filename)) {
+            throw new \InvalidArgumentException('Invalid argument provided (expected string got "'
+                    . gettype($filename) . '"): ' . $filename);
+        }
+
+        if (!is_string($expectedStatusCode)) {
+            throw new \InvalidArgumentException('Invalid argument provided (expected string got "'
+                    . gettype($expectedStatusCode) . '"): ' . $expectedStatusCode);
+        }
+
         $this->plugin = $plugin;
         $this->linkInformation = $linkInformation;
+        $this->filename = $filename;
+        $this->expectedStatusCode = $expectedStatusCode;
     }
 
     /**
@@ -73,9 +103,9 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * @todo Improve the verification done by this method.
      */
     protected function _performTestRequest() {
-        $headers = \get_headers((string)$this->linkInformation->getUrl() . '/application/controllers/appointments.php');
+        $headers = \get_headers((string)$this->linkInformation->getUrl() . '/' . $this->filename);
 
-        if ($headers === false || \strpos($headers[0], '200 OK') === false) {
+        if ($headers === false || \strpos($headers[0], $this->expectedStatusCode) === false) {
             throw new \Exception('The installation is not reachable from the web.');
         }
     }
