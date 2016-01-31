@@ -39,7 +39,7 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * Class Constructor
      *
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
-     * @param \EAWP\Core\ValueObjects\Link $link Contains installation information.
+     * @param \EAWP\Core\ValueObjects\LinkInformation $linkInformation Easy!Appointments Link Information
      */
     public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
         $this->plugin = $plugin;
@@ -73,7 +73,7 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * @todo Improve the verification done by this method.
      */
     protected function _performTestRequest() {
-        $headers = \get_headers((string)$this->linkInformation->getUrl() . '/index.php');
+        $headers = \get_headers((string)$this->linkInformation->getUrl() . '/application/controllers/appointments.php');
 
         if ($headers === false || \strpos($headers[0], '200 OK') === false) {
             throw new \Exception('The installation is not reachable from the web.');
