@@ -11,15 +11,13 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Path;
+use \EAWP\Core\ValueObjects\Link;
 
 /**
  * Unlink Operation
  *
  * This class implements the "unlink" operation of a given connection between WordPress and Easy!Appointments. It is
  * also possible to entirely remove the installation files and database tables.
- *
- * @todo Implement Operation
  */
 class Unlink implements \EAWP\Core\Interfaces\IOperation {
     /**
@@ -30,35 +28,49 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Path
+     * Easy!Appointments Installation Link
      *
-     * @var \EAWP\Core\ValueObjects\Path
+     * @var \EAWP\Core\ValueObjects\Link
      */
-    protected $path;
+    protected $link;
 
     /**
-     * Remove E!A Files & Database
+     * Remove E!A Files
      *
      * @var bool
      */
-    protected $removeFilesAndDatabase;
+    protected $removeFiles;
+
+    /**
+     * Remove E!A Database Tables
+     *
+     * @var bool
+     */
+    protected $removeDbTables;
 
     /**
      * Class Constructor
      *
-     * @param Plugin $plugin The plugin instance.
-     * @param Path $path Contains the Easy!Appointments installation path.
-     * @param bool $removeFilesAndDatabase (optional) Whether to also remove the E!A files and database tables.
+     * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress plugin instance.
+     * @param \EAWP\Core\ValueObjects\Link $link Contains installation information.
+     * @param bool $removeFiles (optional) Whether to remove the Easy!Appointments files.
+     * @param bool $removeDbTables (optional) Whether to remove the Easy!Appointments database tables.
      */
-    public function __construct(Plugin $plugin, Path $path, $removeFilesAndDatabase = false) {
-        if (!is_bool($removeFilesAndDatabase)) {
+    public function __construct(Plugin $plugin, Link $link, $removeFiles = false, $removeDbTables = false) {
+        if (!is_bool($removeFiles)) {
             throw new \InvalidArgumentException('Invalid argument provided (expected bool got "'
-                    . gettype($removeFilesAndDatabase) . '"): ' . $removeFilesAndDatabase);
+                    . gettype($removeFiles) . '"): ' . $removeFiles);
+        }
+
+        if (!is_bool($removeDbTables)) {
+            throw new \InvalidArgumentException('Invalid argument provided (expected bool got "'
+                    . gettype($removeDbTables) . '"): ' . $removeDbTables);
         }
 
         $this->plugin = $plugin;
-        $this->path = $path;
-        $this->removeFilesAndDatabase = $removeFilesAndDatabase;
+        $this->link = $link;
+        $this->removeFiles = $removeFiles;
+        $this->removeDbTables = $removeDbTables;
     }
 
     /**
@@ -68,8 +80,13 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
      */
     public function invoke() {
         $this->_removeOptions();
-        if ($this->removeFilesAndDatabase) {
-            $this->_removeFilesAndDatabase();
+
+        if ($this->removeFiles) {
+            $this->_removeFiles();
+        }
+
+        if ($this->removeDbTables) {
+            $this->_removeDbTables();
         }
     }
 
@@ -85,12 +102,16 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
     }
 
     /**
-     * Remove E!A files and database tables.
-     *
-     * This method will completely remove the Easy!Appointments files.
+     * Remove E!A files.
      */
-    protected function _removeFilesAndDatabase() {
-        $this->_recursiveDelete((string)$this->path);
+    protected function _removeFiles() {
+        $this->_recursiveDelete((string)$this->link->getPath());
+    }
+
+    /**
+     * Remove E!A database tables.
+     */
+    protected function _removeDbTables() {
         $db = $this->plugin->getDatabase();
         $db->query('
             DROP TABLE IF EXISTS ea_appointments;

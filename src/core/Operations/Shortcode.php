@@ -11,6 +11,7 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
+use \EAWP\Core\ValueObjects\Link;
 
 /**
  * Shortcode Class
@@ -24,16 +25,23 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Easy!Appointments WordPress Plugin Instance
      *
-     * @var EAWP\Core\Plugin
+     * @var \EAWP\Core\Plugin
      */
     protected $plugin;
 
     /**
+     * Easy!Appointments Installation Link
+     *
+     * @var \EAWP\Core\ValueObjects\Link
+     */
+    protected $link;
+
+    /**
      * Class Constructor
      *
-     * @param EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
+     * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
      */
-    public function __construct(Plugin $plugin) {
+    public function __construct(Plugin $plugin, Link $link) {
         $this->plugin = $plugin;
     }
 

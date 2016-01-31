@@ -11,56 +11,44 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Path;
-use \EAWP\Core\ValueObjects\Url;
+use \EAWP\Core\ValueObjects\Link;
 
 /**
  * Install Class
  *
  * This class implements the Easy!Appointments installation procedure. It will copy and configure an installation
- * directly through WordPress. The file will create a new Easy!Appointments "configuration.php" file and set the
- * WordPress database credentials to it. In the end it must store the "eawp_path" and"eawp_url" settings to WordPress.
+ * directly through WordPress. The file will create a new Easy!Appointments "config.php" file and set the WordPress
+ * database credentials to it. In the end it must store the "eawp_path" and "eawp_url" settings to WordPress.
  *
  * Important:
  *
  * This method does not have to check for Easy!Appointments compatibility because it will install the latest supported
  * version of project.
- *
- * @todo This operation has to work with dynamic version number.
  */
 class Install implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *
-     * @var EAWP\Core\Plugin
+     * @var \EAWP\Core\Plugin
      */
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Path
+     * Easy!Appointments Installation Link
      *
-     * @var EAWP\Core\ValueObjects\Path
+     * @var \EAWP\Core\ValueObjects\Link
      */
-    protected $path;
-
-    /**
-     * Easy!Appointments Installation URL ($base_url)
-     *
-     * @var EAWP\Core\ValueObjects\Url
-     */
-    protected $url;
+    protected $link;
 
     /**
      * Class Constructor
      *
      * @param EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
-     * @param EAWP\Core\ValueObjects\Path $path Easy!Appointments installation path (provided from user).
-     * @param EAWP\Core\ValueObjects\Url $url Easy!Appointments installation url (provided from user).
+     * @param EAWP\Core\ValueObjects\Link $link Contains installation information.
      */
-    public function __construct(Plugin $plugin, Path $path, Url $url) {
+    public function __construct(Plugin $plugin, Link $link) {
         $this->plugin = $plugin;
-        $this->path = $path;
-        $this->url = $url;
+        $this->link = $link;
     }
 
     /**
@@ -75,8 +63,8 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
     public function invoke() {
         $this->_copyFiles();
         $this->_configure();
-        \add_option('eawp_path', (string)$this->path);
-        \add_option('eawp_url', (string)$this->url);
+        \add_option('eawp_path', (string)$this->link->getPath());
+        \add_option('eawp_url', (string)$this->link->getUrl());
     }
 
     /**
@@ -86,44 +74,44 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
         if (!is_writable(dirname((string)$this->path)))
             throw new \Exception('Destination path is not writable.');
 
-        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.0.0', (string)$this->path);
+        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.1.0', (string)$this->link->getPath());
     }
 
     /**
      * Configure Easy!Appointments "configuration.php" with WP information.
      */
     protected function _configure() {
-        $configurationPath = (string)$this->path . '/configuration.php';
+        $configPath = (string)$this->link->getPath . '/config.php';
 
-        // Get "configuration.php" content.
-        $configuration = file_get_contents($configurationPath);
+        // Get "config.php" content.
+        $configContent = file_get_contents($configPath);
 
         // Replace $base_url variable.
-        $this->_setValue('$base_url', (string)$this->url . '/', $configuration);
+        $this->_setValue('BASE_URL', (string)$this->link->getUrl, $configContent);
 
         // Replace database variables.
-        $this->_setValue('$db_host', DB_HOST , $configuration);
-        $this->_setValue('$db_name', DB_NAME, $configuration);
-        $this->_setValue('$db_username', DB_USER, $configuration);
-        $this->_setValue('$db_password', DB_PASSWORD, $configuration);
+        $this->_setValue('DB_HOST', DB_HOST , $configContent);
+        $this->_setValue('DB_NAME', DB_NAME, $configContent);
+        $this->_setValue('DB_USERNAME', DB_USER, $configContent);
+        $this->_setValue('DB_PASSWORD', DB_PASSWORD, $configContent);
 
-        // Update "configuration.php" content.
-        file_put_contents($configurationPath, $configuration);
+        // Update "config.php" content.
+        file_put_contents($configPath, $configContent);
     }
 
     /**
-     * Will set a configuration value to the "configuration.php" content.
+     * Will set a configuration value to the "config.php" content.
      *
      * This method uses a regular expression to find the configuration setting to be replaced with the new value.
      *
-     * @param string $parameter Name of the "configuration.php" setting to be set (eg '$base_url').
+     * @param string $parameter Name of the "config.php" setting to be set (eg 'BASE_URL').
      * @param string $value New value of the configuration setting.
-     * @param string $configuration (ByReference) Contains the "configuration.php" file contents.
+     * @param string $configContent (By Reference) Contains the "config.php" file contents.
      */
-    protected function _setValue($parameter, $value, &$configuration) {
+    protected function _setValue($parameter, $value, &$configContent) {
         $pattern = '/(?:\\' . $parameter . ' * = \'?)(.*)[^\';]/';
         $setting = $parameter . ' = \'' . $value . '\';' . PHP_EOL;
-        $configuration = preg_replace($pattern, $setting, $configuration, 1);
+        $configContent = preg_replace($pattern, $setting, $configContent, 1);
     }
 
     /**
@@ -140,7 +128,7 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
         while(false !== ($file = readdir($dir))) {
             if (($file != '.') && ($file != '..')) {
                 if (is_dir($src . '/' . $file))
-                    $this->_recursiveCopy($src . '/' . $file,$dst . '/' . $file);
+                    $this->_recursiveCopy($src . '/' . $file, $dst . '/' . $file);
                 else
                     copy($src . '/' . $file,$dst . '/' . $file);
             }

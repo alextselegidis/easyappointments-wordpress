@@ -11,8 +11,7 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Path;
-use \EAWP\Core\ValueObjects\Url;
+use \EAWP\Core\ValueObjects\Link;
 
 /**
  * Verify State Operation
@@ -20,42 +19,31 @@ use \EAWP\Core\ValueObjects\Url;
  * This class implements the "verify state" operation of the current connection. It will check if Easy!Appointments is
  * correctly connected to WordPress, whether the configuration.php file exists and if the E!A installation is reachable
  * from the web.
- *
- * @todo Implement Operation
  */
 class VerifyState implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Instance of Easy!Appointments WP Plugin
      *
-     * @var EAWP\Core\Plugin
+     * @var \EAWP\Core\Plugin
      */
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Path
+     * Easy!Appointments Installation Link
      *
-     * @var EAWP\Core\ValueObjects\Path
+     * @var \EAWP\Core\ValueObjects\Link
      */
-    protected $path;
-
-    /**
-     * Easy!Appointments Installation URL ($base_url)
-     *
-     * @var EAWP\Core\ValueObjects\Url
-     */
-    protected $url;
+    protected $link;
 
     /**
      * Class Constructor
      *
-     * @param EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
-     * @param EAWP\Core\ValueObjects\Path $path Easy!Appointments installation path (provided from user).
-     * @param EAWP\Core\ValueObjects\Url $url Easy!Appointments installation url (provided from user).
+     * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
+     * @param \EAWP\Core\ValueObjects\Link $link Contains installation information.
      */
-    public function __construct(Plugin $plugin, Path $path, Url $url) {
+    public function __construct(Plugin $plugin, Link $link) {
         $this->plugin = $plugin;
-        $this->path = $path;
-        $this->url = $url;
+        $this->link = $link;
     }
 
     /**
@@ -73,8 +61,8 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * Verify that the configuration file is where it's supposed to be.
      */
     protected function _verifyConfigurationFile() {
-        if (!\file_exists((string)$this->path . '/configuration.php')
-                && !\file_exists((string)$this->path . '/config.php')) {
+        if (!\file_exists((string)$this->link->getPath() . '/configuration.php')
+                && !\file_exists((string)$this->link->getPath() . '/config.php')) {
             throw new \Exception('Configuration file of Easy!Appointments was not found on the given path.');
         }
     }
@@ -85,7 +73,7 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * @todo Improve the verification done by this method.
      */
     protected function _performTestRequest() {
-        $headers = \get_headers((string)$this->url . '/index.php');
+        $headers = \get_headers((string)$this->link->getUrl() . '/index.php');
 
         if ($headers === false || \strpos($headers[0], '200 OK') === false) {
             throw new \Exception('The installation is not reachable from the web.');
