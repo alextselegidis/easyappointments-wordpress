@@ -8,7 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 use \EAWP\Core\Operations\Unlink;
 
@@ -27,7 +27,7 @@ class UnlinkTest extends PHPUnit_Framework_TestCase {
      */
     public function setUp() {
         WpMock::setUp();
-        
+
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         if (file_exists($this->tmpDirectory)) {

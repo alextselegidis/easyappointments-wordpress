@@ -8,7 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
 use \EAWP\Core\ValueObjects\Url;
 
