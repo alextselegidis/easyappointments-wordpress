@@ -8,11 +8,11 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+namespace EAWP\Core;
+
 require_once __DIR__ . '/bootstrap.php';
 
-use \EAWP\Core\Plugin;
-
-class PluginTest extends PHPUnit_Framework_TestCase {
+class PluginTest extends \PHPUnit_Framework_TestCase {
     // ------------------------------------------------------------------------
     // TEST OBJECT INSTANTIATION
     // ------------------------------------------------------------------------
@@ -42,10 +42,18 @@ class PluginTest extends PHPUnit_Framework_TestCase {
                 $this->anything());
 
         $route->expects($this->at(2))->method('ajax')->with(
-                $this->equalTo('bridge'),
+                $this->equalTo('link'),
                 $this->anything());
 
-        $route->expects($this->at(3))->method('shortcode')->with(
+        $route->expects($this->at(3))->method('ajax')->with(
+                $this->equalTo('unlink'),
+                $this->anything());
+
+        $route->expects($this->at(4))->method('ajax')->with(
+                $this->equalTo('verify'),
+                $this->anything());
+
+        $route->expects($this->at(5))->method('shortcode')->with(
                 $this->equalTo('easyappointments'),
                 $this->anything());
 

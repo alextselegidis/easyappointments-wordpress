@@ -11,7 +11,7 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Link;
+use \EAWP\Core\ValueObjects\LinkInformation;
 
 /**
  * Install Class
@@ -34,21 +34,21 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Link
+     * Easy!Appointments Link Information
      *
-     * @var \EAWP\Core\ValueObjects\Link
+     * @var \EAWP\Core\ValueObjects\LinkInformation
      */
-    protected $link;
+    protected $linkInformation;
 
     /**
      * Class Constructor
      *
      * @param EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
-     * @param EAWP\Core\ValueObjects\Link $link Contains installation information.
+     * @param EAWP\Core\ValueObjects\LinkInformation $linkInformation Contains installation information.
      */
-    public function __construct(Plugin $plugin, Link $link) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
         $this->plugin = $plugin;
-        $this->link = $link;
+        $this->linkInformation = $linkInformation;
     }
 
     /**
@@ -63,8 +63,8 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
     public function invoke() {
         $this->_copyFiles();
         $this->_configure();
-        \add_option('eawp_path', (string)$this->link->getPath());
-        \add_option('eawp_url', (string)$this->link->getUrl());
+        \add_option('eawp_path', (string)$this->linkInformation->getPath());
+        \add_option('eawp_url', (string)$this->linkInformation->getUrl());
     }
 
     /**
@@ -74,20 +74,20 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
         if (!is_writable(dirname((string)$this->path)))
             throw new \Exception('Destination path is not writable.');
 
-        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.1.0', (string)$this->link->getPath());
+        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.1.0', (string)$this->linkInformation->getPath());
     }
 
     /**
      * Configure Easy!Appointments "configuration.php" with WP information.
      */
     protected function _configure() {
-        $configPath = (string)$this->link->getPath . '/config.php';
+        $configPath = (string)$this->linkInformation->getPath() . '/config.php';
 
         // Get "config.php" content.
         $configContent = file_get_contents($configPath);
 
         // Replace $base_url variable.
-        $this->_setValue('BASE_URL', (string)$this->link->getUrl, $configContent);
+        $this->_setValue('BASE_URL', (string)$this->linkInformation->getUrl(), $configContent);
 
         // Replace database variables.
         $this->_setValue('DB_HOST', DB_HOST , $configContent);

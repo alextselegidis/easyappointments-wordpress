@@ -8,11 +8,11 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+namespace EAWP\Core\Operations;
+
 require_once __DIR__ . '/../bootstrap.php';
 
-use \EAWP\Core\Operations\Install;
-
-class InstallTest extends PHPUnit_Framework_TestCase {
+class InstallTest extends \PHPUnit_Framework_TestCase {
     /**
      * Temporary Test Directory Path
      *
@@ -29,7 +29,7 @@ class InstallTest extends PHPUnit_Framework_TestCase {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         if (file_exists($this->tmpDirectory)) {
-            Filesystem::delete($this->tmpDirectory);
+            \Filesystem::delete($this->tmpDirectory);
         }
     }
 
@@ -39,7 +39,7 @@ class InstallTest extends PHPUnit_Framework_TestCase {
      * Remove "tmp-dir" directory after the test.
      */
     public function tearDown() {
-        Filesystem::delete($this->tmpDirectory);
+        \Filesystem::delete($this->tmpDirectory);
     }
 
     public function testInstallMustPlaceAndConfigureApplicationFiles() {
@@ -64,7 +64,7 @@ class InstallTest extends PHPUnit_Framework_TestCase {
 
         // Assert configuration file content.
         $this->assertFileExists($testPath . '/configuration.php');
-        $this->assertTrue(WpMock::isExecuted('add_option', array('eawp_path', $testPath)));
-        $this->assertTrue(WpMock::isExecuted('add_option', array('eawp_url', $testUrl)));
+        $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_path', $testPath)));
+        $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_url', $testUrl)));
     }
 }

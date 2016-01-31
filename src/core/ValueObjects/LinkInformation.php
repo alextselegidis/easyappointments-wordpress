@@ -11,11 +11,11 @@
 namespace EAWP\Core\ValueObjects;
 
 /**
- * Path Value Object
+ * Link Information Entity
  *
- * Use this value object to validate server paths and check that they exist in the server.
+ * Contains the connection information bewteen Easy!Appointments and WordPress.
  */
-class Link {
+class LinkInformation {
     /**
      * Path
      *

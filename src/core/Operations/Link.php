@@ -11,10 +11,10 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Link;
+use \EAWP\Core\ValueObjects\LinkInformation;
 
 /**
- * Link Library
+ * Link Operation
  *
  * This class implements the "link" of WordPress and an existing Easy!Appointments installation. It will set the
  * configuration information to the WordPress settings table ("eawp_path" and "eawp_url").
@@ -34,35 +34,35 @@ class Link implements \EAWP\Core\Interfaces\IOperation {
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Link
+     * Easy!Appointments Link Information
      *
-     * @var \EAWP\Core\ValueObjects\Link
+     * @var \EAWP\Core\ValueObjects\LinkInformation
      */
-    protected $link;
+    protected $linkInformation;
 
     /**
      * Class Constructor
      *
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress plugin instance.
-     * @param \EAWP\Core\ValueObjects\Link $link $link Contains installation information.
+     * @param \EAWP\Core\ValueObjects\LinkInformation $link Contains installation information.
      */
-    public function __construct(Plugin $plugin, Link $link) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
         $this->plugin = $plugin;
-        $this->link = $link;
+        $this->linkInformation = $linkInformation;
     }
 
     /**
      * Invoke Bridge Operation
      *
-     * Will create a link bewtween an existing installation with current WordPress site. This method must add the
+     * Will create a link between an existing installation with current WordPress site. This method must add the
      * "eawp_path" and "eawp_url" setting to WP options so that other operations can use that installation. At first it
      * will read the "configuration.php" file of E!A and then place these information into WP options table in order to
      * be available for other operations.
      */
     public function invoke() {
         $this->_validateInstallation();
-        \add_option('eawp_path', (string)$this->link->getPath());
-        \add_option('eawp_url', (string)$this->link->getUrl());
+        \add_option('eawp_path', (string)$this->linkInformation->getPath());
+        \add_option('eawp_url', (string)$this->linkInformation->getUrl());
     }
 
     /**
@@ -74,11 +74,11 @@ class Link implements \EAWP\Core\Interfaces\IOperation {
      * @throws Exception If the provided path does not point to an E!A installation.
      */
     protected function _validateInstallation() {
-        $path = rtrim((string)$this->link->getPath(), '/');
+        $path = rtrim((string)$this->linkInformation->getPath(), '/');
 
         if (!file_exists($path . '/configuration.php') && !file_exists($path . '/config.php')) {
             throw new \Exception('Provided path does not point to an Easy!Appointments installation: "'
-                    . (string)$this->link->getPath() . '"');
+                    . (string)$this->linkInformation->getPath() . '"');
         }
     }
 }

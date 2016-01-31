@@ -8,11 +8,11 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+namespace EAWP\Core\Operations;
+
 require_once __DIR__ . '/../bootstrap.php';
 
-use \EAWP\Core\Operations\VerifyState;
-
-class VerifyStateTest extends PHPUnit_Framework_TestCase {
+class VerifyStateTest extends \PHPUnit_Framework_TestCase {
     /**
      * Temporary Test Directory Path
      *
@@ -27,19 +27,19 @@ class VerifyStateTest extends PHPUnit_Framework_TestCase {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         if (file_exists($this->tmpDirectory)) {
-            Filesystem::delete($this->tmpDirectory);
+            \Filesystem::delete($this->tmpDirectory);
         }
 
-        mkdir($this->tmpDirectory);
-        touch($this->tmpDirectory . '/configuration.php');
+        \mkdir($this->tmpDirectory);
+        \touch($this->tmpDirectory . '/configuration.php');
     }
 
     /**
      * Test Tear Down
      */
     public function tearDown() {
-        unlink($this->tmpDirectory . '/configuration.php');
-        rmdir($this->tmpDirectory);
+        \unlink($this->tmpDirectory . '/configuration.php');
+        \rmdir($this->tmpDirectory);
     }
 
     public function testVerifyStateMustBeExecutedWithoutThrowingAnException() {

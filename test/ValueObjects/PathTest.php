@@ -8,11 +8,11 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+namespace EAWP\Core\ValueObjects;
+
 require_once __DIR__ . '/../bootstrap.php';
 
-use \EAWP\Core\ValueObjects\Path;
-
-class PathTest extends PHPUnit_Framework_TestCase {
+class PathTest extends \PHPUnit_Framework_TestCase {
     public function testGetStringValueOfObject() {
         $path = new Path(__DIR__);
         $this->assertEquals(__DIR__, (string)$path);

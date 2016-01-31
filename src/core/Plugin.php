@@ -78,7 +78,7 @@ class Plugin {
 
         $this->route->ajax('install', function() use($plugin) {
             try {
-                $path = new Path($_POST['path'])
+                $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
                 $link = new Link($path, $url);
                 $operation = new \EAWP\Core\Operations\Install($plugin, $link);

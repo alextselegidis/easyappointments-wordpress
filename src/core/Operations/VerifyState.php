@@ -11,7 +11,7 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Link;
+use \EAWP\Core\ValueObjects\LinkInformation;
 
 /**
  * Verify State Operation
@@ -29,11 +29,11 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Link
+     * Easy!Appointments Link Information
      *
-     * @var \EAWP\Core\ValueObjects\Link
+     * @var \EAWP\Core\ValueObjects\LinkInformation
      */
-    protected $link;
+    protected $linkInformation;
 
     /**
      * Class Constructor
@@ -41,9 +41,9 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
      * @param \EAWP\Core\ValueObjects\Link $link Contains installation information.
      */
-    public function __construct(Plugin $plugin, Link $link) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
         $this->plugin = $plugin;
-        $this->link = $link;
+        $this->linkInformation = $linkInformation;
     }
 
     /**
@@ -61,8 +61,8 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * Verify that the configuration file is where it's supposed to be.
      */
     protected function _verifyConfigurationFile() {
-        if (!\file_exists((string)$this->link->getPath() . '/configuration.php')
-                && !\file_exists((string)$this->link->getPath() . '/config.php')) {
+        if (!\file_exists((string)$this->linkInformation->getPath() . '/configuration.php')
+                && !\file_exists((string)$this->linkInformation->getPath() . '/config.php')) {
             throw new \Exception('Configuration file of Easy!Appointments was not found on the given path.');
         }
     }
@@ -73,7 +73,7 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      * @todo Improve the verification done by this method.
      */
     protected function _performTestRequest() {
-        $headers = \get_headers((string)$this->link->getUrl() . '/index.php');
+        $headers = \get_headers((string)$this->linkInformation->getUrl() . '/index.php');
 
         if ($headers === false || \strpos($headers[0], '200 OK') === false) {
             throw new \Exception('The installation is not reachable from the web.');

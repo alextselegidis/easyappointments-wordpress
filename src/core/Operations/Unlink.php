@@ -11,7 +11,7 @@
 namespace EAWP\Core\Operations;
 
 use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\Link;
+use \EAWP\Core\ValueObjects\LinkInformation;
 
 /**
  * Unlink Operation
@@ -28,11 +28,11 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Link
+     * Easy!Appointments Link Information
      *
-     * @var \EAWP\Core\ValueObjects\Link
+     * @var \EAWP\Core\ValueObjects\LinkInformation
      */
-    protected $link;
+    protected $linkInformation;
 
     /**
      * Remove E!A Files
@@ -52,11 +52,12 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
      * Class Constructor
      *
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress plugin instance.
-     * @param \EAWP\Core\ValueObjects\Link $link Contains installation information.
+     * @param \EAWP\Core\ValueObjects\LinkInformation $linkInformation Easy!Appointments Link Information
      * @param bool $removeFiles (optional) Whether to remove the Easy!Appointments files.
      * @param bool $removeDbTables (optional) Whether to remove the Easy!Appointments database tables.
      */
-    public function __construct(Plugin $plugin, Link $link, $removeFiles = false, $removeDbTables = false) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation, $removeFiles = false,
+            $removeDbTables = false) {
         if (!is_bool($removeFiles)) {
             throw new \InvalidArgumentException('Invalid argument provided (expected bool got "'
                     . gettype($removeFiles) . '"): ' . $removeFiles);
@@ -68,7 +69,7 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
         }
 
         $this->plugin = $plugin;
-        $this->link = $link;
+        $this->linkInformation = $linkInformation;
         $this->removeFiles = $removeFiles;
         $this->removeDbTables = $removeDbTables;
     }
@@ -105,7 +106,7 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
      * Remove E!A files.
      */
     protected function _removeFiles() {
-        $this->_recursiveDelete((string)$this->link->getPath());
+        $this->_recursiveDelete((string)$this->linkInformation->getPath());
     }
 
     /**

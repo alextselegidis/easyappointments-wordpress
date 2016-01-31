@@ -8,11 +8,11 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+namespace EAWP\Core\ValueObjects;
+
 require_once __DIR__ . '/../bootstrap.php';
 
-use \EAWP\Core\ValueObjects\Link;
-
-class PathTest extends PHPUnit_Framework_TestCase {
+class LinkInformationTest extends \PHPUnit_Framework_TestCase {
     protected $link;
 
     protected $path;
