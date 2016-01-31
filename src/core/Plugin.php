@@ -13,6 +13,7 @@ namespace EAWP\Core;
 use \wpdb;
 use \EAWP\Core\ValueObjects\Path;
 use \EAWP\Core\ValueObjects\Url;
+use \EAWP\Core\ValueObjects\Link;
 use \EAWP\Core\Exceptions\AjaxException;
 
 /**
@@ -60,11 +61,14 @@ class Plugin {
 
             $jsData = array(
                 'Lang' => array(
-                    'InstallationSuccessMessage' => __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
-                                                      . 'complete the configuration of the application.', 'eawp'),
-                    'LinkSuccessMessage' => __('Easy!Appointments installation was linked successfully! You can now use the '
-                                                . '[easyappointments] shortcode in your pages.', 'eawp'),
-                    'AjaxExceptionMessage' => __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp')
+                    'InstallationSuccessMessage' =>
+                            __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
+                                  . 'complete the configuration of the application.', 'eawp'),
+                    'LinkSuccessMessage' =>
+                            __('Easy!Appointments installation was linked successfully! You can now use the '
+                                    . '[easyappointments] shortcode in your pages.', 'eawp'),
+                    'AjaxExceptionMessage' =>
+                            __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp')
                 )
             );
 
@@ -74,28 +78,54 @@ class Plugin {
 
         $this->route->ajax('install', function() use($plugin) {
             try {
-                $path = new Path($_POST['path']);
+                $path = new Path($_POST['path'])
                 $url = new Url($_POST['url']);
-                $library = new \EAWP\Libraries\Install($plugin, $path, $url);
-                $library->invoke();
+                $link = new Link($path, $url);
+                $operation = new \EAWP\Core\Operations\Install($plugin, $link);
+                $operation->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response();
             }
         });
 
-        $this->route->ajax('bridge', function() use($plugin) {
+        $this->route->ajax('link', function() use($plugin) {
             try {
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
-                $library = new \EAWP\Libraries\Bridge($plugin, $path, $url);
-                $library->invoke();
+                $link = new Link($path, $url);
+                $operation = new \EAWP\Core\Operations\Link($plugin, $link);
+                $operation->invoke();
+            } catch(AjaxException $ex) {
+                echo $ex->response();
+            }
+        });
+
+        $this->route->ajax('unlink', function() use($plugin) {
+            try {
+                $path = new Path($_POST['path']);
+                $url = new Url($_POST['url']);
+                $link = new Link($path, $url);
+                $operation = new \EAWP\Core\Operations\Unlink($plugin, $link);
+                $operation->invoke();
+            } catch(AjaxException $ex) {
+                echo $ex->response();
+            }
+        });
+
+        $this->route->ajax('verify', function() use($plugin) {
+            try {
+                $path = new Path($_POST['path']);
+                $url = new Url($_POST['url']);
+                $link = new Link($path, $url);
+                $operation = new \EAWP\Core\Operations\VerifyState($plugin, $link);
+                $operation->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response();
             }
         });
 
         $this->route->shortcode('easyappointments', function() use($plugin) {
-            $library = new \EAWP\Libraries\Shortcode($plugin);
+            $library = new \EAWP\Core\Operations\Shortcode($plugin);
             $library->invoke();
         });
     }
