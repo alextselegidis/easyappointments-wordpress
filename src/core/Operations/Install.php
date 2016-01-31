@@ -44,7 +44,7 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
      * Class Constructor
      *
      * @param EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
-     * @param EAWP\Core\ValueObjects\LinkInformation $linkInformation Contains installation information.
+     * @param EAWP\Core\ValueObjects\LinkInformation $linkInformation Easy!Appointments Link Information
      */
     public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
         $this->plugin = $plugin;
@@ -55,7 +55,7 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
      * Invoke Install Operation
      *
      * Copy E!A files to desired location (after checking for writable permissions) and create a new configuration file
-     * with the WordPress DB credentials and the provided $base_url value. After that store the path and the URL to
+     * with the WordPress DB credentials and the provided BASE_URL value. After that store the path and the URL to
      * "eawp_path" and "eawp_url" settings respectively.
      *
      * @link https://codex.wordpress.org/Function_Reference/add_option
@@ -71,7 +71,7 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
      * Copy Easy!Appointments files to required destination.
      */
     protected function _copyFiles() {
-        if (!is_writable(dirname((string)$this->path)))
+        if (!is_writable(dirname((string)$this->linkInformation->getPath())))
             throw new \Exception('Destination path is not writable.');
 
         $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.1.0', (string)$this->linkInformation->getPath());

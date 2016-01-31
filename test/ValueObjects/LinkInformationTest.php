@@ -22,7 +22,7 @@ class LinkInformationTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
         $this->path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')->disableOriginalConstructor()->getMock();
         $this->url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')->disableOriginalConstructor()->getMock();
-        $this->link = new Link($this->path, $this->url);
+        $this->link = new LinkInformation($this->path, $this->url);
     }
 
     public function testGetPathReturnsPathObject() {

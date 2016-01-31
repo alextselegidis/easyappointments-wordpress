@@ -28,7 +28,7 @@ class InstallTest extends \PHPUnit_Framework_TestCase {
     public function setUp() {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
-        if (file_exists($this->tmpDirectory)) {
+        if (\file_exists($this->tmpDirectory)) {
             \Filesystem::delete($this->tmpDirectory);
         }
     }
@@ -59,11 +59,17 @@ class InstallTest extends \PHPUnit_Framework_TestCase {
         $testUrl = 'http://wp/test/easyappointments';
         $url->method('__toString')->willReturn($testUrl);
 
-        $install = new Install($plugin, $path, $url);
+        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
+                     ->disableOriginalConstructor()
+                     ->getMock();
+        $linkInformation->method('getPath')->willReturn($path);
+        $linkInformation->method('getUrl')->willReturn($url);
+
+        $install = new Install($plugin, $linkInformation);
         $install->invoke();
 
         // Assert configuration file content.
-        $this->assertFileExists($testPath . '/configuration.php');
+        $this->assertFileExists($testPath . '/config.php');
         $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_path', $testPath)));
         $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_url', $testUrl)));
     }
