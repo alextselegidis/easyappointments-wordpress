@@ -1,6 +1,6 @@
-<?php 
+<?php
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - WordPress Plugin 
+ * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
  * @copyright A.Tselegidis (C) 2016
@@ -8,7 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Core\Exceptions; 
+namespace EAWP\Core\Exceptions;
 
 class AjaxException extends \Exception {
     public function response() {

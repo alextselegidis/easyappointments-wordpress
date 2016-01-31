@@ -16,9 +16,8 @@ use \EAWP\Core\ValueObjects\Path;
 /**
  * Unlink Operation
  *
- * This class implements the "unlink" operation of a given connection between WordPress
- * and Easy!Appointments. It is also possible to entirely remove the installation files
- * and database tables.
+ * This class implements the "unlink" operation of a given connection between WordPress and Easy!Appointments. It is
+ * also possible to entirely remove the installation files and database tables.
  *
  * @todo Implement Operation
  */
@@ -65,8 +64,7 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Invoke the unlink operation.
      *
-     * This method will reset the WordPress options which will automatically disable any
-     * used shortcodes.
+     * This method will reset the WordPress options which will automatically disable any used shortcodes.
      */
     public function invoke() {
         $this->_removeOptions();
@@ -78,8 +76,8 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Remove WordPress Options of Plugin
      *
-     * Without the eawp_path and eawp_url options there is no connection with E!A and WordPress.
-     * The plugin shortcode will not work anymore.
+     * Without the eawp_path and eawp_url options there is no connection with E!A and WordPress. The plugin shortcode
+     * will not work anymore.
      */
     protected function _removeOptions() {
         \delete_option('eawp_path');

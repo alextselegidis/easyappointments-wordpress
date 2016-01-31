@@ -18,8 +18,8 @@ use \EAWP\Core\Exceptions\AjaxException;
 /**
  * EAWP Plugin Class
  *
- * This class handles the core operations of the plugin. It coordinates the
- * libraries and registers the required hooks for WordPresss.
+ * This class handles the core operations of the plugin. It coordinates the libraries and registers the required hooks
+ * for WordPresss.
  */
 class Plugin {
     /**

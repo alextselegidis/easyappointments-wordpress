@@ -15,8 +15,8 @@ use \EAWP\Core\Plugin;
 /**
  * Shortcode Class
  *
- * This class will handle the addition of the booking wizard in a WordPress post/page
- * with the use of a simple short code ("easyappointments").
+ * This class will handle the addition of the booking wizard in a WordPress post/page with the use of a simple short
+ * code ("easyappointments").
  *
  * @todo Implement Shortcode Operation
  */
@@ -40,9 +40,8 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Invoke Shortcode Operation
      *
-     * This operation must include the E!A booking form into a page that  has the
-     * "easyappointments" shortcode. The shortcode binding is done from the core
-     * plugin and this operation must resolve all the dependencies and load the
+     * This operation must include the E!A booking form into a page that  has the "easyappointments" shortcode. The
+     * shortcode binding is done from the core plugin and this operation must resolve all the dependencies and load the
      * booking form inside the page so that website users can book an appointment.
      */
     public function invoke() {
