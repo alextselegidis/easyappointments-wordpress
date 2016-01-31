@@ -33,3 +33,15 @@ gulp.task('doc', function(done) {
 
     done();
 });
+
+/**
+ * Execute the PHPUnit tests.
+ */
+gulp.task('test', function(done) {
+    exec('phpunit test', function(err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+    });
+
+    done();
+});
