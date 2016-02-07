@@ -61,7 +61,7 @@ class WpMock {
      *
      * @return bool Returns whether the function was executed.
      */
-    function isExecuted($function, array $arguments = array()) {
+    public static function isExecuted($function, array $arguments = array()) {
         if (!isset(self::$executions[$function]))
             return false;
 
