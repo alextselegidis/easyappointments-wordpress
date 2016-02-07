@@ -52,7 +52,7 @@ class Link implements \EAWP\Core\Interfaces\IOperation {
     }
 
     /**
-     * Invoke Bridge Operation
+     * Invoke Link Operation
      *
      * Will create a link between an existing installation with current WordPress site. This method must add the
      * "eawp_path" and "eawp_url" setting to WP options so that other operations can use that installation. At first it
