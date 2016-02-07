@@ -1,4 +1,4 @@
-## Easy!Appointments - WordPress Plugin
+## Easy!Appointments - WordPress Plugin [![Build Status](https://travis-ci.org/alextselegidis/easyappointments-wp-plugin.svg?branch=develop)](https://travis-ci.org/alextselegidis/easyappointments-wp-plugin)
 <img src="https://easyappointments.files.wordpress.com/2015/02/easyappointments-wp-plugin-banner.png">
 
 This plugin aims to link an Easy!Appointments installation with an existing WordPress system and make them work together.
