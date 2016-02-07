@@ -55,7 +55,7 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
                 ->disableOriginalConstructor()
                 ->getMock();
-        $url->method('__toString')->willReturn('http://localhost');
+        $url->method('__toString')->willReturn('http://easyappointments.org');
 
         $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
                      ->disableOriginalConstructor()
@@ -64,7 +64,7 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
         $linkInformation->method('getUrl')->willReturn($url);
 
         // Assert that the operation will be executed without throwing an exception.
-        $verifyState = new VerifyState($plugin, $linkInformation, 'index.php', '404');
+        $verifyState = new VerifyState($plugin, $linkInformation, 'index.html', '200');
         $verifyState->invoke();
     }
 
