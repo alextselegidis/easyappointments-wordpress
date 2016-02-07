@@ -8,86 +8,21 @@
  * ---------------------------------------------------------------------------- */
 
 /**
- * Admin Class
+ * Easy!Appointments WP Page
  *
- * This class handles the JavaScript functionality of the plugin's settings page.
- *
- * @module admin
+ * Defines the JS functionality of the admin settings page.
  */
-(function($) {
-    /**
-     * Module Reference Object
-     *
-     * @type {object}
-     */
-    var $this = this;
-
-    /**
-     * Bind page event handlers.
-     */
-    $this.events = function() {
-        $('#install').on('click', function(event) {
-            $this.install();
-        });
-
-        $('#bridge').on('click', function(event) {
-            $this.bridge();
-        });
-    };
-
-    /**
-     * Execute the install operation with the provided data.
-     */
-    $this.install = function() {
-        var data = {
-            action: 'install',
-            path: $('#path').val(),
-            url: $('#url').val()
-        };
-
-        $.post(window.ajaxurl, data, function(response) {
-            if (response.exception)
-                Admin.prototype.handleException(response);
-            $('.eawp').prepend(
-                '<div class="updated">'
-                    + '<span class="dashicons dashicons-yes"></span>'
-                    + EAWP.Lang.InstallationSuccessMessage
-                + '</div>'
-            );
-        }, 'json');
-    };
-
-    /**
-     * Execute the bridge operation with the provided data.
-     */
-    $this.bridge = function() {
-        var data = {
-            action: 'bridge',
-            path: $('#path').val(),
-            url: $('#url').val()
-        };
-
-        $.post(window.ajaxurl, data, function(response) {
-            if (response.exception)
-                Admin.prototype.handleException(response);
-            $('.eawp').prepend(
-                '<div class="updated">'
-                    + '<span class="dashicons dashicons-yes"></span>'
-                    + EAWP.Lang.BridgeSuccessMessage
-                + '</div>'
-            );
-        }, 'json');
-    };
-
+jQuery(function($) {
     /**
      * Handle AJAX exception.
      *
      * This method will display exception information to the user.
      *
-     * @param  {[type]} exception [description]
-     * @return {[type]}           [description]
+     * @param {jqXHR}
+     * @param {String}
+     * @param {Error}
      */
-    $this.handleException = function(exception) {
+    function handleException(jqXHR, textStatus, errorThrown) {
         // Remove previous message and display a new one with exception information.
         $('.eawp div.error').remove();
 
@@ -95,7 +30,6 @@
                 .replace('%file%', exception.file)
                 .replace('%line%', exception.line)
                 .replace('%message%', exception.message);
-
 
         $('.eawp').prepend(
             '<div class="error">'
@@ -107,9 +41,77 @@
         console.log('AJAX Exception: ', exception);
     };
 
+    /**
+     * Execute the install operation with the provided data.
+     */
+    function install() {
+        var data = {
+            action: 'install',
+            path: $('#path').val(),
+            url: $('#url').val()
+        };
+
+        $.ajax({
+            url: window.ajaxurl,
+            data: data,
+            method: 'POST',
+            dataType: 'json'
+        })
+            .done(function(response) {
+                $('.eawp').prepend(
+                    '<div class="updated">'
+                        + '<span class="dashicons dashicons-yes"></span>'
+                        + EAWP.Lang.InstallationSuccessMessage
+                    + '</div>'
+                );
+            })
+            .fail(handleException);
+    }
+
+    /**
+     * Execute the link operation with the provided data.
+     */
+    function link() {
+        var data = {
+            action: 'link',
+            path: $('#path').val(),
+            url: $('#url').val()
+        };
+
+        $.ajax({
+            url: window.ajaxurl,
+            data: data,
+            method: 'POST',
+            dataType: 'json'
+        })
+            .done(function(response) {
+                $('.eawp').prepend(
+                    '<div class="updated">'
+                        + '<span class="dashicons dashicons-yes"></span>'
+                        + EAWP.Lang.BridgeSuccessMessage
+                    + '</div>'
+                );
+            })
+            .fail(handleException);
+    }
+
+    /**
+     * Bind page event handlers.
+     */
+    function events() {
+        $('#install').on('click', function(event) {
+            install();
+        });
+
+        $('#link').on('click', function(event) {
+            link();
+        });
+    }
+
     // ------------------------------------------------------------------------
     //  INITIALIZE PAGE
     // ------------------------------------------------------------------------
-    $this.events();
 
-})(jQuery);
+    events();
+
+});
