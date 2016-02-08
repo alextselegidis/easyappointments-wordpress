@@ -67,13 +67,19 @@ class Plugin {
                     'LinkSuccessMessage' =>
                             __('Easy!Appointments installation was linked successfully! You can now use the '
                                     . '[easyappointments] shortcode in your pages.', 'eawp'),
+                    'UnlinkSuccessMesssage' =>
+                            __('Easy!Apppointments isntallation was unlinked successfully!', 'eawp'),
+                    'VerificationSuccess' =>
+                            __ ('Easy!Appointments link is active.', 'eawp'),
+                    'VerificationFailure' =>
+                            __('Easy!Appointments link seems to be broken.', 'eawp'),
                     'AjaxExceptionMessage' =>
                             __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp')
                 )
             );
 
             $route->view('Easy!Appointments', 'Easy!Appointments',
-                    'eawp-settings', 'admin', array('admin.js', 'style.css'), $jsData);
+                    'eawp-settings', 'admin', array('plugin.js', 'admin.js', 'verify-state.js', 'style.css'), $jsData);
         });
 
         $this->route->ajax('install', function() use($plugin) {
