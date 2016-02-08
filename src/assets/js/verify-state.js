@@ -45,7 +45,7 @@ jQuery(function($) {
             } else {
                 $('.eawp').prepend(
                     '<div class="error">'
-                        + '<span class="dashicons dashicons-yes"></span>'
+                        + '<span class="dashicons dashicons-no"></span>'
                         + EAWP.Lang.VerificationFailure
                     + '</div>'
                 );
