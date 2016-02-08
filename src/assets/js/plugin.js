@@ -13,6 +13,8 @@
  * This module adds common JS functionality that is shared between the other modules.
  */
 jQuery(function($) {
+    'use strict';
+    
     EAWP.Plugin = {};
 
     /**
@@ -20,11 +22,9 @@ jQuery(function($) {
      *
      * This method will display exception information to the user.
      *
-     * @param {jqXHR}
-     * @param {String}
-     * @param {Error}
+     * @param {object} exception
      */
-    EAWP.Plugin.handleAjaxFailure = function(jqXHR, textStatus, errorThrown) {
+    EAWP.Plugin.handleAjaxException = function(exception) {
         // Remove previous message and display a new one with exception information.
         $('.eawp div.error').remove();
 

@@ -13,6 +13,8 @@
  * Defines the JS functionality of the admin settings page.
  */
 jQuery(function($) {
+    'use strict';
+
     /**
      * Execute the install operation with the provided data.
      */
@@ -60,7 +62,7 @@ jQuery(function($) {
                 $('.eawp').prepend(
                     '<div class="updated">'
                         + '<span class="dashicons dashicons-yes"></span>'
-                        + EAWP.Lang.BridgeSuccessMessage
+                        + EAWP.Lang.LinkSuccessMessage
                     + '</div>'
                 );
             })

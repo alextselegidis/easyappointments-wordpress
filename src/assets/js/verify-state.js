@@ -15,6 +15,8 @@
  * page of the plugin.
  */
 jQuery(function($) {
+    'use strict';
+    
     var $path = $('#path'),
         $url = $('#url');
 
