@@ -14,34 +14,6 @@
  */
 jQuery(function($) {
     /**
-     * Handle AJAX exception.
-     *
-     * This method will display exception information to the user.
-     *
-     * @param {jqXHR}
-     * @param {String}
-     * @param {Error}
-     */
-    function handleException(jqXHR, textStatus, errorThrown) {
-        // Remove previous message and display a new one with exception information.
-        $('.eawp div.error').remove();
-
-        var message = EAWP.Lang.AjaxExceptionMessage
-                .replace('%file%', exception.file)
-                .replace('%line%', exception.line)
-                .replace('%message%', exception.message);
-
-        $('.eawp').prepend(
-            '<div class="error">'
-                + '<span class="dashicons dashicons-flag"></span>'
-                + exception
-            + '</div>'
-        );
-
-        console.log('AJAX Exception: ', exception);
-    };
-
-    /**
      * Execute the install operation with the provided data.
      */
     function install() {
@@ -65,7 +37,7 @@ jQuery(function($) {
                     + '</div>'
                 );
             })
-            .fail(handleException);
+            .fail(EAWP.Plugin.handleAjaxFailure);
     }
 
     /**
@@ -92,7 +64,7 @@ jQuery(function($) {
                     + '</div>'
                 );
             })
-            .fail(handleException);
+            .fail(EAWP.Plugin.handleAjaxFailure);
     }
 
     /**
