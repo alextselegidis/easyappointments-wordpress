@@ -13,7 +13,7 @@ namespace EAWP\Core;
 use \wpdb;
 use \EAWP\Core\ValueObjects\Path;
 use \EAWP\Core\ValueObjects\Url;
-use \EAWP\Core\ValueObjects\Link;
+use \EAWP\Core\ValueObjects\LinkInformation;
 use \EAWP\Core\Exceptions\AjaxException;
 
 /**
@@ -86,8 +86,8 @@ class Plugin {
             try {
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
-                $link = new Link($path, $url);
-                $operation = new \EAWP\Core\Operations\Install($plugin, $link);
+                $linkInformation = new LinkInformation($path, $url);
+                $operation = new \EAWP\Core\Operations\Install($plugin, $linkInformation);
                 $operation->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response();
@@ -98,8 +98,8 @@ class Plugin {
             try {
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
-                $link = new Link($path, $url);
-                $operation = new \EAWP\Core\Operations\Link($plugin, $link);
+                $linkInformation = new LinkInformation($path, $url);
+                $operation = new \EAWP\Core\Operations\Link($plugin, $linkInformation);
                 $operation->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response();
@@ -110,8 +110,10 @@ class Plugin {
             try {
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
-                $link = new Link($path, $url);
-                $operation = new \EAWP\Core\Operations\Unlink($plugin, $link);
+                $removeFiles = filter_var($_POST['removeFiles'], FILTER_VALIDATE_BOOLEAN);
+                $removeDbTables = filter_var($_POST['removeDbTables'], FILTER_VALIDATE_BOOLEAN);
+                $linkInformation = new LinkInformation($path, $url);
+                $operation = new \EAWP\Core\Operations\Unlink($plugin, $linkInformation, $removeFiles, $removeDbTables);
                 $operation->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response();
@@ -122,8 +124,8 @@ class Plugin {
             try {
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
-                $link = new Link($path, $url);
-                $operation = new \EAWP\Core\Operations\VerifyState($plugin, $link);
+                $linkInformation = new LinkInformation($path, $url);
+                $operation = new \EAWP\Core\Operations\VerifyState($plugin, $linkInformation);
                 $operation->invoke();
             } catch(AjaxException $ex) {
                 echo $ex->response();
