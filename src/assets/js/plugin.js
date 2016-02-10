@@ -14,7 +14,7 @@ EAWP.Plugin = EAWP.Plugin || {};
  *
  * This module adds common JS functionality that is shared between the other modules.
  */
-(function(exports) {
+(function(exports, $) {
 
     'use strict';
 
@@ -37,11 +37,11 @@ EAWP.Plugin = EAWP.Plugin || {};
         $('.eawp').prepend(
             '<div class="error">'
                 + '<span class="dashicons dashicons-flag"></span>'
-                + exception
+                + message
             + '</div>'
         );
 
         console.log('AJAX Exception: ', exception);
     };
 
-})(EAWP.Plugin);
+})(EAWP.Plugin, jQuery);
