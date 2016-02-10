@@ -89,8 +89,8 @@ class Plugin {
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\Install($plugin, $linkInformation);
                 $operation->invoke();
-            } catch(AjaxException $ex) {
-                echo $ex->response();
+            } catch(\Exception $ex) {
+                echo AjaxException::response($ex);
             }
         });
 
@@ -101,8 +101,8 @@ class Plugin {
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\Link($plugin, $linkInformation);
                 $operation->invoke();
-            } catch(AjaxException $ex) {
-                echo $ex->response();
+            } catch(\Exception $ex) {
+                echo AjaxException::response($ex);
             }
         });
 
@@ -115,8 +115,8 @@ class Plugin {
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\Unlink($plugin, $linkInformation, $removeFiles, $removeDbTables);
                 $operation->invoke();
-            } catch(AjaxException $ex) {
-                echo $ex->response();
+            } catch(\Exception $ex) {
+                echo AjaxException::response($ex);
             }
         });
 
@@ -127,8 +127,8 @@ class Plugin {
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\VerifyState($plugin, $linkInformation);
                 $operation->invoke();
-            } catch(AjaxException $ex) {
-                echo $ex->response();
+            } catch(\Exception $ex) {
+                echo AjaxException::response($ex);
             }
         });
 
