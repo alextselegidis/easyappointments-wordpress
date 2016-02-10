@@ -20,12 +20,13 @@ class AjaxException extends \Exception {
     /**
      * Get a JSON encoded exception response.
      *
-     * @param \Exception The exception object to be serialized.
+     * @param \Exception $ex The exception object to be serialized.
+     * @param bool $encode Whether to "json_encode" the result or not.
      *
-     * @return string JSON-encoded information of the provided exception.
+     * @return mixed Associative array or JSON-encoded information of the provided exception.
      */
-    public static function response(\Exception $ex) {
-        return json_encode(array(
+    public static function response(\Exception $ex, $encode = false) {
+        $exceptionInformation = array(
             'exception' => true,
             'message' => $ex->getMessage(),
             'code' => $ex->getCode(),
@@ -33,6 +34,8 @@ class AjaxException extends \Exception {
             'line' => $ex->getLine(),
             'trace' => $ex->getTrace(),
             'traceAsString' => $ex->getTraceAsString()
-        ));
+        );
+
+        return ($encode) ? json_encode($exceptionInformation) : $exceptionInformation;
     }
 }
