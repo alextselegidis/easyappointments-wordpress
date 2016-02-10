@@ -13,6 +13,7 @@
  * Defines the JS functionality of the admin settings page.
  */
 jQuery(function($) {
+
     'use strict';
 
     /**
@@ -32,14 +33,17 @@ jQuery(function($) {
             dataType: 'json'
         })
             .done(function(response) {
+                if (response.exception) {
+                    return EAWP.Plugin.handleAjaxException(response);
+                }
+
                 $('.eawp').prepend(
                     '<div class="updated">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.InstallationSuccessMessage
                     + '</div>'
                 );
-            })
-            .fail(EAWP.Plugin.handleAjaxFailure);
+            });
     }
 
     /**
@@ -59,14 +63,17 @@ jQuery(function($) {
             dataType: 'json'
         })
             .done(function(response) {
+                if (response.exception) {
+                    return EAWP.Plugin.handleAjaxException(response);
+                }
+
                 $('.eawp').prepend(
                     '<div class="updated">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.LinkSuccessMessage
                     + '</div>'
                 );
-            })
-            .fail(EAWP.Plugin.handleAjaxFailure);
+            });
     }
 
     /**

@@ -15,8 +15,9 @@
  * page of the plugin.
  */
 jQuery(function($) {
+
     'use strict';
-    
+
     var $path = $('#path'),
         $url = $('#url');
 
@@ -37,6 +38,10 @@ jQuery(function($) {
         dataType: 'json'
     })
         .done(function(response) {
+            if (response.exception) {
+                return EAWP.Plugin.handleAjaxException(response);
+            }
+
             if (response.success) {
                 $('.eawp').prepend(
                     '<div class="updated">'
@@ -52,6 +57,6 @@ jQuery(function($) {
                     + '</div>'
                 );
             }
-        })
-        .fail(EAWP.Plugin.handleAjaxFailure);
+        });
+
 });

@@ -7,15 +7,16 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+EAWP.Plugin = EAWP.Plugin || {};
+
 /**
  * Easy!Appointments WP Plugin
  *
  * This module adds common JS functionality that is shared between the other modules.
  */
-jQuery(function($) {
+(function(exports) {
+
     'use strict';
-    
-    EAWP.Plugin = {};
 
     /**
      * Handle AJAX exception.
@@ -24,7 +25,7 @@ jQuery(function($) {
      *
      * @param {object} exception
      */
-    EAWP.Plugin.handleAjaxException = function(exception) {
+    exports.handleAjaxException = function(exception) {
         // Remove previous message and display a new one with exception information.
         $('.eawp div.error').remove();
 
@@ -42,4 +43,5 @@ jQuery(function($) {
 
         console.log('AJAX Exception: ', exception);
     };
-});
+
+})(EAWP.Plugin);
