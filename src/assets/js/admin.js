@@ -43,7 +43,8 @@ jQuery(function($) {
                         + EAWP.Lang.InstallationSuccessMessage
                     + '</div>'
                 );
-            });
+            })
+            .fail(EAWP.Plugin.handleAjaxFailure);
     }
 
     /**
@@ -73,7 +74,8 @@ jQuery(function($) {
                         + EAWP.Lang.LinkSuccessMessage
                     + '</div>'
                 );
-            });
+            })
+            .fail(EAWP.Plugin.handleAjaxFailure);
     }
 
     /**

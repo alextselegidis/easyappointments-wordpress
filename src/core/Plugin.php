@@ -74,7 +74,9 @@ class Plugin {
                     'VerificationFailure' =>
                             __('Easy!Appointments link seems to be broken.', 'eawp'),
                     'AjaxExceptionMessage' =>
-                            __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp')
+                            __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp'),
+                    'AjaxFailureMessage' =>
+                            __('The AJAX request could not be completed due to an unexpected error: %message%', 'eawp')
                 )
             );
 
@@ -90,7 +92,7 @@ class Plugin {
                 $operation = new \EAWP\Core\Operations\Install($plugin, $linkInformation);
                 $operation->invoke();
             } catch(\Exception $ex) {
-                echo AjaxException::response($ex);
+                \wp_send_json(AjaxException::response($ex));
             }
         });
 
@@ -102,7 +104,7 @@ class Plugin {
                 $operation = new \EAWP\Core\Operations\Link($plugin, $linkInformation);
                 $operation->invoke();
             } catch(\Exception $ex) {
-                echo AjaxException::response($ex);
+                \wp_send_json(AjaxException::response($ex));
             }
         });
 
@@ -116,7 +118,7 @@ class Plugin {
                 $operation = new \EAWP\Core\Operations\Unlink($plugin, $linkInformation, $removeFiles, $removeDbTables);
                 $operation->invoke();
             } catch(\Exception $ex) {
-                echo AjaxException::response($ex);
+                \wp_send_json(AjaxException::response($ex));
             }
         });
 
@@ -128,7 +130,7 @@ class Plugin {
                 $operation = new \EAWP\Core\Operations\VerifyState($plugin, $linkInformation);
                 $operation->invoke();
             } catch(\Exception $ex) {
-                echo AjaxException::response($ex);
+                \wp_send_json(AjaxException::response($ex));
             }
         });
 

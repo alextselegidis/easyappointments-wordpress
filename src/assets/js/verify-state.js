@@ -57,6 +57,7 @@ jQuery(function($) {
                     + '</div>'
                 );
             }
-        });
+        })
+        .fail(EAWP.Plugin.handleAjaxFailure);
 
 });
