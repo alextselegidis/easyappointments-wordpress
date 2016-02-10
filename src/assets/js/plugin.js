@@ -19,20 +19,13 @@ EAWP.Plugin = EAWP.Plugin || {};
     'use strict';
 
     /**
-     * Handle AJAX exception.
+     * Create an error message HTML output for the plugin page.
      *
-     * This method will display exception information to the user.
-     *
-     * @param {object} exception
+     * @param  {string} message
      */
-    exports.handleAjaxException = function(exception) {
+    function _showErrorMessage(message) {
         // Remove previous message and display a new one with exception information.
         $('.eawp div.error').remove();
-
-        var message = EAWP.Lang.AjaxExceptionMessage
-                .replace('%file%', exception.file)
-                .replace('%line%', exception.line)
-                .replace('%message%', exception.message);
 
         $('.eawp').prepend(
             '<div class="error">'
@@ -40,8 +33,42 @@ EAWP.Plugin = EAWP.Plugin || {};
                 + message
             + '</div>'
         );
+    }
+
+    /**
+     * Handle AJAX Exception
+     *
+     * This method will display exception information to the user.
+     *
+     * @param {object} exception
+     */
+    exports.handleAjaxException = function(exception) {
+        var message = EAWP.Lang.AjaxExceptionMessage
+                .replace('%file%', exception.file)
+                .replace('%line%', exception.line)
+                .replace('%message%', exception.message);
+
+        _showErrorMessage(message)
 
         console.log('AJAX Exception: ', exception);
+    };
+
+    /**
+     * Handle AJAX Failure
+     *
+     * This method must be bound to the "fail" method of the jqXHR object and must be executed whenever
+     * the AJAX request was failed. It will also display a user friendly message to the plugin page.
+     *
+     * @param  {jqXHR} jqXHR
+     * @param  {string} textStatus
+     * @param  {Error} errorThrown
+     */
+    exports.handleAjaxFailure = function(jqXHR, textStatus, errorThrown) {
+        var message = EAWP.Lang.AjaxFailureMessage.replace('%message%', errorThrown.message);
+
+        _showErrorMessage(message);
+
+        console.log('AJAX Failure: ', jqXHR, textStatus, errorThrown);
     };
 
 })(EAWP.Plugin, jQuery);
