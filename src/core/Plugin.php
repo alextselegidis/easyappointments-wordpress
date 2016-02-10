@@ -120,7 +120,7 @@ class Plugin {
             }
         });
 
-        $this->route->ajax('verify', function() use($plugin) {
+        $this->route->ajax('verify-state', function() use($plugin) {
             try {
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);

@@ -26,7 +26,7 @@ jQuery(function($) {
     }
 
     var data = {
-        action: 'verify',
+        action: 'verify-state',
         path: $path.val(),
         url: $url.val()
     };
