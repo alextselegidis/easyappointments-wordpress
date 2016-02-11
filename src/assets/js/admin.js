@@ -79,22 +79,52 @@ jQuery(function($) {
     }
 
     /**
-     * Bind page event handlers.
+     * Execute the unlink operation with the provided data.
      */
-    function events() {
-        $('#install').on('click', function(event) {
-            install();
-        });
+    function link() {
+        var data = {
+            action: 'unlink',
+            path: $('#path').val(),
+            url: $('#url').val(),
+            removeFiles: $('#remove-files').prop('checked'),
+            removeDbTables: $('#remove-db-tables').prop('checked'),
+        };
 
-        $('#link').on('click', function(event) {
-            link();
-        });
+        $.ajax({
+            url: window.ajaxurl,
+            data: data,
+            method: 'POST',
+            dataType: 'json'
+        })
+            .done(function(response) {
+                if (response.exception) {
+                    return EAWP.Plugin.handleAjaxException(response);
+                }
+
+                $('.eawp').prepend(
+                    '<div class="updated">'
+                        + '<span class="dashicons dashicons-yes"></span>'
+                        + EAWP.Lang.LinkSuccessMessage
+                    + '</div>'
+                );
+            })
+            .fail(EAWP.Plugin.handleAjaxFailure);
     }
 
     // ------------------------------------------------------------------------
     //  INITIALIZE PAGE
     // ------------------------------------------------------------------------
 
-    events();
+    $('#install').on('click', function(event) {
+        install();
+    });
+
+    $('#link').on('click', function(event) {
+        link();
+    });
+
+    $('#unlink').on('click', function(event) {
+        unlink();
+    });
 
 });
