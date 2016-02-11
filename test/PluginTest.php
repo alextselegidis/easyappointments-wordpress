@@ -50,7 +50,7 @@ class PluginTest extends \PHPUnit_Framework_TestCase {
                 $this->anything());
 
         $route->expects($this->at(4))->method('ajax')->with(
-                $this->equalTo('verify'),
+                $this->equalTo('verify-state'),
                 $this->anything());
 
         $route->expects($this->at(5))->method('shortcode')->with(
