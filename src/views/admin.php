@@ -48,10 +48,21 @@
                                value="<?php echo get_option('eawp_url'); ?>"/></td>
             </tr>
             <tr>
-                <td class="submit" colspan="2">
+                <td class="submit link-operations" colspan="2">
                     <button id='install' class="button button-primary"><?php _e('Install', 'eawp'); ?></button>
                     <button id='link' class="button"><?php _e('Link', 'eawp'); ?></button>
+                </td>
+                <td class="sublime unlink-operations hidden" colspan="2">
                     <button id='unlink' class="button"><?php _e('Unlink', 'eawp'); ?></button>
+                    <label for="remove-files">
+                        <input type="checkbox" id="remove-files" >
+                        <?php _e('Remove Easy!Appointments Files') ?>
+                    </label>
+
+                    <label for="remove-db-tables">
+                        <input type="checkbox" id="remove-db-tables" >
+                        <?php _e('Remove Easy!Appointments Database Tables') ?>
+                    </label>
                 </td>
             </tr>
         </tbody>
