@@ -51,6 +51,7 @@
                 <td class="submit" colspan="2">
                     <button id='install' class="button button-primary"><?php _e('Install', 'eawp'); ?></button>
                     <button id='link' class="button"><?php _e('Link', 'eawp'); ?></button>
+                    <button id='unlink' class="button"><?php _e('Unlink', 'eawp'); ?></button>
                 </td>
             </tr>
         </tbody>
