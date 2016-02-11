@@ -19,18 +19,18 @@ jQuery(function($) {
     'use strict';
 
     /**
-     * Toggle the disable status of the operation buttons.
+     * Toggle the visibility status of the operation buttons.
      *
      * @param {Boolean} linkStatus A true value states that there is an active connection while
      * a false indicates that there is no active connection.
      */
     function _toggleOperationButtons(linkStatus) {
         if (linkStatus) {
-            $('#install, #link').prop('disabled', true);
-            $('#unlink').prop('disabled', false);
+            $('.link-operations').hide();
+            $('.unlink-operations').show();
         } else {
-            $('#install, #link').prop('disabled', false);
-            $('#unlink').prop('disabled', true);
+            $('.link-operations').show();
+            $('.unlink-operations').hide();
         }
     }
 
@@ -55,11 +55,11 @@ jQuery(function($) {
         dataType: 'json'
     })
         .done(function(response) {
+            _toggleOperationButtons(response.success);
+
             if (response.exception) {
                 return EAWP.Plugin.handleAjaxException(response);
             }
-
-            _toggleOperationButtons(response.success);
 
             if (response.success) {
                 $('.eawp').prepend(
