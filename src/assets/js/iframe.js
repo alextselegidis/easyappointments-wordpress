@@ -20,12 +20,14 @@
 
      // Add "resize" watcher on the iframe content element so that the iframe always show the whole
      // page content (mostly useful for mobile views).
-     function _bindSizeWatcher() {
-         var $iframeContent = $('body > div', $iframe.contents()),
+     function _resizeWatcher() {
+         var $iframeContent = $('#book-appointment-wizard', $iframe.contents()),
              lastWidth = $iframeContent.width(),
              lastHeight = $iframeContent.height();
 
          setInterval(function() {
+             $iframeContent = $('#book-appointment-wizard', $iframe.contents());
+
              if (lastWidth === $iframeContent.width() && lastHeight === $iframeContent.height()) {
                  return;
              }
@@ -34,8 +36,8 @@
              $iframe.height($iframeContent.height());
              lastWidth = $iframeContent.width();
              lastHeight = $iframeContent.height();
-         }, 100);
+         }, 500);
      }
 
-     $iframe.on('load', _bindSizeWatcher);
+     $iframe.on('load', _resizeWatcher);
 });
