@@ -114,7 +114,7 @@ class UnlinkTest extends \PHPUnit_Framework_TestCase {
 
     public function testUnlinkAndRemoveDatabaseTablesMustRemoveWordPressOptionsAndDatabaseTables() {
         $wpdb = $this->getMockBuilder('\WPDB')->getMock();
-        $wpdb->expects($this->once())->method('query');
+        $wpdb->expects($this->exactly(9))->method('query');
 
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
                         ->disableOriginalConstructor()

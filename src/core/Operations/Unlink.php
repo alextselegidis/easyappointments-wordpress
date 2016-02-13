@@ -82,12 +82,12 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
     public function invoke() {
         $this->_removeOptions();
 
-        if ($this->removeFiles) {
-            $this->_removeFiles();
-        }
-
         if ($this->removeDbTables) {
             $this->_removeDbTables();
+        }
+
+        if ($this->removeFiles) {
+            $this->_removeFiles();
         }
     }
 
@@ -106,6 +106,9 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
      * Remove E!A files.
      */
     protected function _removeFiles() {
+        if (!is_writable(dirname((string)$this->linkInformation->getPath())))
+            throw new \Exception('Cannot remove installation files, permission denied.');
+
         $this->_recursiveDelete((string)$this->linkInformation->getPath());
     }
 
@@ -114,17 +117,15 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
      */
     protected function _removeDbTables() {
         $db = $this->plugin->getDatabase();
-        $db->query('
-            DROP TABLE IF EXISTS ea_appointments;
-            DROP TABLE IF EXISTS ea_secretaries_providers;
-            DROP TABLE IF EXISTS ea_services_providers;
-            DROP TABLE IF EXISTS ea_settings;
-            DROP TABLE IF EXISTS ea_services;
-            DROP TABLE IF EXISTS ea_services_categories;
-            DROP TABLE IF EXISTS ea_user_settings;
-            DROP TABLE IF EXISTS ea_users;
-            DROP TABLE IF EXISTS ea_roles;
-        ');
+        $db->query('DROP TABLE IF EXISTS ea_appointments;');
+        $db->query('DROP TABLE IF EXISTS ea_secretaries_providers;');
+        $db->query('DROP TABLE IF EXISTS ea_services_providers;');
+        $db->query('DROP TABLE IF EXISTS ea_settings;');
+        $db->query('DROP TABLE IF EXISTS ea_services;');
+        $db->query('DROP TABLE IF EXISTS ea_service_categories;');
+        $db->query('DROP TABLE IF EXISTS ea_user_settings;');
+        $db->query('DROP TABLE IF EXISTS ea_users;');
+        $db->query('DROP TABLE IF EXISTS ea_roles;');
     }
 
     /**
@@ -142,11 +143,11 @@ class Unlink implements \EAWP\Core\Interfaces\IOperation {
                     if (filetype($dir . "/" . $object) == "dir")
                         $this->_recursiveDelete($dir . "/" . $object);
                     else
-                        unlink($dir . "/" . $object);
+                        @\unlink($dir . "/" . $object);
                 }
             }
-            reset($objects);
-            rmdir($dir);
+            @\reset($objects);
+            @\rmdir($dir);
         }
     }
 }
