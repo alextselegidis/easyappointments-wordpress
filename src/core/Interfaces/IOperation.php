@@ -19,8 +19,8 @@ interface IOperation {
     /**
      * Invoke Library
      *
-     * This method must define the operation logic that will execute a specific task. Every plugin operation must define
-     * a single task.
+     * This method must define the operation logic that will execute a specific task. Every plugin
+     * operation must define a single task.
      */
     public function invoke();
 }

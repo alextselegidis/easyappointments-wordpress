@@ -17,29 +17,46 @@ namespace EAWP\Core\ValueObjects;
  */
 class LinkInformation {
     /**
-     * Path
+     * Link Path
      *
      * @var \EAWP\Core\ValueObjects\Path
      */
     protected $path;
 
     /**
-     * Url
+     * Link URL
      *
      * @var \EAWP\Core\ValueObjects\Url
      */
     protected $url;
 
-
-    public function __construct(Path $path, Url $url = null) {
+    /**
+     * Class Constructor
+     *
+     * @param \EAWP\Core\ValueObjects\Path $path The installation path that points to the
+     * Easy!Appointments directory.
+     * @param \EAWP\Core\ValueObjects\Url $url The installation URL that points to the
+     * Easy!Appointments directory.
+     */
+    public function __construct(Path $path, Url $url) {
         $this->path = $path;
         $this->url = $url;
     }
 
+    /**
+     * Path getter method.
+     *
+     * @return \EAWP\Core\ValueObjects\Path
+     */
     public function getPath() {
         return $this->path;
     }
 
+    /**
+     * URL getter method.
+     *
+     * @return \EAWP\Core\ValueObjects\Url
+     */
     public function getUrl() {
         return $this->url;
     }

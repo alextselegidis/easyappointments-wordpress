@@ -13,8 +13,8 @@ namespace EAWP\Core;
 /**
  * EAWP Route Class
  *
- * This class manages WordPress action hooking and data filtering in order to trigger the required operations through
- * libraries when necessary.
+ * This class manages WordPress action hooking and data filtering in order to trigger the required
+ * operations through libraries when necessary.
  */
 class Route {
     /**
@@ -56,8 +56,8 @@ class Route {
     /**
      * Route AJAX request from JavaScript
      *
-     * This method must set a rule in order to route a future request from the user's browser. Always return error
-     * responses in JSON format back to client.
+     * This method must set a rule in order to route a future request from the user's browser. Always
+     * return error responses in JSON format back to client.
      *
      * @param string $name The name of the request that will execute the callback.
      * @param callable $callback Callable that will handle the ajax request.

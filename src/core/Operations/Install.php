@@ -16,14 +16,15 @@ use \EAWP\Core\ValueObjects\LinkInformation;
 /**
  * Install Class
  *
- * This class implements the Easy!Appointments installation procedure. It will copy and configure an installation
- * directly through WordPress. The file will create a new Easy!Appointments "config.php" file and set the WordPress
- * database credentials to it. In the end it must store the "eawp_path" and "eawp_url" settings to WordPress.
+ * This class implements the Easy!Appointments installation procedure. It will copy and configure
+ * an installation directly through WordPress. The file will create a new Easy!Appointments "config.php"
+ * file and set the WordPressdatabase credentials to it. In the end it must store the "eawp_path" and
+ * "eawp_url" settings to WordPress.
  *
  * Important:
  *
- * This method does not have to check for Easy!Appointments compatibility because it will install the latest supported
- * version of project.
+ * This method does not have to check for Easy!Appointments compatibility because it will install the
+ * latest supported version of project.
  */
 class Install implements \EAWP\Core\Interfaces\IOperation {
     /**
@@ -54,9 +55,9 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Invoke Install Operation
      *
-     * Copy E!A files to desired location (after checking for writable permissions) and create a new configuration file
-     * with the WordPress DB credentials and the provided BASE_URL value. After that store the path and the URL to
-     * "eawp_path" and "eawp_url" settings respectively.
+     * Copy E!A files to desired location (after checking for writable permissions) and create a
+     * new configuration file with the WordPress DB credentials and the provided BASE_URL value.
+     * After that store the path and the URL to "eawp_path" and "eawp_url" settings respectively.
      *
      * @link https://codex.wordpress.org/Function_Reference/add_option
      */
@@ -102,7 +103,8 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
     /**
      * Will set a configuration value to the "config.php" content.
      *
-     * This method uses a regular expression to find the configuration setting to be replaced with the new value.
+     * This method uses a regular expression to find the configuration setting to be replaced with
+     * the new value.
      *
      * @param string $parameter Name of the "config.php" setting to be set (eg 'BASE_URL').
      * @param string $value New value of the configuration setting.

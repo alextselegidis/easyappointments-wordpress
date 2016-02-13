@@ -18,7 +18,7 @@
 
      var $iframe = $('.easyappointments-wp-iframe');
 
-     // Bind resize event on the iframe body element so that the iframe always show the whole
+     // Add "resize" watcher on the iframe content element so that the iframe always show the whole
      // page content (mostly useful for mobile views).
      function _bindSizeWatcher() {
          var $iframeContent = $('body > div', $iframe.contents()),

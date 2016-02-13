@@ -16,9 +16,9 @@ use \EAWP\Core\ValueObjects\LinkInformation;
 /**
  * Verify State Operation
  *
- * This class implements the "verify state" operation of the current connection. It will check if Easy!Appointments is
- * correctly connected to WordPress, whether the configuration.php file exists and if the E!A installation is reachable
- * from the web.
+ * This class implements the "verify state" operation of the current connection. It will check
+ * if Easy!Appointments is correctly connected to WordPress, whether the configuration.php file
+ * exists and if the E!A installation is reachable from the web.
  */
 class VerifyState implements \EAWP\Core\Interfaces\IOperation {
     /**
