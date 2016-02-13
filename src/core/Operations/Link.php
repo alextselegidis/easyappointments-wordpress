@@ -61,8 +61,8 @@ class Link implements \EAWP\Core\Interfaces\IOperation {
      */
     public function invoke() {
         $this->_validateInstallation();
-        \add_option('eawp_path', (string)$this->linkInformation->getPath());
-        \add_option('eawp_url', (string)$this->linkInformation->getUrl());
+        \update_option('eawp_path', (string)$this->linkInformation->getPath());
+        \update_option('eawp_url', (string)$this->linkInformation->getUrl());
     }
 
     /**

@@ -94,7 +94,7 @@ class LinkTest extends \PHPUnit_Framework_TestCase {
         $link->invoke();
 
         // Assert whether database options where successfully created.
-        $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_path', $testPath)));
-        $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_url', $testUrl)));
+        $this->assertTrue(\WpMock::isExecuted('update_option', array('eawp_path', $testPath)));
+        $this->assertTrue(\WpMock::isExecuted('update_option', array('eawp_url', $testUrl)));
     }
 }
