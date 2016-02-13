@@ -104,9 +104,13 @@ jQuery(function($) {
                 $('.eawp').prepend(
                     '<div class="updated">'
                         + '<span class="dashicons dashicons-yes"></span>'
-                        + EAWP.Lang.LinkSuccessMessage
+                        + EAWP.Lang.UnlinkSuccessMesssage
                     + '</div>'
                 );
+
+                $('#path, #url').val('');
+
+                EAWP.Plugin.toggleOperationButtons(false);
             })
             .fail(EAWP.Plugin.handleAjaxFailure);
     }
