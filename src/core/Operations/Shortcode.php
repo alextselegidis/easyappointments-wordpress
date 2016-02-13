@@ -30,11 +30,11 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
     protected $plugin;
 
     /**
-     * Easy!Appointments Installation Link
+     * Easy!Appointments Installation LinkInformation
      *
-     * @var \EAWP\Core\ValueObjects\Link
+     * @var \EAWP\Core\ValueObjects\LinkInformation
      */
-    protected $link;
+    protected $linkInformation;
 
     /**
      * Class Constructor
@@ -42,19 +42,27 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
      * @param \EAWP\Core\ValueObjects\LinkInformation $linkInformation Easy!Appointments Link Information
      */
-    public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation, array $attributes) {
         $this->plugin = $plugin;
         $this->linkInformation = $linkInformation;
+        $this->attributes = $attributes;
     }
 
     /**
      * Invoke Shortcode Operation
      *
-     * This operation must include the E!A booking form into a page that  has the "easyappointments" shortcode. The
-     * shortcode binding is done from the core plugin and this operation must resolve all the dependencies and load the
-     * booking form inside the page so that website users can book an appointment.
+     * This operation must include the E!A booking form into a page that has the "easyappointments" shortcode. The
+     * shortcode binding is done from the core plugin and this operation must resolve all the dependencies and load
+     * the booking form inside the page so that website users can book an appointment.
      */
     public function invoke() {
+        \wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
 
+        $width = (isset($this->attributes['width'])) ? $this->attributes['width'] : '100%';
+        $height = (isset($this->attributes['height'])) ? $this->attributes['height'] : '700px';
+        $style = (isset($this->attributes['style'])) ? $this->attributes['style'] : '';
+
+        return '<iframe class="easyappointments-wp-iframe" src="' . (string)$this->linkInformation->getUrl() . '"
+                width="' .  $width . '" height="' . $height . '" style="' . $style . '"></iframe>';
     }
 }

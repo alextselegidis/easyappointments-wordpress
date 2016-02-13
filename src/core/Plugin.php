@@ -134,9 +134,19 @@ class Plugin {
             }
         });
 
-        $this->route->shortcode('easyappointments', function() use($plugin) {
-            $library = new \EAWP\Core\Operations\Shortcode($plugin);
-            $library->invoke();
+        $this->route->shortcode('easyappointments', function($attributes) use($plugin) {
+            $path = \get_option('eawp_path');
+            $url = \get_option('eawp_url');
+
+            if (empty($path) || empty($url)) {
+                return; // There are no options set so do not proceed with the operation.
+            }
+
+            $attributes = (is_array($attributes)) ? $attributes : array();
+
+            $linkInformation = new LinkInformation(new Path($path), new Url($url));
+            $operation = new \EAWP\Core\Operations\Shortcode($plugin, $linkInformation, $attributes);
+            return $operation->invoke();
         });
     }
 
