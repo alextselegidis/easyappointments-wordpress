@@ -54,6 +54,6 @@ gulp.task('test', function(done) {
  * "wp-content/plugins/easyappointments-wp" directory with the original plugin source
  * files that are finally commited to the repository.
  */
-gulp.task('dev', function(done) {
-    sync('src', 'wordpress/wp-content/plugins/easyappointments-wp');
+gulp.task('dev', function() {
+    return sync('src', 'wordpress/wp-content/plugins/easyappointments-wp');
 });
