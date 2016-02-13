@@ -18,27 +18,11 @@ jQuery(function($) {
 
     'use strict';
 
-    /**
-     * Toggle the visibility status of the operation buttons.
-     *
-     * @param {Boolean} linkStatus A true value states that there is an active connection while
-     * a false indicates that there is no active connection.
-     */
-    function _toggleOperationButtons(linkStatus) {
-        if (linkStatus) {
-            $('.link-operations').hide();
-            $('.unlink-operations').show();
-        } else {
-            $('.link-operations').show();
-            $('.unlink-operations').hide();
-        }
-    }
-
     var $path = $('#path'),
         $url = $('#url');
 
     if ($path.val() === '' || $url.val() === '') {
-        _toggleOperationButtons(false);
+        EAWP.Plugin.toggleOperationButtons(false);
         return; // no need to check
     }
 
@@ -56,7 +40,7 @@ jQuery(function($) {
     })
         .done(function(response) {
             var status = (!response.exception) ? true : false;
-            _toggleOperationButtons(status);
+            EAWP.Plugin.toggleOperationButtons(status);
 
             if (!response.exception) {
                 $('.eawp').prepend(

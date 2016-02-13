@@ -71,4 +71,20 @@ EAWP.Plugin = EAWP.Plugin || {};
         console.log('AJAX Failure: ', jqXHR, textStatus, errorThrown);
     };
 
+    /**
+     * Toggle the visibility status of the operation buttons.
+     *
+     * @param {Boolean} linkStatus A true value states that there is an active connection while
+     * a false indicates that there is no active connection.
+     */
+    exports.toggleOperationButtons = function(linkStatus) {
+        if (linkStatus) {
+            $('.link-operations').hide();
+            $('.unlink-operations').show();
+        } else {
+            $('.link-operations').show();
+            $('.unlink-operations').hide();
+        }
+    }
+
 })(EAWP.Plugin, jQuery);
