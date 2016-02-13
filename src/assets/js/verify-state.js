@@ -55,13 +55,10 @@ jQuery(function($) {
         dataType: 'json'
     })
         .done(function(response) {
-            _toggleOperationButtons(response.success);
+            var status = (!response.exception) ? true : false;
+            _toggleOperationButtons(status);
 
-            if (response.exception) {
-                return EAWP.Plugin.handleAjaxException(response);
-            }
-
-            if (response.success) {
+            if (!response.exception) {
                 $('.eawp').prepend(
                     '<div class="updated">'
                         + '<span class="dashicons dashicons-yes"></span>'
