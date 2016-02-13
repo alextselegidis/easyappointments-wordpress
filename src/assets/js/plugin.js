@@ -29,7 +29,7 @@ EAWP.Plugin = EAWP.Plugin || {};
 
         $('.eawp').prepend(
             '<div class="error">'
-                + '<span class="dashicons dashicons-flag"></span>'
+                + '<span class="dashicons dashicons-no"></span>'
                 + message
             + '</div>'
         );
