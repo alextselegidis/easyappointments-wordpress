@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    sync = require('gulp-dir-sync'),
     exec = require('child_process').execSync,
     fs = require('fs-extra'),
     zip = require('zip-dir');
@@ -44,4 +45,15 @@ gulp.task('test', function(done) {
     });
 
     done();
+});
+
+/**
+ * Development Task
+ *
+ * While developing the plugin this task will synchronize the changes made in the
+ * "wp-content/plugins/easyappointments-wp" directory with the original plugin source
+ * files that are finally commited to the repository.
+ */
+gulp.task('dev', function(done) {
+    sync('src', 'wordpress/wp-content/plugins/easyappointments-wp');
 });
