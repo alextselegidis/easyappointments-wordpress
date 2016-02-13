@@ -68,7 +68,7 @@ class Plugin {
                             __('Easy!Appointments installation was linked successfully! You can now use the '
                                     . '[easyappointments] shortcode in your pages.', 'eawp'),
                     'UnlinkSuccessMesssage' =>
-                            __('Easy!Apppointments isntallation was unlinked successfully!', 'eawp'),
+                            __('Easy!Apppointments installation was unlinked successfully!', 'eawp'),
                     'VerificationSuccess' =>
                             __ ('Easy!Appointments link is active.', 'eawp'),
                     'VerificationFailure' =>
