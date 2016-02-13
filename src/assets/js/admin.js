@@ -81,7 +81,7 @@ jQuery(function($) {
     /**
      * Execute the unlink operation with the provided data.
      */
-    function link() {
+    function unlink() {
         var data = {
             action: 'unlink',
             path: $('#path').val(),
