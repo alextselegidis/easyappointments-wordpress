@@ -25,10 +25,10 @@ EAWP.Plugin = EAWP.Plugin || {};
      */
     function _showErrorMessage(message) {
         // Remove previous message and display a new one with exception information.
-        $('.eawp div.error').remove();
+        $('.eawp .notification').remove();
 
         $('.eawp').prepend(
-            '<div class="error">'
+            '<div class="error notification">'
                 + '<span class="dashicons dashicons-no"></span>'
                 + message
             + '</div>'

@@ -42,16 +42,18 @@ jQuery(function($) {
             var status = (!response.exception) ? true : false;
             EAWP.Plugin.toggleOperationButtons(status);
 
+            $('.eawp .notification').remove();
+
             if (!response.exception) {
                 $('.eawp').prepend(
-                    '<div class="updated">'
+                    '<div class="updated notification">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.VerificationSuccess
                     + '</div>'
                 );
             } else {
                 $('.eawp').prepend(
-                    '<div class="error">'
+                    '<div class="error notification">'
                         + '<span class="dashicons dashicons-no"></span>'
                         + EAWP.Lang.VerificationFailure
                     + '</div>'

@@ -37,8 +37,10 @@ jQuery(function($) {
                     return EAWP.Plugin.handleAjaxException(response);
                 }
 
+                $('.eawp .notification').remove();
+
                 $('.eawp').prepend(
-                    '<div class="updated">'
+                    '<div class="updated notification">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.InstallationSuccessMessage
                     + '</div>'
@@ -68,8 +70,10 @@ jQuery(function($) {
                     return EAWP.Plugin.handleAjaxException(response);
                 }
 
+                $('.eawp .notification').remove();
+
                 $('.eawp').prepend(
-                    '<div class="updated">'
+                    '<div class="updated notification">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.LinkSuccessMessage
                     + '</div>'
@@ -101,8 +105,10 @@ jQuery(function($) {
                     return EAWP.Plugin.handleAjaxException(response);
                 }
 
+                $('.eawp .notification').remove();
+
                 $('.eawp').prepend(
-                    '<div class="updated">'
+                    '<div class="updated notification">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.UnlinkSuccessMesssage
                     + '</div>'
