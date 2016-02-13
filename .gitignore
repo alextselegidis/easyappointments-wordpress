@@ -4,3 +4,5 @@ doc/apigen
 easyappointments-wp.zip
 node_modules
 test/Operations/tmp-dir
+wordpress
+vendor
