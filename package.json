@@ -25,6 +25,7 @@
   "devDependencies": {
     "fs-extra": "^0.26.4",
     "gulp": "^3.9.0",
+    "gulp-dir-sync": "^0.1.2",
     "zip-dir": "^1.0.0"
   }
 }
