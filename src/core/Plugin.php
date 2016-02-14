@@ -77,6 +77,9 @@ class Plugin {
                             __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp'),
                     'AjaxFailureMessage' =>
                             __('The AJAX request could not be completed due to an unexpected error: %message%', 'eawp')
+                ),
+                'Plugin' => array(
+                    'nonce' => \wp_create_nonce('eawp')
                 )
             );
 
@@ -86,6 +89,7 @@ class Plugin {
 
         $this->route->ajax('install', function() use($plugin) {
             try {
+                $this->_verifyAjaxNonce($_POST['nonce']);
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
                 $linkInformation = new LinkInformation($path, $url);
@@ -98,6 +102,7 @@ class Plugin {
 
         $this->route->ajax('link', function() use($plugin) {
             try {
+                $this->_verifyAjaxNonce($_POST['nonce']);
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
                 $linkInformation = new LinkInformation($path, $url);
@@ -110,6 +115,7 @@ class Plugin {
 
         $this->route->ajax('unlink', function() use($plugin) {
             try {
+                $this->_verifyAjaxNonce($_POST['nonce']);
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
                 $removeFiles = filter_var($_POST['removeFiles'], FILTER_VALIDATE_BOOLEAN);
@@ -124,6 +130,7 @@ class Plugin {
 
         $this->route->ajax('verify-state', function() use($plugin) {
             try {
+                $this->_verifyAjaxNonce($_POST['nonce']);
                 $path = new Path($_POST['path']);
                 $url = new Url($_POST['url']);
                 $linkInformation = new LinkInformation($path, $url);
@@ -177,5 +184,19 @@ class Plugin {
     public function uninstall() {
         // Add the required operations here ...
         return;
+    }
+
+    /**
+     * Verify AJAX Nonce.
+     *
+     * Use this method in every AJAX callback in order to verify the AJAX nonce. This will
+     * provide CSRF attacks.
+     *
+     * @param string $nonce
+     */
+    protected function _verifyAjaxNonce($nonce) {
+        if (!\wp_verify_nonce($nonce, 'eawp')) {
+            throw new UnexpectedValueException('The AJAX nonce is not valid!');
+        }
     }
 }

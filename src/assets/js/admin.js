@@ -23,7 +23,8 @@ jQuery(function($) {
         var data = {
             action: 'install',
             path: $('#path').val(),
-            url: $('#url').val()
+            url: $('#url').val(),
+            nonce: EAWP.Plugin.nonce
         };
 
         $.ajax({
@@ -56,7 +57,8 @@ jQuery(function($) {
         var data = {
             action: 'link',
             path: $('#path').val(),
-            url: $('#url').val()
+            url: $('#url').val(),
+            nonce: EAWP.Plugin.nonce
         };
 
         $.ajax({
@@ -92,6 +94,7 @@ jQuery(function($) {
             url: $('#url').val(),
             removeFiles: $('#remove-files').prop('checked'),
             removeDbTables: $('#remove-db-tables').prop('checked'),
+            nonce: EAWP.Plugin.nonce
         };
 
         $.ajax({

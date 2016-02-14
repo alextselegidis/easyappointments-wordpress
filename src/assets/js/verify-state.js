@@ -29,7 +29,8 @@ jQuery(function($) {
     var data = {
         action: 'verify-state',
         path: $path.val(),
-        url: $url.val()
+        url: $url.val(),
+        nonce: EAWP.Plugin.nonce
     };
 
     $.ajax({
