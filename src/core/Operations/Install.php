@@ -75,7 +75,7 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
         if (!is_writable(dirname((string)$this->linkInformation->getPath())))
             throw new \Exception('Destination path is not writable.');
 
-        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor/1.1.0', (string)$this->linkInformation->getPath());
+        $this->_recursiveCopy(EAWP_BASEPATH . '/ea-vendor', (string)$this->linkInformation->getPath());
     }
 
     /**

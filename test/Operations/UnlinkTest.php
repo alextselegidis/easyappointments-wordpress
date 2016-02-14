@@ -36,7 +36,7 @@ class UnlinkTest extends \PHPUnit_Framework_TestCase {
 
         \mkdir($this->tmpDirectory);
 
-        \Filesystem::copy(__DIR__ . '/../../src/ea-vendor/1.1.0', $this->tmpDirectory);
+        \Filesystem::copy(__DIR__ . '/../../src/ea-vendor', $this->tmpDirectory);
     }
 
     /**
