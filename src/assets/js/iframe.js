@@ -18,23 +18,20 @@
 
      var $iframe = $('.easyappointments-wp-iframe');
 
-     // Add "resize" watcher on the iframe content element so that the iframe always show the whole
-     // page content (mostly useful for mobile views).
+     // Add "resize" watcher on the iframe content element so that the iframe always show the
+     // whole page content (mostly useful for mobile views - vertical resize).
      function _resizeWatcher() {
          var $iframeContent = $('#book-appointment-wizard', $iframe.contents()),
-             lastWidth = $iframeContent.width(),
              lastHeight = $iframeContent.height();
 
          setInterval(function() {
              $iframeContent = $('#book-appointment-wizard', $iframe.contents());
 
-             if (lastWidth === $iframeContent.width() && lastHeight === $iframeContent.height()) {
+             if (lastHeight === $iframeContent.height()) {
                  return;
              }
 
-             $iframe.width($iframeContent.width());
              $iframe.height($iframeContent.height());
-             lastWidth = $iframeContent.width();
              lastHeight = $iframeContent.height();
          }, 500);
      }
