@@ -16,7 +16,7 @@ WordPress supports the use of custom [shortcodes](https://www.smashingmagazine.c
 ```
 [easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px; border-radius: 10px;"]
 ```
-The "width", "height" and "style" attributes are optional but they can help you re-adjust the display of the iframe so that it better suits your template.
+The "width", "height" and "style" attributes are optional but they can help re-adjust the display of the iframe so that it better suits the active theme.
 
 ### Translations
 
