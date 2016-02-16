@@ -20,4 +20,4 @@ The "width", "height" and "style" attributes are optional but they can help re-a
 
 ### Translations
 
-This plugin uses the i18n localization system of WordPress and the translations are po & mo files located in the assets/lang directory. Feel free to contribute your own translations so that other users can benefit from them.
+This plugin uses the i18n localization system of WordPress and the translations are po & mo files located in the assets/lang directory. Contributions are more than welcomed and will help other users use it in their own language.
