@@ -16,6 +16,8 @@
 ?>
 
 <div class="wrap eawp">
+    <img class="logo" src="<?php echo plugins_url('assets/img/logo.png', __DIR__); ?>"
+            alt="Easy!Appointments Logo" />
     <h2>Easy!Appointments - WordPress Plugin</h2>
     <p>
         <?php _e('This plugin aims to bridge Easy!Appointments with WordPress and '

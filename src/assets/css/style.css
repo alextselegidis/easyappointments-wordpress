@@ -1,5 +1,5 @@
 /* ----------------------------------------------------------------------------
- * Easy!Appointments - WordPress Plugin 
+ * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
  * @copyright A.Tselegidis (C) 2016
@@ -16,4 +16,11 @@
 .eawp .error {
     padding: 15px;
     max-width: 700px;
+}
+
+.eawp .logo {
+    float: left;
+    width: 68px;
+    height: 68px;
+    margin: 0 10px 10px 0;
 }
