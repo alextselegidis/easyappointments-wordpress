@@ -128,9 +128,11 @@ class Route {
                     // Enqueue required assets.
                     foreach($assets as $file) {
                         if (substr($file, -3) === '.js') {
+                            $file = (!\WP_DEBUG) ? str_replace('.js', '.min.js', $file) : $file;
                             wp_enqueue_script(md5($file), plugins_url('../assets/js/' . $file, __FILE__));
                             wp_localize_script(md5($file), 'EAWP', $jsData);
                         } else if (substr($file, -4) === '.css') {
+                            $file = (!\WP_DEBUG) ? str_replace('.css', '.min.css', $file) : $file;
                             wp_enqueue_style(md5($file), plugins_url('../assets/css/' . $file, __FILE__));
                         }
                     }

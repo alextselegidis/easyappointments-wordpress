@@ -52,12 +52,13 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
      * Invoke Shortcode Operation
      *
      * This operation must include the E!A booking form into a page that has the "easyappointments"
-     * shortcode. The shortcode binding is done from the core plugin and this operation must resolve 
+     * shortcode. The shortcode binding is done from the core plugin and this operation must resolve
      * all the dependencies and load the booking form inside the page so that website users can book
      * an appointment.
      */
     public function invoke() {
-        \wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
+        $file = (WP_DEBUG) ? 'iframe.js' : 'iframe.min.js';
+        \wp_enqueue_script(md5($file), plugins_url('../../assets/js/' . $file, __FILE__));
 
         $width = (isset($this->attributes['width'])) ? $this->attributes['width'] : '100%';
         $height = (isset($this->attributes['height'])) ? $this->attributes['height'] : '700px';
