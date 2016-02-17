@@ -2,7 +2,12 @@ var gulp = require('gulp'),
     sync = require('gulp-dir-sync'),
     exec = require('child_process').execSync,
     fs = require('fs-extra'),
-    zip = require('zip-dir');
+    zip = require('zip-dir'),
+    autoprefixer = require('gulp-autoprefixer')
+    cssnano = require('gulp-cssnano'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename');
 
 /**
  * Create a ZIP package for the plugin.
@@ -31,7 +36,6 @@ gulp.task('doc', function(done) {
         console.log(stdout);
         console.log(stderr);
     });
-
     done();
 });
 
@@ -43,8 +47,36 @@ gulp.task('test', function(done) {
         console.log(stdout);
         console.log(stderr);
     });
-
     done();
+});
+
+/**
+ * Compile the JavaScript Files
+ */
+gulp.task('scripts', function() {
+    return gulp.src([
+        'src/assets/js/*.js',
+        '!src/assets/js/*.min.js'
+    ])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('src/assets/js'));
+});
+
+/**
+ * Compile the CSS Files
+ */
+gulp.task('styles', function() {
+    return gulp.src([
+        'src/assets/css/*.css',
+        '!src/assets/css/*.min.css'
+    ])
+        .pipe(autoprefixer())
+        .pipe(cssnano())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('src/assets/css'));
 });
 
 /**
@@ -55,5 +87,7 @@ gulp.task('test', function(done) {
  * files that are finally commited to the repository.
  */
 gulp.task('dev', function() {
+    gulp.watch('src/assets/js/*.js', ['scripts']);
+    gulp.watch('src/assets/css/*.css', ['styles']);
     return sync('src', 'wordpress/wp-content/plugins/easyappointments-wp');
 });
