@@ -12,7 +12,7 @@ var gulp = require('gulp'),
 /**
  * Create a ZIP package for the plugin.
  */
-gulp.task('build', function(done) {
+gulp.task('build', ['styles', 'scripts'], function(done) {
     fs.removeSync('.tmp-package');
     fs.removeSync('easyappointments-wp.zip');
     fs.copySync('src', '.tmp-package');
@@ -84,9 +84,9 @@ gulp.task('styles', function() {
  *
  * While developing the plugin this task will synchronize the changes made in the
  * "wp-content/plugins/easyappointments-wp" directory with the original plugin source
- * files that are finally commited to the repository.
+ * files that are finally committed to the repository.
  */
-gulp.task('dev', function() {
+gulp.task('dev', ['styles', 'scripts'], function() {
     gulp.watch('src/assets/js/*.js', ['scripts']);
     gulp.watch('src/assets/css/*.css', ['styles']);
     return sync('src', 'wordpress/wp-content/plugins/easyappointments-wp');
