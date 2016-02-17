@@ -75,15 +75,53 @@ Vagrant.configure(2) do |config|
      wget https://phar.phpunit.de/phpunit-old.phar
      chmod +x phpunit-old.phar
      sudo mv phpunit-old.phar /usr/bin/phpunit
+     
      cd /var/www
      sudo chown -R vagrant .
+
      wget https://wordpress.org/wordpress-4.0.tar.gz && tar xfz wordpress-4.0.tar.gz && rm wordpress-4.0.tar.gz && mv wordpress wp4_0
      cp wp4_0/wp-config-sample.php wp4_0/wp-config.php
      sed -i -e 's/database_name_here/wp4_0/g' wp4_0/wp-config.php
      sed -i -e 's/username_here/root/g' wp4_0/wp-config.php
      sed -i -e 's/password_here/root/g' wp4_0/wp-config.php
-     ln -s /vagrant/src wp4_0/wp-content/plugins/easyappointments-wp
+     cp -r /vagrant/src wp4_0/wp-content/plugins/easyappointments-wp
      mysql -u root -proot -e "CREATE DATABASE wp4_0"
      mysql -u root -proot wp4_0 < /vagrant/rsc/wp4_0.sql
+
+     wget https://wordpress.org/wordpress-4.1.tar.gz && tar xfz wordpress-4.1.tar.gz && rm wordpress-4.1.tar.gz && mv wordpress wp4_1
+     cp wp4_1/wp-config-sample.php wp4_1/wp-config.php
+     sed -i -e 's/database_name_here/wp4_1/g' wp4_1/wp-config.php
+     sed -i -e 's/username_here/root/g' wp4_1/wp-config.php
+     sed -i -e 's/password_here/root/g' wp4_1/wp-config.php
+     cp -r /vagrant/src wp4_1/wp-content/plugins/easyappointments-wp
+     mysql -u root -proot -e "CREATE DATABASE wp4_1"
+     mysql -u root -proot wp4_1 < /vagrant/rsc/wp4_1.sql
+
+     wget https://wordpress.org/wordpress-4.2.tar.gz && tar xfz wordpress-4.2.tar.gz && rm wordpress-4.2.tar.gz && mv wordpress wp4_2
+     cp wp4_2/wp-config-sample.php wp4_2/wp-config.php
+     sed -i -e 's/database_name_here/wp4_2/g' wp4_2/wp-config.php
+     sed -i -e 's/username_here/root/g' wp4_2/wp-config.php
+     sed -i -e 's/password_here/root/g' wp4_2/wp-config.php
+     cp -r /vagrant/src wp4_2/wp-content/plugins/easyappointments-wp
+     mysql -u root -proot -e "CREATE DATABASE wp4_2"
+     mysql -u root -proot wp4_2 < /vagrant/rsc/wp4_2.sql
+
+     wget https://wordpress.org/wordpress-4.3.tar.gz && tar xfz wordpress-4.3.tar.gz && rm wordpress-4.3.tar.gz && mv wordpress wp4_3
+     cp wp4_3/wp-config-sample.php wp4_3/wp-config.php
+     sed -i -e 's/database_name_here/wp4_3/g' wp4_3/wp-config.php
+     sed -i -e 's/username_here/root/g' wp4_3/wp-config.php
+     sed -i -e 's/password_here/root/g' wp4_3/wp-config.php
+     cp -r /vagrant/src wp4_3/wp-content/plugins/easyappointments-wp
+     mysql -u root -proot -e "CREATE DATABASE wp4_3"
+     mysql -u root -proot wp4_3 < /vagrant/rsc/wp4_3.sql
+
+     wget https://wordpress.org/wordpress-4.4.tar.gz && tar xfz wordpress-4.4.tar.gz && rm wordpress-4.4.tar.gz && mv wordpress wp4_4
+     cp wp4_4/wp-config-sample.php wp4_4/wp-config.php
+     sed -i -e 's/database_name_here/wp4_4/g' wp4_4/wp-config.php
+     sed -i -e 's/username_here/root/g' wp4_4/wp-config.php
+     sed -i -e 's/password_here/root/g' wp4_4/wp-config.php
+     cp -r /vagrant/src wp4_4/wp-content/plugins/easyappointments-wp
+     mysql -u root -proot -e "CREATE DATABASE wp4_4"
+     mysql -u root -proot wp4_4 < /vagrant/rsc/wp4_4.sql
   SHELL
 end
