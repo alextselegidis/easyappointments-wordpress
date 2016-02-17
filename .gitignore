@@ -6,3 +6,4 @@ node_modules
 test/Operations/tmp-dir
 wordpress
 vendor
+src/assets/**/*.min.*
