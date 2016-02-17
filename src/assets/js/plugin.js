@@ -48,7 +48,7 @@ EAWP.Plugin = EAWP.Plugin || {};
                 .replace('%line%', exception.line)
                 .replace('%message%', exception.message);
 
-        _showErrorMessage(message)
+        _showErrorMessage(message);
 
         console.log('AJAX Exception: ', exception);
     };
@@ -85,6 +85,6 @@ EAWP.Plugin = EAWP.Plugin || {};
             $('.link-operations').show();
             $('.unlink-operations').hide();
         }
-    }
+    };
 
 })(EAWP.Plugin, jQuery);
