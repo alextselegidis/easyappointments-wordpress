@@ -84,7 +84,7 @@ class VerifyState implements \EAWP\Core\Interfaces\IOperation {
      */
     public function invoke() {
         $this->_verifyConfigurationFile();
-        $this->_performTestRequest();
+        //$this->_performTestRequest(); // Uncomment for extra HTTP request check.
     }
 
     /**

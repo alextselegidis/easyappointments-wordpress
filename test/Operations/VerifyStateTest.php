@@ -94,31 +94,4 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
         $this->setExpectedException('\Exception');
         $verifyState->invoke();
     }
-
-    public function testVerifyStateMustThrowAnExceptionIfTheSiteIsNotReachableFromTheWeb() {
-        $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-                ->disableOriginalConstructor()
-                ->getMock();
-
-        $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-                ->disableOriginalConstructor()
-                ->getMock();
-        $path->method('__toString')->willReturn($this->tmpDirectory);
-
-        $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-                ->disableOriginalConstructor()
-                ->getMock();
-        $url->method('__toString')->willReturn('http://easyappointments.org/this-one-does-not-exist');
-
-        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-                     ->disableOriginalConstructor()
-                     ->getMock();
-        $linkInformation->method('getPath')->willReturn($path);
-        $linkInformation->method('getUrl')->willReturn($url);
-
-        // Assert that the operation will be executed without throwing an exception.
-        $verifyState = new VerifyState($plugin, $linkInformation);
-        $this->setExpectedException('\Exception');
-        $verifyState->invoke();
-    }
 }
