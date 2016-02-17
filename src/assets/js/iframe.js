@@ -16,7 +16,8 @@
 
      'use strict';
 
-     var $iframe = $('.easyappointments-wp-iframe');
+     var $iframe = $('.easyappointments-wp-iframe'),
+        initialHeight = $iframe.height();
 
      // Add "resize" watcher on the iframe content element so that the iframe always show the
      // whole page content (mostly useful for mobile views - vertical resize).
@@ -31,7 +32,8 @@
                  return;
              }
 
-             $iframe.height($iframeContent.height());
+             var newHeight = ($iframeContent.height() > initialHeight) ? $iframeContent.height() : initialHeight;
+             $iframe.height(newHeight);
              lastHeight = $iframeContent.height();
          }, 500);
      }
