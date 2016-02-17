@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2016-02-17 21:58+0100\n"
-"PO-Revision-Date: 2016-02-17 21:59+0100\n"
+"POT-Creation-Date: 2016-02-17 22:02+0100\n"
+"PO-Revision-Date: 2016-02-17 22:06+0100\n"
 "Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language: el\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;gettext;gettext_noop;__;\\__;\\_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ../../views\n"
+"X-Poedit-SearchPath-0: ../..\n"
 
 #: ../../views/admin.php:23
 msgid ""
@@ -196,24 +196,46 @@ msgid "For more information visit the official website of the project at "
 msgstr ""
 "Για περισσότερες πληροφορίες επισκεφθείτε την επίσημη ιστοσελίδα του έργου "
 
-#~ msgid ""
-#~ "Easy!Appointments files were installed successfully! Navigate to your "
-#~ "installation URL complete the configuration of the application."
-#~ msgstr ""
-#~ "Τα αρχεία του Easy!Appointments εγκαταστάθηκαν επιτυχώς! Πλοηγηθείτε στην "
-#~ "ηλεκτρονική διεύθυνση της εγκατάστασης σας (URL) για να ολοκληρώσετε την "
-#~ "διαμόρφωση της εφαρμογής."
+#: ../../core/Plugin.php:65
+msgid ""
+"Easy!Appointments files were installed successfully! Navigate to your "
+"installation URL complete the configuration of the application."
+msgstr ""
+"Τα αρχεία του Easy!Appointments εγκαταστάθηκαν επιτυχώς! Πλοηγηθείτε στην "
+"ηλεκτρονική διεύθυνση της εγκατάστασης σας (URL) για να ολοκληρώσετε την "
+"διαμόρφωση της εφαρμογής."
 
-#~ msgid ""
-#~ "Easy!Appointments installation was bridged successfully! You can now use "
-#~ "the [easyappointments] shortcode in your pages."
-#~ msgstr ""
-#~ "Η εγκατάσταση Easy!Appointments συνδέθηκε επιτυχώς! Μπορείτε τώρα να "
-#~ "χρησιμοποιήσετε το [easyappointments] shortcode στις σελίδες σας."
+#: ../../core/Plugin.php:68
+msgid ""
+"Easy!Appointments installation was linked successfully! You can now use the "
+"[easyappointments] shortcode in your pages."
+msgstr ""
+"Η εγκατάσταση Easy!Appointments συνδέθηκε επιτυχώς! Μπορείτε τώρα να "
+"χρησιμοποιήσετε το [easyappointments] shortcode στις σελίδες σας."
 
-#~ msgid "An unexpected error occured in file %file% (line %line%): %message%"
-#~ msgstr ""
-#~ "Ένα απρόσμενο σφάλμα συνέβει στο αρχείο %file% (γραμμή %line%): %message%"
+#: ../../core/Plugin.php:71
+msgid "Easy!Apppointments installation was unlinked successfully!"
+msgstr "Η εγκατάσταση του Easy!Appointments αποσυνδέθηκε επιτυχώς!"
+
+#: ../../core/Plugin.php:73
+msgid "Easy!Appointments link is active."
+msgstr "Η σύνδεση του Easy!Appointments είναι ενεργή."
+
+#: ../../core/Plugin.php:75
+msgid "Easy!Appointments link seems to be broken."
+msgstr "Η σύνδεση του Easy!Appointments φαίνεται ότι είναι σπασμένη. "
+
+#: ../../core/Plugin.php:77
+msgid "An unexpected error occured in file %file% (line %line%): %message%"
+msgstr ""
+"Ένα απρόσμενο σφάλμα συνέβει στο αρχείο %file% (γραμμή %line%): %message%"
+
+#: ../../core/Plugin.php:79
+msgid ""
+"The AJAX request could not be completed due to an unexpected error: %message%"
+msgstr ""
+"Το αίτημα AJAX δεν μπόρεσε να ολοκληρωθεί εξαιτίας ενός απρόσμενου "
+"σφάλματος: %message%"
 
 #~ msgid "Installation"
 #~ msgstr "Εγκατάσταση"
