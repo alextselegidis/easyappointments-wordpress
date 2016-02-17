@@ -58,7 +58,7 @@ gulp.task('scripts', function() {
         'src/assets/js/*.js',
         '!src/assets/js/*.min.js'
     ])
-        .pipe(jshint())
+        .pipe(jshint({laxbreak: true}))
         .pipe(jshint.reporter('default'))
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
