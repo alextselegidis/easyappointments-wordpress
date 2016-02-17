@@ -33,7 +33,8 @@ $functions = array(
     '_e',
     'add_option',
     'update_option',
-    'delete_option'
+    'delete_option',
+    'wp_verify_nonce'
 );
 
 // Dynamic Declaration of Functions

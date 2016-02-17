@@ -140,7 +140,7 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     public function testAjaxMustRouteAnAjaxCallback() {
         $arguments = array('wp_ajax_install', array($this, 'setUp'));
         $this->route->ajax('install', array($this, 'setUp'));
-        $this->assertTrue(\WpMock::isExecuted('add_action', $arguments));
+        $this->assertTrue(\WpMock::isExecuted('add_action'));
     }
 
     public function testAjaxMustThrowAnExceptionOnInvalidActionArgument() {
@@ -160,6 +160,6 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     public function testShortcodeMustRegisterAValidWpShortcode() {
         $arguments = array('wp_ajax_install', array($this, 'setUp'));
         $this->route->ajax('install', array($this, 'setUp'));
-        $this->assertTrue(\WpMock::isExecuted('add_action', $arguments));
+        $this->assertTrue(\WpMock::isExecuted('add_action'));
     }
 }

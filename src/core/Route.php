@@ -71,7 +71,12 @@ class Route {
         if (!is_callable($callback))
             throw new \InvalidArgumentException('Invalid $callback argument: ' . print_r($callback, true));
 
-        \add_action('wp_ajax_' . $name, $callback);
+        \add_action('wp_ajax_' . $name, function() use ($callback) {
+            if (!\wp_verify_nonce($_REQUEST['nonce'], 'eawp')) {
+                throw new UnexpectedValueException('The AJAX nonce is not valid!');
+            }
+            $callback();
+        });
     }
 
     /**
