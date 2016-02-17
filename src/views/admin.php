@@ -57,14 +57,14 @@
                     <fieldset>
                         <label for="remove-files">
                             <input type="checkbox" id="remove-files" >
-                            <?php _e('Remove Easy!Appointments Files *') ?>
+                            <?php _e('Remove Easy!Appointments Files', 'eawp'); ?> *
                         </label>
 
                         <br>
 
                         <label for="remove-db-tables">
                             <input type="checkbox" id="remove-db-tables" >
-                            <?php _e('Remove Easy!Appointments Database Tables *') ?>
+                            <?php _e('Remove Easy!Appointments Database Tables', 'eawp'); ?> *
                         </label>
                     </fieldset>
 
@@ -72,7 +72,7 @@
 
                     <button id='unlink' class="button"><?php _e('Unlink', 'eawp'); ?></button>
 
-                    <p class="description"><?php _e('* These actions cannot be undone!'); ?></p>
+                    <p class="description">* <?php _e('These actions cannot be undone!', 'eawp'); ?></p>
                 </td>
             </tr>
         </tbody>

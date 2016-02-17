@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2016-02-17 00:26+0100\n"
-"PO-Revision-Date: 2016-02-17 00:26+0100\n"
+"POT-Creation-Date: 2016-02-17 21:58+0100\n"
+"PO-Revision-Date: 2016-02-17 21:59+0100\n"
 "Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language: English\n"
@@ -52,11 +52,11 @@ msgid "Link"
 msgstr ""
 
 #: ../../views/admin.php:60
-msgid "Remove Easy!Appointments Files *"
+msgid "Remove Easy!Appointments Files"
 msgstr ""
 
 #: ../../views/admin.php:67
-msgid "Remove Easy!Appointments Database Tables *"
+msgid "Remove Easy!Appointments Database Tables"
 msgstr ""
 
 #: ../../views/admin.php:73 ../../views/admin.php:98
@@ -64,7 +64,7 @@ msgid "Unlink"
 msgstr ""
 
 #: ../../views/admin.php:75
-msgid "* These actions cannot be undone!"
+msgid "These actions cannot be undone!"
 msgstr ""
 
 #: ../../views/admin.php:83
