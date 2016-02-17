@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2015-03-22 11:48+0100\n"
-"PO-Revision-Date: 2015-03-22 11:48+0100\n"
+"POT-Creation-Date: 2016-02-17 00:26+0100\n"
+"PO-Revision-Date: 2016-02-17 00:26+0100\n"
 "Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language: English\n"
@@ -13,91 +13,141 @@ msgstr ""
 "X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ../../..\n"
+"X-Poedit-SearchPath-0: ../../views\n"
 
-#: ../../../src/core/Plugin.php:57
-msgid ""
-"Easy!Appointments files were installed successfully! Navigate to your "
-"installation URL complete the configuration of the application."
-msgstr ""
-
-#: ../../../src/core/Plugin.php:59
-msgid ""
-"Easy!Appointments installation was bridged successfully! You can now use the "
-"[easyappointments] shortcode in your pages."
-msgstr ""
-
-#: ../../../src/core/Plugin.php:61
-msgid "An unexpected error occured in file %file% (line %line%): %message%"
-msgstr ""
-
-#: ../../../src/views/admin.php:21
+#: ../../views/admin.php:23
 msgid ""
 "This plugin aims to bridge Easy!Appointments with WordPress and facilitate "
 "users in the integration of the appointment booking system to their WP "
 "pages. It offers useful functions such as the installation of Easy!"
-"Appointments directly from the WordPress backend, the bridge of an existing "
+"Appointments directly from WordPress' backend, the link of an existing "
 "installation and of course the display of the appointment booking wizard "
 "with the use of a simple shortcode."
 msgstr ""
 
-#: ../../../src/views/admin.php:29
-msgid "Installation"
+#: ../../views/admin.php:31
+msgid "Link Information"
 msgstr ""
 
-#: ../../../src/views/admin.php:31
+#: ../../views/admin.php:33
 msgid ""
 "Set the path and URL of your Easy!Appointments installation and press either "
-"the \"Install\" or \"Bridge\" button in order to complete the operation."
+"the \"Install\" or \"Link\" button to proceed with the operation."
 msgstr ""
 
-#: ../../../src/views/admin.php:39
+#: ../../views/admin.php:40
 msgid "Path"
 msgstr ""
 
-#: ../../../src/views/admin.php:45
+#: ../../views/admin.php:46
 msgid "URL"
 msgstr ""
 
-#: ../../../src/views/admin.php:52 ../../../src/views/admin.php:62
+#: ../../views/admin.php:53 ../../views/admin.php:86
 msgid "Install"
 msgstr ""
 
-#: ../../../src/views/admin.php:53 ../../../src/views/admin.php:68
-msgid "Bridge"
+#: ../../views/admin.php:54 ../../views/admin.php:92
+msgid "Link"
 msgstr ""
 
-#: ../../../src/views/admin.php:59
+#: ../../views/admin.php:60
+msgid "Remove Easy!Appointments Files *"
+msgstr ""
+
+#: ../../views/admin.php:67
+msgid "Remove Easy!Appointments Database Tables *"
+msgstr ""
+
+#: ../../views/admin.php:73 ../../views/admin.php:98
+msgid "Unlink"
+msgstr ""
+
+#: ../../views/admin.php:75
+msgid "* These actions cannot be undone!"
+msgstr ""
+
+#: ../../views/admin.php:83
 msgid "Hints"
 msgstr ""
 
-#: ../../../src/views/admin.php:63
+#: ../../views/admin.php:87
 msgid ""
 "This operation will create a new installation by placing and configuring "
 "Easy!Appointments files into the requested directory. You will have to "
 "complete the E!A installation by visiting the provided URL."
 msgstr ""
 
-#: ../../../src/views/admin.php:69
+#: ../../views/admin.php:93
 msgid ""
-"This operation will bridge an existing Easy!Appointments installation with "
-"your WordPress website. Make sure that you will set the correct installation "
-"path and URL."
+"This operation will create a \"link\" between an existing Easy!Appointments "
+"installation and your WordPress website. Make sure that you will set the "
+"correct installation path and URL."
 msgstr ""
 
-#: ../../../src/views/admin.php:74
+#: ../../views/admin.php:99
+msgid ""
+"This operation will unlink an active connection between Easy!Appointments "
+"and your WordPress website. You might set whether you want the files and "
+"database tables to be removed as well, even though this is optional."
+msgstr ""
+
+#: ../../views/admin.php:104
 msgid "Shortcode"
 msgstr ""
 
-#: ../../../src/views/admin.php:75
+#: ../../views/admin.php:105
 msgid ""
-"If you want the Easy!Appointments booking wizard to be available in your "
-"website, create a new page and add the [easyappointments] shortcode in it. "
-"When you launch the page you will see the appointment booking wizard."
+"If you want to show the Easy!Appointments booking wizard in a page of your "
+"website you have to add the [easyappointments] shortcode. The shortcode "
+"accepts optionally the following attributes: \"width\", \"height\", \"style"
+"\" which will style the iframe element of your  page (e.g. [easyappointments "
+"width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
 msgstr ""
 
-#: ../../../src/views/admin.php:81
+#: ../../views/admin.php:115
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../views/admin.php:118
+msgid "Permission Problems"
+msgstr ""
+
+#: ../../views/admin.php:119
 msgid ""
-"For more information visit the official website of the project at <a href="
-"\"http://easyappointments.org\">www.easyappointments.com</a>."
+"Some plugin operations perform various filesystem tasks that might be "
+"interrupted due to lack of permissions. This issues are more likely to "
+"happen in Unix environments where PHP does not have the required permissions "
+"to read/write/delete files or directories. If you cannot solve the problem "
+"try to perform the operation manually with an FTP user (e.g. if the \"Install"
+"\" operation fails upload the latest E!A version manually and connect it "
+"with WP through the \"Link\" operation)."
+msgstr ""
+
+#: ../../views/admin.php:127
+msgid "Broken Connection"
+msgstr ""
+
+#: ../../views/admin.php:128
+msgid ""
+"If this page informs you of a broken Easy!Appointments connection it could "
+"be that the E!A files where moved or the installation URL was changed and "
+"the connection couldn't be verified.  \"Unlink\" the current connection "
+"without removing the files or database tables and then \"Link\" it again "
+"with the new information."
+msgstr ""
+
+#: ../../views/admin.php:134
+msgid "Support Forum"
+msgstr ""
+
+#: ../../views/admin.php:135
+msgid ""
+"If you encounter problems but you do not know what to do visit the official "
+"Easy!Appointments support group where can discuss them with active users "
+"from all over the world."
+msgstr ""
+
+#: ../../views/admin.php:143
+msgid "For more information visit the official website of the project at "
 msgstr ""
