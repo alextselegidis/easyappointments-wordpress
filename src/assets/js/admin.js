@@ -46,6 +46,8 @@ jQuery(function($) {
                         + EAWP.Lang.InstallationSuccessMessage
                     + '</div>'
                 );
+
+                EAWP.Plugin.toggleOperationButtons(true);
             })
             .fail(EAWP.Plugin.handleAjaxFailure);
     }
@@ -80,6 +82,8 @@ jQuery(function($) {
                         + EAWP.Lang.LinkSuccessMessage
                     + '</div>'
                 );
+
+                EAWP.Plugin.toggleOperationButtons(true);
             })
             .fail(EAWP.Plugin.handleAjaxFailure);
     }
