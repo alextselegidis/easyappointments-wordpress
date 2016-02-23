@@ -15,8 +15,9 @@ var gulp = require('gulp'),
 gulp.task('build', ['styles', 'scripts'], function(done) {
     fs.removeSync('.tmp-package');
     fs.removeSync('easyappointments-wp.zip');
-    fs.copySync('src', '.tmp-package');
-    fs.copySync('LICENSE', '.tmp-package/LICENSE');
+    fs.mkdirSync('.tmp-package');
+    fs.copySync('src', '.tmp-package/easyappointments-wp');
+    fs.copySync('LICENSE', '.tmp-package/easyappointments-wp/LICENSE');
     zip('.tmp-package', { saveTo: 'easyappointments-wp.zip' }, function (err, buffer) {
         if (err) {
             console.log('Zip Error', err);
