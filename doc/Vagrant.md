@@ -1,7 +1,7 @@
 # Setup Vagrant
 
 The Vagrantfile will provision a precise32 box with a complete LAMP stack (PHP v5.3) and
-will automatically install WordPress v4.0 (and other versions) with the easyappointmets-wp plugin already pre-installed.
+will automatically install WordPress v4.0 to v4.4 with the easyappointmets-wp plugin already pre-enabled.
 The MySQL user has the `root/root` credentials and the WordPress installation the `administrator/administrator`.
 
 1. Install Vagrant and start by executing the `vagrant up` command.

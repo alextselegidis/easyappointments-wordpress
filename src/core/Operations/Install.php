@@ -111,8 +111,8 @@ class Install implements \EAWP\Core\Interfaces\IOperation {
      * @param string $configContent (By Reference) Contains the "config.php" file contents.
      */
     protected function _setValue($parameter, $value, &$configContent) {
-        $pattern = '/(' . $parameter . ' .*= \').*(\';)/';
-        $setting = '$1' . $value . '$2';
+        $pattern = '/(' . $parameter . ' .*)=.*;/';
+        $setting = '$1 = \'' . $value . '\';';
         $configContent = preg_replace($pattern, $setting, $configContent, 1);
     }
 

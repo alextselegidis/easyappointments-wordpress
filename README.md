@@ -14,10 +14,10 @@ Once the plugin is installed and activated a new menu entry becomes available un
 WordPress supports the use of custom [shortcodes](https://www.smashingmagazine.com/2012/05/wordpress-shortcodes-complete-guide) which enable plugins to insert custom content into a page. This plugin takes advantage of this functionality and inserts an iframe that points to the booking wizard of Easy!Appointments and can be used directly within pages or posts so that customers can book appointments without ever leaving the website.
 
 ```
-[easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px; border-radius: 10px;"]
+[easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px;"]
 ```
-The "width", "height" and "style" attributes are optional but they can help re-adjust the display of the iframe so that it better suits the active theme.
+The "width", "height" and "style" attributes are optional but they can help to re-adjust the display of the iframe so that it better suits the active theme.
 
 ### Translations
 
-This plugin uses the i18n localization system of WordPress and the translations are po & mo files located in the assets/lang directory. Contributions are more than welcomed and will help other users use it in their own language.
+This plugin uses the **i18n** localization system of WordPress and the translations are po & mo files located in the assets/lang directory. Contributions are more than welcome so feel free to make pull requests with your translations or send them directly to [alextselegidis@gmail.com](mailto:alextselegidis@gmail.com).
