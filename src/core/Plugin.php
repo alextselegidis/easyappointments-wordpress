@@ -89,8 +89,8 @@ class Plugin {
 
         $this->route->ajax('install', function() use($plugin) {
             try {
-                $path = new Path($_POST['path']);
-                $url = new Url($_POST['url']);
+                $path = new Path(sanitize_text_field($_POST['path']));
+                $url = new Url(sanitize_text_field($_POST['url']));
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\Install($plugin, $linkInformation);
                 $operation->invoke();
@@ -101,8 +101,8 @@ class Plugin {
 
         $this->route->ajax('link', function() use($plugin) {
             try {
-                $path = new Path($_POST['path']);
-                $url = new Url($_POST['url']);
+                $path = new Path(sanitize_text_field($_POST['path']));
+                $url = new Url(sanitize_text_field($_POST['url']));
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\Link($plugin, $linkInformation);
                 $operation->invoke();
@@ -113,8 +113,8 @@ class Plugin {
 
         $this->route->ajax('unlink', function() use($plugin) {
             try {
-                $path = new Path($_POST['path']);
-                $url = new Url($_POST['url']);
+                $path = new Path(sanitize_text_field($_POST['path']));
+                $url = new Url(sanitize_text_field($_POST['url']));
                 $removeFiles = filter_var($_POST['removeFiles'], FILTER_VALIDATE_BOOLEAN);
                 $removeDbTables = filter_var($_POST['removeDbTables'], FILTER_VALIDATE_BOOLEAN);
                 $linkInformation = new LinkInformation($path, $url);
@@ -127,8 +127,8 @@ class Plugin {
 
         $this->route->ajax('verify-state', function() use($plugin) {
             try {
-                $path = new Path($_POST['path']);
-                $url = new Url($_POST['url']);
+                $path = new Path(sanitize_text_field($_POST['path']));
+                $url = new Url(sanitize_text_field($_POST['url']));
                 $linkInformation = new LinkInformation($path, $url);
                 $operation = new \EAWP\Core\Operations\VerifyState($plugin, $linkInformation);
                 $operation->invoke();
