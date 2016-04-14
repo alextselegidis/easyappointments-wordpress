@@ -75,7 +75,7 @@ Vagrant.configure(2) do |config|
      wget https://phar.phpunit.de/phpunit-old.phar
      chmod +x phpunit-old.phar
      sudo mv phpunit-old.phar /usr/bin/phpunit
-     
+
      cd /var/www
      sudo chown -R vagrant .
 
@@ -123,5 +123,14 @@ Vagrant.configure(2) do |config|
      cp -r /vagrant/src wp4_4/wp-content/plugins/easyappointments-wp
      mysql -u root -proot -e "CREATE DATABASE wp4_4"
      mysql -u root -proot wp4_4 < /vagrant/rsc/wp4_4.sql
+
+     wget https://wordpress.org/wordpress-4.5.tar.gz && tar xfz wordpress-4.5.tar.gz && rm wordpress-4.5.tar.gz && mv wordpress wp4_5
+     cp wp4_5/wp-config-sample.php wp4_5/wp-config.php
+     sed -i -e 's/database_name_here/wp4_5/g' wp4_5/wp-config.php
+     sed -i -e 's/username_here/root/g' wp4_5/wp-config.php
+     sed -i -e 's/password_here/root/g' wp4_5/wp-config.php
+     cp -r /vagrant/src wp4_5/wp-content/plugins/easyappointments-wp
+     mysql -u root -proot -e "CREATE DATABASE wp4_5"
+     mysql -u root -proot wp4_5 < /vagrant/rsc/wp4_5.sql
   SHELL
 end
