@@ -40,13 +40,13 @@
                 <th scope="row"><label for="path"><?php _e('Path', 'eawp'); ?></label></th>
                 <td><input type="text" id="path" class="regular-text"
                         placeholder="<?php echo ABSPATH . 'easyappointments'; ?>"
-                        value="<?php echo get_option('eawp_path'); ?>" /></td>
+                        value="<?php echo esc_html(get_option('eawp_path')); ?>" /></td>
             </tr>
             <tr>
                 <th scope="row"><label for="url"><?php _e('URL', 'eawp'); ?></label></th>
                 <td><input type="text" id="url" class="regular-text"
                                placeholder="<?php echo get_site_url() . '/easyappointments'; ?>"
-                               value="<?php echo get_option('eawp_url'); ?>"/></td>
+                               value="<?php echo esc_html(get_option('eawp_url')); ?>"/></td>
             </tr>
             <tr>
                 <td class="submit link-operations hidden" colspan="2">
