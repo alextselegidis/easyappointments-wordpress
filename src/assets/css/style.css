@@ -22,5 +22,10 @@
     float: left;
     width: 68px;
     height: 68px;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 5px 0;
+}
+
+.eawp p,
+.eawp ul li {
+    max-width: 700px;
 }
