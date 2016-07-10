@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2016-02-17 22:02+0100\n"
-"PO-Revision-Date: 2016-02-17 22:06+0100\n"
+"POT-Creation-Date: 2016-07-10 19:25+0100\n"
+"PO-Revision-Date: 2016-07-10 19:26+0100\n"
 "Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language: el\n"
@@ -49,39 +49,43 @@ msgstr ""
 msgid "Path"
 msgstr "Διαδρομή (Path)"
 
-#: ../../views/admin.php:46
+#: ../../views/admin.php:45 ../../views/admin.php:55
+msgid "Example"
+msgstr "Παράδειγμα"
+
+#: ../../views/admin.php:50
 msgid "URL"
 msgstr "Διεύθυνση (URL)"
 
-#: ../../views/admin.php:53 ../../views/admin.php:86
+#: ../../views/admin.php:61 ../../views/admin.php:94
 msgid "Install"
 msgstr "Εγκατάσταση"
 
-#: ../../views/admin.php:54 ../../views/admin.php:92
+#: ../../views/admin.php:62 ../../views/admin.php:100
 msgid "Link"
 msgstr "Σύνδεση"
 
-#: ../../views/admin.php:60
+#: ../../views/admin.php:68
 msgid "Remove Easy!Appointments Files"
 msgstr "Διαγραφή Αρχείων του Easy!Appointments"
 
-#: ../../views/admin.php:67
+#: ../../views/admin.php:75
 msgid "Remove Easy!Appointments Database Tables"
 msgstr "Διαγραφή Πινάκων του Easy!Appointments από την Βάση Δεδομένων"
 
-#: ../../views/admin.php:73 ../../views/admin.php:98
+#: ../../views/admin.php:81 ../../views/admin.php:106
 msgid "Unlink"
 msgstr "Αποσύνδεση"
 
-#: ../../views/admin.php:75
+#: ../../views/admin.php:83
 msgid "These actions cannot be undone!"
 msgstr "Αυτές οι ενέργειες δεν μπορούν να αναιρεθούν!"
 
-#: ../../views/admin.php:83
+#: ../../views/admin.php:91
 msgid "Hints"
 msgstr "Συμβουλές"
 
-#: ../../views/admin.php:87
+#: ../../views/admin.php:95
 msgid ""
 "This operation will create a new installation by placing and configuring "
 "Easy!Appointments files into the requested directory. You will have to "
@@ -92,7 +96,7 @@ msgstr ""
 "πρέπει να ολοκληρώσετε την εγκατάσταση του E!A ακολουθώντας την διεύθυνση "
 "(URL) που καταχωρήσατε."
 
-#: ../../views/admin.php:93
+#: ../../views/admin.php:101
 msgid ""
 "This operation will create a \"link\" between an existing Easy!Appointments "
 "installation and your WordPress website. Make sure that you will set the "
@@ -102,7 +106,7 @@ msgstr ""
 "εγκατάστασης Easy!Appointments με την WordPress ιστοσελίδα σας. "
 "Σιγουρευτείτε ότι θα θέσετε την σωστή διαδρομή (Path) και διεύθυνση (URL). "
 
-#: ../../views/admin.php:99
+#: ../../views/admin.php:107
 msgid ""
 "This operation will unlink an active connection between Easy!Appointments "
 "and your WordPress website. You might set whether you want the files and "
@@ -113,11 +117,11 @@ msgstr ""
 "εφόσον θέλετε να διαγραφούν τα αρχεία και οι πίνακες της βάσης δεδομένων, "
 "κάτι το οποίο είναι προαιρετικό."
 
-#: ../../views/admin.php:104
+#: ../../views/admin.php:112
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: ../../views/admin.php:105
+#: ../../views/admin.php:113
 msgid ""
 "If you want to show the Easy!Appointments booking wizard in a page of your "
 "website you have to add the [easyappointments] shortcode. The shortcode "
@@ -132,15 +136,15 @@ msgstr ""
 "μορφοποιήσουν το iframe στοιχείο στην σελίδα σας (π.χ. [easyappointments "
 "width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
 
-#: ../../views/admin.php:115
+#: ../../views/admin.php:123
 msgid "Troubleshooting"
 msgstr "Αντιμετώπιση Προβλημάτων"
 
-#: ../../views/admin.php:118
+#: ../../views/admin.php:126
 msgid "Permission Problems"
 msgstr "Προβλήματα Δικαιωμάτων (Permissions)"
 
-#: ../../views/admin.php:119
+#: ../../views/admin.php:127
 msgid ""
 "Some plugin operations perform various filesystem tasks that might be "
 "interrupted due to lack of permissions. This issues are more likely to "
@@ -159,11 +163,11 @@ msgstr ""
 "(π.χ. αν η λειτουργία εγκατάστασης αποτύχει, μεταφορτώστε την τελευταία E!A "
 "έκδοση χειροκίνητα και συνδέστε την με το WP μέσω της λειτουργίας σύνδεσης)."
 
-#: ../../views/admin.php:127
+#: ../../views/admin.php:135
 msgid "Broken Connection"
 msgstr "Εσφαλμένη Σύνδεση"
 
-#: ../../views/admin.php:128
+#: ../../views/admin.php:136
 msgid ""
 "If this page informs you of a broken Easy!Appointments connection it could "
 "be that the E!A files where moved or the installation URL was changed and "
@@ -177,11 +181,11 @@ msgstr ""
 "τρέχουσα σύνδεση χωρίς να διαγράψετε τα αρχεία ή τους πίνακες της βάσης "
 "δεδομένων και έπειτα συνδέστε την πάλι με τις νέες πληροφορίες. "
 
-#: ../../views/admin.php:134
+#: ../../views/admin.php:142
 msgid "Support Forum"
 msgstr "Φόρουμ Υποστήριξης"
 
-#: ../../views/admin.php:135
+#: ../../views/admin.php:143
 msgid ""
 "If you encounter problems but you do not know what to do visit the official "
 "Easy!Appointments support group where can discuss them with active users "
@@ -191,7 +195,7 @@ msgstr ""
 "επισκεφθείτε το επίσημο γκρουπ υποστήριξης του Easy!Appointments όπου "
 "μπορείτε να τα συζητήσετε με ενεργούς χρήστες από όλον τον κόσμο."
 
-#: ../../views/admin.php:143
+#: ../../views/admin.php:151
 msgid "For more information visit the official website of the project at "
 msgstr ""
 "Για περισσότερες πληροφορίες επισκεφθείτε την επίσημη ιστοσελίδα του έργου "
