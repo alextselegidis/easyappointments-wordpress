@@ -89,14 +89,14 @@ class VerifyState implements \EAWP\Core\Operations\Interfaces\OperationInterface
      */
     public function invoke()
     {
-        $this->_verifyConfigurationFile();
+        $this->verifyConfigurationFile();
         //$this->_performTestRequest(); // Uncomment for extra HTTP request check.
     }
 
     /**
      * Verify that the configuration file is where it's supposed to be.
      */
-    protected function _verifyConfigurationFile()
+    protected function verifyConfigurationFile()
     {
         if (!\file_exists((string)$this->linkInformation->getPath() . '/configuration.php')
             && !\file_exists((string)$this->linkInformation->getPath() . '/config.php')
@@ -110,7 +110,7 @@ class VerifyState implements \EAWP\Core\Operations\Interfaces\OperationInterface
      *
      * @todo Improve the verification done by this method.
      */
-    protected function _performTestRequest()
+    protected function performTestRequest()
     {
         $headers = \get_headers((string)$this->linkInformation->getUrl() . '/' . $this->filename);
 

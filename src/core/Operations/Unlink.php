@@ -90,11 +90,11 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
         $this->_removeOptions();
 
         if ($this->removeDbTables) {
-            $this->_removeDbTables();
+            $this->removeDbTables();
         }
 
         if ($this->removeFiles) {
-            $this->_removeFiles();
+            $this->removeFiles();
         }
     }
 
@@ -113,7 +113,7 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
     /**
      * Remove E!A database tables.
      */
-    protected function _removeDbTables()
+    protected function removeDbTables()
     {
         $db = $this->plugin->getDatabase();
         $db->query('DROP TABLE IF EXISTS ea_appointments;');
@@ -130,13 +130,13 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
     /**
      * Remove E!A files.
      */
-    protected function _removeFiles()
+    protected function removeFiles()
     {
         if (!is_writable(dirname((string)$this->linkInformation->getPath()))) {
             throw new \Exception('Cannot remove installation files, permission denied.');
         }
 
-        $this->_recursiveDelete((string)$this->linkInformation->getPath());
+        $this->recursiveDelete((string)$this->linkInformation->getPath());
     }
 
     /**
@@ -146,14 +146,14 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
      *
      * @link http://stackoverflow.com/a/3338133/1718162
      */
-    protected function _recursiveDelete($dir)
+    protected function recursiveDelete($dir)
     {
         if (is_dir($dir)) {
             $objects = scandir($dir);
             foreach ($objects as $object) {
                 if ($object != "." && $object != "..") {
                     if (filetype($dir . "/" . $object) == "dir") {
-                        $this->_recursiveDelete($dir . "/" . $object);
+                        $this->recursiveDelete($dir . "/" . $object);
                     } else {
                         @\unlink($dir . "/" . $object);
                     }

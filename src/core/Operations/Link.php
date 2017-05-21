@@ -63,7 +63,7 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface
      */
     public function invoke()
     {
-        $this->_validateInstallation();
+        $this->validateInstallation();
         \update_option('eawp_path', (string)$this->linkInformation->getPath());
         \update_option('eawp_url', (string)$this->linkInformation->getUrl());
     }
@@ -76,7 +76,7 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface
      *
      * @throws Exception If the provided path does not point to an E!A installation.
      */
-    protected function _validateInstallation()
+    protected function validateInstallation()
     {
         $path = rtrim((string)$this->linkInformation->getPath(), '/');
 

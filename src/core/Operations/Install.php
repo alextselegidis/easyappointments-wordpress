@@ -65,8 +65,8 @@ class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface
      */
     public function invoke()
     {
-        $this->_copyFiles();
-        $this->_configure();
+        $this->copyFiles();
+        $this->configure();
         \add_option('eawp_path', (string)$this->linkInformation->getPath());
         \add_option('eawp_url', (string)$this->linkInformation->getUrl());
     }
@@ -74,13 +74,13 @@ class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface
     /**
      * Copy Easy!Appointments files to required destination.
      */
-    protected function _copyFiles()
+    protected function copyFiles()
     {
         if (!is_writable(dirname((string)$this->linkInformation->getPath()))) {
             throw new \Exception('Destination path is not writable.');
         }
 
-        $this->_recursiveCopy(EAWP_BASEPATH . '/vendor', (string)$this->linkInformation->getPath());
+        $this->recursiveCopy(EAWP_BASEPATH . '/vendor', (string)$this->linkInformation->getPath());
     }
 
     /**
@@ -91,14 +91,14 @@ class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface
      *
      * @link  http://stackoverflow.com/a/2050909/1718162
      */
-    protected function _recursiveCopy($src, $dst)
+    protected function recursiveCopy($src, $dst)
     {
         $dir = opendir($src);
         @mkdir($dst);
         while (false !== ($file = readdir($dir))) {
             if (($file != '.') && ($file != '..')) {
                 if (is_dir($src . '/' . $file)) {
-                    $this->_recursiveCopy($src . '/' . $file, $dst . '/' . $file);
+                    $this->recursiveCopy($src . '/' . $file, $dst . '/' . $file);
                 } else {
                     copy($src . '/' . $file, $dst . '/' . $file);
                 }
@@ -110,7 +110,7 @@ class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface
     /**
      * Configure Easy!Appointments "configuration.php" with WP information.
      */
-    protected function _configure()
+    protected function configure()
     {
         $configPath = (string)$this->linkInformation->getPath() . '/config.php';
 
@@ -118,13 +118,13 @@ class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface
         $configContent = file_get_contents($configPath);
 
         // Replace $base_url variable.
-        $this->_setValue('BASE_URL', (string)$this->linkInformation->getUrl(), $configContent);
+        $this->setValue('BASE_URL', (string)$this->linkInformation->getUrl(), $configContent);
 
         // Replace database variables.
-        $this->_setValue('DB_HOST', DB_HOST, $configContent);
-        $this->_setValue('DB_NAME', DB_NAME, $configContent);
-        $this->_setValue('DB_USERNAME', DB_USER, $configContent);
-        $this->_setValue('DB_PASSWORD', DB_PASSWORD, $configContent);
+        $this->setValue('DB_HOST', DB_HOST, $configContent);
+        $this->setValue('DB_NAME', DB_NAME, $configContent);
+        $this->setValue('DB_USERNAME', DB_USER, $configContent);
+        $this->setValue('DB_PASSWORD', DB_PASSWORD, $configContent);
 
         // Update "config.php" content.
         file_put_contents($configPath, $configContent);
@@ -140,7 +140,7 @@ class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface
      * @param string $value New value of the configuration setting.
      * @param string $configContent (By Reference) Contains the "config.php" file contents.
      */
-    protected function _setValue($parameter, $value, &$configContent)
+    protected function setValue($parameter, $value, &$configContent)
     {
         $pattern = '/(' . $parameter . ' .*)=.*;/';
         $setting = '$1 = \'' . $value . '\';';
