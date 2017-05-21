@@ -1,4 +1,4 @@
-<?php 
+<?php
 /* ----------------------------------------------------------------------------
  * Easy!Appointments - WordPress Plugin 
  *
@@ -15,34 +15,38 @@ namespace EAWP\Core\ValueObjects;
  *
  * Use this value object to validate server URL strings.
  */
-class Url {
+class Url
+{
     /**
      * @var string
      */
-    protected $url; 
+    protected $url;
 
     /**
      * Class Constructor
-     * 
-     * Validates the URL object value. 
-     * 
+     *
+     * Validates the URL object value.
+     *
      * @param string $url Provide the application base URL to be used for configuring E!A.
-     * 
+     *
      * @throws \InvalidArgumentException When an invalid URL is provided.
      */
-    public function __construct($url) {
-        if (!is_string($url) || empty($url) || !filter_var($url, FILTER_VALIDATE_URL))
-            throw new \InvalidArgumentException('Invalid $url argument provided: ' . print_r($url, TRUE));
-        
-        $this->url = rtrim($url, '/'); 
+    public function __construct($url)
+    {
+        if (!is_string($url) || empty($url) || !filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new \InvalidArgumentException('Invalid $url argument provided: ' . print_r($url, true));
+        }
+
+        $this->url = rtrim($url, '/');
     }
 
     /**
      * Get URL as string literal.
-     * 
-     * @return string 
+     *
+     * @return string
      */
-    public function __toString() {
-        return $this->url; 
+    public function __toString()
+    {
+        return $this->url;
     }
 }

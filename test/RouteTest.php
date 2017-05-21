@@ -12,7 +12,8 @@ namespace EAWP\Core;
 
 require_once __DIR__ . '/bootstrap.php';
 
-class RouteTest extends \PHPUnit_Framework_TestCase {
+class RouteTest extends \PHPUnit_Framework_TestCase
+{
     /**
      * Route instance to test.
      *
@@ -23,7 +24,8 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     /**
      * Tests Setup
      */
-    public function setUp() {
+    public function setUp()
+    {
         \WpMock::setUp();
         $this->route = new Route();
     }
@@ -32,18 +34,21 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST ACTION METHOD
     // ------------------------------------------------------------------------
 
-    public function testHookWpActionMustRegisterTheCallback() {
+    public function testHookWpActionMustRegisterTheCallback()
+    {
         $arguments = array('init', array($this, 'setUp'));
         $this->route->action('init', array($this, 'setUp'));
         $this->assertTrue(\WpMock::isExecuted('add_action', $arguments));
     }
 
-    public function testHookWpActionMustThrowAnExceptionOnInvalidHookNameArgument() {
+    public function testHookWpActionMustThrowAnExceptionOnInvalidHookNameArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->action(null, array($this, 'setUp'));
     }
 
-    public function testHookWpActionMustThrowAnExceptionOnInvalidHookCallbackArgument() {
+    public function testHookWpActionMustThrowAnExceptionOnInvalidHookCallbackArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->action('init', null);
     }
@@ -52,18 +57,21 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST FILTER METHOD
     // ------------------------------------------------------------------------
 
-    public function testHookWpFilterMustRegisterACallback() {
+    public function testHookWpFilterMustRegisterACallback()
+    {
         $arguments = array('example_filter', array($this, 'setUp'));
         $this->route->filter('example_filter', array($this, 'setUp'));
         $this->assertTrue(\WpMock::isExecuted('add_filter', $arguments));
     }
 
-    public function testHookWpFilterMustThrowAnExceptionOnInvalidHookNameArgument() {
+    public function testHookWpFilterMustThrowAnExceptionOnInvalidHookNameArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->filter(null, array($this, 'setUp'));
     }
 
-    public function testHookWpFilterMustThrowAnExceptionOnInvalidHookCallbackArgument() {
+    public function testHookWpFilterMustThrowAnExceptionOnInvalidHookCallbackArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->filter('example_filter', null);
     }
@@ -72,7 +80,8 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST SCRIPT METHOD
     // ------------------------------------------------------------------------
 
-    public function testEnqueueScriptMustCallTheWpMethodCorrectly() {
+    public function testEnqueueScriptMustCallTheWpMethodCorrectly()
+    {
         $arguments = array(
             md5('http://github.com'), // script handle
             'http://github.com'       // script url
@@ -81,7 +90,8 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue(\WpMock::isExecuted('wp_enqueue_script', $arguments));
     }
 
-    public function testEnqueueScriptMustThrowAnExceptionOnInvalidUrlArgument() {
+    public function testEnqueueScriptMustThrowAnExceptionOnInvalidUrlArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->script(null);
     }
@@ -90,7 +100,8 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST STYLE METHOD
     // ------------------------------------------------------------------------
 
-    public function testEnqueueStyleMustCallTheWpMethodCorrectly() {
+    public function testEnqueueStyleMustCallTheWpMethodCorrectly()
+    {
         $arguments = array(
             md5('http://github.com'), // script handle
             'http://github.com'       // script url
@@ -99,7 +110,8 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue(\WpMock::isExecuted('wp_enqueue_style', $arguments));
     }
 
-    public function testEnqueueStyleMustThrowAnExceptionOnInvalidUrlArgument() {
+    public function testEnqueueStyleMustThrowAnExceptionOnInvalidUrlArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->style(null);
     }
@@ -108,27 +120,32 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST VIEW METHOD
     // ------------------------------------------------------------------------
 
-    public function testViewMustCallTheWpMethodCorrectly() {
+    public function testViewMustCallTheWpMethodCorrectly()
+    {
         $this->route->view('Page Title', 'Menu Title', 'Menu Slug', 'view-file');
         $this->assertTrue(\WpMock::isExecuted('add_action'));
     }
 
-    public function testViewMustThrowAnExceptionOnInvalidPageTitleArgument() {
+    public function testViewMustThrowAnExceptionOnInvalidPageTitleArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->view(null, 'Menu Title', 'Menu Slug', 'view-file');
     }
 
-    public function testViewMustThrowAnExceptionOnInvalidMenuTitleArgument() {
+    public function testViewMustThrowAnExceptionOnInvalidMenuTitleArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->view('Page Title', null, 'Menu Slug', 'view-file');
     }
 
-    public function testViewMustThrowAnExceptionOnInvalidMenuSlugArgument() {
+    public function testViewMustThrowAnExceptionOnInvalidMenuSlugArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->view('Page Title', 'Menu Title', null, 'view-file');
     }
 
-    public function testViewMustThrowAnExceptionOnInvalidViewFileArgument() {
+    public function testViewMustThrowAnExceptionOnInvalidViewFileArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->view('Page Title', 'Menu Title', 'Menu Slug', null);
     }
@@ -137,18 +154,21 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST AJAX METHOD
     // ------------------------------------------------------------------------
 
-    public function testAjaxMustRouteAnAjaxCallback() {
+    public function testAjaxMustRouteAnAjaxCallback()
+    {
         $arguments = array('wp_ajax_install', array($this, 'setUp'));
         $this->route->ajax('install', array($this, 'setUp'));
         $this->assertTrue(\WpMock::isExecuted('add_action'));
     }
 
-    public function testAjaxMustThrowAnExceptionOnInvalidActionArgument() {
+    public function testAjaxMustThrowAnExceptionOnInvalidActionArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->ajax(null, array($this, 'setUp'));
     }
 
-    public function testAjaxMustThrowAnExceptionOnInvalidCallbackArgument() {
+    public function testAjaxMustThrowAnExceptionOnInvalidCallbackArgument()
+    {
         $this->setExpectedException('InvalidArgumentException');
         $this->route->ajax('install', null);
     }
@@ -157,7 +177,8 @@ class RouteTest extends \PHPUnit_Framework_TestCase {
     // TEST SHORTCODE METHOD
     // ------------------------------------------------------------------------
 
-    public function testShortcodeMustRegisterAValidWpShortcode() {
+    public function testShortcodeMustRegisterAValidWpShortcode()
+    {
         $arguments = array('wp_ajax_install', array($this, 'setUp'));
         $this->route->ajax('install', array($this, 'setUp'));
         $this->assertTrue(\WpMock::isExecuted('add_action'));

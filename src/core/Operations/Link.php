@@ -10,8 +10,8 @@
 
 namespace EAWP\Core\Operations;
 
-use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\LinkInformation;
+use EAWP\Core\Plugin;
+use EAWP\Core\ValueObjects\LinkInformation;
 
 /**
  * Link Operation
@@ -25,7 +25,8 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  * and it is compatible with the current plugin version (very important for future releases). With
  * this check we can ensure that the "linked" E!A version will work without defects.
  */
-class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface {
+class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface
+{
     /**
      * Instance of Easy!Appointments WP Plugin
      *
@@ -46,7 +47,8 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface {
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress plugin instance.
      * @param \EAWP\Core\ValueObjects\LinkInformation $link Contains installation information.
      */
-    public function __construct(Plugin $plugin, LinkInformation $linkInformation) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation)
+    {
         $this->plugin = $plugin;
         $this->linkInformation = $linkInformation;
     }
@@ -59,7 +61,8 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface {
      * that installation. At first it will read the "configuration.php" file of E!A and then place these
      * information into WP options table in order to be available for other operations.
      */
-    public function invoke() {
+    public function invoke()
+    {
         $this->_validateInstallation();
         \update_option('eawp_path', (string)$this->linkInformation->getPath());
         \update_option('eawp_url', (string)$this->linkInformation->getUrl());
@@ -73,12 +76,13 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface {
      *
      * @throws Exception If the provided path does not point to an E!A installation.
      */
-    protected function _validateInstallation() {
+    protected function _validateInstallation()
+    {
         $path = rtrim((string)$this->linkInformation->getPath(), '/');
 
         if (!file_exists($path . '/configuration.php') && !file_exists($path . '/config.php')) {
             throw new \Exception('Provided path does not point to an Easy!Appointments installation: "'
-                    . (string)$this->linkInformation->getPath() . '"');
+                . (string)$this->linkInformation->getPath() . '"');
         }
     }
 }

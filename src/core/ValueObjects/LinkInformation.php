@@ -15,7 +15,8 @@ namespace EAWP\Core\ValueObjects;
  *
  * Contains the connection information between Easy!Appointments and WordPress.
  */
-class LinkInformation {
+class LinkInformation
+{
     /**
      * Link Path
      *
@@ -38,7 +39,8 @@ class LinkInformation {
      * @param \EAWP\Core\ValueObjects\Url $url The installation URL that points to the
      * Easy!Appointments directory.
      */
-    public function __construct(Path $path, Url $url) {
+    public function __construct(Path $path, Url $url)
+    {
         $this->path = $path;
         $this->url = $url;
     }
@@ -48,7 +50,8 @@ class LinkInformation {
      *
      * @return \EAWP\Core\ValueObjects\Path
      */
-    public function getPath() {
+    public function getPath()
+    {
         return $this->path;
     }
 
@@ -57,7 +60,8 @@ class LinkInformation {
      *
      * @return \EAWP\Core\ValueObjects\Url
      */
-    public function getUrl() {
+    public function getUrl()
+    {
         return $this->url;
     }
 }

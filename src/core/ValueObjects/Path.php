@@ -15,7 +15,8 @@ namespace EAWP\Core\ValueObjects;
  *
  * Use this value object to validate server paths and check that they exist in the server.
  */
-class Path {
+class Path
+{
     /**
      * @var string
      */
@@ -31,9 +32,11 @@ class Path {
      *
      * @throws \InvalidArgumentException When provided path is not valid.
      */
-    public function __construct($path) {
-        if (!is_string($path) || empty($path) || !file_exists(dirname($path)))
-            throw new \InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, TRUE));
+    public function __construct($path)
+    {
+        if (!is_string($path) || empty($path) || !file_exists(dirname($path))) {
+            throw new \InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, true));
+        }
 
         $this->path = rtrim($path, '/');
     }
@@ -43,7 +46,8 @@ class Path {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return $this->path;
     }
 }

@@ -16,7 +16,8 @@ namespace EAWP\Core;
  * This class manages WordPress action hooking and data filtering in order to trigger the required
  * operations through libraries when necessary.
  */
-class Route {
+class Route
+{
     /**
      * Hook Plugin Action
      *
@@ -25,12 +26,15 @@ class Route {
      *
      * @throws InvalidArgumentException If arguments are invalid.
      */
-    public function action($name, $callback) {
-        if (!is_string($name) || empty($name))
+    public function action($name, $callback)
+    {
+        if (!is_string($name) || empty($name)) {
             throw new \InvalidArgumentException('Invalid $name argument: ' . print_r($name, true));
+        }
 
-        if (!is_callable($callback))
+        if (!is_callable($callback)) {
             throw new \InvalidArgumentException('Invalid $callback argument: ' . print_r($callback, true));
+        }
 
         \add_action($name, $callback);
     }
@@ -43,12 +47,15 @@ class Route {
      *
      * @throws InvalidArgumentException If arguments are invalid.
      */
-    public function filter($name, $callback) {
-        if (!is_string($name) || empty($name))
+    public function filter($name, $callback)
+    {
+        if (!is_string($name) || empty($name)) {
             throw new \InvalidArgumentException('Invalid $name argument: ' . print_r($name, true));
+        }
 
-        if (!is_callable($callback))
+        if (!is_callable($callback)) {
             throw new \InvalidArgumentException('Invalid $callback argument: ' . print_r($callback, true));
+        }
 
         \add_filter($name, $callback);
     }
@@ -64,14 +71,17 @@ class Route {
      *
      * @throws InvalidArgumentException If arguments are invalid.
      */
-    public function ajax($name, $callback) {
-        if (!is_string($name) || empty($name))
+    public function ajax($name, $callback)
+    {
+        if (!is_string($name) || empty($name)) {
             throw new \InvalidArgumentException('Invalid $name argument: ' . print_r($name, true));
+        }
 
-        if (!is_callable($callback))
+        if (!is_callable($callback)) {
             throw new \InvalidArgumentException('Invalid $callback argument: ' . print_r($callback, true));
+        }
 
-        \add_action('wp_ajax_' . $name, function() use ($callback) {
+        \add_action('wp_ajax_' . $name, function () use ($callback) {
             if (!\wp_verify_nonce($_REQUEST['nonce'], 'eawp')) {
                 throw new UnexpectedValueException('The AJAX nonce is not valid!');
             }
@@ -87,8 +97,9 @@ class Route {
      * @param string $name Shortcode name to be registered.
      * @param callable $callback Callable that will handle the shortcode execution.
      */
-    public function shortcode($name, $callback) {
-        \add_action('init', function() use($name, $callback) {
+    public function shortcode($name, $callback)
+    {
+        \add_action('init', function () use ($name, $callback) {
             add_shortcode($name, $callback);
         });
     }
@@ -110,35 +121,42 @@ class Route {
      *
      * @throws InvalidArgumentException If argument is invalid.
      */
-    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile, array $assets = array(), array $jsData = array()) {
-        if (!is_string($pageTitle) || empty($pageTitle))
+    public function view($pageTitle, $menuTitle, $menuSlug, $viewFile, array $assets = array(), array $jsData = array())
+    {
+        if (!is_string($pageTitle) || empty($pageTitle)) {
             throw new \InvalidArgumentException('Invalid $pageTitle argument: ' . print_r($pageTitle, true));
+        }
 
-        if (!is_string($menuTitle) || empty($menuTitle))
+        if (!is_string($menuTitle) || empty($menuTitle)) {
             throw new \InvalidArgumentException('Invalid $menuTitle argument: ' . print_r($menuTitle, true));
+        }
 
-        if (!is_string($menuSlug) || empty($menuSlug))
+        if (!is_string($menuSlug) || empty($menuSlug)) {
             throw new \InvalidArgumentException('Invalid $menuSlug argument: ' . print_r($menuSlug, true));
+        }
 
-        if (!is_string($viewFile) || empty($viewFile))
+        if (!is_string($viewFile) || empty($viewFile)) {
             throw new \InvalidArgumentException('Invalid $viewFile argument: ' . print_r($viewFile, true));
+        }
 
-        \add_action('admin_menu', function() use($pageTitle, $menuTitle, $menuSlug, $viewFile, $assets, $jsData) {
+        \add_action('admin_menu', function () use ($pageTitle, $menuTitle, $menuSlug, $viewFile, $assets, $jsData) {
             add_options_page(
                 $pageTitle,
                 $menuTitle,
                 'manage_options',
                 $menuSlug,
-                function() use($viewFile, $assets, $jsData) {
+                function () use ($viewFile, $assets, $jsData) {
                     // Enqueue required assets.
-                    foreach($assets as $file) {
+                    foreach ($assets as $file) {
                         if (substr($file, -3) === '.js') {
                             $file = (!\WP_DEBUG) ? str_replace('.js', '.min.js', $file) : $file;
                             wp_enqueue_script(md5($file), plugins_url('../assets/js/' . $file, __FILE__));
                             wp_localize_script(md5($file), 'EAWP', $jsData);
-                        } else if (substr($file, -4) === '.css') {
-                            $file = (!\WP_DEBUG) ? str_replace('.css', '.min.css', $file) : $file;
-                            wp_enqueue_style(md5($file), plugins_url('../assets/css/' . $file, __FILE__));
+                        } else {
+                            if (substr($file, -4) === '.css') {
+                                $file = (!\WP_DEBUG) ? str_replace('.css', '.min.css', $file) : $file;
+                                wp_enqueue_style(md5($file), plugins_url('../assets/css/' . $file, __FILE__));
+                            }
                         }
                     }
                     // Include view file (loaded from views directory).
@@ -155,9 +173,11 @@ class Route {
      *
      * @throws InvalidArgumentException If argument is invalid.
      */
-    public function script($url) {
-        if (!is_string($url) || empty($url))
+    public function script($url)
+    {
+        if (!is_string($url) || empty($url)) {
             throw new \InvalidArgumentException('Invalid $url argument: ' . print_r($url, true));
+        }
         \wp_enqueue_script(md5($url), $url);
     }
 
@@ -168,9 +188,11 @@ class Route {
      *
      * @throws InvalidArgumentException If argument is invalid.
      */
-    public function style($url) {
-        if (!is_string($url) || empty($url))
+    public function style($url)
+    {
+        if (!is_string($url) || empty($url)) {
             throw new \InvalidArgumentException('Invalid $url argument: ' . print_r($url, true));
+        }
         \wp_enqueue_style(md5($url), $url);
     }
 }

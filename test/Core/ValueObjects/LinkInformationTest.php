@@ -12,24 +12,28 @@ namespace EAWP\Core\ValueObjects;
 
 require_once __DIR__ . '/../bootstrap.php';
 
-class LinkInformationTest extends \PHPUnit_Framework_TestCase {
+class LinkInformationTest extends \PHPUnit_Framework_TestCase
+{
     protected $link;
 
     protected $path;
 
     protected $url;
 
-    public function setUp() {
+    public function setUp()
+    {
         $this->path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')->disableOriginalConstructor()->getMock();
         $this->url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')->disableOriginalConstructor()->getMock();
         $this->link = new LinkInformation($this->path, $this->url);
     }
 
-    public function testGetPathReturnsPathObject() {
+    public function testGetPathReturnsPathObject()
+    {
         $this->assertSame($this->path, $this->link->getPath());
     }
 
-    public function testGetUrlReturnsUrlObject() {
+    public function testGetUrlReturnsUrlObject()
+    {
         $this->assertSame($this->url, $this->link->getUrl());
     }
 }

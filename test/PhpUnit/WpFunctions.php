@@ -39,7 +39,7 @@ $functions = array(
 
 // Dynamic Declaration of Functions
 
-foreach($functions as $function) {
+foreach ($functions as $function) {
     eval(
         'function ' . $function . '() {
             WpMock::registerExecution(__FUNCTION__, func_get_args());

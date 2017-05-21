@@ -16,7 +16,8 @@ namespace EAWP\Core\Exceptions;
  * This exception class is used to convert normal caught exceptions to JSON-encoded strings that will be
  * returned back to JavaScript.
  */
-class AjaxException extends \Exception {
+class AjaxException extends \Exception
+{
     /**
      * Get a JSON encoded exception response.
      *
@@ -25,7 +26,8 @@ class AjaxException extends \Exception {
      *
      * @return mixed Associative array or JSON-encoded information of the provided exception.
      */
-    public static function response(\Exception $ex, $encode = false) {
+    public static function response(\Exception $ex, $encode = false)
+    {
         $exceptionInformation = array(
             'exception' => true,
             'message' => $ex->getMessage(),

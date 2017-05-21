@@ -12,23 +12,28 @@ namespace EAWP\Core\ValueObjects;
 
 require_once __DIR__ . '/../bootstrap.php';
 
-class UrlTest extends \PHPUnit_Framework_TestCase {
-    public function testGetStringValueOfObject() {
+class UrlTest extends \PHPUnit_Framework_TestCase
+{
+    public function testGetStringValueOfObject()
+    {
         $url = new Url('http://easyappointments.org');
         $this->assertEquals('http://easyappointments.org', (string)$url);
     }
 
-    public function testThrowsExceptionWhenUrlIsEmpty() {
+    public function testThrowsExceptionWhenUrlIsEmpty()
+    {
         $this->setExpectedException('InvalidArgumentException');
         new Url('');
     }
 
-    public function testThrowsExceptionWithInvalidArgumentType() {
+    public function testThrowsExceptionWithInvalidArgumentType()
+    {
         $this->setExpectedException('InvalidArgumentException');
         new Url(null);
     }
 
-    public function testThrowsExceptionWhenUrlValueIsInvalid() {
+    public function testThrowsExceptionWhenUrlValueIsInvalid()
+    {
         $this->setExpectedException('InvalidArgumentException');
         new Url('string\is\not/url');
     }

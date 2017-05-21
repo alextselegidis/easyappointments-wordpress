@@ -12,7 +12,8 @@ namespace EAWP\Core\Operations;
 
 require_once __DIR__ . '/../bootstrap.php';
 
-class VerifyStateTest extends \PHPUnit_Framework_TestCase {
+class VerifyStateTest extends \PHPUnit_Framework_TestCase
+{
     /**
      * Temporary Test Directory Path
      *
@@ -23,7 +24,8 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
     /**
      * Test Setup
      */
-    public function setUp() {
+    public function setUp()
+    {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         if (\file_exists($this->tmpDirectory)) {
@@ -37,29 +39,31 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
     /**
      * Test Tear Down
      */
-    public function tearDown() {
+    public function tearDown()
+    {
         \unlink($this->tmpDirectory . '/config.php');
         \rmdir($this->tmpDirectory);
     }
 
-    public function testVerifyStateMustBeExecutedWithoutThrowingAnException() {
+    public function testVerifyStateMustBeExecutedWithoutThrowingAnException()
+    {
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-                ->disableOriginalConstructor()
-                ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-                ->disableOriginalConstructor()
-                ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $path->method('__toString')->willReturn($this->tmpDirectory);
 
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-                ->disableOriginalConstructor()
-                ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $url->method('__toString')->willReturn('http://easyappointments.org');
 
         $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-                     ->disableOriginalConstructor()
-                     ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $linkInformation->method('getPath')->willReturn($path);
         $linkInformation->method('getUrl')->willReturn($url);
 
@@ -68,24 +72,25 @@ class VerifyStateTest extends \PHPUnit_Framework_TestCase {
         $verifyState->invoke();
     }
 
-    public function testVerifyStateMustThrownAnExceptionIfConfigurationFileWasNotFound() {
+    public function testVerifyStateMustThrownAnExceptionIfConfigurationFileWasNotFound()
+    {
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-                ->disableOriginalConstructor()
-                ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-                ->disableOriginalConstructor()
-                ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $path->method('__toString')->willReturn($this->tmpDirectory . '/this-one-does-not-exist');
 
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-                ->disableOriginalConstructor()
-                ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $url->method('__toString')->willReturn('http://easyappointments.org');
 
         $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-                     ->disableOriginalConstructor()
-                     ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $linkInformation->method('getPath')->willReturn($path);
         $linkInformation->method('getUrl')->willReturn($url);
 

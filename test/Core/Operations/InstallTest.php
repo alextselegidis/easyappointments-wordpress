@@ -12,7 +12,8 @@ namespace EAWP\Core\Operations;
 
 require_once __DIR__ . '/../bootstrap.php';
 
-class InstallTest extends \PHPUnit_Framework_TestCase {
+class InstallTest extends \PHPUnit_Framework_TestCase
+{
     /**
      * Temporary Test Directory Path
      *
@@ -25,7 +26,8 @@ class InstallTest extends \PHPUnit_Framework_TestCase {
      *
      * Make sure that the "tmp-dir" directory does not exist prior the test.
      */
-    public function setUp() {
+    public function setUp()
+    {
         $this->tmpDirectory = __DIR__ . '/tmp-dir';
 
         if (\file_exists($this->tmpDirectory)) {
@@ -38,30 +40,32 @@ class InstallTest extends \PHPUnit_Framework_TestCase {
      *
      * Remove "tmp-dir" directory after the test.
      */
-    public function tearDown() {
+    public function tearDown()
+    {
         \Filesystem::delete($this->tmpDirectory);
     }
 
-    public function testInstallMustPlaceAndConfigureApplicationFiles() {
+    public function testInstallMustPlaceAndConfigureApplicationFiles()
+    {
         $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-                        ->disableOriginalConstructor()
-                        ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
 
         $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-                     ->disableOriginalConstructor()
-                     ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $testPath = $this->tmpDirectory;
         $path->method('__toString')->willReturn($testPath);
 
         $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-                     ->disableOriginalConstructor()
-                     ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $testUrl = 'http://wp/test/easyappointments';
         $url->method('__toString')->willReturn($testUrl);
 
         $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-                     ->disableOriginalConstructor()
-                     ->getMock();
+            ->disableOriginalConstructor()
+            ->getMock();
         $linkInformation->method('getPath')->willReturn($path);
         $linkInformation->method('getUrl')->willReturn($url);
 
