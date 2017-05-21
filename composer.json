@@ -32,17 +32,17 @@
         "roave/security-advisories": "dev-master"
     },
     "require-dev": {
-        "johnpbloch/wordpress": "^4.4",
         "phpunit/phpunit": "^6.1",
         "mikey179/vfsStream": "^1.6",
-        "fzaninotto/faker": "^1.6"
+        "fzaninotto/faker": "^1.6",
+        "johnpbloch/wordpress": "^4.7"
     },
     "autoload": {
         "psr-4": {
+            "EAWP\\": "src",
             "EAWP\\Test\\": "test"
         }
     },
-
     "scripts": {
         "test": "phpunit -c test/phpunit.xml test",
         "coverage": "phpunit -c test/phpunit.xml --coverage-html docs/coverage --testdox-text doc/testdox.txt test/Core"
