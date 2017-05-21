@@ -26,7 +26,7 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  * This method does not have to check for Easy!Appointments compatibility because it will install the
  * latest supported version of project.
  */
-class Install implements \EAWP\Core\Interfaces\IOperation {
+class Install implements \EAWP\Core\Operations\Interfaces\OperationInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      *

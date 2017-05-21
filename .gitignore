@@ -4,7 +4,7 @@
 /doc/apigen/
 /easyappointments-wp.zip
 /node_modules/
-/test/Operations/tmp-dir
+/test/Core/Operations/tmp-dir
 /wordpress/
 /vendor/
 /src/assets/**/*.min.*

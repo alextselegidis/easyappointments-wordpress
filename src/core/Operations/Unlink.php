@@ -20,7 +20,7 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  * Easy!Appointments. It is also possible to entirely remove the installation files and database
  * tables.
  */
-class Unlink implements \EAWP\Core\Interfaces\IOperation {
+class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface {
     /**
      * Plugin Instance
      *

@@ -26,7 +26,7 @@ class MockAutoloadClass extends EAWP\Core\Autoload
     }
 }
 
-class AutoloadTest extends PHPUnit_Framework_TestCase
+class AutoloadTest extends \PHPUnit\Framework\TestCase
 {
     protected $loader;
 

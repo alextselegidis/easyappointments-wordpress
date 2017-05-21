@@ -25,7 +25,7 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  * and it is compatible with the current plugin version (very important for future releases). With
  * this check we can ensure that the "linked" E!A version will work without defects.
  */
-class Link implements \EAWP\Core\Interfaces\IOperation {
+class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      *

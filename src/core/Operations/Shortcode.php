@@ -21,7 +21,7 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  *
  * @todo Implement Shortcode Operation
  */
-class Shortcode implements \EAWP\Core\Interfaces\IOperation {
+class Shortcode implements \EAWP\Core\Operations\Interfaces\OperationInterface {
     /**
      * Easy!Appointments WordPress Plugin Instance
      *

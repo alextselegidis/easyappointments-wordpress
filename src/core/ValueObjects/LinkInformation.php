@@ -13,7 +13,7 @@ namespace EAWP\Core\ValueObjects;
 /**
  * Link Information Entity
  *
- * Contains the connection information bewteen Easy!Appointments and WordPress.
+ * Contains the connection information between Easy!Appointments and WordPress.
  */
 class LinkInformation {
     /**

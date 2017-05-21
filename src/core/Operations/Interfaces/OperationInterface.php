@@ -8,14 +8,14 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-namespace EAWP\Core\Interfaces;
+namespace EAWP\Core\Operations\Interfaces;
 
 /**
  * Operation Interface
  *
  * Defines a solid interface for all plugin operations so that they have the same public API.
  */
-interface IOperation {
+interface OperationInterface {
     /**
      * Invoke Library
      *

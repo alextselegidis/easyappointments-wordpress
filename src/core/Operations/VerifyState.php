@@ -20,7 +20,7 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  * if Easy!Appointments is correctly connected to WordPress, whether the configuration.php file
  * exists and if the E!A installation is reachable from the web.
  */
-class VerifyState implements \EAWP\Core\Interfaces\IOperation {
+class VerifyState implements \EAWP\Core\Operations\Interfaces\OperationInterface {
     /**
      * Instance of Easy!Appointments WP Plugin
      *
