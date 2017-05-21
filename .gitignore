@@ -1,9 +1,10 @@
-.tmp-package
-.vagrant
-doc/apigen
+.idea/
+.tmp-package/
+.vagrant/
+doc/apigen/
 easyappointments-wp.zip
-node_modules
+node_modules/
 test/Operations/tmp-dir
-wordpress
-vendor
+wordpress/
+vendor/
 src/assets/**/*.min.*
