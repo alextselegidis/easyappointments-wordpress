@@ -27,7 +27,12 @@
         "source": "https://github.com/alextselegidis/easyappointments-wp-plugin"
     },
     "minimum-stability": "stable",
+    "require": {
+        "php": ">= 5.6",
+        "roave/security-advisories": "dev-master"
+    },
     "require-dev": {
-        "johnpbloch/wordpress": "^4.4"
+        "johnpbloch/wordpress": "^4.4",
+        "phpunit/phpunit": "^6.1"
     }
 }
