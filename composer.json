@@ -34,5 +34,9 @@
     "require-dev": {
         "johnpbloch/wordpress": "^4.4",
         "phpunit/phpunit": "^6.1"
+    },
+    "scripts": {
+        "test": "phpunit -c test/phpunit.xml test",
+        "coverage": "phpunit -c test/phpunit.xml --coverage-html docs/coverage --testdox-text doc/testdox.txt test/Core"
     }
 }
