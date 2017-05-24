@@ -10,22 +10,23 @@
 
 namespace EAWP\Core\Operations;
 
+use EAWP\Core\Operations\Interfaces\OperationInterface;
 use EAWP\Core\Plugin;
 use EAWP\Core\ValueObjects\LinkInformation;
 
 /**
  * Link Operation
  *
- * This class implements the "link" of WordPress and an existing Easy!Appointments installation.
- * It will set the configuration information to the WordPress settings table ("eawp_path" and "eawp_url").
+ * This class implements the "link" of WordPress and an existing Easy!Appointments installation. It will set the
+ * configuration information to the WordPress settings table ("eawp_path" and "eawp_url").
  *
  * Important:
  *
- * This operation should also check that the destination path contains a valid E!A installation
- * and it is compatible with the current plugin version (very important for future releases). With
- * this check we can ensure that the "linked" E!A version will work without defects.
+ * This operation should also check that the destination path contains a valid E!A installation and it is compatible
+ * with the current plugin version (very important for future releases). With  this check we can ensure that the
+ * "linked" E!A version will work without defects.
  */
-class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface
+class Link implements OperationInterface
 {
     /**
      * Instance of Easy!Appointments WP Plugin
@@ -56,10 +57,10 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface
     /**
      * Invoke Link Operation
      *
-     * Will create a link between an existing installation with current WordPress site. This method
-     * must add the "eawp_path" and "eawp_url" setting to WP options so that other operations can use
-     * that installation. At first it will read the "configuration.php" file of E!A and then place these
-     * information into WP options table in order to be available for other operations.
+     * Will create a link between an existing installation with current WordPress site. This method must add the
+     * "eawp_path" and "eawp_url" setting to WP options so that other operations can use  that installation. At first it
+     * will read the "configuration.php" file of E!A and then place these information into WP options table in order to
+     * be available for other operations.
      */
     public function invoke()
     {
@@ -71,10 +72,10 @@ class Link implements \EAWP\Core\Operations\Interfaces\OperationInterface
     /**
      * Validate Easy!Appointments installation.
      *
-     * This method must check whether the provided path points to an Easy!Appointments installation.
-     * Currently it will only check for a "configuration.php" or a "config.php" file.
+     * This method must check whether the provided path points to an Easy!Appointments installation. Currently it will
+     * only check for a "configuration.php" or a "config.php" file.
      *
-     * @throws Exception If the provided path does not point to an E!A installation.
+     * @throws \Exception If the provided path does not point to an E!A installation.
      */
     protected function validateInstallation()
     {

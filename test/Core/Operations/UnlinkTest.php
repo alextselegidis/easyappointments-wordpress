@@ -10,146 +10,120 @@
 
 namespace EAWP\Core\Operations;
 
-require_once __DIR__ . '/../bootstrap.php';
+use EAWP\Core\Plugin;
+use EAWP\Core\ValueObjects\LinkInformation;
+use EAWP\Core\ValueObjects\Path;
+use EAWP\Core\ValueObjects\Url;
+use EAWP\Test\PhpUnit\Mocks\WPFunctions;
+use EAWP\Test\PhpUnit\TestCase;
+use org\bovigo\vfs\vfsStream;
+use org\bovigo\vfs\vfsStreamDirectory;
+use Prophecy\Argument;
+use Prophecy\Prophecy\ObjectProphecy;
 
-class UnlinkTest extends \PHPUnit_Framework_TestCase
+require_once __DIR__ . '/../../../wordpress/wp-includes/wp-db.php';
+
+class UnlinkTest extends TestCase
 {
     /**
-     * Temporary Test Directory Path
-     *
+     * @var vfsStreamDirectory
+     */
+    protected $root;
+
+    /**
+     * @var \wpdb
+     */
+    protected $wpdb;
+
+    /**
+     * @var ObjectProphecy
+     */
+    protected $plugin;
+
+    /**
+     * @var ObjectProphecy
+     */
+    protected $path;
+
+    /**
      * @var string
      */
-    protected $tmpDirectory;
+    protected $pathValue;
 
     /**
-     * Test Setup
-     *
-     * Will create sample copy of the installation files.
+     * @var ObjectProphecy
      */
+    protected $url;
+
+    /**
+     * @var string
+     */
+    protected $urlValue;
+
+    /**
+     * @var ObjectProphecy
+     */
+    protected $linkInformation;
+
+    /**
+     * @var Unlink
+     */
+    protected $unlink;
+
     public function setUp()
     {
-        \WpMock::setUp();
+        WPFunctions::setUp();
 
-        $this->tmpDirectory = __DIR__ . '/tmp-dir';
+        $this->root = vfsStream::setup('tmp', 0777, [
+            'config.php' => 'Contains E!A configuration values.'
+        ]);
 
-        if (\file_exists($this->tmpDirectory)) {
-            \Filesystem::delete($this->tmpDirectory);
-        }
+        $this->wpdb = $this->prophesize(\wpdb::class);
+        $this->wpdb->query(Argument::any())->willReturn(null);
 
-        \mkdir($this->tmpDirectory);
+        $this->plugin = $this->prophesize(Plugin::class);
+        $this->plugin->getDatabase()->willReturn($this->wpdb);
 
-        \Filesystem::copy(__DIR__ . '/../../src/ea-vendor', $this->tmpDirectory);
+        $this->pathValue = vfsStream::url('tmp');
+        $this->path = $this->prophesize(Path::class);
+        $this->path->__toString()->willReturn($this->pathValue);
+
+        $this->urlValue = $this->faker->url;
+        $this->url = $this->prophesize(Url::class);
+        $this->url->__toString()->willReturn($this->urlValue);
+
+        $this->linkInformation = $this->prophesize(LinkInformation::class);
+        $this->linkInformation->getPath()->willReturn($this->path->reveal());
+        $this->linkInformation->getUrl()->willReturn($this->url->reveal());
+
+        $this->unlink = new Unlink($this->plugin->reveal(), $this->linkInformation->reveal(), true, true);
     }
 
-    /**
-     * Test Tear Down
-     *
-     * Will make sure that the filesystem will remain clean after the test execution.
-     */
-    public function tearDown()
+    public function testUnlinkMethodMustRemoveWordPressOptions()
     {
-        \Filesystem::delete($this->tmpDirectory);
+        $this->unlink->invoke();
+        $this->assertTrue(WPFunctions::isExecuted('delete_option', array('eawp_path')));
+        $this->assertTrue(WPFunctions::isExecuted('delete_option', array('eawp_url')));
     }
 
-    public function testUnlinkMustRemoveWordPressOptions()
+    public function testUnlinkMethodRemovesEasyAppointmentFiles()
     {
-        $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testPath = $this->tmpDirectory;
-        $path->method('__toString')->willReturn($testPath);
-
-        $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testUrl = 'http://wp/test/easyappointments';
-        $url->method('__toString')->willReturn($testUrl);
-
-        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $linkInformation->method('getPath')->willReturn($path);
-        $linkInformation->method('getUrl')->willReturn($url);
-
-        $link = new Unlink($plugin, $linkInformation, false, false);
-        $link->invoke();
-
-        // Assert that the operation was executed successfully.
-        $this->assertTrue(\WpMock::isExecuted('delete_option', array('eawp_path')));
-        $this->assertTrue(\WpMock::isExecuted('delete_option', array('eawp_url')));
-        $this->assertTrue(\file_exists($testPath . '/config.php'));
+        $this->unlink->invoke();
+        $this->assertFalse($this->root->hasChild('config.php'));
     }
 
-    public function testUnlinkAndRemoveFilesMustRemoveWordPressOptionsAndDeleteEasyAppointmentsFiles()
+    public function testUnlinkMethodRemovesEasyAppointmentsDatabaseTables()
     {
-        $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->wpdb->query(Argument::containingString('ea_appointments'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_secretaries_providers'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_services_providers'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_settings'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_services'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_service_categories'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_user_settings'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_users'))->shouldBeCalled();
+        $this->wpdb->query(Argument::containingString('ea_roles'))->shouldBeCalled();
 
-        $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testPath = $this->tmpDirectory;
-        $path->method('__toString')->willReturn($testPath);
-
-        $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testUrl = 'http://wp/test/easyappointments';
-        $url->method('__toString')->willReturn($testUrl);
-
-        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $linkInformation->method('getPath')->willReturn($path);
-        $linkInformation->method('getUrl')->willReturn($url);
-
-        $link = new Unlink($plugin, $linkInformation, true, false);
-        $link->invoke();
-
-        // Assert that the operation was executed successfully.
-        $this->assertTrue(\WpMock::isExecuted('delete_option', array('eawp_path')));
-        $this->assertTrue(\WpMock::isExecuted('delete_option', array('eawp_url')));
-        $this->assertNotTrue(\file_exists($testPath . '/config.php'));
-    }
-
-    public function testUnlinkAndRemoveDatabaseTablesMustRemoveWordPressOptionsAndDatabaseTables()
-    {
-        $wpdb = $this->getMockBuilder('\WPDB')->getMock();
-        $wpdb->expects($this->exactly(9))->method('query');
-
-        $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $plugin->method('getDatabase')->willReturn($wpdb);
-
-        $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testPath = $this->tmpDirectory;
-        $path->method('__toString')->willReturn($testPath);
-
-        $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testUrl = 'http://wp/test/easyappointments';
-        $url->method('__toString')->willReturn($testUrl);
-
-        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $linkInformation->method('getPath')->willReturn($path);
-        $linkInformation->method('getUrl')->willReturn($url);
-
-        $link = new Unlink($plugin, $linkInformation, false, true);
-        $link->invoke();
-
-        // Assert that the operation was executed successfully.
-        $this->assertTrue(\WpMock::isExecuted('delete_option', array('eawp_path')));
-        $this->assertTrue(\WpMock::isExecuted('delete_option', array('eawp_url')));
+        $this->unlink->invoke();
     }
 }

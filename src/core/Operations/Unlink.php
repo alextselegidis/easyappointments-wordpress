@@ -132,7 +132,7 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
      */
     protected function removeFiles()
     {
-        if (!is_writable(dirname((string)$this->linkInformation->getPath()))) {
+        if (!is_writable((string)$this->linkInformation->getPath())) {
             throw new \Exception('Cannot remove installation files, permission denied.');
         }
 

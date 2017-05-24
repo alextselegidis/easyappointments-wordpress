@@ -10,9 +10,9 @@
 
 namespace EAWP\Core\ValueObjects;
 
-require_once __DIR__ . '/../bootstrap.php';
+use EAWP\Test\PhpUnit\TestCase;
 
-class UrlTest extends \PHPUnit_Framework_TestCase
+class UrlTest extends TestCase
 {
     public function testGetStringValueOfObject()
     {
@@ -22,19 +22,19 @@ class UrlTest extends \PHPUnit_Framework_TestCase
 
     public function testThrowsExceptionWhenUrlIsEmpty()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         new Url('');
     }
 
     public function testThrowsExceptionWithInvalidArgumentType()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         new Url(null);
     }
 
     public function testThrowsExceptionWhenUrlValueIsInvalid()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         new Url('string\is\not/url');
     }
 }

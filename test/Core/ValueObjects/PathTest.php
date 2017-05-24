@@ -10,9 +10,10 @@
 
 namespace EAWP\Core\ValueObjects;
 
-require_once __DIR__ . '/../bootstrap.php';
 
-class PathTest extends \PHPUnit_Framework_TestCase
+use EAWP\Test\PhpUnit\TestCase;
+
+class PathTest extends TestCase
 {
     public function testGetStringValueOfObject()
     {
@@ -22,13 +23,13 @@ class PathTest extends \PHPUnit_Framework_TestCase
 
     public function testThrowsExceptionWhenPathIsEmpty()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         new Path('');
     }
 
     public function testThrowsExceptionWithInvalidArgumentType()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $this->expectException(\InvalidArgumentException::class);
         new Path(null);
     }
 }

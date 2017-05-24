@@ -16,9 +16,9 @@ use EAWP\Core\ValueObjects\LinkInformation;
 /**
  * Verify State Operation
  *
- * This class implements the "verify state" operation of the current connection. It will check
- * if Easy!Appointments is correctly connected to WordPress, whether the configuration.php file
- * exists and if the E!A installation is reachable from the web.
+ * This class implements the "verify state" operation of the current connection. It will check if Easy!Appointments is
+ * correctly connected to WordPress, whether the configuration.php file exists and if the E!A installation is reachable
+ * from the web.
  */
 class VerifyState implements \EAWP\Core\Operations\Interfaces\OperationInterface
 {
@@ -82,19 +82,19 @@ class VerifyState implements \EAWP\Core\Operations\Interfaces\OperationInterface
     }
 
     /**
-     * Invode the unlink operation.
+     * Invoke the verify state operation.
      *
-     * This method will reset the WordPress options which will automatically disable any
-     * used shortcodes.
+     * This method will reset the WordPress options which will automatically disable any used shortcodes.
      */
     public function invoke()
     {
         $this->verifyConfigurationFile();
-        //$this->_performTestRequest(); // Uncomment for extra HTTP request check.
     }
 
     /**
      * Verify that the configuration file is where it's supposed to be.
+     *
+     * @throws \Exception If no configuration file is found.
      */
     protected function verifyConfigurationFile()
     {
@@ -102,20 +102,6 @@ class VerifyState implements \EAWP\Core\Operations\Interfaces\OperationInterface
             && !\file_exists((string)$this->linkInformation->getPath() . '/config.php')
         ) {
             throw new \Exception('Configuration file of Easy!Appointments was not found on the given path.');
-        }
-    }
-
-    /**
-     * Get the headers of the provided installation.
-     *
-     * @todo Improve the verification done by this method.
-     */
-    protected function performTestRequest()
-    {
-        $headers = \get_headers((string)$this->linkInformation->getUrl() . '/' . $this->filename);
-
-        if ($headers === false || \strpos($headers[0], $this->expectedStatusCode) === false) {
-            throw new \Exception('The installation is not reachable from the web.');
         }
     }
 }

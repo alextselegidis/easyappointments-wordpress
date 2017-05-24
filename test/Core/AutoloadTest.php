@@ -8,8 +8,7 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/bootstrap.php';
-require_once __DIR__ . '/../src/core/Autoload.php';
+// @link http://www.php-fig.org/psr/psr-4/examples
 
 class MockAutoloadClass extends EAWP\Core\Autoload
 {
@@ -26,46 +25,11 @@ class MockAutoloadClass extends EAWP\Core\Autoload
     }
 }
 
-class AutoloadTest extends \PHPUnit\Framework\TestCase
+class AutoloadTest extends \EAWP\Test\PhpUnit\TestCase
 {
     protected $loader;
 
-    public function testExistingFile()
-    {
-        $actual = $this->loader->loadClass('Foo\Bar\ClassName');
-        $expect = '/vendor/foo.bar/src/ClassName.php';
-        $this->assertSame($expect, $actual);
-
-        $actual = $this->loader->loadClass('Foo\Bar\ClassNameTest');
-        $expect = '/vendor/foo.bar/tests/ClassNameTest.php';
-        $this->assertSame($expect, $actual);
-    }
-
-    public function testMissingFile()
-    {
-        $actual = $this->loader->loadClass('No_Vendor\No_Package\NoClass');
-        $this->assertFalse($actual);
-    }
-
-    public function testDeepFile()
-    {
-        $actual = $this->loader->loadClass('Foo\Bar\Baz\Dib\Zim\Gir\ClassName');
-        $expect = '/vendor/foo.bar.baz.dib.zim.gir/src/ClassName.php';
-        $this->assertSame($expect, $actual);
-    }
-
-    public function testConfusion()
-    {
-        $actual = $this->loader->loadClass('Foo\Bar\DoomClassName');
-        $expect = '/vendor/foo.bar/src/DoomClassName.php';
-        $this->assertSame($expect, $actual);
-
-        $actual = $this->loader->loadClass('Foo\BarDoom\ClassName');
-        $expect = '/vendor/foo.bardoom/src/ClassName.php';
-        $this->assertSame($expect, $actual);
-    }
-
-    protected function setUp()
+    public function setUp()
     {
         $this->loader = new MockAutoloadClass;
 
@@ -102,5 +66,40 @@ class AutoloadTest extends \PHPUnit\Framework\TestCase
             'Foo\Bar\Baz\Dib\Zim\Gir',
             '/vendor/foo.bar.baz.dib.zim.gir/src'
         );
+    }
+
+    public function testExistingFile()
+    {
+        $actual = $this->loader->loadClass('Foo\Bar\ClassName');
+        $expect = '/vendor/foo.bar/src/ClassName.php';
+        $this->assertSame($expect, $actual);
+
+        $actual = $this->loader->loadClass('Foo\Bar\ClassNameTest');
+        $expect = '/vendor/foo.bar/tests/ClassNameTest.php';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testMissingFile()
+    {
+        $actual = $this->loader->loadClass('No_Vendor\No_Package\NoClass');
+        $this->assertFalse($actual);
+    }
+
+    public function testDeepFile()
+    {
+        $actual = $this->loader->loadClass('Foo\Bar\Baz\Dib\Zim\Gir\ClassName');
+        $expect = '/vendor/foo.bar.baz.dib.zim.gir/src/ClassName.php';
+        $this->assertSame($expect, $actual);
+    }
+
+    public function testConfusion()
+    {
+        $actual = $this->loader->loadClass('Foo\Bar\DoomClassName');
+        $expect = '/vendor/foo.bar/src/DoomClassName.php';
+        $this->assertSame($expect, $actual);
+
+        $actual = $this->loader->loadClass('Foo\BarDoom\ClassName');
+        $expect = '/vendor/foo.bardoom/src/ClassName.php';
+        $this->assertSame($expect, $actual);
     }
 }

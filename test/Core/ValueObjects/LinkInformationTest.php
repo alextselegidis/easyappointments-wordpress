@@ -10,30 +10,40 @@
 
 namespace EAWP\Core\ValueObjects;
 
-require_once __DIR__ . '/../bootstrap.php';
+use EAWP\Test\PhpUnit\TestCase;
+use Prophecy\Prophecy\ObjectProphecy;
 
-class LinkInformationTest extends \PHPUnit_Framework_TestCase
+class LinkInformationTest extends TestCase
 {
-    protected $link;
+    /**
+     * @var LinkInformation
+     */
+    protected $linkInformation;
 
+    /**
+     * @var Path|ObjectProphecy
+     */
     protected $path;
 
+    /**
+     * @var Url|ObjectProphecy
+     */
     protected $url;
 
     public function setUp()
     {
-        $this->path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')->disableOriginalConstructor()->getMock();
-        $this->url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')->disableOriginalConstructor()->getMock();
-        $this->link = new LinkInformation($this->path, $this->url);
+        $this->path = $this->prophesize(Path::class);
+        $this->url = $this->prophesize(Url::class);
+        $this->linkInformation = new LinkInformation($this->path->reveal(), $this->url->reveal());
     }
 
     public function testGetPathReturnsPathObject()
     {
-        $this->assertSame($this->path, $this->link->getPath());
+        $this->assertSame($this->path->reveal(), $this->linkInformation->getPath());
     }
 
     public function testGetUrlReturnsUrlObject()
     {
-        $this->assertSame($this->url, $this->link->getUrl());
+        $this->assertSame($this->url->reveal(), $this->linkInformation->getUrl());
     }
 }

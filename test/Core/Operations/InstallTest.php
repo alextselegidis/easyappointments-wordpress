@@ -10,71 +10,97 @@
 
 namespace EAWP\Core\Operations;
 
-require_once __DIR__ . '/../bootstrap.php';
+use EAWP\Core\Plugin;
+use EAWP\Core\ValueObjects\LinkInformation;
+use EAWP\Core\ValueObjects\Path;
+use EAWP\Core\ValueObjects\Url;
+use EAWP\Test\PhpUnit\Mocks\WPFunctions;
+use EAWP\Test\PhpUnit\TestCase;
+use org\bovigo\vfs\vfsStream;
+use org\bovigo\vfs\vfsStreamDirectory;
+use Prophecy\Prophecy\ObjectProphecy;
 
-class InstallTest extends \PHPUnit_Framework_TestCase
+class InstallTest extends TestCase
 {
     /**
-     * Temporary Test Directory Path
-     *
-     * @string
+     * @var vfsStreamDirectory
      */
-    protected $tmpDirectory;
+    protected $root;
 
     /**
-     * Test Setup
-     *
-     * Make sure that the "tmp-dir" directory does not exist prior the test.
+     * @var ObjectProphecy
      */
+    protected $plugin;
+
+    /**
+     * @var ObjectProphecy
+     */
+    protected $path;
+
+    /**
+     * @var string
+     */
+    protected $pathValue;
+
+    /**
+     * @var ObjectProphecy
+     */
+    protected $url;
+
+    /**
+     * @var string
+     */
+    protected $urlValue;
+
+    /**
+     * @var ObjectProphecy
+     */
+    protected $linkInformation;
+
+    /**
+     * @var Install
+     */
+    protected $install;
+
     public function setUp()
     {
-        $this->tmpDirectory = __DIR__ . '/tmp-dir';
+        WPFunctions::setUp();
 
-        if (\file_exists($this->tmpDirectory)) {
-            \Filesystem::delete($this->tmpDirectory);
-        }
+        $this->root = vfsStream::setup('tmp', 0777);
+
+        $this->plugin = $this->prophesize(Plugin::class);
+
+        $this->pathValue = vfsStream::url('tmp');
+        $this->path = $this->prophesize(Path::class);
+        $this->path->__toString()->willReturn($this->pathValue);
+
+        $this->urlValue = $this->faker->url;
+        $this->url = $this->prophesize(Url::class);
+        $this->url->__toString()->willReturn($this->urlValue);
+
+        $this->linkInformation = $this->prophesize(LinkInformation::class);
+        $this->linkInformation->getPath()->willReturn($this->path->reveal());
+        $this->linkInformation->getUrl()->willReturn($this->url->reveal());
+
+        $this->install = new Install($this->plugin->reveal(), $this->linkInformation->reveal());
     }
 
-    /**
-     * Test Tear Down
-     *
-     * Remove "tmp-dir" directory after the test.
-     */
-    public function tearDown()
+    public function testInvokeMethodMustPlaceAndConfigureApplicationFiles()
     {
-        \Filesystem::delete($this->tmpDirectory);
-    }
-
-    public function testInstallMustPlaceAndConfigureApplicationFiles()
-    {
-        $plugin = $this->getMockBuilder('\EAWP\Core\Plugin')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $path = $this->getMockBuilder('\EAWP\Core\ValueObjects\Path')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testPath = $this->tmpDirectory;
-        $path->method('__toString')->willReturn($testPath);
-
-        $url = $this->getMockBuilder('\EAWP\Core\ValueObjects\Url')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $testUrl = 'http://wp/test/easyappointments';
-        $url->method('__toString')->willReturn($testUrl);
-
-        $linkInformation = $this->getMockBuilder('\EAWP\Core\ValueObjects\LinkInformation')
-            ->disableOriginalConstructor()
-            ->getMock();
-        $linkInformation->method('getPath')->willReturn($path);
-        $linkInformation->method('getUrl')->willReturn($url);
-
-        $install = new Install($plugin, $linkInformation);
-        $install->invoke();
+        $this->install->invoke();
 
         // Assert configuration file content.
-        $this->assertFileExists($testPath . '/config.php');
-        $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_path', $testPath)));
-        $this->assertTrue(\WpMock::isExecuted('add_option', array('eawp_url', $testUrl)));
+        $this->assertFileExists($this->pathValue . '/config.php');
+        $this->assertTrue(WPFunctions::isExecuted('add_option', array('eawp_path', $this->pathValue)));
+        $this->assertTrue(WPFunctions::isExecuted('add_option', array('eawp_url', $this->urlValue)));
+    }
+
+    public function testInvokeMethodThrowsExceptionIfDestinationDirectoryIsNotWritable()
+    {
+        $this->root->chmod(000);
+
+        $this->expectException(\Exception::class);
+
+        $this->install->invoke();
     }
 }
