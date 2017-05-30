@@ -93,5 +93,12 @@ gulp.task('styles', function() {
 gulp.task('dev', ['styles', 'scripts'], function() {
     gulp.watch('src/assets/js/*.js', ['scripts']);
     gulp.watch('src/assets/css/*.css', ['styles']);
-    return sync('src', 'wordpress/wp-content/plugins/easyappointments-wp');
+
+    var path = './wordpress/wp-content/plugins/easyappointments-wp';
+
+    if (!fs.pathExistsSync(path)) {
+        fs.mkdirSync(path);
+    }
+
+    return sync('src', './wordpress/wp-content/plugins/easyappointments-wp');
 });
