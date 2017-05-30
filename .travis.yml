@@ -6,7 +6,7 @@ php:
   - hhvm
   - nightly
 
-script: phpunit test -c test/phpunit.xml
+script: phpunit -c test/phpunit.xml test
 
 notifications:
     on_success: never
