@@ -3,7 +3,7 @@
 
 This plugin aims to bridge Easy!Appointments with WordPress and facilitate users in the integration of the appointment booking system to their WP pages. It offers useful functions such as the installation of Easy!Appointments directly from WordPress' backend, the link of an existing installation and of course the display of the appointment booking wizard with the use of a simple shortcode.
 
-*Minimum Requirements: WordPress v4.0 & PHP v5.3*
+*Minimum Requirements: WordPress v4.0 & PHP v5.6*
 
 ### Linking Easy!Appointments & WordPress
 

@@ -3,7 +3,7 @@ Contributors: alextselegidis
 Donate link: http://alextselegidis.com
 Tags: appointments, scheduler, google-calendar
 Requires at least: 4.0.0
-Tested up to: 4.5
+Tested up to: 4.7.5
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -17,7 +17,7 @@ This plugin aims to bridge Easy!Appointments with WordPress and facilitate users
 
 This plugin aims to bridge Easy!Appointments with WordPress and facilitate users in the integration of the appointment booking system to their WP pages. It offers useful functions such as the installation of Easy!Appointments directly from WordPress' backend, the link of an existing installation and of course the display of the appointment booking wizard with the use of a simple shortcode.
 
-*Minimum Requirements: WordPress v4.0 & PHP v5.3*
+*Minimum Requirements: WordPress v4.0 & PHP v5.6*
 
 ### Linking Easy!Appointments & WordPress
 
@@ -59,6 +59,11 @@ You can change the default language of Easy!Appointments by editing the config.p
 Easy!Appointments has an official group where many users help each other with problems, enhancements and other contributions. It is the best place to interact with other users and share your experiences with the project.
 
 == Changelog ==
+
+= 1.1.0 =
+* Updated Easy!Appointments release to v1.2.1.
+* Back-end UI improvements.
+* Install operation will not try to create a new directory, but it will use an existing one.
 
 = 1.0.1 =
 * Initial release in WordPress plugin repositories.
