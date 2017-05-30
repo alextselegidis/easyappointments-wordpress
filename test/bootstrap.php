@@ -8,7 +8,6 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-declare(strict_types = 1);
 error_reporting(E_ALL);
 
 define('EAWP_BASEPATH', __DIR__ . '/../src');
