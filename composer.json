@@ -39,7 +39,7 @@
     },
     "autoload": {
         "psr-4": {
-            "EAWP\\": "src",
+            "EAWP\\Core": "src/core",
             "EAWP\\Test\\": "test"
         }
     },
