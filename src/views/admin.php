@@ -42,7 +42,7 @@
                     <input type="text" id="path" class="regular-text"
                             value="<?php echo esc_html(get_option('eawp_path')); ?>" />
                     <p class="description">
-                        <?php echo _('Example') . ': ' . ABSPATH . 'easyappointments';?>
+                        <?php echo _('Example') . ': ' . str_replace('\\', '/' ,ABSPATH . 'easyappointments');?>
                     </p>
                 </td>
             </tr>
