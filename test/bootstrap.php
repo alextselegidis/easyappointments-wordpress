@@ -17,7 +17,7 @@ define('DB_USER', 'db_user');
 define('DB_PASSWORD', 'db_password');
 
 // Load required libraries and classes for the tests.
-//require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 //require_once EAWP_BASEPATH . '/core/Autoload.php';
 //$loader = new EAWP\Core\Autoload;
 //$loader->register();
