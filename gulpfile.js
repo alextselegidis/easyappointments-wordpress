@@ -1,13 +1,14 @@
-var gulp = require('gulp'),
-    sync = require('gulp-dir-sync'),
-    exec = require('child_process').execSync,
-    fs = require('fs-extra'),
-    zip = require('zip-dir'),
-    autoprefixer = require('gulp-autoprefixer')
-    cssnano = require('gulp-cssnano'),
-    jshint = require('gulp-jshint'),
-    uglify = require('gulp-uglify'),
-    rename = require('gulp-rename');
+const gulp = require('gulp');
+const syncDir = require('gulp-directory-sync');
+const exec = require('child_process').execSync;
+const fs = require('fs-extra');
+const zip = require('zip-dir');
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const jshint = require('gulp-jshint');
+const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
+const gutil = require('gulp-util');
 
 /**
  * Create a ZIP package for the plugin.
@@ -34,7 +35,7 @@ gulp.task('build', ['styles', 'scripts'], function(done) {
  */
 gulp.task('doc', function(done) {
     fs.removeSync('doc/apigen');
-    var command = 'php doc/apigen.phar generate -s "src" -d "doc/apigen" --exclude "*ea-vendor*" '
+    const command = 'php doc/apigen.phar generate -s "src" -d "doc/apigen" --exclude "*ea-vendor*" '
             + '--todo --template-theme "bootstrap"'
     exec(command, function(err, stdout, stderr) {
         console.log(stdout);
@@ -94,11 +95,13 @@ gulp.task('dev', ['styles', 'scripts'], function() {
     gulp.watch('src/assets/js/*.js', ['scripts']);
     gulp.watch('src/assets/css/*.css', ['styles']);
 
-    var path = './wordpress/wp-content/plugins/easyappointments-wp';
+    const path = './wordpress/wp-content/plugins/easyappointments-wp';
 
     if (!fs.pathExistsSync(path)) {
         fs.mkdirSync(path);
     }
 
-    return sync('src', './wordpress/wp-content/plugins/easyappointments-wp');
+    return gulp.src( '' )
+        .pipe(syncDir( 'src', './wordpress/wp-content/plugins/easyappointments-wp', { printSummary: true } ))
+        .on('error', gutil.log);
 });
