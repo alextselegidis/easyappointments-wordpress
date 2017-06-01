@@ -18,8 +18,8 @@ jQuery(function($) {
 
     'use strict';
 
-    var $path = $('#path'),
-        $url = $('#url');
+    var $path = $('#path');
+    var $url = $('#url');
 
     if ($path.val() === '' || $url.val() === '') {
         EAWP.Plugin.toggleOperationButtons(false);
@@ -40,7 +40,7 @@ jQuery(function($) {
         dataType: 'json'
     })
         .done(function(response) {
-            var status = (!response.exception) ? true : false;
+            var status = !response.exception;
             EAWP.Plugin.toggleOperationButtons(status);
 
             $('.eawp .notification').remove();
