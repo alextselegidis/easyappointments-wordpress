@@ -73,11 +73,11 @@ class Plugin
                     'UnlinkSuccessMesssage' =>
                         __('Easy!Apppointments installation was unlinked successfully!', 'eawp'),
                     'VerificationSuccess' =>
-                        __('Easy!Appointments link is active.', 'eawp'),
+                        __('Easy!Appointments link is active! Use the [easyappointments] shortcode in your pages/posts.', 'eawp'),
                     'VerificationFailure' =>
-                        __('Easy!Appointments link seems to be broken.', 'eawp'),
+                        __('Easy!Appointments link seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'eawp'),
                     'AjaxExceptionMessage' =>
-                        __('An unexpected error occured in file %file% (line %line%): %message%', 'eawp'),
+                        __('An unexpected error occurred in file %file% (line %line%): %message%', 'eawp'),
                     'AjaxFailureMessage' =>
                         __('The AJAX request could not be completed due to an unexpected error: %message%', 'eawp')
                 ),
