@@ -84,6 +84,12 @@ gulp.task('styles', function() {
         .pipe(gulp.dest('src/assets/css'));
 });
 
+gulp.task('sync', function() {
+    return gulp.src('')
+        .pipe(syncDir( 'src', './wordpress/wp-content/plugins/easyappointments-wp', { printSummary: true } ))
+        .on('error', gutil.log);
+});
+
 /**
  * Development Task
  *
@@ -101,7 +107,5 @@ gulp.task('dev', ['styles', 'scripts'], function() {
         fs.mkdirSync(path);
     }
 
-    return gulp.src( '' )
-        .pipe(syncDir( 'src', './wordpress/wp-content/plugins/easyappointments-wp', { printSummary: true } ))
-        .on('error', gutil.log);
+    return gulp.watch('src/**/*', ['sync']);
 });
