@@ -7,6 +7,15 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
+.eawp .header {
+    overflow: auto ;
+}
+
+.eawp .header h1 {
+    margin: 18px 0;
+    padding: 0;
+}
+
 .eawp .form-table .button {
     min-width: 100px;
     margin-right: 10px;
@@ -28,4 +37,8 @@
 .eawp p,
 .eawp ul li {
     max-width: 700px;
+}
+
+.eawp #unlink {
+    margin-bottom: 15px;
 }
