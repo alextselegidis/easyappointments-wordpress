@@ -13,7 +13,7 @@
     ],
     "type": "project",
     "homepage": "http://easyappointments.org",
-    "license": "GPL-2.0+",
+    "license": "GPL-3.0",
     "authors": [
         {
             "name": "Alex Tselegidis",
