@@ -25,8 +25,6 @@ class Url
     /**
      * Class Constructor
      *
-     * Validates the URL object value.
-     *
      * @param string $url Provide the application base URL to be used for configuring E!A.
      *
      * @throws \InvalidArgumentException When an invalid URL is provided.
