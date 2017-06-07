@@ -25,16 +25,13 @@ class Path
     /**
      * Class Constructor
      *
-     * Validates the path object value.
-     *
-     * @param string $path Provide the final destination path of the application (even if
-     * it doesn't exist yet).
+     * @param string $path Provide the final destination path of the application (even if it doesn't exist yet).
      *
      * @throws \InvalidArgumentException When provided path is not valid.
      */
     public function __construct($path)
     {
-        if (!is_string($path) || empty($path) || !file_exists(dirname($path))) {
+        if (!is_string($path) || empty($path) || !file_exists($path)) {
             throw new \InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, true));
         }
 
