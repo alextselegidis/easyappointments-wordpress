@@ -1,23 +1,25 @@
 ## Easy!Appointments - WordPress Plugin [![Build Status](https://travis-ci.org/alextselegidis/easyappointments-wp-plugin.svg?branch=develop)](https://travis-ci.org/alextselegidis/easyappointments-wp-plugin)
+
 <img src="https://easyappointments.files.wordpress.com/2015/02/easyappointments-wp-plugin-banner.png">
 
-This plugin aims to bridge Easy!Appointments with WordPress and facilitate users in the integration of the appointment booking system to their WP pages. It offers useful functions such as the installation of Easy!Appointments directly from WordPress' backend, the link of an existing installation and of course the display of the appointment booking wizard with the use of a simple shortcode.
+Leverage your conversion rates by integrating the booking form directly in your WordPress pages. Customers will never have to leave your website for booking an appointment. Take advantage of the scheduling power of Easy!Appointment which will run smoothly with your WordPress installation. Include the booking form in your pages with the [easyappointments] shortcode.
 
 *Minimum Requirements: WordPress v4.0 & PHP v5.6*
 
-### Linking Easy!Appointments & WordPress
+### Connecting Easy!Appointments with WordPress
 
-Once the plugin is installed and activated a new menu entry becomes available under "Settings >> Easy!Appointments" (wp-admin). This is the main page of the plugin and it allows users to create new installations or link existing ones with their websites. Easy!Appointments must be linked with WordPress before being able to use the booking shortcode.
+Install and activate the plugin and navigate to `Settings >> Easy!Appointments` menu of the WordPress admin section. Create a new Easy!Appointments installation or connect to an existing one by providing the preferred URL and destination path in the page form. Once a connection is established you'll be able to include the booking form in your pages.
 
-### Applying The Shortcode
+### Include Booking in your Pages
 
-WordPress supports the use of custom [shortcodes](https://www.smashingmagazine.com/2012/05/wordpress-shortcodes-complete-guide) which enable plugins to insert custom content into a page. This plugin takes advantage of this functionality and inserts an iframe that points to the booking wizard of Easy!Appointments and can be used directly within pages or posts so that customers can book appointments without ever leaving the website.
+WordPress supports the use of custom shortcodes which allow plugins to insert custom content into pages. This plugin takes advantage of this functionality and creates an iframe that displays the booking form of Easy!Appointments. Include the `[easyappointments]` shortcode in the correct place of your published contents as shown in the following example.
 
 ```
 [easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px;"]
 ```
-The "width", "height" and "style" attributes are optional but they can help to re-adjust the display of the iframe so that it better suits the active theme.
+
+The "width", "height" and "style" attributes are optional but can help you to fine tune the styling of the iframe.
 
 ### Translations
 
-This plugin uses the **i18n** localization system of WordPress and the translations are po & mo files located in the assets/lang directory. Contributions are more than welcome so feel free to make pull requests with your translations or send them directly to [alextselegidis@gmail.com](mailto:alextselegidis@gmail.com).
+This plugin uses the **i18n** localization system of WordPress and the translations are po & mo files located in the `assets/lang` directory. Contributions are more than welcome so feel free to make pull requests with your translations or send them directly to [alextselegidis@gmail.com](mailto:alextselegidis@gmail.com).
