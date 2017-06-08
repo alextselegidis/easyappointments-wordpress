@@ -10,6 +10,7 @@
 
 namespace EAWP\Core\Operations;
 
+use EAWP\Core\Operations\Interfaces\OperationInterface;
 use EAWP\Core\Plugin;
 use EAWP\Core\ValueObjects\LinkInformation;
 
@@ -20,7 +21,7 @@ use EAWP\Core\ValueObjects\LinkInformation;
  * Easy!Appointments. It is also possible to entirely remove the installation files and database
  * tables.
  */
-class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
+class Unlink implements OperationInterface
 {
     /**
      * Plugin Instance
@@ -129,6 +130,8 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
 
     /**
      * Remove E!A files.
+     *
+     * This method will only remove the files that belong to the Easy!Appointments vendor package.
      */
     protected function removeFiles()
     {
@@ -136,7 +139,27 @@ class Unlink implements \EAWP\Core\Operations\Interfaces\OperationInterface
             throw new \Exception('Cannot remove installation files, permission denied.');
         }
 
-        $this->recursiveDelete((string)$this->linkInformation->getPath());
+        $entries = [
+            'application/',
+            'assets/',
+            'engine/',
+            'storage/',
+            'system/',
+            'vendor/'
+        ];
+
+        $path = (string)$this->linkInformation->getPath();
+
+        foreach($entries as $entry) {
+            $this->recursiveDelete($path . '/' . $entry);
+        }
+
+        @unlink($path . '/autoload.php');
+        @unlink($path . '/CHANGELOG.md');
+        @unlink($path . '/config.php');
+        @unlink($path . '/index.php');
+        @unlink($path . '/LICENSE');
+        @unlink($path . '/README.md');
     }
 
     /**
