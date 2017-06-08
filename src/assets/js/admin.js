@@ -44,6 +44,8 @@ jQuery(function($) {
                     '<div class="updated notification">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.InstallationSuccessMessage
+                        + ' &rarr; '
+                        + '<a href="' + data.url + '" target="_blank">' + data.url + '</a>'
                     + '</div>'
                 );
 
