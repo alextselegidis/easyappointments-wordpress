@@ -53,8 +53,9 @@ add_thickbox();
     <table class="form-table">
         <tbody>
             <tr>
-                <th scope="row"><label for="path"><?php _e('Path', 'eawp'); ?></label></th>
                 <td>
+                    <label for="path"><?php _e('Path', 'eawp'); ?></label>
+
                     <input type="text" id="path" class="regular-text"
                             value="<?php echo esc_html(get_option('eawp_path')); ?>" />
                     <p class="description">
@@ -63,8 +64,9 @@ add_thickbox();
                 </td>
             </tr>
             <tr>
-                <th scope="row"><label for="url"><?php _e('URL', 'eawp'); ?></label></th>
                 <td>
+                    <label for="url"><?php _e('URL', 'eawp'); ?></label>
+
                     <input type="text" id="url" class="regular-text"
                            value="<?php echo esc_html(get_option('eawp_url')); ?>"/>
                     <p class="description">
@@ -73,11 +75,11 @@ add_thickbox();
                </td>
             </tr>
             <tr>
-                <td class="submit link-operations hidden" colspan="2">
+                <td class="submit link-operations hidden">
                     <button id='install' class="button button-primary"><?php _e('Install', 'eawp'); ?></button>
                     <button id='link' class="button"><?php _e('Link', 'eawp'); ?></button>
                 </td>
-                <td class="sublime unlink-operations hidden" colspan="2">
+                <td class="sublime unlink-operations hidden">
                     <fieldset>
                         <label for="remove-files">
                             <input type="checkbox" id="remove-files" >
