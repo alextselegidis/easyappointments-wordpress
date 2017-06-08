@@ -42,3 +42,7 @@
 .eawp #unlink {
     margin-bottom: 15px;
 }
+
+#TB_window img {
+    width: 100%;
+}

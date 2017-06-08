@@ -132,16 +132,10 @@ jQuery(function($) {
     //  INITIALIZE PAGE
     // ------------------------------------------------------------------------
 
-    $('#install').on('click', function(event) {
-        install();
-    });
+    $('#install').on('click', install);
 
-    $('#link').on('click', function(event) {
-        link();
-    });
+    $('#link').on('click', link);
 
-    $('#unlink').on('click', function(event) {
-        unlink();
-    });
+    $('#unlink').on('click', unlink);
 
 });
