@@ -97,7 +97,7 @@ gulp.task('sync', function() {
  * "wp-content/plugins/easyappointments-wp" directory with the original plugin source
  * files that are finally committed to the repository.
  */
-gulp.task('dev', ['styles', 'scripts'], function() {
+gulp.task('dev', ['styles', 'scripts', 'sync'], function() {
     gulp.watch('src/assets/js/*.js', ['scripts']);
     gulp.watch('src/assets/css/*.css', ['styles']);
 
