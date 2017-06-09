@@ -22,6 +22,8 @@ gulp.task('build', ['styles', 'scripts'], function(done) {
     fs.copySync('doc/wp-readme.txt', '.tmp-package/easyappointments-wp/readme.txt');
     fs.copySync('screenshot-1.png', '.tmp-package/easyappointments-wp/screenshot-1.png');
     fs.copySync('screenshot-2.png', '.tmp-package/easyappointments-wp/screenshot-2.png');
+    fs.copySync('screenshot-3.png', '.tmp-package/easyappointments-wp/screenshot-3.png');
+    fs.copySync('screenshot-4.png', '.tmp-package/easyappointments-wp/screenshot-4.png');
     zip('.tmp-package', { saveTo: 'easyappointments-wp.zip' }, function (err, buffer) {
         if (err) {
             console.log('Zip Error', err);
