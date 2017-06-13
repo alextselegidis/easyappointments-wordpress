@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2017-06-08 23:05+0200\n"
+"POT-Creation-Date: 2017-06-13 10:23+0200\n"
 "PO-Revision-Date: 2016-07-10 19:25+0100\n"
 "Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
@@ -88,64 +88,69 @@ msgstr ""
 msgid "Path"
 msgstr ""
 
-#: ../../views/admin.php:62 ../../views/admin.php:73
+#: ../../views/admin.php:62 ../../views/admin.php:76
 msgid "Example"
 msgstr ""
 
-#: ../../views/admin.php:68
+#: ../../views/admin.php:65
+msgid ""
+"* Make sure that the target directory exists on the server and it's writable."
+msgstr ""
+
+#: ../../views/admin.php:71
 msgid "URL"
 msgstr ""
 
-#: ../../views/admin.php:79 ../../views/admin.php:112
+#: ../../views/admin.php:82 ../../views/admin.php:115
 msgid "Install"
 msgstr ""
 
-#: ../../views/admin.php:80 ../../views/admin.php:118
+#: ../../views/admin.php:83 ../../views/admin.php:121
 msgid "Link"
 msgstr ""
 
-#: ../../views/admin.php:86
+#: ../../views/admin.php:89
 msgid "Remove Easy!Appointments Files"
 msgstr ""
 
-#: ../../views/admin.php:93
+#: ../../views/admin.php:96
 msgid "Remove Easy!Appointments Database Tables"
 msgstr ""
 
-#: ../../views/admin.php:99 ../../views/admin.php:124
+#: ../../views/admin.php:102 ../../views/admin.php:127
 msgid "Unlink"
 msgstr ""
 
-#: ../../views/admin.php:101
+#: ../../views/admin.php:104
 msgid "These actions cannot be undone!"
 msgstr ""
 
-#: ../../views/admin.php:113
+#: ../../views/admin.php:116
 msgid ""
 "This operation will create a new installation by placing and configuring "
 "Easy!Appointments files into the requested directory. You will have to "
 "complete the installation by opening the target URL in your browser."
 msgstr ""
 
-#: ../../views/admin.php:119
+#: ../../views/admin.php:122
 msgid ""
 "This operation will connect an existing Easy!Appointments installation and "
 "your WordPress website. Make sure that you use the correct installation path "
 "and URL of Easy!Appointments."
 msgstr ""
 
-#: ../../views/admin.php:125
+#: ../../views/admin.php:128
 msgid ""
 "This operation will unlink an active connection between Easy!Appointments "
 "and your WordPress website. You can remove the files and database tables as "
 "well, even though this is optional."
 msgstr ""
 
-#: ../../views/admin.php:130
+#: ../../views/admin.php:133
 msgid "Shortcode"
 msgstr ""
 
-#: ../../views/admin.php:131
+#: ../../views/admin.php:134
 msgid ""
 "Display the booking form directly in your pages or posts by adding the "
 "[easyappointments] shortcode. This shortcode accepts some optional "
@@ -155,11 +160,11 @@ msgid ""
 "style=\"border: 2px solid black\"])."
 msgstr ""
 
-#: ../../views/admin.php:145
+#: ../../views/admin.php:148
 msgid "Permission Problems"
 msgstr ""
 
-#: ../../views/admin.php:146
+#: ../../views/admin.php:149
 msgid ""
 "Some plugin operations perform various filesystem tasks that might be "
 "interrupted due to lack of permissions. This issues mostly happen in Unix "
@@ -170,11 +175,11 @@ msgid ""
 "connect it with WordPress with the \"Link\" operation)."
 msgstr ""
 
-#: ../../views/admin.php:154
+#: ../../views/admin.php:157
 msgid "Broken Connection"
 msgstr ""
 
-#: ../../views/admin.php:155
+#: ../../views/admin.php:158
 msgid ""
 "If this settings page notifies you of a broken Easy!Appointments connection "
 "it could be that the Easy!Appointments files where moved or the installation "
@@ -183,26 +188,26 @@ msgid ""
 "\"Link\" it again with the new information."
 msgstr ""
 
-#: ../../views/admin.php:161
+#: ../../views/admin.php:164
 msgid "Support Forum"
 msgstr ""
 
-#: ../../views/admin.php:162
+#: ../../views/admin.php:165
 msgid ""
 "If you encounter issues but you do not know what to do visit the official "
 "Easy!Appointments support group where active users help each other solve "
 "their problems."
 msgstr ""
 
-#: ../../views/admin.php:166
+#: ../../views/admin.php:169
 msgid "Support Group"
 msgstr ""
 
-#: ../../views/admin.php:178
+#: ../../views/admin.php:181
 msgid "Easy!Appointments - WordPress Plugin"
 msgstr ""
 
-#: ../../views/admin.php:180
+#: ../../views/admin.php:183
 msgid ""
 "Leverage your conversion rates by integrating the booking form directly in "
 "your WordPress pages. Customers will never have to leave your website for "
@@ -211,17 +216,17 @@ msgid ""
 "the booking form in your pages with the [easyappointments] shortcode."
 msgstr ""
 
-#: ../../views/admin.php:188
+#: ../../views/admin.php:191
 msgid "Get Involved"
 msgstr ""
 
-#: ../../views/admin.php:189
+#: ../../views/admin.php:192
 msgid ""
 "Found a problem or want to add a new feature? Contributors are more than "
 "welcome so feel free to file an issue or make pull requests on the GitHub "
 "page of the plugin."
 msgstr ""
 
-#: ../../views/admin.php:202
+#: ../../views/admin.php:205
 msgid "For more information visit the official website of the project at "
 msgstr ""

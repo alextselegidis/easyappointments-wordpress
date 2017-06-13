@@ -61,6 +61,9 @@ add_thickbox();
                     <p class="description">
                         <?php echo _('Example') . ': ' . str_replace('\\', '/' ,ABSPATH . 'easyappointments');?>
                     </p>
+                    <p class="description">
+                        <?php echo _('* Make sure that the target directory exists on the server and it\'s writable.')?>
+                    </p>
                 </td>
             </tr>
             <tr>
