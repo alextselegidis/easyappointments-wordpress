@@ -1,5 +1,50 @@
 {
+    "name": "alextselegidis/easyappointments-wp-plugin",
+    "description": "Easy!Appointments web scheduling integration with WordPress.",
+    "keyword": [
+        "calendar",
+        "scheduler",
+        "appointments",
+        "events",
+        "wordpress",
+        "cms",
+        "integration",
+        "plugin"
+    ],
+    "type": "project",
+    "homepage": "http://easyappointments.org",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Alex Tselegidis",
+            "email": "alextselegidis@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/alextselegidis/easyappointments-wp-plugin/issues",
+        "forum": "https://groups.google.com/forum/#!forum/easy-appointments",
+        "wiki": "http://easyappointments.org/docs.html#1.2.1/readme.md",
+        "source": "https://github.com/alextselegidis/easyappointments-wp-plugin"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">= 5.6",
+        "roave/security-advisories": "dev-master",
+        "phpunit/phpunit": "^5.7"
+    },
     "require-dev": {
-        "johnpbloch/wordpress": "^4.4"
+        "mikey179/vfsStream": "^1.6",
+        "fzaninotto/faker": "^1.6",
+        "johnpbloch/wordpress": "^4.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "EAWP\\Core\\": "src/core",
+            "EAWP\\Test\\": "test"
+        }
+    },
+    "scripts": {
+        "test": "phpunit -c test/phpunit.xml test",
+        "coverage": "phpunit -c test/phpunit.xml --coverage-html docs/coverage --testdox-text doc/testdox.txt test/Core"
     }
 }

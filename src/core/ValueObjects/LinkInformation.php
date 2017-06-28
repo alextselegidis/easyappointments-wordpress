@@ -3,7 +3,7 @@
  * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
- * @copyright A.Tselegidis (C) 2016
+ * @copyright A.Tselegidis (C) 2017
  * @link http://easyappointments.org
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
@@ -13,9 +13,10 @@ namespace EAWP\Core\ValueObjects;
 /**
  * Link Information Entity
  *
- * Contains the connection information bewteen Easy!Appointments and WordPress.
+ * Contains the connection information between Easy!Appointments and WordPress.
  */
-class LinkInformation {
+class LinkInformation
+{
     /**
      * Link Path
      *
@@ -38,7 +39,8 @@ class LinkInformation {
      * @param \EAWP\Core\ValueObjects\Url $url The installation URL that points to the
      * Easy!Appointments directory.
      */
-    public function __construct(Path $path, Url $url) {
+    public function __construct(Path $path, Url $url)
+    {
         $this->path = $path;
         $this->url = $url;
     }
@@ -48,7 +50,8 @@ class LinkInformation {
      *
      * @return \EAWP\Core\ValueObjects\Path
      */
-    public function getPath() {
+    public function getPath()
+    {
         return $this->path;
     }
 
@@ -57,7 +60,8 @@ class LinkInformation {
      *
      * @return \EAWP\Core\ValueObjects\Url
      */
-    public function getUrl() {
+    public function getUrl()
+    {
         return $this->url;
     }
 }

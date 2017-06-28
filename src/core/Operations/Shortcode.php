@@ -3,15 +3,15 @@
  * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
- * @copyright A.Tselegidis (C) 2016
+ * @copyright A.Tselegidis (C) 2017
  * @link http://easyappointments.org
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
 namespace EAWP\Core\Operations;
 
-use \EAWP\Core\Plugin;
-use \EAWP\Core\ValueObjects\LinkInformation;
+use EAWP\Core\Plugin;
+use EAWP\Core\ValueObjects\LinkInformation;
 
 /**
  * Shortcode Class
@@ -21,7 +21,8 @@ use \EAWP\Core\ValueObjects\LinkInformation;
  *
  * @todo Implement Shortcode Operation
  */
-class Shortcode implements \EAWP\Core\Interfaces\IOperation {
+class Shortcode implements \EAWP\Core\Operations\Interfaces\OperationInterface
+{
     /**
      * Easy!Appointments WordPress Plugin Instance
      *
@@ -42,7 +43,8 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
      * @param \EAWP\Core\Plugin $plugin Easy!Appointments WordPress Plugin Instance
      * @param \EAWP\Core\ValueObjects\LinkInformation $linkInformation Easy!Appointments Link Information
      */
-    public function __construct(Plugin $plugin, LinkInformation $linkInformation, array $attributes) {
+    public function __construct(Plugin $plugin, LinkInformation $linkInformation, array $attributes)
+    {
         $this->plugin = $plugin;
         $this->linkInformation = $linkInformation;
         $this->attributes = $attributes;
@@ -56,7 +58,8 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
      * all the dependencies and load the booking form inside the page so that website users can book
      * an appointment.
      */
-    public function invoke() {
+    public function invoke()
+    {
         $file = (WP_DEBUG) ? 'iframe.js' : 'iframe.min.js';
         \wp_enqueue_script(md5($file), plugins_url('../../assets/js/' . $file, __FILE__));
 
@@ -65,6 +68,6 @@ class Shortcode implements \EAWP\Core\Interfaces\IOperation {
         $style = (isset($this->attributes['style'])) ? $this->attributes['style'] : '';
 
         return '<iframe class="easyappointments-wp-iframe" src="' . (string)$this->linkInformation->getUrl() . '"
-                width="' .  $width . '" height="' . $height . '" style="' . $style . '"></iframe>';
+                width="' . $width . '" height="' . $height . '" style="' . $style . '"></iframe>';
     }
 }

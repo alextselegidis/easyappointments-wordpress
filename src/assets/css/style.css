@@ -2,10 +2,19 @@
  * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
- * @copyright A.Tselegidis (C) 2016
+ * @copyright A.Tselegidis (C) 2017
  * @link http://easyappointments.org
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
+
+.eawp .header {
+    overflow: auto ;
+}
+
+.eawp .header h1 {
+    margin: 18px 0;
+    padding: 0;
+}
 
 .eawp .form-table .button {
     min-width: 100px;
@@ -28,4 +37,27 @@
 .eawp p,
 .eawp ul li {
     max-width: 700px;
+}
+
+.eawp #unlink {
+    margin-bottom: 15px;
+}
+
+#TB_window img {
+    width: 100%;
+}
+
+.eawp .form-table td {
+    padding: 0 0 20px 0;
+}
+
+.eawp .form-table td label {
+    display: block;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.eawp .regular-text {
+    width: 33em;
 }

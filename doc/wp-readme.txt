@@ -1,48 +1,47 @@
 === Easy!Appointments ===
 Contributors: alextselegidis
 Donate link: http://alextselegidis.com
-Tags: appointments, scheduler, google-calendar
+Tags: agenda, appointments, scheduler, google-calendar, online-appointments, booking, service-providers, booking-system, online-meetings, reservation-system, scheduling-software, events, staff, customers, organization, efficiency
 Requires at least: 4.0.0
-Tested up to: 4.5
+Tested up to: 4.8
 Stable tag: trunk
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-This plugin aims to bridge Easy!Appointments with WordPress and facilitate users in the integration of the appointment scheduler to their websites.
+Integrate the booking form of Easy!Appointments directly into your WordPress pages.
 
 == Description ==
 
-## Easy!Appointments - WordPress Plugin [![Build Status](https://travis-ci.org/alextselegidis/easyappointments-wp-plugin.svg?branch=develop)](https://travis-ci.org/alextselegidis/easyappointments-wp-plugin)
-<img src="https://easyappointments.files.wordpress.com/2015/02/easyappointments-wp-plugin-banner.png">
+Leverage your conversion rates by integrating the booking form directly in your WordPress pages. Customers will never have to leave your website for booking an appointment. Take advantage of the scheduling power of Easy!Appointment which will run smoothly with your WordPress installation.Include the booking form in your pages with the [easyappointments] shortcode.
 
-This plugin aims to bridge Easy!Appointments with WordPress and facilitate users in the integration of the appointment booking system to their WP pages. It offers useful functions such as the installation of Easy!Appointments directly from WordPress' backend, the link of an existing installation and of course the display of the appointment booking wizard with the use of a simple shortcode.
+*Minimum Requirements: WordPress v4.0 & PHP v5.6*
 
-*Minimum Requirements: WordPress v4.0 & PHP v5.3*
+= Connecting Easy!Appointments with WordPress =
 
-### Linking Easy!Appointments & WordPress
+Install and activate the plugin and navigate to `Settings >> Easy!Appointments` menu of the WordPress admin section. Create a new Easy!Appointments installation or connect to an existing one by providing the preferred URL and destination path in the page form. Once a connection is established you'll be able to include the booking form in your pages.
 
-Once the plugin is installed and activated a new menu entry becomes available under "Settings >> Easy!Appointments" (wp-admin). This is the main page of the plugin and it allows users to create new installations or link existing ones with their websites. Easy!Appointments must be linked with WordPress before being able to use the booking shortcode.
+= Include Booking in your Pages =
 
-### Applying The Shortcode
+WordPress supports the use of custom shortcodes which allow plugins to insert custom content into pages. This plugin takes advantage of this functionality and creates an iframe that displays the booking form of Easy!Appointments. Include the `[easyappointments]` shortcode in the correct place of your published contents as shown in the following example.
 
-WordPress supports the use of custom [shortcodes](https://www.smashingmagazine.com/2012/05/wordpress-shortcodes-complete-guide) which enable plugins to insert custom content into a page. This plugin takes advantage of this functionality and inserts an iframe that points to the booking wizard of Easy!Appointments and can be used directly within pages or posts so that customers can book appointments without ever leaving the website.
+`[easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px;"]`
 
-```
-[easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px;"]
-```
-The "width", "height" and "style" attributes are optional but they can help to re-adjust the display of the iframe so that it better suits the active theme.
+The "width", "height" and "style" attributes are optional but can help you to fine tune the styling of the iframe.
 
-### Translations
-
-This plugin uses the **i18n** localization system of WordPress and the translations are po & mo files located in the assets/lang directory. Contributions are more than welcome so feel free to make pull requests with your translations or send them directly to [alextselegidis@gmail.com](mailto:alextselegidis@gmail.com).
-
+*Find out more about Easy!Appointments at http://easyappointments.org*
 
 == Installation ==
 
-Upload and activate the plugin to your WordPress website and head to Settings > Easy!Appointments page. There you can either create a new Easy!Appointments installation or link an existing one.
+Install and activate the plugin and navigate to `Settings >> Easy!Appointments` menu of the WordPress admin section. Create a new Easy!Appointments installation or connect to an existing one by providing the preferred URL and destination path in the page form. Once a connection is established you'll be able to include the booking form in your pages.
 
 After a successful connection you can use the [easyappointments] shortcode in your posts or pages. This shortcode will display the Easy!Appointments booking form and clients will be able to book appointments without ever leaving your website.
 
+== Screenshots ==
+
+1. Booking form integration in mobile viewport.
+2. Booking form integration in desktop viewport.
+3. Admin page of the plugin.
+4. Plugin information modals.
 
 == Frequently Asked Questions ==
 
@@ -56,9 +55,16 @@ You can change the default language of Easy!Appointments by editing the config.p
 
 = Where can I get more help? =
 
-Easy!Appointments has an official group where many users help each other with problems, enhancements and other contributions. It is the best place to interact with other users and share your experiences with the project.
+If you encounter issues but you do not know what to do visit the official Easy!Appointments support group where active users help each other solve their problems.
+
+https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
+
+= 1.1.0 =
+* Installation will not try to create a new directory (avoiding permission problems).
+* Added minified assets (JS & CSS).
+* Enhanced admin UI section.
 
 = 1.0.1 =
 * Initial release in WordPress plugin repositories.

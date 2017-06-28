@@ -1,6 +1,6 @@
 {
   "name": "easyappointments-wp-plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Easy!Appointments plugin for WordPress",
   "main": "index.js",
   "directories": {
@@ -23,15 +23,17 @@
   },
   "homepage": "https://github.com/alextselegidis/easyappointments-wp-plugin#readme",
   "devDependencies": {
-    "fs-extra": "^0.26.4",
+    "fs-extra": "^3.0.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cssnano": "^2.1.1",
-    "gulp-dir-sync": "^0.1.2",
+    "gulp-directory-sync": "^1.2.3",
     "gulp-jshint": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.2",
+    "gulp-util": "^3.0.8",
     "jshint": "^2.9.1",
     "zip-dir": "^1.0.0"
-  }
+  },
+  "dependencies": {}
 }

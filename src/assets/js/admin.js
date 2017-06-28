@@ -2,7 +2,7 @@
  * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
- * @copyright A.Tselegidis (C) 2016
+ * @copyright A.Tselegidis (C) 2017
  * @link http://easyappointments.org
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
@@ -44,6 +44,8 @@ jQuery(function($) {
                     '<div class="updated notification">'
                         + '<span class="dashicons dashicons-yes"></span>'
                         + EAWP.Lang.InstallationSuccessMessage
+                        + ' &rarr; '
+                        + '<a href="' + data.url + '" target="_blank">' + data.url + '</a>'
                     + '</div>'
                 );
 
@@ -132,16 +134,10 @@ jQuery(function($) {
     //  INITIALIZE PAGE
     // ------------------------------------------------------------------------
 
-    $('#install').on('click', function(event) {
-        install();
-    });
+    $('#install').on('click', install);
 
-    $('#link').on('click', function(event) {
-        link();
-    });
+    $('#link').on('click', link);
 
-    $('#unlink').on('click', function(event) {
-        unlink();
-    });
+    $('#unlink').on('click', unlink);
 
 });

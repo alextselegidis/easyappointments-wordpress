@@ -3,7 +3,7 @@
  * Easy!Appointments - WordPress Plugin
  *
  * @license GPLv3
- * @copyright A.Tselegidis (C) 2016
+ * @copyright A.Tselegidis (C) 2017
  * @link http://easyappointments.org
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
@@ -15,7 +15,8 @@ namespace EAWP\Core\ValueObjects;
  *
  * Use this value object to validate server paths and check that they exist in the server.
  */
-class Path {
+class Path
+{
     /**
      * @var string
      */
@@ -24,16 +25,15 @@ class Path {
     /**
      * Class Constructor
      *
-     * Validates the path object value.
-     *
-     * @param string $path Provide the final destination path of the application (even if
-     * it doesn't exist yet).
+     * @param string $path Provide the final destination path of the application (even if it doesn't exist yet).
      *
      * @throws \InvalidArgumentException When provided path is not valid.
      */
-    public function __construct($path) {
-        if (!is_string($path) || empty($path) || !file_exists(dirname($path)))
-            throw new \InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, TRUE));
+    public function __construct($path)
+    {
+        if (!is_string($path) || empty($path) || !file_exists($path)) {
+            throw new \InvalidArgumentException('Invalid $path argument provided: ' . print_r($path, true));
+        }
 
         $this->path = rtrim($path, '/');
     }
@@ -43,7 +43,8 @@ class Path {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return $this->path;
     }
 }
