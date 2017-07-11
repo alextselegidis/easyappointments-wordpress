@@ -80,7 +80,7 @@ class Install implements OperationInterface
     protected function downloadFiles()
     {
         // Fetch integration info.
-        $ch = curl_init('http://easyappointments.org/integrations/integrations.json');
+        $ch = curl_init(EAWP_INTEGRATIONS_INFORMATION_URL);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $integrations = json_decode(curl_exec($ch), true);
         curl_close($ch);

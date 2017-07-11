@@ -17,6 +17,9 @@ define('EAWP_BASEPATH', __DIR__);
 define('EAWP_MIN_VERSION', '1.0.0');
 define('EAWP_MAX_VERSION', '1.2.1');
 
+// Integrations Information Source
+define('EAWP_INTEGRATIONS_INFORMATION_URL', 'http://easyappointments.org/integrations/integrations.json');
+
 // Setup Autoloader
 require EAWP_BASEPATH . '/core/Autoload.php';
 $loader = new EAWP\Core\Autoload;
