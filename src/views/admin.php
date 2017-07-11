@@ -21,7 +21,10 @@ add_thickbox();
     <div class="header">
         <img class="logo" src="<?php echo plugins_url('assets/img/logo.png', __DIR__); ?>"
                 alt="Easy!Appointments Logo" />
-        <h1>Easy!Appointments - WordPress Plugin</h1>
+        <h1>
+            Easy!Appointments - WordPress Plugin
+            <img class="loading hidden" src="<?php echo admin_url('images/wpspin_light-2x.gif'); ?>">
+        </h1>
     </div>
     <p>
         <?php _e('Integrate the booking form of Easy!Appointments directly into your WordPress pages. This plugin will  '
