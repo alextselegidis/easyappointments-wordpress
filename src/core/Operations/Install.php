@@ -65,51 +65,54 @@ class Install implements OperationInterface
      */
     public function invoke()
     {
-        $this->copyFiles();
+        $this->downloadFiles();
+        $this->unzipFiles();
         $this->configure();
         \add_option('eawp_path', (string)$this->linkInformation->getPath());
         \add_option('eawp_url', (string)$this->linkInformation->getUrl());
     }
 
     /**
-     * Copy Easy!Appointments files to required destination.
+     * Download the latest Easy!Appointments files to required destination.
      *
      * @throws \Exception If the destination directory is not writable.
      */
-    protected function copyFiles()
+    protected function downloadFiles()
     {
-        $installationPath = (string)$this->linkInformation->getPath();
+        // Fetch integration info.
+        $ch = curl_init(EAWP_INTEGRATIONS_INFORMATION_URL);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $integrations = json_decode(curl_exec($ch), true);
+        curl_close($ch);
 
-        if (!is_writable($installationPath)) {
-            throw new \Exception('Destination path is not writable: ' . $installationPath);
+        foreach($integrations['easyappointments'] as $package) {
+            if ($package['current'] === true) {
+                $zip = file_get_contents($package['url']);
+                file_put_contents((string)$this->linkInformation->getPath() . '/easyappointments.zip', $zip);
+                break;
+            }
         }
-
-        $this->recursiveCopy(EAWP_BASEPATH . '/vendor', $installationPath);
     }
 
     /**
-     * Recursively copies source directory and contents to destination path.
-     *
-     * @param string $sourcePath Source directory path.
-     * @param string $destinationPath Destination directory path.
-     *
-     * @link  http://stackoverflow.com/a/2050909/1718162
+     * Unzip the easyappointments.zip
      */
-    protected function recursiveCopy($sourcePath, $destinationPath)
+    protected function unzipFiles()
     {
-        $dir = opendir($sourcePath);
-        @mkdir($destinationPath);
-        while (false !== ($file = readdir($dir))) {
-            if (($file !== '.') && ($file !== '..')) {
-                if (is_dir($sourcePath . '/' . $file)) {
-                    $this->recursiveCopy($sourcePath . '/' . $file, $destinationPath . '/' . $file);
-                } else {
-                    copy($sourcePath . '/' . $file, $destinationPath . '/' . $file);
-                }
-            }
+        $path = (string)$this->linkInformation->getPath() . '/easyappointments.zip';
+        $zip = new \ZipArchive;
+        $res = $zip->open($path);
+
+        if (!$res) {
+            throw new \Exception('Could not open Easy!Appointments zip file.');
         }
-        closedir($dir);
+
+        $zip->extractTo((string)$this->linkInformation->getPath());
+        $zip->close();
+
+        @unlink($path);
     }
+
 
     /**
      * Configure Easy!Appointments "config.php" with WP information.

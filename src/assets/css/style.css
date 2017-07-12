@@ -61,3 +61,10 @@
 .eawp .regular-text {
     width: 33em;
 }
+
+.eawp .loading {
+    height: 22px;
+    width: 22px;
+    position: relative;
+    top: 4px;
+}

@@ -125,6 +125,8 @@ jQuery(function($) {
 
                 $('#path, #url').val('');
 
+                $('#remove-files, #remove-db-tables').prop('checked', false);
+
                 EAWP.Plugin.toggleOperationButtons(false);
             })
             .fail(EAWP.Plugin.handleAjaxFailure);
@@ -139,5 +141,13 @@ jQuery(function($) {
     $('#link').on('click', link);
 
     $('#unlink').on('click', unlink);
+
+    $(document).ajaxStart(function() {
+        $('.eawp img.loading').removeClass('hidden');
+    });
+
+    $(document).ajaxComplete(function() {
+        $('.eawp img.loading').addClass('hidden');
+    });
 
 });

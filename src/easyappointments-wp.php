@@ -3,7 +3,7 @@
  * Plugin Name: Easy!Appointments - WordPress Plugin
  * Plugin URI: http://easyappointments.org
  * Description: Easy!Appointments web scheduling integration with WordPress.
- * Version: 1.1
+ * Version: 1.1.1
  * Author: A.Tselegidis
  * Author URI: http://alextselegidis.com
  * Text Domain: eawp
@@ -16,6 +16,9 @@ define('EAWP_BASEPATH', __DIR__);
 // Supported Versions
 define('EAWP_MIN_VERSION', '1.0.0');
 define('EAWP_MAX_VERSION', '1.2.1');
+
+// Integrations Information Source
+define('EAWP_INTEGRATIONS_INFORMATION_URL', 'http://easyappointments.org/integrations/integrations.json');
 
 // Setup Autoloader
 require EAWP_BASEPATH . '/core/Autoload.php';
