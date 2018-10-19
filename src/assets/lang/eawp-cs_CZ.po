@@ -1,0 +1,289 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
+"POT-Creation-Date: 2017-06-13 10:23+0200\n"
+"PO-Revision-Date: 2018-10-19 23:22+0200\n"
+"Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n>=2 && n<=4 ? 1 : 2);\n"
+"Language: cs_CZ\n"
+"X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../core/Plugin.php:68
+msgid ""
+"Easy!Appointments files were installed successfully! Navigate to your "
+"installation URL complete the configuration of the application."
+msgstr ""
+"Soubory Easy!Appointments byly úspěšně instalovány! Pro dokončení "
+"konfigurace aplikace přejděte na URL vaší instalace."
+
+#: ../../core/Plugin.php:71
+msgid ""
+"Easy!Appointments installation was linked successfully! You can now use the "
+"[easyappointments] shortcode in your pages."
+msgstr ""
+"Instalace Easy!Appointments byla úspěšně připojena. Nyní můžete v rámci "
+"stránek používat shortcode [easyappointments]."
+
+#: ../../core/Plugin.php:74
+msgid "Easy!Apppointments installation was unlinked successfully!"
+msgstr "Instalace Easy!Appointments byla úspěšně odpojena!"
+
+#: ../../core/Plugin.php:76
+msgid ""
+"Easy!Appointments link is active! Use the [easyappointments] shortcode in "
+"your pages/posts."
+msgstr ""
+"Odkaz Easy!Appointments je aktivní! Použijte v rámci stránek/příspěvků "
+"shortcode [easyappointments]."
+
+#: ../../core/Plugin.php:78
+msgid ""
+"Easy!Appointments link seems to be broken! Make sure Easy!Appointments files "
+"are located in the target directory."
+msgstr ""
+"Zdá se, že odkaz Easy!Appointments je rozbitý! Ujistěte se, že soubory Easy!"
+"Appointments se nacházejí v cílovém adresáři."
+
+#: ../../core/Plugin.php:80
+msgid "An unexpected error occurred in file %file% (line %line%): %message%"
+msgstr ""
+"V souboru %file% (na řádku %line\") se vyskytla neočekávaná chyba: %message%"
+
+#: ../../core/Plugin.php:82
+msgid ""
+"The AJAX request could not be completed due to an unexpected error: %message%"
+msgstr ""
+"Kvůli neočekávané chybě nebylo možné dokončit AJAX požadavek: %message%"
+
+#: ../../views/admin.php:27
+msgid ""
+"Integrate the booking form of Easy!Appointments directly into your WordPress "
+"pages. This plugin will  let you create a new Easy!Appointments installation "
+"or use an existing one directly from the WordPress back-end section. Add the "
+"[easyappointments] shortcode into your pages and leverage your conversion "
+"rates."
+msgstr ""
+"Integrujte rezervační formulář Easy!Appointments přímo do vašich WordPress "
+"stránek. Tento plugin vám umožní vytvořit novou instalaci Easy!Appointments "
+"nebo použít existující přímo z administrace WordPressu. Vložte do vašich "
+"stránek shortcode [easyappointments] a zvyšte tak vaše konverzní poměry."
+
+#: ../../views/admin.php:34 ../../views/admin.php:36
+msgid "Hints"
+msgstr "Návody"
+
+#: ../../views/admin.php:38 ../../views/admin.php:40
+msgid "Troubleshooting"
+msgstr "Řešení problémů"
+
+#: ../../views/admin.php:42 ../../views/admin.php:44
+msgid "About"
+msgstr "O aplikaci"
+
+#: ../../views/admin.php:47
+msgid "Connection Information"
+msgstr "Údaje spojení"
+
+#: ../../views/admin.php:49
+msgid ""
+"Set the path and URL of your Easy!Appointments installation and press either "
+"the \"Install\" or \"Link\" button to proceed with the operation."
+msgstr ""
+"Nastavte umístění a URL vaší instalace Easy!Appointments a pro pokračování "
+"stiskněte tlačítko \"Instalovat\" nebo \"Propojit\"."
+
+#: ../../views/admin.php:57
+msgid "Path"
+msgstr "Umístění"
+
+#: ../../views/admin.php:62 ../../views/admin.php:76
+msgid "Example"
+msgstr "Příklad"
+
+#: ../../views/admin.php:65
+msgid ""
+"* Make sure that the target directory exists on the server and it's writable."
+msgstr ""
+"* Ujistěte se, že cílový adresář na serveru existuje a lze do něj zapisovat."
+
+#: ../../views/admin.php:71
+msgid "URL"
+msgstr "URL adresa"
+
+#: ../../views/admin.php:82 ../../views/admin.php:115
+msgid "Install"
+msgstr "Instalovat"
+
+#: ../../views/admin.php:83 ../../views/admin.php:121
+msgid "Link"
+msgstr "Připojit"
+
+#: ../../views/admin.php:89
+msgid "Remove Easy!Appointments Files"
+msgstr "Odstranit soubory Easy!Appointments"
+
+#: ../../views/admin.php:96
+msgid "Remove Easy!Appointments Database Tables"
+msgstr "Odstranit databázové tabulky Easy!Appointments"
+
+#: ../../views/admin.php:102 ../../views/admin.php:127
+msgid "Unlink"
+msgstr "Odpojit"
+
+#: ../../views/admin.php:104
+msgid "These actions cannot be undone!"
+msgstr "Tyto operace nelze vzít zpět!"
+
+#: ../../views/admin.php:116
+msgid ""
+"This operation will create a new installation by placing and configuring "
+"Easy!Appointments files into the requested directory. You will have to "
+"complete the installation by opening the target URL in your browser."
+msgstr ""
+"Tato operace vytvoří novou instalaci umístěním a konfigurací souborů Easy!"
+"Appointments do požadovaného adresáře. Budete přitom muset dokončit "
+"instalaci otevřením cílového URL ve vašem prohlížeči."
+
+#: ../../views/admin.php:122
+msgid ""
+"This operation will connect an existing Easy!Appointments installation and "
+"your WordPress website. Make sure that you use the correct installation path "
+"and URL of Easy!Appointments."
+msgstr ""
+"Tato operace propojí existující instalaci Easy!Appointments s vaší WordPress "
+"instalací. Ujistěte se, že použijete správné umístění a URL instalace Easy!"
+"Appointments."
+
+#: ../../views/admin.php:128
+msgid ""
+"This operation will unlink an active connection between Easy!Appointments "
+"and your WordPress website. You can remove the files and database tables as "
+"well, even though this is optional."
+msgstr ""
+"Tato operace zruší aktivní spojení Easy!Appointments a vaší WordPress "
+"instalací. Také můžete odstranit soubory a databázové tabulky, ačkoli to "
+"není povinné."
+
+#: ../../views/admin.php:133
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: ../../views/admin.php:134
+msgid ""
+"Display the booking form directly in your pages or posts by adding the "
+"[easyappointments] shortcode. This shortcode accepts some optional "
+"attributes that will change its appearance. These attibutes are \"width\", "
+"\"height\", \"style\" and will be applied automatically to the parent "
+"container element (e.g. [easyappointments width=\"500px\" height=\"300px\" "
+"style=\"border: 2px solid black\"])."
+msgstr ""
+"Zobrazte rezervační formulář přímo ve vašich stránkách nebo příspěvcích "
+"vložením shortcode [easyappointments]. Tento shortcode akceptuje některé "
+"volitelné atributy, které změní jeho vzhled. Tyto atributy jsou \"width\", "
+"\"height\", \"style\" a budou automaticky aplikovány na nadřazený prvek typu "
+"kontejneru (např. [easyappointments width=\"500px height=\"300px\" style="
+"\"border: 2px solid black\"])."
+
+#: ../../views/admin.php:148
+msgid "Permission Problems"
+msgstr "Potíže s oprávněními"
+
+#: ../../views/admin.php:149
+msgid ""
+"Some plugin operations perform various filesystem tasks that might be "
+"interrupted due to lack of permissions. This issues mostly happen in Unix "
+"environments because PHP does not have the required permissions to read/"
+"write/delete files or directories. If you cannot solve the problem try to "
+"continue the operation manually with an FTP user (e.g. if the \"Install\" "
+"operation fails, upload the latest Easy!Appointments version manually and "
+"connect it with WordPress with the \"Link\" operation)."
+msgstr ""
+"Některé operace pluginu realizují různé úkoly v rámci souborového systému, "
+"které mohou být přerušeny vlivem nedostatečných oprávnění. K těmto problémům "
+"dochází převážně v Unixových prostředích protože PHP nemá požadovaná "
+"oprávnění pro čtení/zápis/odstranění souborů nebo adresářů. Pokud tento "
+"problém nedokážete vyřešit, pokuste se pokračovat v provozu manuálně "
+"prostřednictvím FTP uživatele (např., pokud selže operace \"Instalace\", "
+"nahrajte poslední verzi Easy!Appointments manuálně a propojte ji s "
+"WordPressem pomocí operace \"Propojit\")."
+
+#: ../../views/admin.php:157
+msgid "Broken Connection"
+msgstr "Spojení nefunkční"
+
+#: ../../views/admin.php:158
+msgid ""
+"If this settings page notifies you of a broken Easy!Appointments connection "
+"it could be that the Easy!Appointments files where moved or the installation "
+"URL was changed and the connection couldn't be verified.  \"Unlink\" the "
+"current connection without removing the files or database tables and then "
+"\"Link\" it again with the new information."
+msgstr ""
+"Pokud vás tato stránka nastavení upozorňuje na rozbité spojení Easy!"
+"Appointments, je možné, že soubory Easy!Appointments byly přesunuty, nebo že "
+"byla změněna URL instalace a spojení tak nemohlo být ověřeno. \"Odpojte\" "
+"aktuální spojení bez odstranění souborů nebo tabulek databáze a poté opět "
+"proveďte \"Připojení\" s novými informacemi."
+
+#: ../../views/admin.php:164
+msgid "Support Forum"
+msgstr "Fórum podpory"
+
+#: ../../views/admin.php:165
+msgid ""
+"If you encounter issues but you do not know what to do visit the official "
+"Easy!Appointments support group where active users help each other solve "
+"their problems."
+msgstr ""
+"Pokud narazíte na problémy a nevíte co dělat, navštivte oficiální skupinu "
+"podpory Easy!Appointments, kde si aktivní uživatelé vzájemně pomáhají řešit "
+"problémy."
+
+#: ../../views/admin.php:169
+msgid "Support Group"
+msgstr "Skupina podpory"
+
+#: ../../views/admin.php:181
+msgid "Easy!Appointments - WordPress Plugin"
+msgstr "Easy!Appointments - WordPress Plugin"
+
+#: ../../views/admin.php:183
+msgid ""
+"Leverage your conversion rates by integrating the booking form directly in "
+"your WordPress pages. Customers will never have to leave your website for "
+"booking an appointment. Take advantage of the scheduling power of Easy!"
+"Appointment which will run smoothly with your WordPress installation.Include "
+"the booking form in your pages with the [easyappointments] shortcode."
+msgstr ""
+"Zvyšte vaše konverzní poměry prostřednictvím integrace rezervačního "
+"formuláře přímo s vašimi WordPress stránkami. Zákazníci tak nebudou muset "
+"pro vytvoření rezervace schůzky opustit vaše webové stránky. Využijte výhod "
+"síly plánování aplikace Easy!Appointments, která bude efektivně fungovat s "
+"vaši WordPress instalací. Vkládejte rezervační formulář do vašich stránek "
+"prostřednictvím shortcode [easyappointments]."
+
+#: ../../views/admin.php:191
+msgid "Get Involved"
+msgstr "Zapojte se"
+
+#: ../../views/admin.php:192
+msgid ""
+"Found a problem or want to add a new feature? Contributors are more than "
+"welcome so feel free to file an issue or make pull requests on the GitHub "
+"page of the plugin."
+msgstr ""
+"Objevili jste problém nebo chcete přidat novou funkci? Přispěvatelé jsou "
+"více než vítáni, takže neváhejte a založte problém nebo vytvářejte požadavky "
+"na přidání změn na GitHub stránce pluginu."
+
+#: ../../views/admin.php:205
+msgid "For more information visit the official website of the project at "
+msgstr "Pro více informací navštivte oficiální stránku projektu "
