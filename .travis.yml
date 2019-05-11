@@ -6,7 +6,5 @@ install: composer install
 
 php:
   - '7.1'
-  - '7.2'
-  - nightly
 
 script: phpunit -c test/phpunit.xml test
