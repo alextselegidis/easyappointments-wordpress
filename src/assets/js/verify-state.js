@@ -14,7 +14,7 @@
  * in order to trigger the "Verify State" operation and display the result to the settings
  * page of the plugin.
  */
-jQuery(function($) {
+jQuery(function ($) {
 
     'use strict';
 
@@ -22,7 +22,7 @@ jQuery(function($) {
     var $url = $('#url');
 
     if ($path.val() === '' || $url.val() === '') {
-        EAWP.Plugin.toggleOperationButtons(false);
+        EAWPPlugin.toggleOperationButtons(false);
         return; // no need to check
     }
 
@@ -30,7 +30,7 @@ jQuery(function($) {
         action: 'verify-state',
         path: $path.val(),
         url: $url.val(),
-        nonce: EAWP.Plugin.nonce
+        nonce: EAWPConfig.Ajax.nonce
     };
 
     $.ajax({
@@ -39,28 +39,28 @@ jQuery(function($) {
         method: 'POST',
         dataType: 'json'
     })
-        .done(function(response) {
+        .done(function (response) {
             var status = !response.exception;
-            EAWP.Plugin.toggleOperationButtons(status);
+            EAWPPlugin.toggleOperationButtons(status);
 
             $('.eawp .notification').remove();
 
             if (!response.exception) {
                 $('.eawp').prepend(
                     '<div class="updated notification">'
-                        + '<span class="dashicons dashicons-yes"></span>'
-                        + EAWP.Lang.VerificationSuccess
+                    + '<span class="dashicons dashicons-yes"></span>'
+                    + EAWPConfig.Lang.VerificationSuccess
                     + '</div>'
                 );
             } else {
                 $('.eawp').prepend(
                     '<div class="error notification">'
-                        + '<span class="dashicons dashicons-no"></span>'
-                        + EAWP.Lang.VerificationFailure
+                    + '<span class="dashicons dashicons-no"></span>'
+                    + EAWPConfig.Lang.VerificationFailure
                     + '</div>'
                 );
             }
         })
-        .fail(EAWP.Plugin.handleAjaxFailure);
+        .fail(EAWPPlugin.handleAjaxFailure);
 
 });

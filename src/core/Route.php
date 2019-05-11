@@ -22,9 +22,9 @@ class Route
      * Hook Plugin Action
      *
      * @param string $name Action name (see WordPress action hooks)
-     * @param callback $callback Callback function for the action.
+     * @param callable $callback Callback function for the action.
      *
-     * @throws InvalidArgumentException If arguments are invalid.
+     * @throws \InvalidArgumentException If arguments are invalid.
      */
     public function action($name, $callback)
     {
@@ -43,9 +43,9 @@ class Route
      * Add WP Filter
      *
      * @param string $name Filter name (see WordPress filter hooks).
-     * @param function $callback Callback function for the filter.
+     * @param callable $callback Callback function for the filter.
      *
-     * @throws InvalidArgumentException If arguments are invalid.
+     * @throws \InvalidArgumentException If arguments are invalid.
      */
     public function filter($name, $callback)
     {
@@ -69,7 +69,7 @@ class Route
      * @param string $name The name of the request that will execute the callback.
      * @param callable $callback Callable that will handle the ajax request.
      *
-     * @throws InvalidArgumentException If arguments are invalid.
+     * @throws \InvalidArgumentException If arguments are invalid.
      */
     public function ajax($name, $callback)
     {
@@ -119,7 +119,7 @@ class Route
      * the assets directory for the assets to be loaded (JavaScript or CSS, eg array('admin.js', 'style.css').
      * @param array $jsData Contains PHP values to be passed to the JavaScript code of the view file .
      *
-     * @throws InvalidArgumentException If argument is invalid.
+     * @throws \InvalidArgumentException If argument is invalid.
      */
     public function view($pageTitle, $menuTitle, $menuSlug, $viewFile, array $assets = array(), array $jsData = array())
     {
@@ -151,7 +151,7 @@ class Route
                         if (substr($file, -3) === '.js') {
                             $file = (!\WP_DEBUG) ? str_replace('.js', '.min.js', $file) : $file;
                             wp_enqueue_script(md5($file), plugins_url('../assets/js/' . $file, __FILE__));
-                            wp_localize_script(md5($file), 'EAWP', $jsData);
+                            wp_localize_script(md5($file), 'EAWPConfig', $jsData);
                         } else {
                             if (substr($file, -4) === '.css') {
                                 $file = (!\WP_DEBUG) ? str_replace('.css', '.min.css', $file) : $file;
@@ -171,7 +171,7 @@ class Route
      *
      * @param string $url The URL to JavaScript file.
      *
-     * @throws InvalidArgumentException If argument is invalid.
+     * @throws \InvalidArgumentException If argument is invalid.
      */
     public function script($url)
     {
@@ -186,7 +186,7 @@ class Route
      *
      * @param string $url The URL to Style file.
      *
-     * @throws InvalidArgumentException If argument is invalid.
+     * @throws \InvalidArgumentException If argument is invalid.
      */
     public function style($url)
     {

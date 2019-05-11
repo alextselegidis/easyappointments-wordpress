@@ -7,14 +7,14 @@
  * @since v1.0.0
  * ---------------------------------------------------------------------------- */
 
-EAWP.Plugin = EAWP.Plugin || {};
+window.EAWPPlugin = window.EAWPPlugin || {};
 
 /**
  * Easy!Appointments WP Plugin
  *
  * This module adds common JS functionality that is shared between the other modules.
  */
-(function(exports, $) {
+(function (exports, $) {
 
     'use strict';
 
@@ -23,7 +23,7 @@ EAWP.Plugin = EAWP.Plugin || {};
      *
      * @param  {string} message
      */
-    function _showErrorMessage(message) {
+    function showErrorMessage(message) {
         // Remove previous message and display a new one with exception information.
         $('.eawp .notification').remove();
 
@@ -42,13 +42,13 @@ EAWP.Plugin = EAWP.Plugin || {};
      *
      * @param {object} exception
      */
-    exports.handleAjaxException = function(exception) {
-        var message = EAWP.Lang.AjaxExceptionMessage
-                .replace('%file%', exception.file)
-                .replace('%line%', exception.line)
-                .replace('%message%', exception.message);
+    exports.handleAjaxException = function (exception) {
+        var message = EAWPConfig.Lang.AjaxExceptionMessage
+            .replace('%file%', exception.file)
+            .replace('%line%', exception.line)
+            .replace('%message%', exception.message);
 
-        _showErrorMessage(message);
+        showErrorMessage(message);
 
         console.log('AJAX Exception: ', exception);
     };
@@ -63,10 +63,10 @@ EAWP.Plugin = EAWP.Plugin || {};
      * @param  {string} textStatus
      * @param  {Error} errorThrown
      */
-    exports.handleAjaxFailure = function(jqXHR, textStatus, errorThrown) {
-        var message = EAWP.Lang.AjaxFailureMessage.replace('%message%', errorThrown.message);
+    exports.handleAjaxFailure = function (jqXHR, textStatus, errorThrown) {
+        var message = EAWPConfig.Lang.AjaxFailureMessage.replace('%message%', errorThrown.message);
 
-        _showErrorMessage(message);
+        showErrorMessage(message);
 
         console.log('AJAX Failure: ', jqXHR, textStatus, errorThrown);
     };
@@ -77,7 +77,7 @@ EAWP.Plugin = EAWP.Plugin || {};
      * @param {Boolean} linkStatus A true value states that there is an active connection while
      * a false indicates that there is no active connection.
      */
-    exports.toggleOperationButtons = function(linkStatus) {
+    exports.toggleOperationButtons = function (linkStatus) {
         if (linkStatus) {
             $('.link-operations').hide();
             $('.unlink-operations').show();
@@ -87,4 +87,4 @@ EAWP.Plugin = EAWP.Plugin || {};
         }
     };
 
-})(EAWP.Plugin, jQuery);
+})(EAWPPlugin, jQuery);
