@@ -5,13 +5,8 @@ sudo: required
 install: composer install
 
 php:
-  - '5.6'
-  - '7.0'
   - '7.1'
+  - '7.2'
   - nightly
 
 script: phpunit -c test/phpunit.xml test
-
-notifications:
-    on_success: never
-    on_failure: always
