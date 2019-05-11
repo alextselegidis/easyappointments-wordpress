@@ -68,6 +68,6 @@ class Shortcode implements \EAWP\Core\Operations\Interfaces\OperationInterface
         $style = (isset($this->attributes['style'])) ? $this->attributes['style'] : '';
 
         return '<iframe class="easyappointments-wp-iframe" src="' . (string)$this->linkInformation->getUrl() . '"
-                width="' . $width . '" height="' . $height . '" style="' . $style . '"></iframe>';
+                width="' . $width . '" height="' . $height . '" style="' . $style . '" frameborder="0"></iframe>';
     }
 }
