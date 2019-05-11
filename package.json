@@ -1,7 +1,6 @@
 {
-  "name": "easyappointments-wp-plugin",
-  "version": "1.1.0",
-  "description": "Easy!Appointments plugin for WordPress",
+  "name": "easyappointments-wordpres-plugin",
+  "description": "Easy!Appointments Plugin for WordPress",
   "main": "index.js",
   "directories": {
     "doc": "doc",
@@ -9,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alextselegidis/easyappointments-wp-plugin.git"
+    "url": "git+https://github.com/alextselegidis/easyappointments-wordpress-plugin.git"
   },
   "keywords": [
     "easyappointments",
@@ -19,21 +18,21 @@
   "author": "Alex Tselegidis <alextselegidis@gmail.com>",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/alextselegidis/easyappointments-wp-plugin/issues"
+    "url": "https://github.com/alextselegidis/easyappointments-wordpress-plugin/issues"
   },
-  "homepage": "https://github.com/alextselegidis/easyappointments-wp-plugin#readme",
+  "homepage": "https://github.com/alextselegidis/easyappointments-wordpress-plugin#readme",
   "devDependencies": {
     "fs-extra": "^3.0.1",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cssnano": "^2.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.3",
     "gulp-directory-sync": "^1.2.3",
-    "gulp-jshint": "^2.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.2",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^1.5.4",
     "gulp-util": "^3.0.8",
-    "jshint": "^2.9.1",
-    "zip-dir": "^1.0.0"
+    "jshint": "^2.10.2",
+    "zip-dir": "^1.0.2"
   },
   "dependencies": {}
 }
