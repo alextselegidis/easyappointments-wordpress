@@ -1,5 +1,5 @@
 {
-    "name": "alextselegidis/easyappointments-wp-plugin",
+    "name": "alextselegidis/easyappointments-wordpress-plugin",
     "description": "Easy!Appointments web scheduling integration with WordPress.",
     "keyword": [
         "calendar",
@@ -29,13 +29,15 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">= 5.6",
-        "roave/security-advisories": "dev-master",
-        "phpunit/phpunit": "^5.7"
+        "ext-json": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
-        "mikey179/vfsStream": "^1.6",
+        "roave/security-advisories": "dev-master",
+        "mikey179/vfsstream": "^1.6",
         "fzaninotto/faker": "^1.6",
-        "johnpbloch/wordpress": "^4.7"
+        "phpunit/phpunit": "^7.5",
+        "johnpbloch/wordpress": "^5"
     },
     "autoload": {
         "psr-4": {

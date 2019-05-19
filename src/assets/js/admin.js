@@ -12,7 +12,7 @@
  *
  * Defines the JS functionality of the admin settings page.
  */
-jQuery(function($) {
+jQuery(function ($) {
 
     'use strict';
 
@@ -24,7 +24,7 @@ jQuery(function($) {
             action: 'install',
             path: $('#path').val(),
             url: $('#url').val(),
-            nonce: EAWP.Plugin.nonce
+            nonce: EAWPConfig.Ajax.nonce
         };
 
         $.ajax({
@@ -33,25 +33,25 @@ jQuery(function($) {
             method: 'POST',
             dataType: 'json'
         })
-            .done(function(response) {
+            .done(function (response) {
                 if (response.exception) {
-                    return EAWP.Plugin.handleAjaxException(response);
+                    return EAWPPlugin.handleAjaxException(response);
                 }
 
                 $('.eawp .notification').remove();
 
                 $('.eawp').prepend(
                     '<div class="updated notification">'
-                        + '<span class="dashicons dashicons-yes"></span>'
-                        + EAWP.Lang.InstallationSuccessMessage
-                        + ' &rarr; '
-                        + '<a href="' + data.url + '" target="_blank">' + data.url + '</a>'
+                    + '<span class="dashicons dashicons-yes"></span>'
+                    + EAWPConfig.Lang.InstallationSuccessMessage
+                    + ' &rarr; '
+                    + '<a href="' + data.url + '" target="_blank">' + data.url + '</a>'
                     + '</div>'
                 );
 
-                EAWP.Plugin.toggleOperationButtons(true);
+                EAWPPlugin.toggleOperationButtons(true);
             })
-            .fail(EAWP.Plugin.handleAjaxFailure);
+            .fail(EAWPPlugin.handleAjaxFailure);
     }
 
     /**
@@ -62,7 +62,7 @@ jQuery(function($) {
             action: 'link',
             path: $('#path').val(),
             url: $('#url').val(),
-            nonce: EAWP.Plugin.nonce
+            nonce: EAWPConfig.Ajax.nonce
         };
 
         $.ajax({
@@ -71,23 +71,23 @@ jQuery(function($) {
             method: 'POST',
             dataType: 'json'
         })
-            .done(function(response) {
+            .done(function (response) {
                 if (response.exception) {
-                    return EAWP.Plugin.handleAjaxException(response);
+                    return EAWPPlugin.handleAjaxException(response);
                 }
 
                 $('.eawp .notification').remove();
 
                 $('.eawp').prepend(
                     '<div class="updated notification">'
-                        + '<span class="dashicons dashicons-yes"></span>'
-                        + EAWP.Lang.LinkSuccessMessage
+                    + '<span class="dashicons dashicons-yes"></span>'
+                    + EAWPConfig.Lang.LinkSuccessMessage
                     + '</div>'
                 );
 
-                EAWP.Plugin.toggleOperationButtons(true);
+                EAWPPlugin.toggleOperationButtons(true);
             })
-            .fail(EAWP.Plugin.handleAjaxFailure);
+            .fail(EAWPPlugin.handleAjaxFailure);
     }
 
     /**
@@ -100,7 +100,7 @@ jQuery(function($) {
             url: $('#url').val(),
             removeFiles: $('#remove-files').prop('checked'),
             removeDbTables: $('#remove-db-tables').prop('checked'),
-            nonce: EAWP.Plugin.nonce
+            nonce: EAWPConfig.Ajax.nonce
         };
 
         $.ajax({
@@ -109,17 +109,17 @@ jQuery(function($) {
             method: 'POST',
             dataType: 'json'
         })
-            .done(function(response) {
+            .done(function (response) {
                 if (response.exception) {
-                    return EAWP.Plugin.handleAjaxException(response);
+                    return EAWPPlugin.handleAjaxException(response);
                 }
 
                 $('.eawp .notification').remove();
 
                 $('.eawp').prepend(
                     '<div class="updated notification">'
-                        + '<span class="dashicons dashicons-yes"></span>'
-                        + EAWP.Lang.UnlinkSuccessMesssage
+                    + '<span class="dashicons dashicons-yes"></span>'
+                    + EAWPConfig.Lang.UnlinkSuccessMesssage
                     + '</div>'
                 );
 
@@ -127,9 +127,9 @@ jQuery(function($) {
 
                 $('#remove-files, #remove-db-tables').prop('checked', false);
 
-                EAWP.Plugin.toggleOperationButtons(false);
+                EAWPPlugin.toggleOperationButtons(false);
             })
-            .fail(EAWP.Plugin.handleAjaxFailure);
+            .fail(EAWPPlugin.handleAjaxFailure);
     }
 
     // ------------------------------------------------------------------------
@@ -142,12 +142,11 @@ jQuery(function($) {
 
     $('#unlink').on('click', unlink);
 
-    $(document).ajaxStart(function() {
+    $(document).ajaxStart(function () {
         $('.eawp img.loading').removeClass('hidden');
     });
 
-    $(document).ajaxComplete(function() {
+    $(document).ajaxComplete(function () {
         $('.eawp img.loading').addClass('hidden');
     });
-
 });

@@ -81,7 +81,7 @@ class Plugin
                     'AjaxFailureMessage' =>
                         __('The AJAX request could not be completed due to an unexpected error: %message%', 'eawp')
                 ),
-                'Plugin' => array(
+                'Ajax' => array(
                     'nonce' => \wp_create_nonce('eawp')
                 )
             );
@@ -159,7 +159,7 @@ class Plugin
     /**
      * Get WordPress Database Object.
      *
-     * @return db
+     * @return \db
      */
     public function getDatabase()
     {

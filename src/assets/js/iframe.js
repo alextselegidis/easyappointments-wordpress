@@ -8,24 +8,24 @@
 * ---------------------------------------------------------------------------- */
 
 /**
-* Easy!Appointments IFrame Handler
-*
-* This module will handle the booking wizard iframe operations.
-*/
-jQuery(function($) {
+ * Easy!Appointments IFrame Handler
+ *
+ * This module will handle the booking wizard iframe operations.
+ */
+jQuery(function ($) {
 
     'use strict';
 
     var $iframe = $('.easyappointments-wp-iframe'),
-    initialHeight = $iframe.height();
+        initialHeight = $iframe.height();
 
     // Add "resize" watcher on the iframe content element so that the iframe always show the
     // whole page content (mostly useful for mobile views - vertical resize).
-    function _resizeWatcher() {
+    function resizeWatcher() {
         var $iframeContent = $('#book-appointment-wizard', $iframe.contents()),
             lastHeight = $iframeContent.height();
 
-        setInterval(function() {
+        setInterval(function () {
             $iframeContent = $('#book-appointment-wizard', $iframe.contents());
 
             if (lastHeight === $iframeContent.height()) {
@@ -38,5 +38,5 @@ jQuery(function($) {
         }, 500);
     }
 
-    $iframe.on('load', _resizeWatcher);
+    $iframe.on('load', resizeWatcher);
 });

@@ -121,6 +121,10 @@ class Install implements OperationInterface
     {
         $configPath = (string)$this->linkInformation->getPath() . '/config.php';
 
+        if (!file_exists($configPath)) {
+            copy((string)$this->linkInformation->getPath() . '/config-sample.php', $configPath);
+        }
+
         // Get "config.php" content.
         $configContent = file_get_contents($configPath);
 
