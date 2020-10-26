@@ -70,7 +70,7 @@ class Easyappointments {
 		if ( defined( 'EASYAPPOINTMENTS_VERSION' ) ) {
 			$this->version = EASYAPPOINTMENTS_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.3.0';
 		}
 		$this->plugin_name = 'easyappointments';
 
