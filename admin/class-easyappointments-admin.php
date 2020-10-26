@@ -209,6 +209,8 @@ class Easyappointments_Admin
             $wpdb->query('DROP TABLE IF EXISTS ea_user_settings;');
             $wpdb->query('DROP TABLE IF EXISTS ea_users;');
             $wpdb->query('DROP TABLE IF EXISTS ea_roles;');
+            $wpdb->query('DROP TABLE IF EXISTS ea_consents;');
+            $wpdb->query('DROP TABLE IF EXISTS ea_migrations;');
             $wpdb->query('SET FOREIGN_KEY_CHECKS=1;');
         }
 
@@ -242,8 +244,6 @@ class Easyappointments_Admin
 
     public function verify_state()
     {
-
-        // todo return proper response, how to deal with error handling
         $path = sanitize_text_field($_POST['path']);
 
         if (
