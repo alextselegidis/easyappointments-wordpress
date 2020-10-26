@@ -118,6 +118,24 @@ class Easyappointments_Public
 
             $attributes = is_array($attributes) ? $attributes : [];
 
+            $query_data = [];
+
+            if (!empty($attributes['provider'])) {
+                $query_data['provider'] = $attributes['provider'];
+            }
+
+            if (!empty($attributes['service'])) {
+                $query_data['service'] = $attributes['service'];
+            }
+
+            if (!empty($query_data)) {
+                if (strpos($url, '?') === false) {
+                    $url .= '?';
+                }
+
+                $url .= http_build_query($query_data);
+            }
+
             wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
 
             $width = isset($attributes['width']) ? $attributes['width'] : '100%';

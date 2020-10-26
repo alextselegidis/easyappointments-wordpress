@@ -138,7 +138,11 @@ add_thickbox();
                 <?php _e('Display the booking form directly in your pages or posts by adding the [easyappointments] '
                     . 'shortcode. This shortcode accepts some optional attributes that will change its appearance. '
                     . 'These attibutes are "width", "height", "style" and will be applied automatically to the parent '
-                    . 'container element (e.g. [easyappointments width="500px" height="300px" style="border: 2px solid black"]).',
+                    . 'container element (e.g. [easyappointments width="500px" height="300px" style="border: 2px solid black"]). '
+                    . 'Additionally you can use the the "provider" and "service" shortcode attributes to preselect a '
+                    . 'provider or a service or both on a certain page (e.g. [easyappointments provider="2" service="1"], '
+                    . 'where "2" and "1" are the record IDs, they can be fetched from the Easy!Appointments backend section, '
+                    . 'in the users and services page accordingly by clicking the dedicated link of a record).',
                     'easyappointments') ?>
             </li>
         </ul>
