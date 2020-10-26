@@ -1,7 +1,7 @@
 <h1 align="center">
     <br>
     <a href="https://easyappointments.org">
-        <img src="https://raw.githubusercontent.com/alextselegidis/easyappointments-wordpress-plugin/master/assets/images/icon-128x128.png" alt="Easy!Appointments" width="128">
+        <img src="https://raw.githubusercontent.com/alextselegidis/easyappointments-wordpress-plugin/master/assets/icon-128x128.png" alt="Easy!Appointments" width="128">
     </a>
     <br>
     Easy!Appointments - WordPress Plugin
@@ -26,7 +26,7 @@
   <a href="#license">License</a>
 </p>
 
-![banner](assets/banner-772x250.png.png)
+![banner](assets/banner-772x250.png)
 
 ## About
 
