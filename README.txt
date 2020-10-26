@@ -6,7 +6,7 @@ Requires at least: 5.0
 Tested up to: 5.5.1
 Stable tag: trunk
 License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Integrate the booking form of Easy!Appointments directly into your WordPress pages.
 
@@ -14,7 +14,7 @@ Integrate the booking form of Easy!Appointments directly into your WordPress pag
 
 Leverage your conversion rates by integrating the booking form directly in your WordPress pages. Customers will never have to leave your website for booking an appointment. Take advantage of the scheduling power of Easy!Appointment which will run smoothly with your WordPress installation.Include the booking form in your pages with the [easyappointments] shortcode.
 
-*Minimum Requirements: WordPress v4.0 & PHP v5.6*
+*Minimum Requirements: WordPress v5.0 & PHP v5.6*
 
 = Connecting Easy!Appointments with WordPress =
 
@@ -28,7 +28,9 @@ WordPress supports the use of custom shortcodes which allow plugins to insert cu
 
 The "width", "height" and "style" attributes are optional but can help you to fine tune the styling of the iframe.
 
-*Find out more about Easy!Appointments at http://easyappointments.org*
+Additionally, you can use the "provider" and "service" shortcode attributes to preselect a provider or a service or both on a certain page (e.g. `[easyappointments provider="2" service="1"]`, where "2" and "1" are the record IDs, they can be fetched from the Easy!Appointments backend section, in the users and services page accordingly by clicking the dedicated link of a record).
+
+*Find out more about Easy!Appointments at https://easyappointments.org*
 
 == Installation ==
 
@@ -65,6 +67,7 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 * Support for WordPress 5.5.
 * Plugin codebase adjustments.
+* Added support for "provider" and "service" shortcode attributes.
 
 = 1.2.0 =
 * Support for WordPress 5.x.
