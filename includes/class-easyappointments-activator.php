@@ -20,17 +20,34 @@
  * @subpackage Easyappointments/includes
  * @author     Alex Tselegidis <info@alextselegidis.com>
  */
-class Easyappointments_Activator {
+class Easyappointments_Activator
+{
 
-	/**
-	 * Short Description. (use period)
-	 *
-	 * Long Description.
-	 *
-	 * @since    1.0.0
-	 */
-	public static function activate() {
+    /**
+     * Short Description. (use period)
+     *
+     * Long Description.
+     *
+     * @since    1.0.0
+     */
+    public static function activate()
+    {
 
-	}
+        self::rename_option('eawp_path', 'easyappointments_path');
+        self::rename_option('eawp_url', 'easyappointments_url');
+
+    }
+
+    protected static function rename_option($old_option_name, $new_option_name)
+    {
+
+        $option_value = get_option($old_option_name);
+
+        if (!empty($option_value)) {
+            delete_option($old_option_name);
+            add_option($new_option_name, $option_value);
+        }
+
+    }
 
 }
