@@ -39,7 +39,7 @@ shortcode.
 
 ### Connecting Easy!Appointments with WordPress
 
-Install and activate the plugin and navigate to `Settings >> Easy!Appointments` menu of the WordPress admin section. 
+Install and activate the plugin and navigate to `Settings > Easy!Appointments` menu of the WordPress admin section. 
 Create a new Easy!Appointments installation or connect to an existing one by providing the preferred URL and destination 
 path in the page form. Once a connection is established you'll be able to include the booking form in your pages.
 
