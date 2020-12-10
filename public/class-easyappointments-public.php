@@ -100,7 +100,7 @@ class Easyappointments_Public
          * class.
          */
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/easyappointments-public.js', ['jquery'], $this->version, false);
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/easyappointments-iframe.js', ['jquery'], $this->version, false);
 
     }
 
@@ -136,7 +136,7 @@ class Easyappointments_Public
                 $url .= http_build_query($query_data);
             }
 
-            wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
+            // wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
 
             $width = isset($attributes['width']) ? $attributes['width'] : '100%';
             $height = isset($attributes['height']) ? $attributes['height'] : '700px';
