@@ -235,6 +235,7 @@ class Easyappointments_Admin
             @unlink($path . '/autoload.php');
             @unlink($path . '/CHANGELOG.md');
             @unlink($path . '/config.php');
+            @unlink($path . '/config-sample.php');
             @unlink($path . '/index.php');
             @unlink($path . '/LICENSE');
             @unlink($path . '/README.md');
