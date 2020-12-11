@@ -121,6 +121,9 @@ class Easyappointments_Admin
 
                 $curl = curl_init($package['url']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
                 $zip = curl_exec($curl);
                 curl_close($curl);
                 file_put_contents($path . '/easyappointments.zip', $zip);
