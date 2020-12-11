@@ -63,6 +63,13 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
+= 1.3.1 =
+
+* Support for WordPress 5.6.
+* Support for Easy!Appointments 1.4
+* Fixed issue with new Easy!Appointments installations.
+* Fixed issue with missing javascript file in public pages.
+
 = 1.3.0 =
 
 * Support for WordPress 5.5.
