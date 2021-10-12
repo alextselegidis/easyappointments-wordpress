@@ -272,7 +272,7 @@ class Easyappointments_Admin
                     'Lang' => [
                         'InstallationSuccessMessage' =>
                             __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
-                                . 'complete the configuration of the application.', 'easyappointments'),
+                                . 'to complete the configuration of the application.', 'easyappointments'),
                         'ConnectSuccessMessage' =>
                             __('Easy!Appointments installation was connected successfully! You can now use the '
                                 . '[easyappointments] shortcode in your pages.', 'easyappointments'),
