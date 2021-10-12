@@ -1,11 +1,5 @@
-/.idea/
-/.tmp-package/
-/.vagrant/
-/doc/apigen/
-/easyappointments-wp.zip
-/node_modules/
-/test/Core/Operations/tmp-dir
-/wordpress/
-/vendor/
-/src/assets/**/*.min.*
+.idea
 .DS_Store
+*.log
+.docker
+build

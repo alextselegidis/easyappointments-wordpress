@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+    mysql:
+        image: mysql:5.7
+        volumes:
+            - ./.docker/mysql:/var/lib/mysql
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: wordpress
+
+    platform:
+        depends_on:
+            - mysql
+        image: wordpress:5.8-apache
+        ports:
+            - "8000:80"
+        restart: always
+        environment:
+            WORDPRESS_DB_HOST: mysql:3306
+            WORDPRESS_DB_USER: wordpress
+            WORDPRESS_DB_PASSWORD: wordpress
+        working_dir: /var/www/html
+        volumes:
+            - .:/var/www/html/wp-content/plugins/easyappointments-wordpress
+

@@ -1,17 +1,17 @@
 <h1 align="center">
     <br>
     <a href="https://easyappointments.org">
-        <img src="https://raw.githubusercontent.com/alextselegidis/easyappointments-integrations/master/logo.png" alt="Easy!Appointments" width="150">
+        <img src="https://raw.githubusercontent.com/alextselegidis/easyappointments-wordpress-plugin/master/assets/icon-128x128.png" alt="Easy!Appointments" width="128">
     </a>
     <br>
-    Easy!Appointments Integrations
+    Easy!Appointments - WordPress Plugin
     <br>
 </h1>
 
 <br>
 
 <h4 align="center">
-    Easy!Appointments integration packages for various platforms. 
+    Easy!Appointments appointment scheduling integration for WordPress. 
 </h4>
 
 <p align="center">
