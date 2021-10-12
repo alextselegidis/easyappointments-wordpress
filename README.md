@@ -10,6 +10,12 @@
 
 <br>
 
+<p align="center" style="background: yellow; font-weight: bold">
+    NOTICE: This repository is undergoing major changes, make sure you update your existing clones before working on new features.
+</p>
+
+<br>
+
 <h4 align="center">
     Easy!Appointments integration packages for various platforms. 
 </h4>
