@@ -17,7 +17,7 @@ services:
             - mysql
         image: wordpress:5.8-apache
         ports:
-            - "8000:80"
+            - '8000:80'
         restart: always
         environment:
             WORDPRESS_DB_HOST: mysql:3306
