@@ -26,7 +26,7 @@
   <a href="#license">License</a>
 </p>
 
-![banner](assets/banner-772x250.png)
+![banner](wordpress/assets/banner-772x250.png)
 
 ## About
 
