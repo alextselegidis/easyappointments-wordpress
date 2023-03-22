@@ -30,7 +30,7 @@ The "width", "height" and "style" attributes are optional but can help you to fi
 
 Additionally, you can use the "provider" and "service" shortcode attributes to preselect a provider or a service or both on a certain page (e.g. `[easyappointments provider="2" service="1"]`, where "2" and "1" are the record IDs, they can be fetched from the Easy!Appointments backend section, in the users and services page accordingly by clicking the dedicated link of a record).
 
-*Find out more about Easy!Appointments at <a href="https://easyappointments.org">https://easyappointments.org</a>*
+*Find out more about Easy!Appointments at https://easyappointments.org*
 
 == Installation ==
 
