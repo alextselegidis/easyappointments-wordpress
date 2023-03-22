@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
     mysql:
-        image: mysql:5.7
+        image: mysql:8.0
         volumes:
             - ./.docker/mysql:/var/lib/mysql
         restart: always
@@ -15,7 +15,7 @@ services:
     platform:
         depends_on:
             - mysql
-        image: wordpress:5.8-apache
+        image: wordpress:6.1-apache
         ports:
             - '8000:80'
         restart: always
