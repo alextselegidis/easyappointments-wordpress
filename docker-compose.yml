@@ -7,23 +7,23 @@ services:
             - ./.docker/mysql:/var/lib/mysql
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_ROOT_PASSWORD: secret
             MYSQL_DATABASE: wordpress
-            MYSQL_USER: wordpress
-            MYSQL_PASSWORD: wordpress
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
 
     platform:
         depends_on:
             - mysql
         image: wordpress:6.4-apache
         ports:
-            - '8000:80'
+            - '80:80'
         restart: always
         environment:
             WORDPRESS_DB_HOST: mysql:3306
-            WORDPRESS_DB_USER: wordpress
-            WORDPRESS_DB_PASSWORD: wordpress
+            WORDPRESS_DB_USER: user
+            WORDPRESS_DB_PASSWORD: password
         working_dir: /var/www/html
         volumes:
-            - .:/var/www/html/wp-content/plugins/easyappointments-wordpress
+            - .:/var/www/html/wp-content/plugins/easyappointments
 
