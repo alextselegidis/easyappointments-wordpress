@@ -15,7 +15,7 @@ services:
     platform:
         depends_on:
             - mysql
-        image: wordpress:6.1-apache
+        image: wordpress:6.4-apache
         ports:
             - '8000:80'
         restart: always
