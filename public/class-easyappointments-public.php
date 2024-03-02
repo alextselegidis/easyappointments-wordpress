@@ -145,10 +145,10 @@ class Easyappointments_Public
             return "
                 <iframe
                     class='easyappointments-iframe'
-                    src='$url'
-                    width='$width'
-                    height='$height'
-                    style='$style'
+                    src='" . esc_attr($url) . "'
+                    width='" . esc_attr($width) . "'
+                    height='" . esc_attr($height) . "'
+                    style='" . esc_attr($style) . "'
                 >
                 </iframe>
             ";
