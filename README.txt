@@ -63,6 +63,11 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
+= 1.3.2 =
+
+* Support for WordPress 6.4.3.
+* Fixed XSS issue with shortcode.
+
 = 1.3.1 =
 
 * Support for WordPress 5.6.
