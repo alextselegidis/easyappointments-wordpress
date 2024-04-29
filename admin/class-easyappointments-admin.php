@@ -190,10 +190,19 @@ class Easyappointments_Admin
 
     }
 
+    /**
+     * @throws Exception
+     */
     public function disconnect()
     {
-
         $path = sanitize_text_field($_POST['path']);
+
+        $path_option_value = get_option('easyappointments_path');
+
+        if ($path !== $path_option_value) {
+            throw new Exception('Cannot remove a folder other than the connected Easy!Appointments instance.');
+        }
+
         $remove_files = filter_var($_POST['remove_files'], FILTER_VALIDATE_BOOLEAN);
         $remove_db_tables = filter_var($_POST['remove_db_tables'], FILTER_VALIDATE_BOOLEAN);
 
