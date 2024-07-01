@@ -61,7 +61,7 @@
      * @param  {Error} errorThrown
      */
     function handleAjaxFailure(jqXHR, textStatus, errorThrown) {
-        var message = EasyappointmentsConfig.Lang.AjaxFailureMessage.replace('%message%', errorThrown.message);
+        var message = EasyappointmentsConfig.Lang.AjaxFailureMessage.replace('%message%', errorThrown);
 
         showErrorMessage(message);
 
