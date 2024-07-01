@@ -67,13 +67,12 @@ add_thickbox();
             </td>
         </tr>
         <tr>
-            <td class="submit connect-actions hidden">
-                <button id="connect" class="button">
-                    <?php _e('Connect', 'easyappointments') ?>
+            <td class="submit">
+                <button id="connect" class="button connect-action">
+                    <?php _e( 'Connect', 'easyappointments') ?>
                 </button>
-            </td>
-            <td class="sublime disconnect-actions hidden">
-                <button id='disconnect' class="button">
+
+                <button id='disconnect' class="button disconnect-action">
                     <?php _e('Disconnect', 'easyappointments') ?>
                 </button>
             </td>

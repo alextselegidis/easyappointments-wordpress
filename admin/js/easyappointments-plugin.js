@@ -75,12 +75,12 @@
      * a false indicates that there is no active connection.
      */
     function toggleActionButtons(connectionStatus) {
+        $('.connect-action').show();
+
         if (connectionStatus) {
-            $('.connect-actions').hide();
-            $('.disconnect-actions').show();
+            $('.disconnect-action').show();
         } else {
-            $('.connect-actions').show();
-            $('.disconnect-actions').hide();
+            $('.disconnect-action').hide();
         }
     }
 

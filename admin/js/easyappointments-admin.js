@@ -60,6 +60,10 @@
      * Execute the disconnect operation with the provided data.
      */
     function disconnect() {
+        if (!confirm(EasyappointmentsConfig.Lang.DisconnectPrompt)) {
+            return;
+        }
+
         var data = {
             action: 'easyappointments_disconnect',
             nonce: EasyappointmentsConfig.Ajax.nonce

@@ -153,6 +153,8 @@ class Easyappointments_Admin
                                     . '[easyappointments] shortcode in your pages.', 'easyappointments'),
                             'DisconnectSuccessMessage' =>
                                 __('Easy!Appointments installation was disconnected successfully!', 'easyappointments'),
+                            'DisconnectPrompt' =>
+                                __('Are you sure that you want to disconnect?'),
                             'VerificationSuccess' =>
                                 __('Easy!Appointments connection is active! Use the [easyappointments] shortcode in your pages/posts.', 'easyappointments'),
                             'VerificationFailure' =>
