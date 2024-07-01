@@ -270,45 +270,45 @@ class Easyappointments_Admin
 
     public function menu()
     {
-
-        add_options_page(
-            'Easy!Appointments',
-            'Easy!Appointments',
+        add_menu_page(
+            __( 'Easy!Appts', 'easyappointments' ),
+            __( 'Easy!Appts', 'easyappointments' ),
             'manage_options',
             'easyappointments-settings',
-            function () {
-                $config = [
-                    'Lang' => [
-                        'InstallationSuccessMessage' =>
-                            __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
-                                . 'to complete the configuration of the application.', 'easyappointments'),
-                        'ConnectSuccessMessage' =>
-                            __('Easy!Appointments installation was connected successfully! You can now use the '
-                                . '[easyappointments] shortcode in your pages.', 'easyappointments'),
-                        'DisconnectSuccessMesssage' =>
-                            __('Easy!Apppointments installation was disconnected successfully!', 'easyappointments'),
-                        'VerificationSuccess' =>
-                            __('Easy!Appointments connection is active! Use the [easyappointments] shortcode in your pages/posts.', 'easyappointments'),
-                        'VerificationFailure' =>
-                            __('Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'easyappointments'),
-                        'AjaxExceptionMessage' =>
-                            __('An unexpected error occurred in file %file% (line %line%): %message%', 'easyappointments'),
-                        'AjaxFailureMessage' =>
-                            __('The AJAX request could not be completed due to an unexpected error: %message%', 'easyappointments')
-                    ],
-                    'Ajax' => [
-                        'nonce' => wp_create_nonce('easyappointments')
-                    ]
-                ];
+                function () {
+                    $config = [
+                        'Lang' => [
+                            'InstallationSuccessMessage' =>
+                                __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
+                                    . 'to complete the configuration of the application.', 'easyappointments'),
+                            'ConnectSuccessMessage' =>
+                                __('Easy!Appointments installation was connected successfully! You can now use the '
+                                    . '[easyappointments] shortcode in your pages.', 'easyappointments'),
+                            'DisconnectSuccessMessage' =>
+                                __('Easy!Appointments installation was disconnected successfully!', 'easyappointments'),
+                            'VerificationSuccess' =>
+                                __('Easy!Appointments connection is active! Use the [easyappointments] shortcode in your pages/posts.', 'easyappointments'),
+                            'VerificationFailure' =>
+                                __('Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'easyappointments'),
+                            'AjaxExceptionMessage' =>
+                                __('An unexpected error occurred in file %file% (line %line%): %message%', 'easyappointments'),
+                            'AjaxFailureMessage' =>
+                                __('The AJAX request could not be completed due to an unexpected error: %message%', 'easyappointments')
+                        ],
+                        'Ajax' => [
+                            'nonce' => wp_create_nonce('easyappointments')
+                        ]
+                    ];
 
-                wp_enqueue_script('easyappointments-admin', plugin_dir_url(__FILE__) . 'js/easyappointments-admin.js', ['jquery'], $this->version, false);
-                wp_enqueue_script('easyappointments-plugin', plugin_dir_url(__FILE__) . 'js/easyappointments-plugin.js', ['jquery'], $this->version, false);
-                wp_enqueue_script('easyappointments-verify-state', plugin_dir_url(__FILE__) . 'js/easyappointments-verify-state.js', ['jquery'], $this->version, false);
-                wp_enqueue_style('easyappointments-admin', plugin_dir_url(__FILE__) . 'css/easyappointments-admin.css', [], $this->version, 'all');
-                wp_localize_script('easyappointments-plugin', 'EasyappointmentsConfig', $config);
+                    wp_enqueue_script('easyappointments-admin', plugin_dir_url(__FILE__) . 'js/easyappointments-admin.js', ['jquery'], $this->version, false);
+                    wp_enqueue_script('easyappointments-plugin', plugin_dir_url(__FILE__) . 'js/easyappointments-plugin.js', ['jquery'], $this->version, false);
+                    wp_enqueue_script('easyappointments-verify-state', plugin_dir_url(__FILE__) . 'js/easyappointments-verify-state.js', ['jquery'], $this->version, false);
+                    wp_enqueue_style('easyappointments-admin', plugin_dir_url(__FILE__) . 'css/easyappointments-admin.css', [], $this->version, 'all');
+                    wp_localize_script('easyappointments-plugin', 'EasyappointmentsConfig', $config);
 
-                include __DIR__ . '/partials/easyappointments-admin-display.php';
-            }
+                    include __DIR__ . '/partials/easyappointments-admin-display.php';
+                },
+            'dashicons-schedule'
         );
 
     }
