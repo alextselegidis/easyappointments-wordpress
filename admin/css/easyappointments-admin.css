@@ -11,8 +11,7 @@
     overflow: auto;
 }
 
-.easyappointments .header h1 {
-    margin: 18px 0;
+.easyappointments .header .plugin-title {
     padding: 0;
 }
 
@@ -29,8 +28,8 @@
 
 .easyappointments .logo {
     float: left;
-    width: 68px;
-    height: 68px;
+    width: 32px;
+    height: 32px;
     margin: 0 10px 5px 0;
 }
 
