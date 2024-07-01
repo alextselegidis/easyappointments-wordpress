@@ -16,17 +16,15 @@
 (function ($) {
     'use strict';
 
-    var $path = $('#path');
     var $url = $('#url');
 
-    if ($path.val() === '' || $url.val() === '') {
+    if ($url.val() === '') {
         EasyappointmentsPlugin.toggleActionButtons(false);
         return; // no need to check
     }
 
     var data = {
         action: 'easyappointments_verify_state',
-        path: $path.val(),
         url: $url.val(),
         nonce: EasyappointmentsConfig.Ajax.nonce
     };
@@ -39,6 +37,7 @@
     })
         .done(function (response) {
             var status = !response.exception;
+
             EasyappointmentsPlugin.toggleActionButtons(status);
 
             $('.easyappointments .notification').remove();

@@ -100,92 +100,19 @@ class Easyappointments_Admin
 
     }
 
-    public function install()
-    {
-
-        $path = sanitize_text_field($_POST['path']);
-        $url = sanitize_text_field($_POST['url']);
-
-        // Fetch integration info.
-        $curl = curl_init(EASYAPPOINTMENTS_INTEGRATIONS_INFORMATION_URL);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $integrations = json_decode(curl_exec($curl), true);
-        curl_close($curl);
-
-        foreach ($integrations['easyappointments'] as $package) {
-            if ($package['current'] === true) {
-                if (!is_dir($path)) {
-                    // dir doesn't exist, make it
-                    mkdir($path, 0777, true);
-                }
-
-                $curl = curl_init($package['url']);
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-                $zip = curl_exec($curl);
-                curl_close($curl);
-                file_put_contents($path . '/easyappointments.zip', $zip);
-                break;
-            }
-        }
-
-        // Unzip file.
-        $zip_path = $path . '/easyappointments.zip';
-        $zip = new ZipArchive;
-        $resource = $zip->open($zip_path);
-
-        if (!$resource) {
-            throw new Exception('Could not open Easy!Appointments zip file.');
-        }
-
-        $zip->extractTo($path);
-        $zip->close();
-
-        @unlink($zip_path);
-
-        // Configure
-
-        $config_path = $path . '/config.php';
-
-        if (!file_exists($config_path)) {
-            copy($path . '/config-sample.php', $config_path);
-        }
-
-        // Get "config.php" content.
-        $config_content = file_get_contents($config_path);
-
-        // Replace $base_url variable.
-        $this->set_config_value('BASE_URL', $url, $config_content);
-
-        // Replace database variables.
-        $this->set_config_value('DB_HOST', DB_HOST, $config_content);
-        $this->set_config_value('DB_NAME', DB_NAME, $config_content);
-        $this->set_config_value('DB_USERNAME', DB_USER, $config_content);
-        $this->set_config_value('DB_PASSWORD', DB_PASSWORD, $config_content);
-
-        // Update "config.php" content.
-        file_put_contents($config_path, $config_content);
-
-        add_option('easyappointments_path', $path);
-        add_option('easyappointments_url', $url);
-
-    }
-
     public function connect()
     {
 
-        $path = sanitize_text_field($_POST['path']);
         $url = sanitize_text_field($_POST['url']);
 
-        $path = rtrim($path, '/');
-
-        if (!file_exists($path . '/configuration.php') && !file_exists($path . '/config.php')) {
-            throw new Exception('Provided path does not point to an Easy!Appointments installation: "' . $path . '"');
+        if (empty($url)) {
+            throw new Exception('No URL value available.');
         }
 
-        update_option('easyappointments_path', $path);
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new Exception('Invalid URL value detected: ' . $url);
+        }
+
         update_option('easyappointments_url', $url);
 
     }
@@ -195,77 +122,20 @@ class Easyappointments_Admin
      */
     public function disconnect()
     {
-        $path = sanitize_text_field($_POST['path']);
-
-        $path_option_value = get_option('easyappointments_path');
-
-        if ($path !== $path_option_value) {
-            throw new Exception('Cannot remove a folder other than the connected Easy!Appointments instance.');
-        }
-
-        $remove_files = filter_var($_POST['remove_files'], FILTER_VALIDATE_BOOLEAN);
-        $remove_db_tables = filter_var($_POST['remove_db_tables'], FILTER_VALIDATE_BOOLEAN);
-
-        delete_option('easyappointments_path');
         delete_option('easyappointments_url');
-
-        if ($remove_db_tables) {
-            global $wpdb;
-            $wpdb->query('SET FOREIGN_KEY_CHECKS=0;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_appointments;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_secretaries_providers;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_services_providers;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_settings;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_services;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_service_categories;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_user_settings;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_users;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_roles;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_consents;');
-            $wpdb->query('DROP TABLE IF EXISTS ea_migrations;');
-            $wpdb->query('SET FOREIGN_KEY_CHECKS=1;');
-        }
-
-        if ($remove_files) {
-            if (!is_writable((string)$path)) {
-                throw new Exception('Cannot remove installation files, permission denied.');
-            }
-
-            $entries = [
-                'application/',
-                'assets/',
-                'engine/',
-                'storage/',
-                'system/',
-                'vendor/'
-            ];
-
-            foreach ($entries as $entry) {
-                $this->recursive_delete($path . '/' . $entry);
-            }
-
-            @unlink($path . '/autoload.php');
-            @unlink($path . '/CHANGELOG.md');
-            @unlink($path . '/config.php');
-            @unlink($path . '/config-sample.php');
-            @unlink($path . '/index.php');
-            @unlink($path . '/LICENSE');
-            @unlink($path . '/README.md');
-        }
-
     }
 
     public function verify_state()
     {
-        $path = sanitize_text_field($_POST['path']);
+        $url = get_option('easyappointments_url');
 
-        if (
-            !file_exists((string)$path . '/configuration.php')
-            && !file_exists((string)$path . '/config.php')
-        ) {
-            throw new Exception('Configuration file of Easy!Appointments was not found on the given path.');
+        if (empty($url)) {
+            throw new Exception('No URL value available.');
         }
 
+        if (!filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new Exception('Invalid URL value detected: ' . $url);
+        }
     }
 
     public function menu()
@@ -278,9 +148,6 @@ class Easyappointments_Admin
                 function () {
                     $config = [
                         'Lang' => [
-                            'InstallationSuccessMessage' =>
-                                __('Easy!Appointments files were installed successfully! Navigate to your installation URL '
-                                    . 'to complete the configuration of the application.', 'easyappointments'),
                             'ConnectSuccessMessage' =>
                                 __('Easy!Appointments installation was connected successfully! You can now use the '
                                     . '[easyappointments] shortcode in your pages.', 'easyappointments'),
@@ -312,46 +179,4 @@ class Easyappointments_Admin
         );
 
     }
-
-    /**
-     * Recursive removal of a directory.
-     *
-     * @param string $directory Directory path to be deleted.
-     */
-    protected function recursive_delete($directory)
-    {
-
-        if (is_dir($directory)) {
-            $objects = scandir($directory);
-            foreach ($objects as $object) {
-                if ($object != "." && $object != "..") {
-                    if (filetype($directory . "/" . $object) == "dir") {
-                        $this->recursive_delete($directory . "/" . $object);
-                    } else {
-                        @unlink($directory . "/" . $object);
-                    }
-                }
-            }
-            @reset($objects);
-            @rmdir($directory);
-        }
-
-    }
-
-    /**
-     * Set a configuration value to the "config.php" content.
-     *
-     * This method uses a regular expression to find the configuration setting to be replaced with the new value.
-     *
-     * @param string $parameter Name of the "config.php" setting to be set (eg 'BASE_URL').
-     * @param string $value New value of the configuration setting.
-     * @param string $config_content (By Reference) Contains the "config.php" file contents.
-     */
-    protected function set_config_value($parameter, $value, &$config_content)
-    {
-        $pattern = '/(' . $parameter . ' .*)=.*;/';
-        $setting = '$1 = \'' . $value . '\';';
-        $config_content = preg_replace($pattern, $setting, $config_content, 1);
-    }
-
 }
