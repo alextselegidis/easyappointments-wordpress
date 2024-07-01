@@ -139,7 +139,7 @@ class Easyappointments_Public
             // wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
 
             $width = isset($attributes['width']) ? $attributes['width'] : '100%';
-            $height = isset($attributes['height']) ? $attributes['height'] : '700px';
+            $height = isset($attributes['height']) ? $attributes['height'] : '1000px';
             $style = isset($attributes['style']) ? $attributes['style'] : '';
 
             return "

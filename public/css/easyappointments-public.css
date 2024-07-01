@@ -2,3 +2,11 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+.easyappointments-iframe {
+    display: block;
+    min-height: 1000px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+}
