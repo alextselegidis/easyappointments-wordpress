@@ -65,6 +65,7 @@ https://groups.google.com/forum/#!categories/easy-appointments
 * Support for up to WordPress 6.5.5.
 * Remove installation functionality.
 * Move the menu item in WP admin to root level, so that it becomes easier to find.
+* Update screenshots.
 
 = 1.3.3 =
 
