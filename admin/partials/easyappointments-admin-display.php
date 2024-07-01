@@ -68,11 +68,11 @@ add_thickbox();
         </tr>
         <tr>
             <td class="submit">
-                <button id="connect" class="button connect-action">
+                <button id="connect" class="button button-primary connect-action">
                     <?php _e( 'Connect', 'easyappointments') ?>
                 </button>
 
-                <button id='disconnect' class="button disconnect-action">
+                <button id='disconnect' class="button disconnect-action" style="display: none">
                     <?php _e('Disconnect', 'easyappointments') ?>
                 </button>
             </td>
