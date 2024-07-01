@@ -103,7 +103,7 @@ class Easyappointments_Admin
     public function connect()
     {
 
-        $url = sanitize_text_field($_POST['url']);
+        $url = trim(sanitize_text_field($_POST['url']));
 
         if (empty($url)) {
             throw new Exception('No URL value available.');
