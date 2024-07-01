@@ -308,7 +308,7 @@ class Easyappointments_Admin
 
                     include __DIR__ . '/partials/easyappointments-admin-display.php';
                 },
-            'dashicons-schedule'
+            'dashicons-calendar-alt'
         );
 
     }
