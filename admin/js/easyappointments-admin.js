@@ -85,7 +85,7 @@
                 $('.easyappointments').prepend(
                     '<div class="updated notification">'
                     + '<span class="dashicons dashicons-yes"></span>'
-                    + EasyappointmentsConfig.Lang.DisconnectSuccessMesssage
+                    + EasyappointmentsConfig.Lang.DisconnectSuccessMessage
                     + '</div>'
                 );
 
