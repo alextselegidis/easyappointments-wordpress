@@ -19,9 +19,15 @@
      * Execute the connect operation with the provided data.
      */
     function connect() {
+        var url = $('#url').val();
+
+        if (!url) {
+            return;
+        }
+
         var data = {
             action: 'easyappointments_connect',
-            url: $('#url').val(),
+            url: url,
             nonce: EasyappointmentsConfig.Ajax.nonce
         };
 
