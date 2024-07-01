@@ -39,9 +39,9 @@ shortcode.
 
 ### Connecting Easy!Appointments with WordPress
 
-Install and activate the plugin and navigate to `Settings > Easy!Appointments` menu of the WordPress admin section. 
-Create a new Easy!Appointments installation or connect to an existing one by providing the preferred URL and destination 
-path in the page form. Once a connection is established you'll be able to include the booking form in your pages.
+Install and activate the plugin and navigate to `Easy!Appointments` menu of the WordPress admin section. 
+Connect to an existing Easy!Appointments installation by providing the preferred URL in the page form. 
+Once a connection is established you'll be able to include the booking form in your pages.
 
 ### Include Booking in your Pages
 
@@ -69,23 +69,14 @@ command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/alextselegidis/easyappointments-wordpress-plugin.git
+$ git clone https://github.com/alextselegidis/easyappointments-wordpress.git
 
 # Go into the repository
-$ cd easyappointments-wordpress-plugin
+$ cd easyappointments-wordpress
 
 # Install dependencies
-$ npm install && composer install
-
-# Build the plugin
-$ npm run build
+$ composer install
 ```
-
-Note: If you're using Linux Bash for Windows, 
-[see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) 
-or use `node` from the command prompt.
-
-You can build the files by running `npm run build`. This command will bundle everything to a `build` directory.
 
 ## Installation
 
