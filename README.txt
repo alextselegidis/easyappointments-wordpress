@@ -60,6 +60,10 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
+= 1.4.1 =
+
+* Add capabilities check to the plugin requests
+
 = 1.4.0 =
 
 * Support for up to WordPress 6.5.5.
