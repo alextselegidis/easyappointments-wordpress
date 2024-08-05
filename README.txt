@@ -4,7 +4,7 @@ Contributors: alextselegidis
 Donate link: https://alextselegidis.com
 Tags: agenda, appointments, scheduler, google-calendar, online-appointments
 Requires at least: 5.0
-Tested up to: 6.5.5
+Tested up to: 6.6.1
 Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
