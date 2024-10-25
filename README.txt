@@ -4,7 +4,7 @@ Contributors: alextselegidis
 Donate link: https://alextselegidis.com
 Tags: agenda, appointments, scheduler, google-calendar, online-appointments
 Requires at least: 5.0
-Tested up to: 6.6.1
+Tested up to: 6.6.2
 Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -59,6 +59,10 @@ If you encounter issues, but you do not know what to do visit the official Easy!
 https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
+
+= 1.4.2 =
+
+* Remove the $path check before rendering the iframe as it is always empty (frontend iframe rendering works again)
 
 = 1.4.1 =
 

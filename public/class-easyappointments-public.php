@@ -109,10 +109,9 @@ class Easyappointments_Public
 
         add_shortcode('easyappointments', function ($attributes) {
 
-            $path = get_option('easyappointments_path');
             $url = get_option('easyappointments_url');
 
-            if (empty($path) || empty($url)) {
+            if (empty($url)) {
                 return ''; // There are no options set so do not proceed with the operation.
             }
 
