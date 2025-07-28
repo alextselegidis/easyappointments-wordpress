@@ -60,6 +60,10 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
+= 1.4.3 =
+
+* Add "nonce" check for the admin HTTP requests
+
 = 1.4.2 =
 
 * Remove the $path check before rendering the iframe as it is always empty (frontend iframe rendering works again)

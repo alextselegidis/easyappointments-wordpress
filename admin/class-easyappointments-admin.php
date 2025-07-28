@@ -98,6 +98,8 @@ class Easyappointments_Admin {
     }
 
     public function connect() {
+        check_admin_referer('easyappointments', 'nonce');
+
         $this->check_capabilities();
 
         $url = trim( sanitize_text_field( $_POST['url'] ) );
@@ -118,12 +120,16 @@ class Easyappointments_Admin {
      * @throws Exception
      */
     public function disconnect() {
+        check_admin_referer('easyappointments', 'nonce');
+
         $this->check_capabilities();
 
         delete_option( 'easyappointments_url' );
     }
 
     public function verify_state() {
+        check_admin_referer('easyappointments', 'nonce');
+
         $this->check_capabilities();
 
         $url = get_option( 'easyappointments_url' );
