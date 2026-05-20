@@ -160,6 +160,7 @@ class Easyappointments {
         $this->loader->add_action( 'wp_ajax_easyappointments_connect', $plugin_admin, 'connect' );
         $this->loader->add_action( 'wp_ajax_easyappointments_disconnect', $plugin_admin, 'disconnect' );
         $this->loader->add_action( 'wp_ajax_easyappointments_verify_state', $plugin_admin, 'verify_state' );
+        $this->loader->add_filter( 'plugin_action_links_easyappointments-wordpress/easyappointments.php', $plugin_admin, 'add_settings_link' );
 
     }
 

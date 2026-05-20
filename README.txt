@@ -60,6 +60,10 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
+= Unreleased =
+
+* Add "Settings" link on the Plugins page for quick access to the plugin configuration.
+
 = 1.4.3 =
 
 * Add "nonce" check for the admin HTTP requests

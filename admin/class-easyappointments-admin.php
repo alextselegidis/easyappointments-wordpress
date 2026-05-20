@@ -190,6 +190,13 @@ class Easyappointments_Admin {
 
     }
 
+    public function add_settings_link( $links ) {
+        $settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=easyappointments-settings' ) ) . '">'
+            . __( 'Settings', 'easyappointments' ) . '</a>';
+        array_unshift( $links, $settings_link );
+        return $links;
+    }
+
     private function check_capabilities() {
         if ( ! $this->can_manage_options() ) {
             throw new Exception( 'You are not allowed to perform this task' );
