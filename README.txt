@@ -2,7 +2,7 @@
 
 Contributors: alextselegidis
 Donate link: https://alextselegidis.com
-Tags: appointments, booking, scheduler, reservations, scheduling
+Tags: appointments, booking, scheduler, elementor, gutenberg
 Requires at least: 5.0
 Tested up to: 6.8.2
 Stable tag: trunk
@@ -32,6 +32,8 @@ Most booking plugins try to lock you into their ecosystem. Easy!Appointments tak
 = Key Features =
 
 * Embed your booking page with a simple shortcode
+* **Gutenberg block** — insert the booking form natively in the block editor
+* **Elementor widget** — drag and drop the booking form in Elementor
 * Connect to any existing Easy!Appointments installation in seconds
 * Responsive booking interface that works on all devices
 * Multi-service and multi-provider support
