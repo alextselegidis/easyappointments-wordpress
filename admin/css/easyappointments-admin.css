@@ -243,10 +243,11 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    padding: 14px 16px;
+    padding: 14px 40px 14px 16px; /* right padding leaves room for dismiss button */
     margin-bottom: 20px;
     border-radius: 4px;
     border-left: 4px solid transparent;
+    position: relative;
 }
 
 .easyappointments .ea-notification--success {

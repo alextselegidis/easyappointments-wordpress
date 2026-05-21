@@ -53,6 +53,9 @@
             + '<p class="ea-notification-message">' + message + '</p>'
             + detailsHtml
             + '</div>'
+            + '<button type="button" class="notice-dismiss ea-notification-dismiss">'
+            + '<span class="screen-reader-text">Dismiss</span>'
+            + '</button>'
             + '</div>'
         );
     }
@@ -70,6 +73,9 @@
             + '<div class="ea-notification-content">'
             + '<p class="ea-notification-message">' + message + '</p>'
             + '</div>'
+            + '<button type="button" class="notice-dismiss ea-notification-dismiss">'
+            + '<span class="screen-reader-text">Dismiss</span>'
+            + '</button>'
             + '</div>'
         );
     }
@@ -130,6 +136,10 @@
             $('.disconnect-action').hide();
         }
     }
+
+    $(document).on('click', '.ea-notification-dismiss', function () {
+        $(this).closest('.ea-notification').remove();
+    });
 
     window.EasyappointmentsPlugin = {
         handleAjaxException:  handleAjaxException,
