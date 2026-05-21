@@ -87,7 +87,8 @@
     window.EasyappointmentsPlugin = {
         handleAjaxException: handleAjaxException,
         handleAjaxFailure: handleAjaxFailure,
-        toggleActionButtons: toggleActionButtons
+        toggleActionButtons: toggleActionButtons,
+        showErrorMessage: showErrorMessage
     };
 
 })(jQuery);

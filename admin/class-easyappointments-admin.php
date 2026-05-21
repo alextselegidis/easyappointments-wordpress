@@ -98,48 +98,90 @@ class Easyappointments_Admin {
     }
 
     public function connect() {
-        check_admin_referer('easyappointments', 'nonce');
+        try {
+            check_admin_referer( 'easyappointments', 'nonce' );
 
-        $this->check_capabilities();
+            $this->check_capabilities();
 
-        $url = trim( sanitize_text_field( $_POST['url'] ) );
+            $url = trim( sanitize_text_field( $_POST['url'] ) );
 
-        if ( empty( $url ) ) {
-            throw new Exception( 'No URL value available.' );
+            if ( empty( $url ) ) {
+                throw new Exception( __( 'No URL value provided.', 'easyappointments' ) );
+            }
+
+            if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
+                throw new Exception( __( 'The provided value is not a valid URL.', 'easyappointments' ) );
+            }
+
+            $logo_url = trailingslashit( $url ) . 'logo.png';
+            $response = wp_remote_head( $logo_url, [ 'timeout' => 10, 'sslverify' => false ] );
+
+            if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) != 200 ) {
+                throw new Exception( __( 'The provided URL does not appear to be a valid Easy!Appointments installation. Please verify the URL and try again.', 'easyappointments' ) );
+            }
+
+            update_option( 'easyappointments_url', $url );
+
+            wp_send_json_success();
+
+        } catch ( Exception $e ) {
+            wp_send_json( [
+                'exception' => [
+                    'message' => $e->getMessage(),
+                    'file'    => $e->getFile(),
+                    'line'    => $e->getLine(),
+                ],
+            ] );
         }
-
-        if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
-            throw new Exception( 'Invalid URL value detected: ' . $url );
-        }
-
-        update_option( 'easyappointments_url', $url );
-
     }
 
-    /**
-     * @throws Exception
-     */
     public function disconnect() {
-        check_admin_referer('easyappointments', 'nonce');
+        try {
+            check_admin_referer( 'easyappointments', 'nonce' );
 
-        $this->check_capabilities();
+            $this->check_capabilities();
 
-        delete_option( 'easyappointments_url' );
+            delete_option( 'easyappointments_url' );
+
+            wp_send_json_success();
+
+        } catch ( Exception $e ) {
+            wp_send_json( [
+                'exception' => [
+                    'message' => $e->getMessage(),
+                    'file'    => $e->getFile(),
+                    'line'    => $e->getLine(),
+                ],
+            ] );
+        }
     }
 
     public function verify_state() {
-        check_admin_referer('easyappointments', 'nonce');
+        try {
+            check_admin_referer( 'easyappointments', 'nonce' );
 
-        $this->check_capabilities();
+            $this->check_capabilities();
 
-        $url = get_option( 'easyappointments_url' );
+            $url = get_option( 'easyappointments_url' );
 
-        if ( empty( $url ) ) {
-            throw new Exception( 'No URL value available.' );
-        }
+            if ( empty( $url ) ) {
+                throw new Exception( __( 'No URL value available.', 'easyappointments' ) );
+            }
 
-        if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
-            throw new Exception( 'Invalid URL value detected: ' . $url );
+            if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
+                throw new Exception( __( 'Invalid URL value detected.', 'easyappointments' ) );
+            }
+
+            wp_send_json_success();
+
+        } catch ( Exception $e ) {
+            wp_send_json( [
+                'exception' => [
+                    'message' => $e->getMessage(),
+                    'file'    => $e->getFile(),
+                    'line'    => $e->getLine(),
+                ],
+            ] );
         }
     }
 
@@ -170,7 +212,9 @@ class Easyappointments_Admin {
                         'AjaxExceptionMessage' =>
                             __( 'An unexpected error occurred in file %file% (line %line%): %message%', 'easyappointments' ),
                         'AjaxFailureMessage' =>
-                            __( 'The AJAX request could not be completed due to an unexpected error: %message%', 'easyappointments' )
+                                __( 'The AJAX request could not be completed due to an unexpected error: %message%', 'easyappointments' ),
+                        'InvalidUrlMessage' =>
+                                __( 'Please enter a valid URL starting with http:// or https://.', 'easyappointments' ),
                     ],
                     'Ajax' => [
                         'nonce' => wp_create_nonce( 'easyappointments' )

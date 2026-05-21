@@ -16,12 +16,32 @@
     'use strict';
 
     /**
+     * Check whether a string is a valid http/https URL.
+     *
+     * @param  {string} value
+     * @return {boolean}
+     */
+    function isValidUrl(value) {
+        try {
+            var url = new URL(value.trim());
+            return url.protocol === 'http:' || url.protocol === 'https:';
+        } catch (_) {
+            return false;
+        }
+    }
+
+    /**
      * Execute the connect operation with the provided data.
      */
     function connect() {
-        var url = $('#url').val();
+        var url = $('#url').val().trim();
 
         if (!url) {
+            return;
+        }
+
+        if (!isValidUrl(url)) {
+            EasyappointmentsPlugin.showErrorMessage(EasyappointmentsConfig.Lang.InvalidUrlMessage);
             return;
         }
 
@@ -38,7 +58,7 @@
             dataType: 'json'
         })
             .done(function (response) {
-                if (response.exception) {
+                if (response && response.exception) {
                     return EasyappointmentsPlugin.handleAjaxException(response);
                 }
 
@@ -76,7 +96,7 @@
             dataType: 'json'
         })
             .done(function (response) {
-                if (response.exception) {
+                if (response && response.exception) {
                     return EasyappointmentsPlugin.handleAjaxException(response);
                 }
 
@@ -104,11 +124,22 @@
 
     $('#disconnect').on('click', disconnect);
 
+    $(document).on('click', '.ea-method-card', function () {
+        var method = $(this).data('method');
+
+        $('.ea-method-card').removeClass('active');
+        $(this).addClass('active');
+
+        $('.ea-instruction-panel').hide();
+        $('#ea-instructions-' + method).show();
+        $('#ea-instructions').slideDown(200);
+    });
+
     $(document).ajaxStart(function () {
-        $('.easyappointments img.loading').removeClass('hidden');
+        $('.easyappointments .ea-loading').removeClass('hidden');
     });
 
     $(document).ajaxComplete(function () {
-        $('.easyappointments img.loading').addClass('hidden');
+        $('.easyappointments .ea-loading').addClass('hidden');
     });
 })(jQuery);
