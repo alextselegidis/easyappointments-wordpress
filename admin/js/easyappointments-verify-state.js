@@ -36,26 +36,14 @@
         dataType: 'json'
     })
         .done(function (response) {
-            var status = !response.exception;
+            var connected = !(response && response.exception);
 
-            EasyappointmentsPlugin.toggleActionButtons(status);
+            EasyappointmentsPlugin.toggleActionButtons(connected);
 
-            $('.easyappointments .notification').remove();
-
-            if (!response.exception) {
-                $('.easyappointments').prepend(
-                    '<div class="updated notification">'
-                    + '<span class="dashicons dashicons-yes"></span>'
-                    + EasyappointmentsConfig.Lang.VerificationSuccess
-                    + '</div>'
-                );
+            if (connected) {
+                EasyappointmentsPlugin.showSuccessMessage(EasyappointmentsConfig.Lang.VerificationSuccess);
             } else {
-                $('.easyappointments').prepend(
-                    '<div class="error notification">'
-                    + '<span class="dashicons dashicons-no"></span>'
-                    + EasyappointmentsConfig.Lang.VerificationFailure
-                    + '</div>'
-                );
+                EasyappointmentsPlugin.handleAjaxException(response.exception);
             }
         })
         .fail(EasyappointmentsPlugin.handleAjaxFailure);

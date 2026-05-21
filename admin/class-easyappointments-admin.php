@@ -209,12 +209,16 @@ class Easyappointments_Admin {
                             __( 'Easy!Appointments connection is active! Use the [easyappointments] shortcode in your pages/posts.', 'easyappointments' ),
                         'VerificationFailure' =>
                             __( 'Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'easyappointments' ),
-                        'AjaxExceptionMessage' =>
-                            __( 'An unexpected error occurred in file %file% (line %line%): %message%', 'easyappointments' ),
-                        'AjaxFailureMessage' =>
-                                __( 'The AJAX request could not be completed due to an unexpected error: %message%', 'easyappointments' ),
+                        'ErrorTitle' =>
+                            __( 'Something went wrong', 'easyappointments' ),
+                        'UnknownError' =>
+                            __( 'An unknown error occurred. Please try again.', 'easyappointments' ),
+                        'ShowTechnicalDetails' =>
+                            __( 'Show technical details', 'easyappointments' ),
                         'InvalidUrlMessage' =>
-                                __( 'Please enter a valid URL starting with http:// or https://.', 'easyappointments' ),
+                            __( 'Please enter a valid URL starting with http:// or https://.', 'easyappointments' ),
+                        'AjaxFailureMessage' =>
+                            __( 'The request could not be completed. Please check your connection and try again.', 'easyappointments' ),
                     ],
                     'Ajax' => [
                         'nonce' => wp_create_nonce( 'easyappointments' )

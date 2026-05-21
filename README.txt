@@ -4,7 +4,7 @@ Contributors: alextselegidis
 Donate link: https://alextselegidis.com
 Tags: appointments, booking, scheduler, elementor, gutenberg
 Requires at least: 5.0
-Tested up to: 6.8.2
+Tested up to: 7.0.0
 Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -122,6 +122,7 @@ https://groups.google.com/forum/#!categories/easy-appointments
 * Validate URL format on the frontend before sending the connect request.
 * Validate URL format and verify the Easy!Appointments installation (via logo.png check) on the backend before saving.
 * Fix AJAX actions to return proper JSON responses with structured error information.
+* Fix error notifications to display a clear title, friendly message, and collapsible technical details instead of raw undefined values.
 
 = 1.4.3 =
 

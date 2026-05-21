@@ -239,19 +239,85 @@
 
 /* Notifications
 ---------------------------------------------------------------------------- */
-.easyappointments .updated,
-.easyappointments .error {
+.easyappointments .ea-notification {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 16px;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
     margin-bottom: 20px;
-    border-radius: 2px;
+    border-radius: 4px;
+    border-left: 4px solid transparent;
 }
 
-.easyappointments .updated .dashicons,
-.easyappointments .error .dashicons {
+.easyappointments .ea-notification--success {
+    background: #f0faf0;
+    border-left-color: #00a32a;
+}
+
+.easyappointments .ea-notification--error {
+    background: #fcf0f0;
+    border-left-color: #d63638;
+}
+
+.easyappointments .ea-notification-icon {
     flex-shrink: 0;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+}
+
+.easyappointments .ea-notification--success .ea-notification-icon {
+    color: #00a32a;
+}
+
+.easyappointments .ea-notification--error .ea-notification-icon {
+    color: #d63638;
+}
+
+.easyappointments .ea-notification-content {
+    flex: 1;
+}
+
+.easyappointments .ea-notification-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #1d2327;
+}
+
+.easyappointments .ea-notification-message {
+    margin: 0;
+    color: #1d2327;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.easyappointments .ea-notification-details {
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.easyappointments .ea-notification-details summary {
+    cursor: pointer;
+    color: #646970;
+    user-select: none;
+}
+
+.easyappointments .ea-notification-details summary:hover {
+    color: #1d2327;
+}
+
+.easyappointments .ea-notification-details pre {
+    margin: 6px 0 0;
+    padding: 8px 10px;
+    background: rgba(0,0,0,.04);
+    border-radius: 3px;
+    font-size: 11px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: #646970;
 }
 
 /* Footer

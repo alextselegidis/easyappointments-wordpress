@@ -16,63 +16,110 @@
     'use strict';
 
     /**
-     * Create an error message HTML output for the plugin page.
+     * Display a user-friendly error notification.
      *
-     * @param  {string} message
+     * Accepts either a plain string or an object with:
+     *   { title, message, details }
+     *
+     * @param {string|object} payload
      */
-    function showErrorMessage(message) {
-        // Remove previous message and display a new one with exception information.
-        $('.easyappointments .notification').remove();
+    function showErrorMessage(payload) {
+        var title, message, details;
 
+        if (typeof payload === 'string') {
+            title   = EasyappointmentsConfig.Lang.ErrorTitle;
+            message = payload;
+            details = null;
+        } else {
+            title   = payload.title   || EasyappointmentsConfig.Lang.ErrorTitle;
+            message = payload.message || EasyappointmentsConfig.Lang.UnknownError;
+            details = payload.details || null;
+        }
+
+        var detailsHtml = '';
+        if (details) {
+            detailsHtml = '<details class="ea-notification-details">'
+                + '<summary>' + EasyappointmentsConfig.Lang.ShowTechnicalDetails + '</summary>'
+                + '<pre>' + details + '</pre>'
+                + '</details>';
+        }
+
+        $('.easyappointments .notification').remove();
         $('.easyappointments').prepend(
-            '<div class="error notification">'
-            + '<span class="dashicons dashicons-no"></span>'
-            + message
+            '<div class="notification ea-notification ea-notification--error">'
+            + '<span class="dashicons dashicons-warning ea-notification-icon"></span>'
+            + '<div class="ea-notification-content">'
+            + '<strong class="ea-notification-title">' + title + '</strong>'
+            + '<p class="ea-notification-message">' + message + '</p>'
+            + detailsHtml
+            + '</div>'
             + '</div>'
         );
     }
 
     /**
-     * Handle AJAX Exception
+     * Display a user-friendly success notification.
      *
-     * This method will display exception information to the user.
+     * @param {string} message
+     */
+    function showSuccessMessage(message) {
+        $('.easyappointments .notification').remove();
+        $('.easyappointments').prepend(
+            '<div class="notification ea-notification ea-notification--success">'
+            + '<span class="dashicons dashicons-yes-alt ea-notification-icon"></span>'
+            + '<div class="ea-notification-content">'
+            + '<p class="ea-notification-message">' + message + '</p>'
+            + '</div>'
+            + '</div>'
+        );
+    }
+
+    /**
+     * Handle a structured AJAX exception object ({ message, file, line }).
      *
      * @param {object} exception
      */
     function handleAjaxException(exception) {
-        var message = EasyappointmentsConfig.Lang.AjaxExceptionMessage
-            .replace('%file%', exception.file)
-            .replace('%line%', exception.line)
-            .replace('%message%', exception.message);
+        var details = null;
+        if (exception && (exception.file || exception.line)) {
+            var parts = [];
+            if (exception.file) { parts.push(exception.file); }
+            if (exception.line) { parts.push('(line ' + exception.line + ')'); }
+            details = parts.join(' ');
+        }
 
-        showErrorMessage(message);
+        showErrorMessage({
+            title:   EasyappointmentsConfig.Lang.ErrorTitle,
+            message: (exception && exception.message)
+                ? exception.message
+                : EasyappointmentsConfig.Lang.UnknownError,
+            details: details
+        });
 
-        console.log('AJAX Exception: ', exception);
+        console.error('AJAX Exception:', exception);
     }
 
     /**
-     * Handle AJAX Failure
+     * Handle a low-level AJAX / network failure.
      *
-     * This method must be bound to the "fail" method of the jqXHR object and must be executed whenever
-     * the AJAX request was failed. It will also display a user friendly message to the plugin page.
-     *
-     * @param  {jqXHR} jqXHR
-     * @param  {string} textStatus
-     * @param  {Error} errorThrown
+     * @param {jqXHR}  jqXHR
+     * @param {string} textStatus
+     * @param {Error}  errorThrown
      */
     function handleAjaxFailure(jqXHR, textStatus, errorThrown) {
-        var message = EasyappointmentsConfig.Lang.AjaxFailureMessage.replace('%message%', errorThrown);
+        showErrorMessage({
+            title:   EasyappointmentsConfig.Lang.ErrorTitle,
+            message: EasyappointmentsConfig.Lang.AjaxFailureMessage,
+            details: errorThrown || textStatus || null
+        });
 
-        showErrorMessage(message);
-
-        console.log('AJAX Failure: ', jqXHR, textStatus, errorThrown);
+        console.error('AJAX Failure:', jqXHR, textStatus, errorThrown);
     }
 
     /**
-     * Toggle the visibility status of the action buttons.
+     * Toggle the visibility of the action buttons.
      *
-     * @param {Boolean} connectionStatus A true value states that there is an active connection while
-     * a false indicates that there is no active connection.
+     * @param {boolean} connectionStatus  true = connected, false = disconnected
      */
     function toggleActionButtons(connectionStatus) {
         $('.connect-action').show();
@@ -85,10 +132,12 @@
     }
 
     window.EasyappointmentsPlugin = {
-        handleAjaxException: handleAjaxException,
-        handleAjaxFailure: handleAjaxFailure,
-        toggleActionButtons: toggleActionButtons,
-        showErrorMessage: showErrorMessage
+        handleAjaxException:  handleAjaxException,
+        handleAjaxFailure:    handleAjaxFailure,
+        toggleActionButtons:  toggleActionButtons,
+        showErrorMessage:     showErrorMessage,
+        showSuccessMessage:   showSuccessMessage
     };
 
 })(jQuery);
+

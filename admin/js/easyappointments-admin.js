@@ -59,18 +59,10 @@
         })
             .done(function (response) {
                 if (response && response.exception) {
-                    return EasyappointmentsPlugin.handleAjaxException(response);
+                    return EasyappointmentsPlugin.handleAjaxException(response.exception);
                 }
 
-                $('.easyappointments .notification').remove();
-
-                $('.easyappointments').prepend(
-                    '<div class="updated notification">'
-                    + '<span class="dashicons dashicons-yes"></span>'
-                    + EasyappointmentsConfig.Lang.ConnectSuccessMessage
-                    + '</div>'
-                );
-
+                EasyappointmentsPlugin.showSuccessMessage(EasyappointmentsConfig.Lang.ConnectSuccessMessage);
                 EasyappointmentsPlugin.toggleActionButtons(true);
             })
             .fail(EasyappointmentsPlugin.handleAjaxFailure);
@@ -97,17 +89,10 @@
         })
             .done(function (response) {
                 if (response && response.exception) {
-                    return EasyappointmentsPlugin.handleAjaxException(response);
+                    return EasyappointmentsPlugin.handleAjaxException(response.exception);
                 }
 
-                $('.easyappointments .notification').remove();
-
-                $('.easyappointments').prepend(
-                    '<div class="updated notification">'
-                    + '<span class="dashicons dashicons-yes"></span>'
-                    + EasyappointmentsConfig.Lang.DisconnectSuccessMessage
-                    + '</div>'
-                );
+                EasyappointmentsPlugin.showSuccessMessage(EasyappointmentsConfig.Lang.DisconnectSuccessMessage);
 
                 $('#url').val('');
 
