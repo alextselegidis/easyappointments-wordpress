@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "easyappointments/booking",
+    "version": "1.0.0",
+    "title": "Easy!Appointments",
+    "category": "embed",
+    "icon": "calendar-alt",
+    "description": "Embed the Easy!Appointments booking form in your page or post.",
+    "keywords": ["booking", "appointments", "scheduler", "calendar", "reservations"],
+    "textdomain": "easyappointments",
+    "editorScript": "file:./index.js",
+    "attributes": {
+        "width": {
+            "type": "string",
+            "default": "100%"
+        },
+        "height": {
+            "type": "string",
+            "default": "1000px"
+        },
+        "iframeStyle": {
+            "type": "string",
+            "default": ""
+        },
+        "provider": {
+            "type": "string",
+            "default": ""
+        },
+        "service": {
+            "type": "string",
+            "default": ""
+        }
+    }
+}

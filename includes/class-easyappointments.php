@@ -122,6 +122,11 @@ class Easyappointments {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-easyappointments-public.php';
 
+		/**
+		 * The class responsible for registering the Gutenberg block.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-easyappointments-block.php';
+
 		$this->loader = new Easyappointments_Loader();
 
 	}
@@ -161,6 +166,9 @@ class Easyappointments {
         $this->loader->add_action( 'wp_ajax_easyappointments_disconnect', $plugin_admin, 'disconnect' );
         $this->loader->add_action( 'wp_ajax_easyappointments_verify_state', $plugin_admin, 'verify_state' );
         $this->loader->add_filter( 'plugin_action_links_easyappointments-wordpress/easyappointments.php', $plugin_admin, 'add_settings_link' );
+
+        $plugin_block = new Easyappointments_Block();
+        $this->loader->add_action( 'init', $plugin_block, 'register' );
 
     }
 

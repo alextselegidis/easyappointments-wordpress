@@ -117,6 +117,7 @@ https://groups.google.com/forum/#!categories/easy-appointments
 = Unreleased =
 
 * Add "Settings" link on the Plugins page for quick access to the plugin configuration.
+* Add Gutenberg block for embedding the booking form in pages and posts.
 
 = 1.4.3 =
 
