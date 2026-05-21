@@ -127,6 +127,11 @@ class Easyappointments {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-easyappointments-block.php';
 
+		/**
+		 * The class responsible for registering the Elementor widget.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-easyappointments-elementor.php';
+
 		$this->loader = new Easyappointments_Loader();
 
 	}
@@ -169,6 +174,9 @@ class Easyappointments {
 
         $plugin_block = new Easyappointments_Block();
         $this->loader->add_action( 'init', $plugin_block, 'register' );
+
+        $plugin_elementor = new Easyappointments_Elementor();
+        $this->loader->add_action( 'plugins_loaded', $plugin_elementor, 'register' );
 
     }
 

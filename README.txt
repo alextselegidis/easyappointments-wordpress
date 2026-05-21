@@ -118,6 +118,7 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 * Add "Settings" link on the Plugins page for quick access to the plugin configuration.
 * Add Gutenberg block for embedding the booking form in pages and posts.
+* Add Elementor widget for embedding the booking form with full property controls.
 * Redesign the settings page with a modern card-based layout and step-by-step integration guide for Gutenberg, Elementor, and Shortcode.
 * Validate URL format on the frontend before sending the connect request.
 * Validate URL format and verify the Easy!Appointments installation (via logo.png check) on the backend before saving.
