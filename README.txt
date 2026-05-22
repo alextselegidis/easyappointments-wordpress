@@ -9,59 +9,78 @@ Stable tag: trunk
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Seamlessly embed a powerful booking system into your WordPress site — fast, clean, and fully in your control.
+Turn any WordPress page into a live booking system — with native Gutenberg and Elementor support.
 
 == Description ==
 
-Turn your WordPress site into a fully functional booking platform in minutes.
+**Stop sending customers to a separate booking site. Bring the booking form directly into WordPress — and watch your conversions soar.**
 
-**Easy!Appointments for WordPress** connects your existing Easy!Appointments installation directly to your site, letting you embed a professional booking experience anywhere — no complex setup, no vendor lock-in, no forced SaaS subscriptions.
+**Easy!Appointments for WordPress** connects your self-hosted Easy!Appointments installation to your site in seconds. Your customers book appointments without ever leaving your page, on your domain, in your brand — all without a SaaS subscription, per-booking fees, or giving up control of your data.
 
-Whether you run a salon, consultancy, clinic, agency, or freelance service, this plugin makes it effortless for your customers to book appointments directly from your website.
+Whether you run a salon, clinic, consultancy, agency, or any service-based business, setup takes minutes and the results are immediate.
 
-= Why this plugin stands out =
+= 🧱 Built for Gutenberg — First-Class Block Support =
 
-Most booking plugins try to lock you into their ecosystem. Easy!Appointments takes a different approach:
+Love the WordPress block editor? So do we. The **Easy!Appointments Gutenberg block** lets you drop the booking form into any page or post in seconds — just like any other block. Search for "Easy!Appointments" in the block inserter, add it, and you're done. Configure iframe dimensions and pre-select a provider or service right from the block settings panel. No shortcodes, no code, no fuss.
 
-* **You keep full control** of your booking system and your data
-* **Self-host everything** — no dependency on third-party servers
-* **No per-user pricing** — scale your business without scaling your costs
-* **Clean, distraction-free** booking experience your customers will love
-* **Works with any WordPress theme** — no conflicts, no bloat
+= 🎨 Built for Elementor — Drag, Drop, Done =
+
+Already building with Elementor? The **Easy!Appointments Elementor widget** integrates seamlessly into your Elementor workflow. Find it in the widget panel, drag it onto your canvas, and configure everything visually. Full property controls included — width, height, styling, provider and service pre-selection, all without touching a line of code.
+
+= Also Works Everywhere Else =
+
+Not using Gutenberg or Elementor? No problem — the classic `[easyappointments]` shortcode works in any page builder, theme, or editor that supports shortcodes.
+
+= Why Easy!Appointments beats the rest =
+
+Most booking plugins hold your data hostage. This one doesn't.
+
+* **You own your data** — it stays on your server, always
+* **No vendor lock-in** — self-host Easy!Appointments for free
+* **Zero per-booking or per-user fees** — grow without growing your costs
+* **Works with any theme** — zero conflicts, zero bloat
+* **Clean booking UX** — your customers will actually complete bookings
 
 = Key Features =
 
-* Embed your booking page with a simple shortcode
-* **Gutenberg block** — insert the booking form natively in the block editor
-* **Elementor widget** — drag and drop the booking form in Elementor
-* Connect to any existing Easy!Appointments installation in seconds
-* Responsive booking interface that works on all devices
-* Multi-service and multi-provider support
-* Preselect a service or provider via shortcode attributes
-* Fast loading, lightweight integration
-* No coding required
+* 🧱 **Native Gutenberg block** — insert the booking form like any other block
+* 🎨 **Elementor widget** — fully visual drag-and-drop integration
+* 📋 **Shortcode support** — `[easyappointments]` works everywhere
+* ⚡ Connect to any Easy!Appointments installation in seconds
+* 📱 Fully responsive — looks great on every device
+* 👥 Multi-service and multi-provider support
+* 🎯 Pre-select a provider or service via attributes
+* 🪶 Fast and lightweight — no performance impact
 
 = Perfect for =
 
-* Salons & barbershops
+* Salons, barbershops & spas
 * Consultants & freelancers
 * Clinics & healthcare providers
 * Agencies & service businesses
-* Coaches, tutors, and trainers
+* Coaches, tutors & trainers
 
 = How it works =
 
 1. Install and activate the plugin
 2. Navigate to **Easy!Appts** in your WordPress admin menu
 3. Paste your Easy!Appointments installation URL and connect
-4. Insert `[easyappointments]` anywhere in your pages or posts
+4. Add the booking form using the **Gutenberg block**, the **Elementor widget**, or the `[easyappointments]` shortcode
 5. Start accepting bookings instantly
 
 = Connecting Easy!Appointments with WordPress =
 
-Install and activate the plugin and navigate to the `Easy!Appts` menu in the WordPress admin section. Connect to an existing Easy!Appointments installation by providing your URL. Once connected you can embed the booking form in any page.
+Install and activate the plugin and navigate to the `Easy!Appts` menu in the WordPress admin section. Connect to an existing Easy!Appointments installation by providing your URL. Once connected you can embed the booking form in any page using your preferred method.
 
-= Include Booking in your Pages =
+= Gutenberg Block =
+
+Open any page in the block editor, click the **+** button to add a block, and search for **Easy!Appointments**. Add the block and configure it from the settings panel on the right — set width, height, optional inline styles, and optionally pre-select a provider or service by ID.
+
+= Elementor Widget =
+
+Open a page in Elementor, search for **Easy!Appointments** in the widget panel, and drag it onto your canvas. All settings are available as Elementor controls — no custom code needed.
+
+= Shortcode =
 
 Use the `[easyappointments]` shortcode anywhere in your content:
 
@@ -69,7 +88,7 @@ Use the `[easyappointments]` shortcode anywhere in your content:
 
 The `width`, `height` and `style` attributes are optional and let you fine-tune the iframe appearance.
 
-You can also preselect a provider and/or service using shortcode attributes (IDs are found in your Easy!Appointments backend):
+Pre-select a provider and/or service (IDs are found in your Easy!Appointments backend):
 
 `[easyappointments provider="2" service="1"]`
 

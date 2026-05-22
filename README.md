@@ -11,7 +11,7 @@
 <br>
 
 <h4 align="center">
-    Easy!Appointments appointment scheduling integration for WordPress. 
+    Bring your booking form directly into WordPress — with native Gutenberg block and Elementor widget support.
 </h4>
 
 <p align="center">
@@ -21,6 +21,7 @@
 
 <p align="center">
   <a href="#about">About</a> •
+  <a href="#gutenberg--elementor">Gutenberg & Elementor</a> •
   <a href="#setup">Setup</a> •
   <a href="#installation">Installation</a> •
   <a href="#license">License</a>
@@ -30,30 +31,41 @@
 
 ## About
 
-Leverage your conversion rates by integrating the booking form directly in your WordPress pages. Customers will never 
-have to leave your website for booking an appointment. Take advantage of the scheduling power of Easy!Appointment which 
-will run smoothly with your WordPress installation. Include the booking form in your pages with the [easyappointments] 
-shortcode.
+**Stop sending customers away to a separate booking site.** Bring the booking form directly into your WordPress pages — and watch your conversions soar.
+
+**Easy!Appointments for WordPress** connects your self-hosted [Easy!Appointments](https://easyappointments.org) installation to your site in seconds. Your customers book appointments without ever leaving your page, on your domain, in your brand — with no SaaS subscriptions, no per-booking fees, and full ownership of your data.
+
+Whether you're running a salon, clinic, consultancy, or any service business, setup takes minutes and the impact is immediate.
 
 *Minimum Requirements: WordPress v5.0 & PHP v5.6*
 
-### Connecting Easy!Appointments with WordPress
+## Gutenberg & Elementor
 
-Install and activate the plugin and navigate to `Easy!Appointments` menu of the WordPress admin section. 
-Connect to an existing Easy!Appointments installation by providing the preferred URL in the page form. 
-Once a connection is established you'll be able to include the booking form in your pages.
+### 🧱 Native Gutenberg Block
 
-### Include Booking in your Pages
+Love the WordPress block editor? The **Easy!Appointments block** is a first-class citizen of the block inserter. Search for "Easy!Appointments", drop it in, and configure width, height, styling, and provider/service pre-selection right from the block settings panel — no shortcodes, no code.
 
-WordPress supports the use of custom shortcodes which allow plugins to insert custom content into pages. This plugin 
-takes advantage of this functionality and creates an iframe that displays the booking form of Easy!Appointments. Include 
-the `[easyappointments]` shortcode in the correct place of your published contents as shown in the following example.
+### 🎨 Elementor Widget
+
+Building with Elementor? Find the **Easy!Appointments widget** in the Elementor panel, drag it onto your canvas, and set everything up visually with full property controls. It fits your workflow perfectly.
+
+### 📋 Shortcode (works everywhere else)
+
+For classic editors, other page builders, or anywhere shortcodes are supported:
 
 ```
 [easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px;"]
 ```
 
-The "width", "height" and "style" attributes are optional but can help you to fine tune the styling of the iframe.
+Pre-select a provider and/or service (IDs found in your Easy!Appointments backend):
+
+```
+[easyappointments provider="2" service="1"]
+```
+
+### Connecting Easy!Appointments with WordPress
+
+Install and activate the plugin and navigate to `Easy!Appts` in the WordPress admin menu. Paste your Easy!Appointments installation URL and connect. Once connected, embed the booking form using the Gutenberg block, the Elementor widget, or the shortcode.
 
 ### Translations
 
