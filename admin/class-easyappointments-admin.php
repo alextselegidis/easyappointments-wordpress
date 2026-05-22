@@ -113,13 +113,6 @@ class Easyappointments_Admin {
                 throw new Exception( __( 'The provided value is not a valid URL.', 'easyappointments' ) );
             }
 
-            $logo_url = trailingslashit( $url ) . 'logo.png';
-            $response = wp_remote_head( $logo_url, [ 'timeout' => 10, 'sslverify' => false ] );
-
-            if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) != 200 ) {
-                throw new Exception( __( 'The provided URL does not appear to be a valid Easy!Appointments installation. Please verify the URL and try again.', 'easyappointments' ) );
-            }
-
             update_option( 'easyappointments_url', $url );
 
             wp_send_json_success();
@@ -199,14 +192,13 @@ class Easyappointments_Admin {
                 $config = [
                     'Lang' => [
                         'ConnectSuccessMessage' =>
-                            __( 'Easy!Appointments installation was connected successfully! You can now use the '
-                                . '[easyappointments] shortcode in your pages.', 'easyappointments' ),
+                            __( 'Easy!Appointments installation was connected successfully! You can now embed the booking form in your pages using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget.', 'easyappointments' ),
                         'DisconnectSuccessMessage' =>
                             __( 'Easy!Appointments installation was disconnected successfully!', 'easyappointments' ),
                         'DisconnectPrompt' =>
                             __( 'Are you sure that you want to disconnect?' ),
                         'VerificationSuccess' =>
-                            __( 'Easy!Appointments connection is active! Use the [easyappointments] shortcode in your pages/posts.', 'easyappointments' ),
+                            __( 'Easy!Appointments connection is active! Embed the booking form using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget.', 'easyappointments' ),
                         'VerificationFailure' =>
                             __( 'Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'easyappointments' ),
                         'ErrorTitle' =>
