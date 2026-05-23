@@ -37,11 +37,11 @@ class Easyappointments_Block {
         $query_data = [];
 
         if ( ! empty( $attributes['provider'] ) ) {
-            $query_data['provider'] = $attributes['provider'];
+            $query_data['provider'] = absint( $attributes['provider'] );
         }
 
         if ( ! empty( $attributes['service'] ) ) {
-            $query_data['service'] = $attributes['service'];
+            $query_data['service'] = absint( $attributes['service'] );
         }
 
         if ( ! empty( $query_data ) ) {

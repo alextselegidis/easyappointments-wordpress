@@ -120,11 +120,11 @@ class Easyappointments_Public
             $query_data = [];
 
             if (!empty($attributes['provider'])) {
-                $query_data['provider'] = $attributes['provider'];
+                $query_data['provider'] = absint( $attributes['provider'] );
             }
 
             if (!empty($attributes['service'])) {
-                $query_data['service'] = $attributes['service'];
+                $query_data['service'] = absint( $attributes['service'] );
             }
 
             if (!empty($query_data)) {
@@ -135,11 +135,9 @@ class Easyappointments_Public
                 $url .= http_build_query($query_data);
             }
 
-            // wp_enqueue_script(md5('iframe.js'), plugins_url('../../assets/js/iframe.js', __FILE__));
-
             $width = isset($attributes['width']) ? $attributes['width'] : '100%';
             $height = isset($attributes['height']) ? $attributes['height'] : '1000px';
-            $style = isset($attributes['style']) ? $attributes['style'] : '';
+            $style = isset($attributes['style']) ? sanitize_text_field( $attributes['style'] ) : '';
 
             return "
                 <iframe

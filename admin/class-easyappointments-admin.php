@@ -60,20 +60,12 @@ class Easyappointments_Admin {
      *
      * @since    1.0.0
      */
-    public function enqueue_styles() {
+    public function enqueue_styles( $hook ) {
+        if ( $hook !== 'toplevel_page_easyappointments-settings' ) {
+            return;
+        }
 
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Easyappointments_Loader as all of the hooks are defined
-         * in that particular class.
-         *
-         * The Easyappointments_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
-
+        wp_enqueue_style( 'easyappointments-admin', plugin_dir_url( __FILE__ ) . 'css/easyappointments-admin.css', [], $this->version, 'all' );
     }
 
     /**
@@ -81,20 +73,34 @@ class Easyappointments_Admin {
      *
      * @since    1.0.0
      */
-    public function enqueue_scripts() {
+    public function enqueue_scripts( $hook ) {
+        if ( $hook !== 'toplevel_page_easyappointments-settings' ) {
+            return;
+        }
 
-        /**
-         * This function is provided for demonstration purposes only.
-         *
-         * An instance of this class should be passed to the run() function
-         * defined in Easyappointments_Loader as all the hooks are defined
-         * in that particular class.
-         *
-         * The Easyappointments_Loader will then create the relationship
-         * between the defined hooks and the functions defined in this
-         * class.
-         */
+        wp_enqueue_script( 'easyappointments-admin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-admin.js', [ 'jquery' ], $this->version, false );
+        wp_enqueue_script( 'easyappointments-plugin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-plugin.js', [ 'jquery' ], $this->version, false );
+        wp_enqueue_script( 'easyappointments-verify-state', plugin_dir_url( __FILE__ ) . 'js/easyappointments-verify-state.js', [ 'jquery' ], $this->version, false );
 
+        $config = [
+            'Lang' => [
+                'ConnectSuccessMessage'  => __( 'Easy!Appointments installation was connected successfully! You can now embed the booking form in your pages using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget.', 'easyappointments' ),
+                'DisconnectSuccessMessage' => __( 'Easy!Appointments installation was disconnected successfully!', 'easyappointments' ),
+                'DisconnectPrompt'       => __( 'Are you sure that you want to disconnect?', 'easyappointments' ),
+                'VerificationSuccess'    => __( 'Easy!Appointments connection is active! Embed the booking form using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget.', 'easyappointments' ),
+                'VerificationFailure'    => __( 'Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'easyappointments' ),
+                'ErrorTitle'             => __( 'Something went wrong', 'easyappointments' ),
+                'UnknownError'           => __( 'An unknown error occurred. Please try again.', 'easyappointments' ),
+                'ShowTechnicalDetails'   => __( 'Show technical details', 'easyappointments' ),
+                'InvalidUrlMessage'      => __( 'Please enter a valid URL starting with http:// or https://.', 'easyappointments' ),
+                'AjaxFailureMessage'     => __( 'The request could not be completed. Please check your connection and try again.', 'easyappointments' ),
+            ],
+            'Ajax' => [
+                'nonce' => wp_create_nonce( 'easyappointments' ),
+            ],
+        ];
+
+        wp_localize_script( 'easyappointments-plugin', 'EasyappointmentsConfig', $config );
     }
 
     public function connect() {
@@ -189,40 +195,6 @@ class Easyappointments_Admin {
             'manage_options',
             'easyappointments-settings',
             function () {
-                $config = [
-                    'Lang' => [
-                        'ConnectSuccessMessage' =>
-                            __( 'Easy!Appointments installation was connected successfully! You can now embed the booking form in your pages using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget.', 'easyappointments' ),
-                        'DisconnectSuccessMessage' =>
-                            __( 'Easy!Appointments installation was disconnected successfully!', 'easyappointments' ),
-                        'DisconnectPrompt' =>
-                            __( 'Are you sure that you want to disconnect?' ),
-                        'VerificationSuccess' =>
-                            __( 'Easy!Appointments connection is active! Embed the booking form using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget.', 'easyappointments' ),
-                        'VerificationFailure' =>
-                            __( 'Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory.', 'easyappointments' ),
-                        'ErrorTitle' =>
-                            __( 'Something went wrong', 'easyappointments' ),
-                        'UnknownError' =>
-                            __( 'An unknown error occurred. Please try again.', 'easyappointments' ),
-                        'ShowTechnicalDetails' =>
-                            __( 'Show technical details', 'easyappointments' ),
-                        'InvalidUrlMessage' =>
-                            __( 'Please enter a valid URL starting with http:// or https://.', 'easyappointments' ),
-                        'AjaxFailureMessage' =>
-                            __( 'The request could not be completed. Please check your connection and try again.', 'easyappointments' ),
-                    ],
-                    'Ajax' => [
-                        'nonce' => wp_create_nonce( 'easyappointments' )
-                    ]
-                ];
-
-                wp_enqueue_script( 'easyappointments-admin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-admin.js', [ 'jquery' ], $this->version, false );
-                wp_enqueue_script( 'easyappointments-plugin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-plugin.js', [ 'jquery' ], $this->version, false );
-                wp_enqueue_script( 'easyappointments-verify-state', plugin_dir_url( __FILE__ ) . 'js/easyappointments-verify-state.js', [ 'jquery' ], $this->version, false );
-                wp_enqueue_style( 'easyappointments-admin', plugin_dir_url( __FILE__ ) . 'css/easyappointments-admin.css', [], $this->version, 'all' );
-                wp_localize_script( 'easyappointments-plugin', 'EasyappointmentsConfig', $config );
-
                 include __DIR__ . '/partials/easyappointments-admin-display.php';
             },
             'dashicons-calendar-alt'

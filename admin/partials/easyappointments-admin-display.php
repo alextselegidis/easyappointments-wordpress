@@ -12,12 +12,12 @@
 <div class="wrap easyappointments">
 
     <div class="ea-header">
-        <img class="ea-logo" src="<?= plugins_url( 'img/logo.png', __DIR__ ) ?>" alt="Easy!Appointments Logo"/>
+        <img class="ea-logo" src="<?php echo esc_url( plugins_url( 'img/logo.png', __DIR__ ) ); ?>" alt="Easy!Appointments Logo"/>
         <div class="ea-header-text">
             <h1><?php _e( 'Easy!Appointments', 'easyappointments' ) ?></h1>
             <p><?php _e( 'Embed professional appointment booking directly into your WordPress site — fast, self-hosted, and fully in your control.', 'easyappointments' ) ?></p>
         </div>
-        <img class="ea-loading hidden" src="<?= admin_url( 'images/wpspin_light-2x.gif' ) ?>" alt="Loading">
+        <img class="ea-loading hidden" src="<?php echo esc_url( admin_url( 'images/wpspin_light-2x.gif' ) ); ?>" alt="Loading">
     </div>
 
     <!-- Step 1: Connect -->
@@ -30,8 +30,8 @@
             <p><?php _e( 'Enter the public root URL of your Easy!Appointments installation and click Connect. The URL will be verified before saving.', 'easyappointments' ) ?></p>
             <div class="ea-url-row">
                 <input type="text" id="url" class="ea-url-input"
-                       placeholder="<?= esc_attr( get_site_url() . '/easyappointments' ) ?>"
-                       value="<?= esc_attr( get_option( 'easyappointments_url' ) ) ?>"/>
+                       placeholder="<?php echo esc_attr( get_site_url() . '/easyappointments' ); ?>"
+                       value="<?php echo esc_attr( get_option( 'easyappointments_url' ) ); ?>"/>
                 <button id="connect" class="button button-primary connect-action">
                     <?php _e( 'Connect', 'easyappointments' ) ?>
                 </button>

@@ -4,10 +4,10 @@ Contributors: alextselegidis
 Donate link: https://alextselegidis.com
 Tags: appointments, booking, scheduler, elementor, gutenberg
 Requires at least: 5.0
-Tested up to: 7.0.0
-Stable tag: trunk
-License: GPLv3
-License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tested up to: 6.7
+Stable tag: 1.4.4
+License: GPL-2.0+
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Turn any WordPress page into a live booking system — with native Gutenberg and Elementor support.
 
@@ -133,16 +133,18 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
-= Unreleased =
+= 1.4.4 =
 
-* Add "Settings" link on the Plugins page for quick access to the plugin configuration.
 * Add Gutenberg block for embedding the booking form in pages and posts.
 * Add Elementor widget for embedding the booking form with full property controls.
+* Add "Settings" link on the Plugins page for quick access to the plugin configuration.
 * Redesign the settings page with a modern card-based layout and step-by-step integration guide for Gutenberg, Elementor, and Shortcode.
 * Validate URL format on the frontend before sending the connect request.
-* Validate URL format and verify the Easy!Appointments installation (via logo.png check) on the backend before saving.
 * Fix AJAX actions to return proper JSON responses with structured error information.
 * Fix error notifications to display a clear title, friendly message, and collapsible technical details instead of raw undefined values.
+* Move admin script and style enqueueing to proper admin_enqueue_scripts hook.
+* Sanitize provider and service shortcode/block attributes with absint().
+* Sanitize style shortcode attribute with sanitize_text_field() before output.
 
 = 1.4.3 =
 
