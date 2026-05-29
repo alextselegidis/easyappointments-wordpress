@@ -4,8 +4,8 @@ Contributors: alextselegidis
 Donate link: https://alextselegidis.com
 Tags: appointments, booking, scheduler, elementor, gutenberg
 Requires at least: 5.0
-Tested up to: 6.7
-Stable tag: 1.4.4
+Tested up to: 7.0
+Stable tag: 1.5.0
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -133,7 +133,7 @@ https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
 
-= 1.4.4 =
+= 1.5.0 =
 
 * Add Gutenberg block for embedding the booking form in pages and posts.
 * Add Elementor widget for embedding the booking form with full property controls.

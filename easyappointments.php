@@ -16,7 +16,7 @@
  * Plugin Name:       Easy!Appointments
  * Plugin URI:        https://easyappointments.org
  * Description:       Easy!Appointments appointment scheduling integration for WordPress.
- * Version:           1.4.4
+ * Version:           1.5.0
  * Author:            Alex Tselegidis
  * Author URI:        https://alextselegidis.com
  * License:           GPL-2.0+
