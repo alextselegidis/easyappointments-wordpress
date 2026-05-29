@@ -125,6 +125,39 @@
         </div>
     </div>
 
+    <!-- Step 3: Easy!Appointments 1.6 Required Configuration -->
+    <details class="ea-card ea-collapsible">
+        <summary class="ea-card-header ea-collapsible-header">
+            <div class="ea-step-badge ea-step-badge--warning">!</div>
+            <h2><?php _e( 'Easy!Appointments 1.6.0 &mdash; Required Configuration', 'easyappointments' ) ?></h2>
+            <span class="ea-collapsible-chevron dashicons dashicons-arrow-down-alt2"></span>
+        </summary>
+        <div class="ea-card-body">
+            <p>
+                <?php _e( 'Easy!Appointments <strong>v1.6.0</strong> introduced stricter HTTP security headers that block iframe embedding by default. If your booking form is not loading inside the page, you need to apply the following one-line fix to your Easy!Appointments installation.', 'easyappointments' ) ?>
+            </p>
+            <ol>
+                <li>
+                    <?php _e( 'Open the file <code>application/hooks/security_headers.php</code> in your Easy!Appointments installation.', 'easyappointments' ) ?>
+                </li>
+                <li>
+                    <?php _e( 'Find the following line:', 'easyappointments' ) ?>
+                    <div class="ea-code-block"><code>header('X-Frame-Options: SAMEORIGIN');</code></div>
+                </li>
+                <li>
+                    <?php _e( 'Replace it with:', 'easyappointments' ) ?>
+                    <div class="ea-code-block"><code>header("X-Frame-Options: ALLOWALL");</code></div>
+                </li>
+                <li>
+                    <?php _e( 'Save the file and reload your WordPress page — the booking form should now embed correctly.', 'easyappointments' ) ?>
+                </li>
+            </ol>
+            <p class="description">
+                <?php _e( '<strong>Note:</strong> This fix is only required if your Easy!Appointments installation is hosted on a <strong>different domain</strong> from your WordPress site (e.g. <code>bookings.example.com</code> vs <code>example.com</code>). If Easy!Appointments lives in a subfolder of the same domain (e.g. <code>example.com/easyappointments</code>), iframe embedding works without this change.', 'easyappointments' ) ?>
+            </p>
+        </div>
+    </details>
+
     <div class="ea-footer">
         <?php _e( 'For more information visit the official website:', 'easyappointments' ) ?>
         <a href="https://easyappointments.org" target="_blank">easyappointments.org</a>

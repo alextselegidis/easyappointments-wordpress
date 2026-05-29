@@ -321,9 +321,73 @@
     color: #646970;
 }
 
+/* Collapsible card
+---------------------------------------------------------------------------- */
+.easyappointments details.ea-collapsible {
+    border-left: 4px solid #dba617;
+}
+
+.easyappointments .ea-collapsible-header {
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    border-bottom: none;
+    transition: background .15s;
+}
+
+.easyappointments .ea-collapsible-header::-webkit-details-marker {
+    display: none;
+}
+
+.easyappointments .ea-collapsible-header:hover {
+    background: #fdf8ec;
+}
+
+.easyappointments details[open] .ea-collapsible-header {
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.easyappointments .ea-collapsible-header h2 {
+    flex: 1;
+    color: #8a6000;
+}
+
+.easyappointments .ea-collapsible-chevron {
+    color: #8a6000;
+    font-size: 16px !important;
+    width: 16px !important;
+    height: 16px !important;
+    transition: transform .2s;
+    margin-left: auto;
+}
+
+.easyappointments details[open] .ea-collapsible-chevron {
+    transform: rotate(180deg);
+}
+
+.easyappointments .ea-step-badge--warning {
+    background: #dba617;
+}
+
+.easyappointments details.ea-collapsible .ea-card-body ol {
+    margin: 12px 0 12px 20px;
+    padding: 0;
+}
+
+.easyappointments details.ea-collapsible .ea-card-body li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+.easyappointments details.ea-collapsible .ea-card-body .ea-code-block {
+    display: block;
+    margin: 8px 0 4px;
+    max-width: 480px;
+}
+
 /* Footer
 ---------------------------------------------------------------------------- */
-.easyappointments .ea-footer {
     margin-top: 8px;
     padding-bottom: 20px;
     color: #646970;
