@@ -78,9 +78,9 @@ class Easyappointments_Admin {
             return;
         }
 
-        wp_enqueue_script( 'easyappointments-admin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-admin.js', [ 'jquery' ], $this->version, false );
-        wp_enqueue_script( 'easyappointments-plugin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-plugin.js', [ 'jquery' ], $this->version, false );
-        wp_enqueue_script( 'easyappointments-verify-state', plugin_dir_url( __FILE__ ) . 'js/easyappointments-verify-state.js', [ 'jquery' ], $this->version, false );
+        wp_enqueue_script( 'easyappointments-admin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-admin.js', [ 'jquery' ], $this->version, true );
+        wp_enqueue_script( 'easyappointments-plugin', plugin_dir_url( __FILE__ ) . 'js/easyappointments-plugin.js', [ 'jquery' ], $this->version, true );
+        wp_enqueue_script( 'easyappointments-verify-state', plugin_dir_url( __FILE__ ) . 'js/easyappointments-verify-state.js', [ 'jquery' ], $this->version, true );
 
         $config = [
             'Lang' => [
