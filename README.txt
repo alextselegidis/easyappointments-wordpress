@@ -5,7 +5,7 @@ Donate link: https://alextselegidis.com
 Tags: appointments, booking, scheduler, elementor, gutenberg
 Requires at least: 5.0
 Tested up to: 7.0
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,6 +132,10 @@ Visit the official Easy!Appointments support group where active users help each 
 https://groups.google.com/forum/#!categories/easy-appointments
 
 == Changelog ==
+
+= 1.5.1 =
+
+* Add missing files into the repository. 
 
 = 1.5.0 =
 
