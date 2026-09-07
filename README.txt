@@ -2,140 +2,208 @@
 
 Contributors: alextselegidis
 Donate link: https://alextselegidis.com
-Tags: appointments, booking, scheduler, elementor, gutenberg
+Tags: appointments, booking, appointment-booking, scheduling, calendar
 Requires at least: 5.0
-Tested up to: 7.0
-Stable tag: 1.5.1
+Tested up to: 7.1
+Requires PHP: 5.6
+Stable tag: 1.5.2
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Turn any WordPress page into a live booking system — with native Gutenberg and Elementor support.
+Add a full appointment booking system to your WordPress site. No monthly fees, no per-booking charges, and your customer data stays on your server.
 
 == Description ==
 
-**Stop sending customers to a separate booking site. Bring the booking form directly into WordPress — and watch your conversions soar.**
+**Let customers book appointments on your website, 24/7 — without paying a monthly subscription or a fee on every booking.**
 
-**Easy!Appointments for WordPress** connects your self-hosted Easy!Appointments installation to your site in seconds. Your customers book appointments without ever leaving your page, on your domain, in your brand — all without a SaaS subscription, per-booking fees, or giving up control of your data.
+Easy!Appointments gives your visitors a proper booking experience: they pick a service, pick a staff member, see the real free slots from your calendar, choose a time, and confirm. You and your customer both get an email. The appointment lands in your calendar. That's it.
 
-Whether you run a salon, clinic, consultancy, agency, or any service-based business, setup takes minutes and the results are immediate.
+It runs on your own hosting, so there is no subscription, no per-booking cut, no cap on how many appointments you take, and no third-party company sitting on your customers' names, phone numbers, and appointment history.
 
-= 🧱 Built for Gutenberg — First-Class Block Support =
+= See it working before you install anything =
 
-Love the WordPress block editor? So do we. The **Easy!Appointments Gutenberg block** lets you drop the booking form into any page or post in seconds — just like any other block. Search for "Easy!Appointments" in the block inserter, add it, and you're done. Configure iframe dimensions and pre-select a provider or service right from the block settings panel. No shortcodes, no code, no fuss.
+Try the real booking form and the real admin calendar, right now, no signup:
 
-= 🎨 Built for Elementor — Drag, Drop, Done =
+**https://demo.easyappointments.org**
 
-Already building with Elementor? The **Easy!Appointments Elementor widget** integrates seamlessly into your Elementor workflow. Find it in the widget panel, drag it onto your canvas, and configure everything visually. Full property controls included — width, height, styling, provider and service pre-selection, all without touching a line of code.
+That takes about 60 seconds and will tell you more than this page can.
 
-= Also Works Everywhere Else =
+= Please read this bit — it explains the two pieces =
 
-Not using Gutenberg or Elementor? No problem — the classic `[easyappointments]` shortcode works in any page builder, theme, or editor that supports shortcodes.
+This is the part most people ask about, so here it is up front and in plain language.
 
-= Why Easy!Appointments beats the rest =
+Easy!Appointments is made of **two things**:
 
-Most booking plugins hold your data hostage. This one doesn't.
+1. **Easy!Appointments** — the booking engine. It holds your calendar, services, staff, working hours, holidays, customers and emails. It is free and open source, and you install it on your own hosting (most shared hosts handle it fine — it needs PHP and MySQL, the same as WordPress).
+2. **This plugin** — the bridge. It puts the booking form from that engine straight onto a page of your WordPress site, on your domain, inside your theme, so customers never get bounced off to a different-looking website to book.
 
-* **You own your data** — it stays on your server, always
-* **No vendor lock-in** — self-host Easy!Appointments for free
-* **Zero per-booking or per-user fees** — grow without growing your costs
-* **Works with any theme** — zero conflicts, zero bloat
-* **Clean booking UX** — your customers will actually complete bookings
+**So yes — you need Easy!Appointments installed somewhere before this plugin does anything.** We would rather tell you that in the first 30 seconds than have you find out after installing.
 
-= Key Features =
+Why it is built that way: keeping the booking engine separate is exactly what lets it be free, unlimited and fully yours. Nobody can raise your price, change the terms, or lock your customer list behind an upgrade, because nobody else is holding it.
 
-* 🧱 **Native Gutenberg block** — insert the booking form like any other block
-* 🎨 **Elementor widget** — fully visual drag-and-drop integration
-* 📋 **Shortcode support** — `[easyappointments]` works everywhere
-* ⚡ Connect to any Easy!Appointments installation in seconds
-* 📱 Fully responsive — looks great on every device
-* 👥 Multi-service and multi-provider support
-* 🎯 Pre-select a provider or service via attributes
-* 🪶 Fast and lightweight — no performance impact
+Get the engine here: **https://easyappointments.org**
 
-= Perfect for =
+= What it actually costs =
 
-* Salons, barbershops & spas
-* Consultants & freelancers
-* Clinics & healthcare providers
-* Agencies & service businesses
-* Coaches, tutors & trainers
+| | Easy!Appointments | Typical hosted booking plugin |
+| --- | --- | --- |
+| Monthly fee | None | ~$10–$80 / month |
+| Fee per booking | None | Common on cheaper tiers |
+| Staff members | Unlimited | Often billed per person |
+| Bookings per month | Unlimited | Often capped by plan |
+| Where customer data lives | Your server | Their servers |
+| If you stop paying | Nothing happens, it keeps running | Booking form stops |
+| Licence | GPL, open source | Proprietary |
 
-= How it works =
+= Setting it up =
 
-1. Install and activate the plugin
-2. Navigate to **Easy!Appts** in your WordPress admin menu
-3. Paste your Easy!Appointments installation URL and connect
-4. Add the booking form using the **Gutenberg block**, the **Elementor widget**, or the `[easyappointments]` shortcode
-5. Start accepting bookings instantly
+Once your Easy!Appointments engine is running, the WordPress side takes about three minutes:
 
-= Connecting Easy!Appointments with WordPress =
+1. Install and activate this plugin.
+2. Open **Easy!Appts** in your WordPress menu, paste your Easy!Appointments web address, click **Connect**.
+3. Open the page where you want bookings and add the **Easy!Appointments** block. Publish.
 
-Install and activate the plugin and navigate to the `Easy!Appts` menu in the WordPress admin section. Connect to an existing Easy!Appointments installation by providing your URL. Once connected you can embed the booking form in any page using your preferred method.
+Your booking form is live on that page. Bookings appear in your Easy!Appointments calendar as they come in.
 
-= Gutenberg Block =
+= Three ways to place the booking form =
 
-Open any page in the block editor, click the **+** button to add a block, and search for **Easy!Appointments**. Add the block and configure it from the settings panel on the right — set width, height, optional inline styles, and optionally pre-select a provider or service by ID.
+**Block editor (Gutenberg).** Click **+**, search "Easy!Appointments", drop it in. Size and options are in the settings panel on the right. No code.
 
-= Elementor Widget =
+**Elementor.** Search "Easy!Appointments" in the widget panel and drag it onto the canvas. Everything is configured with normal Elementor controls.
 
-Open a page in Elementor, search for **Easy!Appointments** in the widget panel, and drag it onto your canvas. All settings are available as Elementor controls — no custom code needed.
+**Anything else.** Classic editor, WPBakery, Divi, a theme widget area — the `[easyappointments]` shortcode works wherever shortcodes work.
 
-= Shortcode =
+You can also point a specific page at a specific service or staff member, so "Book a haircut with Maria" is its own page.
 
-Use the `[easyappointments]` shortcode anywhere in your content:
+= Who this is for =
 
-`[easyappointments width="100%" height="500px" style="border: 5px solid #1A865F; box-shadow: #454545 1px 1px 5px;"]`
+It was built first for **appointment-based local businesses** — salons, barbershops, spas, nail studios, tattoo studios, physiotherapists, dentists and clinics. Anywhere customers book a named person for a fixed-length slot.
 
-The `width`, `height` and `style` attributes are optional and let you fine-tune the iframe appearance.
+It also gets used well beyond that: consultants and coaches, tutors, driving schools, workshops and repair shops, vets, law and accountancy practices, and university and government departments.
 
-Pre-select a provider and/or service (IDs are found in your Easy!Appointments backend):
+= Who is behind it =
 
-`[easyappointments provider="2" service="1"]`
+Easy!Appointments has been developed in the open since 2014.
 
-*Minimum Requirements: WordPress v5.0 & PHP v5.6*
+* 4,300+ stars and 1,500+ forks on GitHub
+* Used by organisations including NEOM, Doctors Without Borders and Dolce & Gabbana
+* Active public support community and issue tracker
+* GPL licensed — you can read every line, fork it, and never be locked out
 
-*Find out more at https://easyappointments.org/wordpress*
+= What you get =
+
+* Real-time availability from your own calendar
+* Multiple services with individual durations and prices
+* Multiple staff members with their own hours and days off
+* Confirmation and reminder emails to both sides
+* Google Calendar sync
+* Works on phones — most bookings arrive from one
+* Runs in many languages
+* Your branding, your domain, your data
+
+= Honest notes =
+
+* You do need to install the Easy!Appointments engine on hosting you control. If you want a booking form with no separate installation at all, this is not that plugin, and we would rather you knew now.
+* It is a self-hosted, open-source project. That means no bill, and it also means you set up your own email sending and updates. The documentation walks through both.
+* Support comes from the community and the issue tracker rather than a paid helpdesk. Response times vary.
+
+Documentation: https://easyappointments.org/documentation
+More about the WordPress integration: https://easyappointments.org/wordpress
+
+*Minimum requirements: WordPress 5.0 and PHP 5.6.*
 
 == Installation ==
 
-1. Upload the plugin files to `/wp-content/plugins/easyappointments-wordpress` or install via the WordPress plugin screen
-2. Activate the plugin through the **Plugins** screen in WordPress
-3. Navigate to **Easy!Appts** in your WordPress admin menu
-4. Paste your Easy!Appointments installation URL and click **Connect**
-5. Insert the `[easyappointments]` shortcode into any page or post
+**Before you start:** you need Easy!Appointments running on your own hosting. It is free — download and setup instructions are at https://easyappointments.org. If you would like to see what you are setting up first, the live demo is at https://demo.easyappointments.org.
+
+Once that is done:
+
+1. Install this plugin from the WordPress **Plugins → Add New** screen, or upload it, then click **Activate**.
+2. Go to **Easy!Appts** in your WordPress admin menu, paste the web address of your Easy!Appointments installation, and click **Connect**.
+3. Edit the page where you want customers to book, add the **Easy!Appointments** block (or the Elementor widget, or the `[easyappointments]` shortcode), and publish.
+
+Take a test booking yourself to confirm the confirmation email arrives, then you are live.
 
 == Screenshots ==
 
-1. Booking form integration in mobile viewport.
-2. Booking form integration in desktop viewport.
-3. Admin page of the plugin.
-4. Plugin information modals.
+1. The whole booking page on a phone, top to bottom — where most of your bookings come from.
+2. The whole booking page on your own site — your domain, your theme, your footer.
+3. Connecting WordPress to your Easy!Appointments installation. One field, one click.
+4. Placing the booking form on a page with the block editor — width, height and pre-selection, no code.
+5. Where the bookings land: your own calendar, colour-coded by service, one column per day.
+6. Your services, durations and prices — managed in your installation, not on someone else's server.
 
 == Frequently Asked Questions ==
 
-= Do I need an existing Easy!Appointments installation? =
+= Do I really need a separate Easy!Appointments installation? =
 
-Yes. This plugin connects your WordPress site to a running Easy!Appointments instance. You can self-host Easy!Appointments for free — visit https://easyappointments.org to get started.
+Yes, and it is worth understanding why. Easy!Appointments is the booking engine — your calendar, services, staff and customers live there. This plugin puts that engine's booking form onto your WordPress pages.
 
-= Is this a SaaS service? Do I pay per booking or per user? =
+Keeping the engine separate is what makes it free and unlimited: there is no company in the middle metering your bookings. You install it once on your own hosting, at https://easyappointments.org, and it is yours.
 
-No. Easy!Appointments is fully open-source and self-hosted. There are no subscription fees, no per-booking charges, and no usage limits.
+= Is installing the engine difficult? =
 
-= Easy!Appointments default language does not match my website's language? =
+If you have installed WordPress, you can install this. It needs the same things WordPress does — PHP and MySQL — and it has a web-based setup wizard. Most people put it in a subfolder or subdomain of the same hosting account their WordPress site is on. The documentation covers the common hosts.
 
-You can change the default language of Easy!Appointments by editing the `config.php` of your installation.
+= Is there a monthly fee, or a fee per booking? =
 
-= Where can I get more help? =
+No, none. There is no subscription, no commission on bookings, no limit on how many appointments or staff members you have, and no paid tier that unlocks the real features. It is GPL open-source software.
 
-Visit the official Easy!Appointments support group where active users help each other:
+= Can I see it before committing to anything? =
+
+Yes — https://demo.easyappointments.org is a live installation with a working booking form and a working admin calendar. Nothing to sign up for.
+
+= Where do bookings go? =
+
+Into your Easy!Appointments calendar, straight away. You can view them by day, week or month, and per staff member. Nothing is stored on anybody else's server.
+
+= Do confirmation emails work reliably? =
+
+They are sent by your Easy!Appointments installation. Whether they reach the inbox depends on how that server sends mail, which is true of every WordPress site as well. If emails go missing, the usual fix is to configure SMTP with a proper sending service rather than relying on the host's default PHP mail. This is documented, and it is the first thing to check if a customer says they did not get a confirmation.
+
+= Does it sync with Google Calendar? =
+
+Yes, Easy!Appointments supports Google Calendar synchronisation per staff member, set up from its own admin area.
+
+= Can I show only one service or one staff member on a page? =
+
+Yes. Each block, widget and shortcode can be pointed at a specific service or staff member, so you can give each service its own landing page.
+
+= Will it match my theme? =
+
+The booking form is embedded on your page, on your domain, and you can size and style the frame. The form's own look comes from your Easy!Appointments installation, which can be customised there.
+
+= Which PHP version do I need? =
+
+This plugin needs PHP 5.6 or newer, though modern PHP is strongly recommended. The Easy!Appointments engine has its own, higher requirement — check the version you are downloading against your host's PHP version before installing, as mismatched PHP versions are the most common cause of setup trouble.
+
+= I have an older Easy!Appointments installation. Will this work with it? =
+
+Update the engine to a current release first. Several reliability issues people have reported over the years were fixed upstream, and running an old version against a current plugin is asking for trouble.
+
+= What if I get stuck? =
+
+Documentation is at https://easyappointments.org/documentation, and there is an active community group where users and the maintainers answer questions:
 
 https://groups.google.com/forum/#!categories/easy-appointments
 
+= Can I change the booking form's language? =
+
+Yes. The language is set in your Easy!Appointments installation, and the plugin's own interface is translated too. Contributions of new translations are welcome.
+
 == Changelog ==
+
+= 1.5.2 =
+
+* Fix the booking form being cut off on phones — the iframe now grows to fit the form instead of scrolling inside a fixed height.
+* Fix the auto-resize script never running: it was loaded in the page head, before the booking form existed, so it silently did nothing.
+* Fix a 1000px minimum height that overrode smaller width/height values set on the block, widget or shortcode.
+* Add a taller fallback height on narrow screens for installations served from a different domain, whose content cannot be measured from the page.
+* Fix the asset version constant lagging behind the plugin version, which served stale CSS and JavaScript from browser caches after an update.
 
 = 1.5.1 =
 
-* Add missing files into the repository. 
+* Add missing files into the repository.
 
 = 1.5.0 =
 
@@ -209,3 +277,10 @@ https://groups.google.com/forum/#!categories/easy-appointments
 * Install, Link, Unlink, Verify and Shortcode operations.
 * Shipped with Easy!Appointments v1.1.1
 
+== Upgrade Notice ==
+
+= 1.5.2 =
+Fixes the booking form being cut off on phones. The form now resizes to fit instead of scrolling inside a fixed height.
+
+= 1.5.0 =
+Adds a native Gutenberg block and an Elementor widget, so you can place the booking form without touching a shortcode.

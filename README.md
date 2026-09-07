@@ -11,7 +11,7 @@
 <br>
 
 <h4 align="center">
-    Bring your booking form directly into WordPress — with native Gutenberg block and Elementor widget support.
+    Add a full appointment booking system to WordPress — no monthly fees, no per-booking charges, your data on your server.
 </h4>
 
 <p align="center">
@@ -31,25 +31,32 @@
 
 ## About
 
-**Stop sending customers away to a separate booking site.** Bring the booking form directly into your WordPress pages — and watch your conversions soar.
+**Let customers book appointments on your website, 24/7 — without a monthly subscription or a fee on every booking.**
 
-**Easy!Appointments for WordPress** connects your self-hosted [Easy!Appointments](https://easyappointments.org) installation to your site in seconds. Your customers book appointments without ever leaving your page, on your domain, in your brand — with no SaaS subscriptions, no per-booking fees, and full ownership of your data.
+[Easy!Appointments](https://easyappointments.org) is made of two pieces, and it is worth knowing that up front:
 
-Whether you're running a salon, clinic, consultancy, or any service business, setup takes minutes and the impact is immediate.
+1. **Easy!Appointments** — the booking engine. Your calendar, services, staff, working hours and customers live here. Free, open source, installed on your own hosting (PHP + MySQL, same as WordPress).
+2. **This plugin** — the bridge. It puts that booking form onto a page of your WordPress site, on your domain, inside your theme, so customers never get bounced to a different-looking site to book.
+
+So yes, you need the engine installed before this plugin does anything. Keeping it separate is exactly what makes it free and unlimited: no company in the middle metering your bookings, no third party holding your customer list.
+
+**See it working first:** [demo.easyappointments.org](https://demo.easyappointments.org) — real booking form, real admin calendar, no signup.
+
+Developed in the open since 2014. 4,300+ GitHub stars, used by organisations including NEOM, Doctors Without Borders and Dolce & Gabbana.
 
 *Minimum Requirements: WordPress v5.0 & PHP v5.6*
 
 ## Gutenberg & Elementor
 
-### 🧱 Native Gutenberg Block
+### Native Gutenberg Block
 
 Love the WordPress block editor? The **Easy!Appointments block** is a first-class citizen of the block inserter. Search for "Easy!Appointments", drop it in, and configure width, height, styling, and provider/service pre-selection right from the block settings panel — no shortcodes, no code.
 
-### 🎨 Elementor Widget
+### Elementor Widget
 
 Building with Elementor? Find the **Easy!Appointments widget** in the Elementor panel, drag it onto your canvas, and set everything up visually with full property controls. It fits your workflow perfectly.
 
-### 📋 Shortcode (works everywhere else)
+### Shortcode (works everywhere else)
 
 For classic editors, other page builders, or anywhere shortcodes are supported:
 
