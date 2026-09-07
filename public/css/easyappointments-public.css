@@ -5,8 +5,22 @@
 
 .easyappointments-iframe {
     display: block;
-    min-height: 1000px;
     border: none;
     margin-left: auto;
     margin-right: auto;
+}
+
+/**
+ * Fallback for installations served from another origin, whose content height cannot be read from
+ * this page. The booking form stacks vertically below the Bootstrap "lg" breakpoint and then needs
+ * far more room than a typical configured height.
+ *
+ * ponytail: fixed floor, tuned for a form with a handful of services and providers. Installations
+ * with long service lists may still scroll inside the frame - serve Easy!Appointments from the same
+ * origin and the script measures it exactly instead.
+ */
+@media (max-width: 991px) {
+    .easyappointments-iframe {
+        min-height: 1400px;
+    }
 }

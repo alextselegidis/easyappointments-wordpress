@@ -15,8 +15,10 @@
  * @wordpress-plugin
  * Plugin Name:       Easy!Appointments
  * Plugin URI:        https://easyappointments.org
- * Description:       Easy!Appointments appointment scheduling integration for WordPress.
- * Version:           1.5.0
+ * Description:       Add appointment booking to your site with Easy!Appointments - no monthly fees, no per-booking charges, your data on your own server.
+ * Version:           1.5.2
+ * Requires at least: 5.0
+ * Requires PHP:      5.6
  * Author:            Alex Tselegidis
  * Author URI:        https://alextselegidis.com
  * License:           GPL-2.0+
@@ -35,7 +37,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'EASYAPPOINTMENTS_VERSION', '1.4.4' );
+define( 'EASYAPPOINTMENTS_VERSION', '1.5.2' );
 
 /**
  * The code that runs during plugin activation.

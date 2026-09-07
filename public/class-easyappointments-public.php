@@ -100,7 +100,7 @@ class Easyappointments_Public
          * class.
          */
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/easyappointments-iframe.js', ['jquery'], $this->version, false);
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/easyappointments-iframe.js', ['jquery'], $this->version, true);
 
     }
 
