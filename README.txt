@@ -97,7 +97,7 @@ Easy!Appointments has been developed in the open since 2014.
 * Confirmation and reminder emails to both sides
 * Google Calendar sync
 * Works on phones, where most bookings come from
-* Runs in many languages
+* Runs in nine languages, with more welcome
 * Your branding, your domain, your data
 
 = Honest notes =
@@ -202,6 +202,8 @@ Yes. The language is set in your Easy!Appointments installation, and the plugin'
 
 = 1.5.2 =
 
+* Add translations for German, Spanish, French, Italian, Dutch and Brazilian Portuguese, and rewrite the Czech, Greek and Russian ones, which still targeted admin screens removed in 1.5.0.
+* Rebuild the translation template, which had been generated in 2017 and covered 41 of the plugin's 80 translatable strings.
 * Fix the booking form being cut off on phones. The iframe now grows to fit the form instead of scrolling inside a fixed height.
 * Fix the auto-resize script never running: it was loaded in the page head, before the booking form existed, so it silently did nothing.
 * Fix a 1000px minimum height that overrode smaller width/height values set on the block, widget or shortcode.

@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2017-06-13 10:23+0200\n"
+"Report-Msgid-Bugs-To: info@alextselegidis.com\n"
+"POT-Creation-Date: 2026-09-07 18:21+0200\n"
 "PO-Revision-Date: 2023-04-14 11:08+0500\n"
 "Last-Translator: Dmitriy K <dmitry@atsip.ru>\n"
 "Language-Team: Dmitriy K <dmitry@atsip.ru>\n"
@@ -9,285 +10,453 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 3.2.2\n"
 "X-Poedit-KeywordsList: _e;gettext;gettext_noop;__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ../..\n"
 
-#: ../../core/Plugin.php:68
-msgid ""
-"Easy!Appointments files were installed successfully! Navigate to your "
-"installation URL complete the configuration of the application."
-msgstr ""
-"Файлы Easy!Appointments были успешно установлены! Перейдите на URL-адрес "
-"вашей установки и завершите настройку приложения."
+#: includes/class-easyappointments-elementor-widget.php:20
+#: admin/partials/easyappointments-admin-display.php:17
+msgid "Easy!Appointments"
+msgstr "Easy!Appointments"
 
-#: ../../core/Plugin.php:71
-msgid ""
-"Easy!Appointments installation was linked successfully! You can now use the "
-"[easyappointments] shortcode in your pages."
-msgstr ""
-"Установка Easy!Appointments была привязана успешно! Теперь вы можете "
-"использовать шорткод [easyappointments] на своих страницах."
+#: includes/class-easyappointments-elementor-widget.php:43
+msgid "Booking Page"
+msgstr "Страница записи"
 
-#: ../../core/Plugin.php:74
-msgid "Easy!Apppointments installation was unlinked successfully!"
-msgstr "Установка Easy!Apppointments была успешно отвязана!"
+#: includes/class-easyappointments-elementor-widget.php:51
+msgid "Width"
+msgstr "Ширина"
 
-#: ../../core/Plugin.php:76
-msgid ""
-"Easy!Appointments link is active! Use the [easyappointments] shortcode in "
-"your pages/posts."
-msgstr ""
-"Ссылка Easy!Appointments активна! Используйте шорткод [easyappointments] на "
-"своих страницах/постах."
+#: includes/class-easyappointments-elementor-widget.php:55
+msgid "CSS value, e.g. 100%, 800px."
+msgstr "Значение CSS, например 100%, 800px."
 
-#: ../../core/Plugin.php:78
-msgid ""
-"Easy!Appointments link seems to be broken! Make sure Easy!Appointments files "
-"are located in the target directory."
-msgstr ""
-"Ссылка Easy!Appointments кажется нерабочей! Убедитесь, что файлы Easy!"
-"Appointments находятся в целевом каталоге."
+#: includes/class-easyappointments-elementor-widget.php:62
+msgid "Height"
+msgstr "Высота"
 
-#: ../../core/Plugin.php:80
-msgid "An unexpected error occurred in file %file% (line %line%): %message%"
-msgstr ""
-"В файле %file% (строка %line%) произошла непредвиденная ошибка: %message%"
+#: includes/class-easyappointments-elementor-widget.php:66
+msgid "CSS value, e.g. 600px, 80vh."
+msgstr "Значение CSS, например 600px, 80vh."
 
-#: ../../core/Plugin.php:82
-msgid ""
-"The AJAX request could not be completed due to an unexpected error: %message%"
-msgstr ""
-"AJAX-запрос не может быть завершен из-за непредвиденной ошибки: %message%"
+#: includes/class-easyappointments-elementor-widget.php:73
+msgid "Custom CSS (iframe)"
+msgstr "Пользовательский CSS (iframe)"
 
-#: ../../views/admin.php:27
-msgid ""
-"Integrate the booking form of Easy!Appointments directly into your WordPress "
-"pages. This plugin will  let you create a new Easy!Appointments installation "
-"or use an existing one directly from the WordPress back-end section. Add the "
-"[easyappointments] shortcode into your pages and leverage your conversion "
-"rates."
-msgstr ""
-"Интегрируйте форму бронирования Easy!Appointments непосредственно в ваши "
-"страницы WordPress. Этот плагин позволит вам создать новую установку Easy!"
-"Appointments или использовать существующую прямо из внутреннего раздела "
-"WordPress. Добавьте шорткод [easyappointments] на свои страницы и повысьте "
-"конверсию."
+#: includes/class-easyappointments-elementor-widget.php:77
+msgid "Optional inline CSS applied to the iframe element."
+msgstr "Необязательный встроенный CSS для элемента iframe."
 
-#: ../../views/admin.php:34 ../../views/admin.php:36
-msgid "Hints"
-msgstr "Советы"
+#: includes/class-easyappointments-elementor-widget.php:90
+msgid "Pre-selection"
+msgstr "Предварительный выбор"
 
-#: ../../views/admin.php:38 ../../views/admin.php:40
-msgid "Troubleshooting"
-msgstr "Устранение неисправностей"
+#: includes/class-easyappointments-elementor-widget.php:98
+msgid "Provider ID"
+msgstr "ID специалиста"
 
-#: ../../views/admin.php:42 ../../views/admin.php:44
-msgid "About"
-msgstr "О компании"
+#: includes/class-easyappointments-elementor-widget.php:102
+msgid "Pre-select a provider by their numeric ID (optional)."
+msgstr "Заранее выбрать специалиста по числовому ID (необязательно)."
 
-#: ../../views/admin.php:47
-msgid "Connection Information"
-msgstr "Информация о подключении"
+#: includes/class-easyappointments-elementor-widget.php:109
+msgid "Service ID"
+msgstr "ID услуги"
 
-#: ../../views/admin.php:49
-msgid ""
-"Set the path and URL of your Easy!Appointments installation and press either "
-"the \"Install\" or \"Link\" button to proceed with the operation."
-msgstr ""
-"Задайте путь и URL вашей установки Easy!Appointments и нажмите кнопку "
-"\"Установить\" или \"Связать\" для продолжения операции."
+#: includes/class-easyappointments-elementor-widget.php:113
+msgid "Pre-select a service by its numeric ID (optional)."
+msgstr "Заранее выбрать услугу по числовому ID (необязательно)."
 
-#: ../../views/admin.php:57
-msgid "Path"
-msgstr "Путь"
+#: includes/class-easyappointments-elementor-widget.php:130
+#: includes/class-easyappointments-elementor-widget.php:189
+msgid "Easy!Appointments: no booking URL configured. Go to Easy!Appts → Settings to connect your installation."
+msgstr "Easy!Appointments: адрес страницы записи не задан. Перейдите в Easy!Appts → Настройки, чтобы подключить установку."
 
-#: ../../views/admin.php:62 ../../views/admin.php:76
-msgid "Example"
-msgstr "Пример"
+#: admin/class-easyappointments-admin.php:87
+msgid "Easy!Appointments installation was connected successfully! You can now embed the booking form in your pages using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget."
+msgstr "Установка Easy!Appointments успешно подключена! Теперь вы можете встроить форму записи на свои страницы с помощью шорткода [easyappointments], блока Gutenberg или виджета Elementor."
 
-#: ../../views/admin.php:65
-msgid ""
-"* Make sure that the target directory exists on the server and it's writable."
-msgstr ""
-"* Убедитесь, что целевой каталог существует на сервере и доступен для записи."
+#: admin/class-easyappointments-admin.php:88
+msgid "Easy!Appointments installation was disconnected successfully!"
+msgstr "Установка Easy!Appointments успешно отключена!"
 
-#: ../../views/admin.php:71
-msgid "URL"
-msgstr "URL"
+#: admin/class-easyappointments-admin.php:89
+msgid "Are you sure that you want to disconnect?"
+msgstr "Вы действительно хотите отключить установку?"
 
-#: ../../views/admin.php:82 ../../views/admin.php:115
-msgid "Install"
-msgstr "Установить"
+#: admin/class-easyappointments-admin.php:90
+msgid "Easy!Appointments connection is active! Embed the booking form using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget."
+msgstr "Соединение с Easy!Appointments активно! Встройте форму записи с помощью шорткода [easyappointments], блока Gutenberg или виджета Elementor."
 
-#: ../../views/admin.php:83 ../../views/admin.php:121
-msgid "Link"
-msgstr "Связать"
+#: admin/class-easyappointments-admin.php:91
+msgid "Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory."
+msgstr "Соединение с Easy!Appointments нарушено! Убедитесь, что файлы Easy!Appointments находятся в целевом каталоге."
 
-#: ../../views/admin.php:89
-msgid "Remove Easy!Appointments Files"
-msgstr "Удалить файлы Easy!Appointments"
+#: admin/class-easyappointments-admin.php:92
+msgid "Something went wrong"
+msgstr "Что-то пошло не так"
 
-#: ../../views/admin.php:96
-msgid "Remove Easy!Appointments Database Tables"
-msgstr "Удаление таблиц базы данных Easy!Appointments"
+#: admin/class-easyappointments-admin.php:93
+msgid "An unknown error occurred. Please try again."
+msgstr "Произошла неизвестная ошибка. Попробуйте ещё раз."
 
-#: ../../views/admin.php:102 ../../views/admin.php:127
-msgid "Unlink"
-msgstr "Отвязать"
+#: admin/class-easyappointments-admin.php:94
+msgid "Show technical details"
+msgstr "Показать технические подробности"
 
-#: ../../views/admin.php:104
-msgid "These actions cannot be undone!"
-msgstr "Эти действия невозможно отменить!"
+#: admin/class-easyappointments-admin.php:95
+msgid "Please enter a valid URL starting with http:// or https://."
+msgstr "Введите корректный адрес, начинающийся с http:// или https://."
 
-#: ../../views/admin.php:116
-msgid ""
-"This operation will create a new installation by placing and configuring "
-"Easy!Appointments files into the requested directory. You will have to "
-"complete the installation by opening the target URL in your browser."
-msgstr ""
-"Эта операция создаст новую установку, поместив и настроив файлы Easy!"
-"Appointments в указанную директорию. Вы должны будете завершить установку, "
-"открыв целевой URL в браузере."
+#: admin/class-easyappointments-admin.php:96
+msgid "The request could not be completed. Please check your connection and try again."
+msgstr "Не удалось выполнить запрос. Проверьте соединение и попробуйте ещё раз."
 
-#: ../../views/admin.php:122
-msgid ""
-"This operation will connect an existing Easy!Appointments installation and "
-"your WordPress website. Make sure that you use the correct installation path "
-"and URL of Easy!Appointments."
-msgstr ""
-"Эта операция соединит существующую установку Easy!Appointments и ваш сайт "
-"WordPress. Убедитесь, что вы используете правильный путь установки и URL "
-"Easy!Appointments."
+#: admin/class-easyappointments-admin.php:115
+msgid "No URL value provided."
+msgstr "Адрес не указан."
 
-#: ../../views/admin.php:128
-msgid ""
-"This operation will unlink an active connection between Easy!Appointments "
-"and your WordPress website. You can remove the files and database tables as "
-"well, even though this is optional."
-msgstr ""
-"Эта операция отвяжет активное соединение между Easy!Appointments и вашим "
-"сайтом WordPress. Вы можете также удалить файлы и таблицы базы данных, хотя "
-"это необязательно."
+#: admin/class-easyappointments-admin.php:119
+msgid "The provided value is not a valid URL."
+msgstr "Указанное значение не является корректным адресом."
 
-#: ../../views/admin.php:133
+#: admin/class-easyappointments-admin.php:167
+msgid "No URL value available."
+msgstr "Адрес недоступен."
+
+#: admin/class-easyappointments-admin.php:171
+msgid "Invalid URL value detected."
+msgstr "Обнаружен некорректный адрес."
+
+#: admin/class-easyappointments-admin.php:193
+#: admin/class-easyappointments-admin.php:194
+msgid "Easy!Appts"
+msgstr "Easy!Appts"
+
+#: admin/class-easyappointments-admin.php:207
+msgid "Settings"
+msgstr "Настройки"
+
+#: admin/partials/easyappointments-admin-display.php:18
+msgid "Embed professional appointment booking directly into your WordPress site. Fast, self-hosted, and fully in your control."
+msgstr "Встройте профессиональную запись на приём прямо в свой сайт на WordPress. Быстро, на своём сервере и полностью под вашим контролем."
+
+#: admin/partials/easyappointments-admin-display.php:27
+msgid "Connect Your Easy!Appointments Installation"
+msgstr "Подключите вашу установку Easy!Appointments"
+
+#: admin/partials/easyappointments-admin-display.php:30
+msgid "Enter the public root URL of your Easy!Appointments installation and click Connect. The URL will be verified before saving."
+msgstr "Введите публичный корневой адрес вашей установки Easy!Appointments и нажмите «Подключить». Адрес будет проверен перед сохранением."
+
+#: admin/partials/easyappointments-admin-display.php:36
+msgid "Connect"
+msgstr "Подключить"
+
+#: admin/partials/easyappointments-admin-display.php:39
+msgid "Disconnect"
+msgstr "Отключить"
+
+#: admin/partials/easyappointments-admin-display.php:43
+#, php-format
+msgid "Example: %s"
+msgstr "Пример: %s"
+
+#: admin/partials/easyappointments-admin-display.php:52
+msgid "Embed the Booking Form"
+msgstr "Встраивание формы записи"
+
+#: admin/partials/easyappointments-admin-display.php:55
+msgid "Choose how you want to embed the booking form in your pages and posts:"
+msgstr "Выберите, как встроить форму записи на страницы и в записи:"
+
+#: admin/partials/easyappointments-admin-display.php:61
+msgid "Gutenberg Block"
+msgstr "Блок Gutenberg"
+
+#: admin/partials/easyappointments-admin-display.php:62
+msgid "Add the booking form natively in the WordPress block editor."
+msgstr "Добавьте форму записи прямо в блочном редакторе WordPress."
+
+#: admin/partials/easyappointments-admin-display.php:67
+msgid "Elementor Widget"
+msgstr "Виджет Elementor"
+
+#: admin/partials/easyappointments-admin-display.php:68
+msgid "Drag and drop the booking widget into any Elementor page."
+msgstr "Перетащите виджет записи на любую страницу Elementor."
+
+#: admin/partials/easyappointments-admin-display.php:73
 msgid "Shortcode"
 msgstr "Шорткод"
 
-#: ../../views/admin.php:134
-msgid ""
-"Display the booking form directly in your pages or posts by adding the "
-"[easyappointments] shortcode. This shortcode accepts some optional "
-"attributes that will change its appearance. These attibutes are \"width\", "
-"\"height\", \"style\" and will be applied automatically to the parent "
-"container element (e.g. [easyappointments width=\"500px\" height=\"300px\" "
-"style=\"border: 2px solid black\"])."
-msgstr ""
-"Отобразите форму бронирования непосредственно на страницах или в сообщениях, "
-"добавив шорткод [easyappointments]. Этот шорткод принимает некоторые "
-"необязательные атрибуты, которые изменят его внешний вид. Эти атрибуты - "
-"\"width\", \"height\", \"style\" - будут автоматически применены к "
-"родительскому элементу контейнера (например, [easyappointments "
-"width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
+#: admin/partials/easyappointments-admin-display.php:74
+msgid "Paste a shortcode anywhere in your content or text widget."
+msgstr "Вставьте шорткод в любое место содержимого или в текстовый виджет."
 
-#: ../../views/admin.php:148
-msgid "Permission Problems"
-msgstr "Проблемы с разрешениями"
+#: admin/partials/easyappointments-admin-display.php:82
+msgid "Using the Gutenberg Block"
+msgstr "Использование блока Gutenberg"
 
-#: ../../views/admin.php:149
-msgid ""
-"Some plugin operations perform various filesystem tasks that might be "
-"interrupted due to lack of permissions. This issues mostly happen in Unix "
-"environments because PHP does not have the required permissions to read/"
-"write/delete files or directories. If you cannot solve the problem try to "
-"continue the operation manually with an FTP user (e.g. if the \"Install\" "
-"operation fails, upload the latest Easy!Appointments version manually and "
-"connect it with WordPress with the \"Link\" operation)."
-msgstr ""
-"Некоторые операции плагина выполняют различные задачи файловой системы, "
-"которые могут быть прерваны из-за отсутствия прав доступа. Такие проблемы "
-"чаще всего возникают в Unix-окружении, поскольку PHP не имеет необходимых "
-"прав на чтение/запись/удаление файлов или каталогов. Если вы не можете "
-"решить проблему, попробуйте продолжить операцию вручную с помощью FTP-"
-"пользователя (например, если операция \"Установить\" не удалась, загрузите "
-"последнюю версию Easy!Appointments вручную и соедините ее с WordPress с "
-"помощью операции \"Связать\")."
+#: admin/partials/easyappointments-admin-display.php:84
+msgid "Open the page or post you want to add the booking form to."
+msgstr "Откройте страницу или запись, куда нужно добавить форму записи."
 
-#: ../../views/admin.php:157
-msgid "Broken Connection"
-msgstr "Соединение прервано"
+#: admin/partials/easyappointments-admin-display.php:85
+#, php-format
+msgid "Click the %s button to add a new block."
+msgstr "Нажмите кнопку %s, чтобы добавить новый блок."
 
-#: ../../views/admin.php:158
-msgid ""
-"If this settings page notifies you of a broken Easy!Appointments connection "
-"it could be that the Easy!Appointments files where moved or the installation "
-"URL was changed and the connection couldn't be verified.  \"Unlink\" the "
-"current connection without removing the files or database tables and then "
-"\"Link\" it again with the new information."
-msgstr ""
-"Если эта страница настроек уведомляет вас о разрыве соединения Easy!"
-"Appointments, это может быть связано с тем, что файлы Easy!Appointments были "
-"перемещены или URL установки был изменен, и соединение не может быть "
-"проверено. \"Отвяжите\" текущее соединение, не удаляя файлы или таблицы базы "
-"данных, а затем \"Свяжите\" его снова с новой информацией."
+#: admin/partials/easyappointments-admin-display.php:86
+#, php-format
+msgid "Search for %s and select it."
+msgstr "Найдите %s и выберите его."
 
-#: ../../views/admin.php:164
-msgid "Support Forum"
-msgstr "Форум поддержки"
+#: admin/partials/easyappointments-admin-display.php:87
+msgid "Use the block settings panel on the right to configure the width, height, and optionally pre-select a service or provider."
+msgstr "В панели настроек блока справа задайте ширину и высоту и при необходимости заранее выберите услугу или специалиста."
 
-#: ../../views/admin.php:165
-msgid ""
-"If you encounter issues but you do not know what to do visit the official "
-"Easy!Appointments support group where active users help each other solve "
-"their problems."
-msgstr ""
-"Если у вас возникли проблемы, но вы не знаете, что делать, посетите "
-"официальную группу поддержки Easy!Appointments, где активные пользователи "
-"помогают друг другу решить проблемы."
+#: admin/partials/easyappointments-admin-display.php:88
+msgid "Publish or update the page. The booking form will appear in place of the block."
+msgstr "Опубликуйте или обновите страницу. Форма записи появится на месте блока."
 
-#: ../../views/admin.php:169
-msgid "Support Group"
-msgstr "Группа поддержки"
+#: admin/partials/easyappointments-admin-display.php:93
+msgid "Using the Elementor Widget"
+msgstr "Использование виджета Elementor"
 
-#: ../../views/admin.php:181
-msgid "Easy!Appointments - WordPress Plugin"
-msgstr "Easy!Appointments - Плагин WordPress"
+#: admin/partials/easyappointments-admin-display.php:95
+msgid "Open the page you want to edit with Elementor."
+msgstr "Откройте страницу, которую нужно отредактировать в Elementor."
 
-#: ../../views/admin.php:183
-msgid ""
-"Leverage your conversion rates by integrating the booking form directly in "
-"your WordPress pages. Customers will never have to leave your website for "
-"booking an appointment. Take advantage of the scheduling power of Easy!"
-"Appointment which will run smoothly with your WordPress installation.Include "
-"the booking form in your pages with the [easyappointments] shortcode."
-msgstr ""
-"Повысьте коэффициент конверсии, интегрировав форму бронирования "
-"непосредственно в страницы вашего WordPress. Клиентам никогда не придется "
-"покидать ваш сайт для бронирования встречи. Воспользуйтесь возможностями "
-"планирования Easy!Appointment, которые будут работать без проблем с вашей "
-"установкой WordPress. Включите форму бронирования на свои страницы с помощью "
-"шорткода [easyappointments]."
+#: admin/partials/easyappointments-admin-display.php:96
+#, php-format
+msgid "In the Elementor widget panel, search for %s."
+msgstr "В панели виджетов Elementor найдите %s."
 
-#: ../../views/admin.php:191
-msgid "Get Involved"
-msgstr "Принять участие"
+#: admin/partials/easyappointments-admin-display.php:97
+msgid "Drag the widget onto your page layout."
+msgstr "Перетащите виджет в макет страницы."
 
-#: ../../views/admin.php:192
-msgid ""
-"Found a problem or want to add a new feature? Contributors are more than "
-"welcome so feel free to file an issue or make pull requests on the GitHub "
-"page of the plugin."
-msgstr ""
-"Нашли проблему или хотите добавить новую функцию? Участие более чем "
-"приветствуются, так что не стесняйтесь заявить о проблеме или сделать запрос "
-"на исправление на странице плагина на GitHub."
+#: admin/partials/easyappointments-admin-display.php:98
+msgid "Configure the width, height, and optional pre-selection in the widget settings panel on the left."
+msgstr "Задайте ширину, высоту и необязательный предварительный выбор в панели настроек виджета слева."
 
-#: ../../views/admin.php:205
-msgid "For more information visit the official website of the project at "
-msgstr ""
-"Для получения дополнительной информации посетите официальный сайт проекта по "
-"адресу "
+#: admin/partials/easyappointments-admin-display.php:99
+msgid "Click Publish or Update. The booking form will be displayed on the live page."
+msgstr "Нажмите «Опубликовать» или «Обновить». Форма записи появится на опубликованной странице."
+
+#: admin/partials/easyappointments-admin-display.php:104
+msgid "Using the Shortcode"
+msgstr "Использование шорткода"
+
+#: admin/partials/easyappointments-admin-display.php:105
+msgid "Paste the following shortcode into any page, post, or text widget:"
+msgstr "Вставьте следующий шорткод на любую страницу, в запись или текстовый виджет:"
+
+#: admin/partials/easyappointments-admin-display.php:107
+msgid "Optional attributes:"
+msgstr "Необязательные атрибуты:"
+
+#: admin/partials/easyappointments-admin-display.php:111
+msgid "Set the iframe dimensions"
+msgstr "Задать размеры iframe"
+
+#: admin/partials/easyappointments-admin-display.php:115
+msgid "Pre-select a service and/or provider (use the record IDs from your Easy!Appointments backend)"
+msgstr "Заранее выбрать услугу и (или) специалиста (используйте ID записей из панели Easy!Appointments)"
+
+#: admin/partials/easyappointments-admin-display.php:119
+msgid "Add custom inline CSS to the iframe"
+msgstr "Добавить пользовательский встроенный CSS к iframe"
+
+#: admin/partials/easyappointments-admin-display.php:132
+msgid "Easy!Appointments 1.6.0: Required Configuration"
+msgstr "Easy!Appointments 1.6.0: требуется настройка"
+
+#: admin/partials/easyappointments-admin-display.php:137
+msgid "Easy!Appointments <strong>v1.6.0</strong> introduced stricter HTTP security headers that block iframe embedding by default. If your booking form is not loading inside the page, you need to apply the following one-line fix to your Easy!Appointments installation."
+msgstr "В Easy!Appointments <strong>v1.6.0</strong> появились более строгие заголовки безопасности HTTP, которые по умолчанию блокируют встраивание через iframe. Если форма записи не загружается внутри страницы, примените к своей установке Easy!Appointments следующее исправление из одной строки."
+
+#: admin/partials/easyappointments-admin-display.php:141
+msgid "Open the file <code>application/hooks/security_headers.php</code> in your Easy!Appointments installation."
+msgstr "Откройте файл <code>application/hooks/security_headers.php</code> в вашей установке Easy!Appointments."
+
+#: admin/partials/easyappointments-admin-display.php:144
+msgid "Find the following line:"
+msgstr "Найдите следующую строку:"
+
+#: admin/partials/easyappointments-admin-display.php:148
+msgid "Replace it with:"
+msgstr "Замените её на:"
+
+#: admin/partials/easyappointments-admin-display.php:152
+msgid "Save the file and reload your WordPress page. The booking form should now embed correctly."
+msgstr "Сохраните файл и перезагрузите страницу WordPress. Теперь форма записи должна встраиваться корректно."
+
+#: admin/partials/easyappointments-admin-display.php:156
+msgid "<strong>Note:</strong> This fix is only required if your Easy!Appointments installation is hosted on a <strong>different domain</strong> from your WordPress site (e.g. <code>bookings.example.com</code> vs <code>example.com</code>). If Easy!Appointments lives in a subfolder of the same domain (e.g. <code>example.com/easyappointments</code>), iframe embedding works without this change."
+msgstr "<strong>Примечание:</strong> это исправление нужно только в том случае, если ваша установка Easy!Appointments размещена на <strong>другом домене</strong>, чем сайт WordPress (например, <code>bookings.example.com</code> и <code>example.com</code>). Если Easy!Appointments находится во вложенной папке того же домена (например, <code>example.com/easyappointments</code>), встраивание через iframe работает без этого изменения."
+
+#: admin/partials/easyappointments-admin-display.php:162
+msgid "For more information visit the official website:"
+msgstr "Подробнее на официальном сайте:"
+
+#: blocks/easyappointments/index.js:28
+msgid "Display"
+msgstr "Отображение"
+
+#: blocks/easyappointments/index.js:33
+msgid "CSS value, e.g. 100% or 800px"
+msgstr "Значение CSS, например 100% или 800px"
+
+#: blocks/easyappointments/index.js:39
+msgid "CSS value, e.g. 1000px"
+msgstr "Значение CSS, например 1000px"
+
+#: blocks/easyappointments/index.js:44
+msgid "Custom iframe style"
+msgstr "Пользовательский стиль iframe"
+
+#: blocks/easyappointments/index.js:45
+msgid "Optional inline CSS for the iframe element."
+msgstr "Необязательный встроенный CSS для элемента iframe."
+
+#: blocks/easyappointments/index.js:59
+msgid "Pre-select a provider by their record ID (found in the Easy!Appointments backend)."
+msgstr "Заранее выбрать специалиста по ID записи (его можно найти в панели Easy!Appointments)."
+
+#: blocks/easyappointments/index.js:65
+msgid "Pre-select a service by its record ID (found in the Easy!Appointments backend)."
+msgstr "Заранее выбрать услугу по ID записи (его можно найти в панели Easy!Appointments)."
+
+#: blocks/easyappointments/index.js:84
+msgid "Your booking form will appear here. Use the settings panel to configure the block."
+msgstr "Здесь появится ваша форма записи. Настройте блок в панели настроек."
+
+#: blocks/easyappointments/index.js:91
+msgid "Provider ID: "
+msgstr "ID специалиста: "
+
+#: blocks/easyappointments/index.js:94
+msgid "Service ID: "
+msgstr "ID услуги: "
+
+#~ msgid "Easy!Appointments files were installed successfully! Navigate to your installation URL complete the configuration of the application."
+#~ msgstr "Файлы Easy!Appointments были успешно установлены! Перейдите на URL-адрес вашей установки и завершите настройку приложения."
+
+#~ msgid "Easy!Appointments installation was linked successfully! You can now use the [easyappointments] shortcode in your pages."
+#~ msgstr "Установка Easy!Appointments была привязана успешно! Теперь вы можете использовать шорткод [easyappointments] на своих страницах."
+
+#~ msgid "Easy!Apppointments installation was unlinked successfully!"
+#~ msgstr "Установка Easy!Apppointments была успешно отвязана!"
+
+#~ msgid "Easy!Appointments link is active! Use the [easyappointments] shortcode in your pages/posts."
+#~ msgstr "Ссылка Easy!Appointments активна! Используйте шорткод [easyappointments] на своих страницах/постах."
+
+#~ msgid "Easy!Appointments link seems to be broken! Make sure Easy!Appointments files are located in the target directory."
+#~ msgstr "Ссылка Easy!Appointments кажется нерабочей! Убедитесь, что файлы Easy!Appointments находятся в целевом каталоге."
+
+#~ msgid "An unexpected error occurred in file %file% (line %line%): %message%"
+#~ msgstr "В файле %file% (строка %line%) произошла непредвиденная ошибка: %message%"
+
+#~ msgid "The AJAX request could not be completed due to an unexpected error: %message%"
+#~ msgstr "AJAX-запрос не может быть завершен из-за непредвиденной ошибки: %message%"
+
+#~ msgid "Integrate the booking form of Easy!Appointments directly into your WordPress pages. This plugin will  let you create a new Easy!Appointments installation or use an existing one directly from the WordPress back-end section. Add the [easyappointments] shortcode into your pages and leverage your conversion rates."
+#~ msgstr "Интегрируйте форму бронирования Easy!Appointments непосредственно в ваши страницы WordPress. Этот плагин позволит вам создать новую установку Easy!Appointments или использовать существующую прямо из внутреннего раздела WordPress. Добавьте шорткод [easyappointments] на свои страницы и повысьте конверсию."
+
+#~ msgid "Hints"
+#~ msgstr "Советы"
+
+#~ msgid "Troubleshooting"
+#~ msgstr "Устранение неисправностей"
+
+#~ msgid "About"
+#~ msgstr "О компании"
+
+#~ msgid "Connection Information"
+#~ msgstr "Информация о подключении"
+
+#~ msgid "Set the path and URL of your Easy!Appointments installation and press either the \"Install\" or \"Link\" button to proceed with the operation."
+#~ msgstr "Задайте путь и URL вашей установки Easy!Appointments и нажмите кнопку \"Установить\" или \"Связать\" для продолжения операции."
+
+#~ msgid "Path"
+#~ msgstr "Путь"
+
+#~ msgid "Example"
+#~ msgstr "Пример"
+
+#~ msgid "* Make sure that the target directory exists on the server and it's writable."
+#~ msgstr "* Убедитесь, что целевой каталог существует на сервере и доступен для записи."
+
+#~ msgid "URL"
+#~ msgstr "URL"
+
+#~ msgid "Install"
+#~ msgstr "Установить"
+
+#~ msgid "Link"
+#~ msgstr "Связать"
+
+#~ msgid "Remove Easy!Appointments Files"
+#~ msgstr "Удалить файлы Easy!Appointments"
+
+#~ msgid "Remove Easy!Appointments Database Tables"
+#~ msgstr "Удаление таблиц базы данных Easy!Appointments"
+
+#~ msgid "Unlink"
+#~ msgstr "Отвязать"
+
+#~ msgid "These actions cannot be undone!"
+#~ msgstr "Эти действия невозможно отменить!"
+
+#~ msgid "This operation will create a new installation by placing and configuring Easy!Appointments files into the requested directory. You will have to complete the installation by opening the target URL in your browser."
+#~ msgstr "Эта операция создаст новую установку, поместив и настроив файлы Easy!Appointments в указанную директорию. Вы должны будете завершить установку, открыв целевой URL в браузере."
+
+#~ msgid "This operation will connect an existing Easy!Appointments installation and your WordPress website. Make sure that you use the correct installation path and URL of Easy!Appointments."
+#~ msgstr "Эта операция соединит существующую установку Easy!Appointments и ваш сайт WordPress. Убедитесь, что вы используете правильный путь установки и URL Easy!Appointments."
+
+#~ msgid "This operation will unlink an active connection between Easy!Appointments and your WordPress website. You can remove the files and database tables as well, even though this is optional."
+#~ msgstr "Эта операция отвяжет активное соединение между Easy!Appointments и вашим сайтом WordPress. Вы можете также удалить файлы и таблицы базы данных, хотя это необязательно."
+
+#~ msgid "Display the booking form directly in your pages or posts by adding the [easyappointments] shortcode. This shortcode accepts some optional attributes that will change its appearance. These attibutes are \"width\", \"height\", \"style\" and will be applied automatically to the parent container element (e.g. [easyappointments width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
+#~ msgstr "Отобразите форму бронирования непосредственно на страницах или в сообщениях, добавив шорткод [easyappointments]. Этот шорткод принимает некоторые необязательные атрибуты, которые изменят его внешний вид. Эти атрибуты - \"width\", \"height\", \"style\" - будут автоматически применены к родительскому элементу контейнера (например, [easyappointments width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
+
+#~ msgid "Permission Problems"
+#~ msgstr "Проблемы с разрешениями"
+
+#~ msgid "Some plugin operations perform various filesystem tasks that might be interrupted due to lack of permissions. This issues mostly happen in Unix environments because PHP does not have the required permissions to read/write/delete files or directories. If you cannot solve the problem try to continue the operation manually with an FTP user (e.g. if the \"Install\" operation fails, upload the latest Easy!Appointments version manually and connect it with WordPress with the \"Link\" operation)."
+#~ msgstr "Некоторые операции плагина выполняют различные задачи файловой системы, которые могут быть прерваны из-за отсутствия прав доступа. Такие проблемы чаще всего возникают в Unix-окружении, поскольку PHP не имеет необходимых прав на чтение/запись/удаление файлов или каталогов. Если вы не можете решить проблему, попробуйте продолжить операцию вручную с помощью FTP-пользователя (например, если операция \"Установить\" не удалась, загрузите последнюю версию Easy!Appointments вручную и соедините ее с WordPress с помощью операции \"Связать\")."
+
+#~ msgid "Broken Connection"
+#~ msgstr "Соединение прервано"
+
+#~ msgid "If this settings page notifies you of a broken Easy!Appointments connection it could be that the Easy!Appointments files where moved or the installation URL was changed and the connection couldn't be verified.  \"Unlink\" the current connection without removing the files or database tables and then \"Link\" it again with the new information."
+#~ msgstr "Если эта страница настроек уведомляет вас о разрыве соединения Easy!Appointments, это может быть связано с тем, что файлы Easy!Appointments были перемещены или URL установки был изменен, и соединение не может быть проверено. \"Отвяжите\" текущее соединение, не удаляя файлы или таблицы базы данных, а затем \"Свяжите\" его снова с новой информацией."
+
+#~ msgid "Support Forum"
+#~ msgstr "Форум поддержки"
+
+#~ msgid "If you encounter issues but you do not know what to do visit the official Easy!Appointments support group where active users help each other solve their problems."
+#~ msgstr "Если у вас возникли проблемы, но вы не знаете, что делать, посетите официальную группу поддержки Easy!Appointments, где активные пользователи помогают друг другу решить проблемы."
+
+#~ msgid "Support Group"
+#~ msgstr "Группа поддержки"
+
+#~ msgid "Easy!Appointments - WordPress Plugin"
+#~ msgstr "Easy!Appointments - Плагин WordPress"
+
+#~ msgid "Leverage your conversion rates by integrating the booking form directly in your WordPress pages. Customers will never have to leave your website for booking an appointment. Take advantage of the scheduling power of Easy!Appointment which will run smoothly with your WordPress installation.Include the booking form in your pages with the [easyappointments] shortcode."
+#~ msgstr "Повысьте коэффициент конверсии, интегрировав форму бронирования непосредственно в страницы вашего WordPress. Клиентам никогда не придется покидать ваш сайт для бронирования встречи. Воспользуйтесь возможностями планирования Easy!Appointment, которые будут работать без проблем с вашей установкой WordPress. Включите форму бронирования на свои страницы с помощью шорткода [easyappointments]."
+
+#~ msgid "Get Involved"
+#~ msgstr "Принять участие"
+
+#~ msgid "Found a problem or want to add a new feature? Contributors are more than welcome so feel free to file an issue or make pull requests on the GitHub page of the plugin."
+#~ msgstr "Нашли проблему или хотите добавить новую функцию? Участие более чем приветствуются, так что не стесняйтесь заявить о проблеме или сделать запрос на исправление на странице плагина на GitHub."
+
+#~ msgid "For more information visit the official website of the project at "
+#~ msgstr "Для получения дополнительной информации посетите официальный сайт проекта по адресу "

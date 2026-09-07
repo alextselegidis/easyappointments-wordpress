@@ -1,344 +1,345 @@
 # Easy!Appointments for WordPress
-# Copyright (C) YEAR Alex Tselegidis
+# Copyright (C) 2026 Alex Tselegidis
 # This file is distributed under the same license as the Easy!Appointments package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Automatically generated, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments 1.5.2\n"
 "Report-Msgid-Bugs-To: info@alextselegidis.com\n"
 "POT-Creation-Date: 2026-09-07 18:21+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Alex Tselegidis <info@alextselegidis.com>\n"
-"Language-Team: Alex Tselegidis <info@alextselegidis.com>\n"
-"Language: en\n"
+"PO-Revision-Date: 2026-09-07 18:21+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: includes/class-easyappointments-elementor-widget.php:20
 #: admin/partials/easyappointments-admin-display.php:17
 msgid "Easy!Appointments"
-msgstr ""
+msgstr "Easy!Appointments"
 
 #: includes/class-easyappointments-elementor-widget.php:43
 msgid "Booking Page"
-msgstr ""
+msgstr "Página de agendamento"
 
 #: includes/class-easyappointments-elementor-widget.php:51
 msgid "Width"
-msgstr ""
+msgstr "Largura"
 
 #: includes/class-easyappointments-elementor-widget.php:55
 msgid "CSS value, e.g. 100%, 800px."
-msgstr ""
+msgstr "Valor CSS, por ex. 100%, 800px."
 
 #: includes/class-easyappointments-elementor-widget.php:62
 msgid "Height"
-msgstr ""
+msgstr "Altura"
 
 #: includes/class-easyappointments-elementor-widget.php:66
 msgid "CSS value, e.g. 600px, 80vh."
-msgstr ""
+msgstr "Valor CSS, por ex. 600px, 80vh."
 
 #: includes/class-easyappointments-elementor-widget.php:73
 msgid "Custom CSS (iframe)"
-msgstr ""
+msgstr "CSS personalizado (iframe)"
 
 #: includes/class-easyappointments-elementor-widget.php:77
 msgid "Optional inline CSS applied to the iframe element."
-msgstr ""
+msgstr "CSS inline opcional aplicado ao elemento iframe."
 
 #: includes/class-easyappointments-elementor-widget.php:90
 msgid "Pre-selection"
-msgstr ""
+msgstr "Pré-seleção"
 
 #: includes/class-easyappointments-elementor-widget.php:98
 msgid "Provider ID"
-msgstr ""
+msgstr "ID do profissional"
 
 #: includes/class-easyappointments-elementor-widget.php:102
 msgid "Pre-select a provider by their numeric ID (optional)."
-msgstr ""
+msgstr "Pré-selecionar um profissional pelo ID numérico (opcional)."
 
 #: includes/class-easyappointments-elementor-widget.php:109
 msgid "Service ID"
-msgstr ""
+msgstr "ID do serviço"
 
 #: includes/class-easyappointments-elementor-widget.php:113
 msgid "Pre-select a service by its numeric ID (optional)."
-msgstr ""
+msgstr "Pré-selecionar um serviço pelo ID numérico (opcional)."
 
 #: includes/class-easyappointments-elementor-widget.php:130
 #: includes/class-easyappointments-elementor-widget.php:189
 msgid "Easy!Appointments: no booking URL configured. Go to Easy!Appts → Settings to connect your installation."
-msgstr ""
+msgstr "Easy!Appointments: nenhuma URL de agendamento configurada. Vá em Easy!Appts → Configurações para conectar sua instalação."
 
 #: admin/class-easyappointments-admin.php:87
 msgid "Easy!Appointments installation was connected successfully! You can now embed the booking form in your pages using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget."
-msgstr ""
+msgstr "A instalação do Easy!Appointments foi conectada com sucesso! Agora você pode incorporar o formulário de agendamento nas suas páginas usando o shortcode [easyappointments], o bloco do Gutenberg ou o widget do Elementor."
 
 #: admin/class-easyappointments-admin.php:88
 msgid "Easy!Appointments installation was disconnected successfully!"
-msgstr ""
+msgstr "A instalação do Easy!Appointments foi desconectada com sucesso!"
 
 #: admin/class-easyappointments-admin.php:89
 msgid "Are you sure that you want to disconnect?"
-msgstr ""
+msgstr "Tem certeza de que deseja desconectar?"
 
 #: admin/class-easyappointments-admin.php:90
 msgid "Easy!Appointments connection is active! Embed the booking form using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget."
-msgstr ""
+msgstr "A conexão com o Easy!Appointments está ativa! Incorpore o formulário de agendamento usando o shortcode [easyappointments], o bloco do Gutenberg ou o widget do Elementor."
 
 #: admin/class-easyappointments-admin.php:91
 msgid "Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory."
-msgstr ""
+msgstr "A conexão com o Easy!Appointments parece estar quebrada! Verifique se os arquivos do Easy!Appointments estão no diretório de destino."
 
 #: admin/class-easyappointments-admin.php:92
 msgid "Something went wrong"
-msgstr ""
+msgstr "Algo deu errado"
 
 #: admin/class-easyappointments-admin.php:93
 msgid "An unknown error occurred. Please try again."
-msgstr ""
+msgstr "Ocorreu um erro desconhecido. Tente novamente."
 
 #: admin/class-easyappointments-admin.php:94
 msgid "Show technical details"
-msgstr ""
+msgstr "Mostrar detalhes técnicos"
 
 #: admin/class-easyappointments-admin.php:95
 msgid "Please enter a valid URL starting with http:// or https://."
-msgstr ""
+msgstr "Informe uma URL válida começando com http:// ou https://."
 
 #: admin/class-easyappointments-admin.php:96
 msgid "The request could not be completed. Please check your connection and try again."
-msgstr ""
+msgstr "Não foi possível concluir a solicitação. Verifique sua conexão e tente novamente."
 
 #: admin/class-easyappointments-admin.php:115
 msgid "No URL value provided."
-msgstr ""
+msgstr "Nenhum valor de URL informado."
 
 #: admin/class-easyappointments-admin.php:119
 msgid "The provided value is not a valid URL."
-msgstr ""
+msgstr "O valor informado não é uma URL válida."
 
 #: admin/class-easyappointments-admin.php:167
 msgid "No URL value available."
-msgstr ""
+msgstr "Nenhum valor de URL disponível."
 
 #: admin/class-easyappointments-admin.php:171
 msgid "Invalid URL value detected."
-msgstr ""
+msgstr "Valor de URL inválido detectado."
 
 #: admin/class-easyappointments-admin.php:193
 #: admin/class-easyappointments-admin.php:194
 msgid "Easy!Appts"
-msgstr ""
+msgstr "Easy!Appts"
 
 #: admin/class-easyappointments-admin.php:207
 msgid "Settings"
-msgstr ""
+msgstr "Configurações"
 
 #: admin/partials/easyappointments-admin-display.php:18
 msgid "Embed professional appointment booking directly into your WordPress site. Fast, self-hosted, and fully in your control."
-msgstr ""
+msgstr "Incorpore agendamento profissional diretamente no seu site WordPress. Rápido, auto-hospedado e totalmente sob seu controle."
 
 #: admin/partials/easyappointments-admin-display.php:27
 msgid "Connect Your Easy!Appointments Installation"
-msgstr ""
+msgstr "Conecte sua instalação do Easy!Appointments"
 
 #: admin/partials/easyappointments-admin-display.php:30
 msgid "Enter the public root URL of your Easy!Appointments installation and click Connect. The URL will be verified before saving."
-msgstr ""
+msgstr "Informe a URL raiz pública da sua instalação do Easy!Appointments e clique em Conectar. A URL será verificada antes de ser salva."
 
 #: admin/partials/easyappointments-admin-display.php:36
 msgid "Connect"
-msgstr ""
+msgstr "Conectar"
 
 #: admin/partials/easyappointments-admin-display.php:39
 msgid "Disconnect"
-msgstr ""
+msgstr "Desconectar"
 
 #: admin/partials/easyappointments-admin-display.php:43
 #, php-format
 msgid "Example: %s"
-msgstr ""
+msgstr "Exemplo: %s"
 
 #: admin/partials/easyappointments-admin-display.php:52
 msgid "Embed the Booking Form"
-msgstr ""
+msgstr "Incorporar o formulário de agendamento"
 
 #: admin/partials/easyappointments-admin-display.php:55
 msgid "Choose how you want to embed the booking form in your pages and posts:"
-msgstr ""
+msgstr "Escolha como deseja incorporar o formulário de agendamento nas suas páginas e posts:"
 
 #: admin/partials/easyappointments-admin-display.php:61
 msgid "Gutenberg Block"
-msgstr ""
+msgstr "Bloco do Gutenberg"
 
 #: admin/partials/easyappointments-admin-display.php:62
 msgid "Add the booking form natively in the WordPress block editor."
-msgstr ""
+msgstr "Adicione o formulário de agendamento nativamente no editor de blocos do WordPress."
 
 #: admin/partials/easyappointments-admin-display.php:67
 msgid "Elementor Widget"
-msgstr ""
+msgstr "Widget do Elementor"
 
 #: admin/partials/easyappointments-admin-display.php:68
 msgid "Drag and drop the booking widget into any Elementor page."
-msgstr ""
+msgstr "Arraste e solte o widget de agendamento em qualquer página do Elementor."
 
 #: admin/partials/easyappointments-admin-display.php:73
 msgid "Shortcode"
-msgstr ""
+msgstr "Shortcode"
 
 #: admin/partials/easyappointments-admin-display.php:74
 msgid "Paste a shortcode anywhere in your content or text widget."
-msgstr ""
+msgstr "Cole um shortcode em qualquer lugar do seu conteúdo ou widget de texto."
 
 #: admin/partials/easyappointments-admin-display.php:82
 msgid "Using the Gutenberg Block"
-msgstr ""
+msgstr "Usando o bloco do Gutenberg"
 
 #: admin/partials/easyappointments-admin-display.php:84
 msgid "Open the page or post you want to add the booking form to."
-msgstr ""
+msgstr "Abra a página ou post ao qual deseja adicionar o formulário de agendamento."
 
 #: admin/partials/easyappointments-admin-display.php:85
 #, php-format
 msgid "Click the %s button to add a new block."
-msgstr ""
+msgstr "Clique no botão %s para adicionar um novo bloco."
 
 #: admin/partials/easyappointments-admin-display.php:86
 #, php-format
 msgid "Search for %s and select it."
-msgstr ""
+msgstr "Pesquise por %s e selecione."
 
 #: admin/partials/easyappointments-admin-display.php:87
 msgid "Use the block settings panel on the right to configure the width, height, and optionally pre-select a service or provider."
-msgstr ""
+msgstr "Use o painel de configurações do bloco, à direita, para configurar largura e altura e, opcionalmente, pré-selecionar um serviço ou profissional."
 
 #: admin/partials/easyappointments-admin-display.php:88
 msgid "Publish or update the page. The booking form will appear in place of the block."
-msgstr ""
+msgstr "Publique ou atualize a página. O formulário de agendamento aparecerá no lugar do bloco."
 
 #: admin/partials/easyappointments-admin-display.php:93
 msgid "Using the Elementor Widget"
-msgstr ""
+msgstr "Usando o widget do Elementor"
 
 #: admin/partials/easyappointments-admin-display.php:95
 msgid "Open the page you want to edit with Elementor."
-msgstr ""
+msgstr "Abra a página que deseja editar com o Elementor."
 
 #: admin/partials/easyappointments-admin-display.php:96
 #, php-format
 msgid "In the Elementor widget panel, search for %s."
-msgstr ""
+msgstr "No painel de widgets do Elementor, pesquise por %s."
 
 #: admin/partials/easyappointments-admin-display.php:97
 msgid "Drag the widget onto your page layout."
-msgstr ""
+msgstr "Arraste o widget para o layout da sua página."
 
 #: admin/partials/easyappointments-admin-display.php:98
 msgid "Configure the width, height, and optional pre-selection in the widget settings panel on the left."
-msgstr ""
+msgstr "Configure largura, altura e a pré-seleção opcional no painel de configurações do widget, à esquerda."
 
 #: admin/partials/easyappointments-admin-display.php:99
 msgid "Click Publish or Update. The booking form will be displayed on the live page."
-msgstr ""
+msgstr "Clique em Publicar ou Atualizar. O formulário de agendamento será exibido na página publicada."
 
 #: admin/partials/easyappointments-admin-display.php:104
 msgid "Using the Shortcode"
-msgstr ""
+msgstr "Usando o shortcode"
 
 #: admin/partials/easyappointments-admin-display.php:105
 msgid "Paste the following shortcode into any page, post, or text widget:"
-msgstr ""
+msgstr "Cole o shortcode a seguir em qualquer página, post ou widget de texto:"
 
 #: admin/partials/easyappointments-admin-display.php:107
 msgid "Optional attributes:"
-msgstr ""
+msgstr "Atributos opcionais:"
 
 #: admin/partials/easyappointments-admin-display.php:111
 msgid "Set the iframe dimensions"
-msgstr ""
+msgstr "Definir as dimensões do iframe"
 
 #: admin/partials/easyappointments-admin-display.php:115
 msgid "Pre-select a service and/or provider (use the record IDs from your Easy!Appointments backend)"
-msgstr ""
+msgstr "Pré-selecionar um serviço e/ou profissional (use os IDs de registro do backend do Easy!Appointments)"
 
 #: admin/partials/easyappointments-admin-display.php:119
 msgid "Add custom inline CSS to the iframe"
-msgstr ""
+msgstr "Adicionar CSS inline personalizado ao iframe"
 
 #: admin/partials/easyappointments-admin-display.php:132
 msgid "Easy!Appointments 1.6.0: Required Configuration"
-msgstr ""
+msgstr "Easy!Appointments 1.6.0: configuração necessária"
 
 #: admin/partials/easyappointments-admin-display.php:137
 msgid "Easy!Appointments <strong>v1.6.0</strong> introduced stricter HTTP security headers that block iframe embedding by default. If your booking form is not loading inside the page, you need to apply the following one-line fix to your Easy!Appointments installation."
-msgstr ""
+msgstr "O Easy!Appointments <strong>v1.6.0</strong> introduziu cabeçalhos de segurança HTTP mais rígidos que bloqueiam a incorporação em iframe por padrão. Se o seu formulário de agendamento não carregar dentro da página, você precisa aplicar a correção de uma linha a seguir na sua instalação do Easy!Appointments."
 
 #: admin/partials/easyappointments-admin-display.php:141
 msgid "Open the file <code>application/hooks/security_headers.php</code> in your Easy!Appointments installation."
-msgstr ""
+msgstr "Abra o arquivo <code>application/hooks/security_headers.php</code> na sua instalação do Easy!Appointments."
 
 #: admin/partials/easyappointments-admin-display.php:144
 msgid "Find the following line:"
-msgstr ""
+msgstr "Localize a seguinte linha:"
 
 #: admin/partials/easyappointments-admin-display.php:148
 msgid "Replace it with:"
-msgstr ""
+msgstr "Substitua por:"
 
 #: admin/partials/easyappointments-admin-display.php:152
 msgid "Save the file and reload your WordPress page. The booking form should now embed correctly."
-msgstr ""
+msgstr "Salve o arquivo e recarregue sua página do WordPress. O formulário de agendamento deve ser incorporado corretamente agora."
 
 #: admin/partials/easyappointments-admin-display.php:156
 msgid "<strong>Note:</strong> This fix is only required if your Easy!Appointments installation is hosted on a <strong>different domain</strong> from your WordPress site (e.g. <code>bookings.example.com</code> vs <code>example.com</code>). If Easy!Appointments lives in a subfolder of the same domain (e.g. <code>example.com/easyappointments</code>), iframe embedding works without this change."
-msgstr ""
+msgstr "<strong>Observação:</strong> esta correção só é necessária se a sua instalação do Easy!Appointments estiver hospedada em um <strong>domínio diferente</strong> do seu site WordPress (por ex. <code>bookings.example.com</code> em vez de <code>example.com</code>). Se o Easy!Appointments estiver em uma subpasta do mesmo domínio (por ex. <code>example.com/easyappointments</code>), a incorporação em iframe funciona sem essa alteração."
 
 #: admin/partials/easyappointments-admin-display.php:162
 msgid "For more information visit the official website:"
-msgstr ""
+msgstr "Para mais informações, visite o site oficial:"
 
 #: blocks/easyappointments/index.js:28
 msgid "Display"
-msgstr ""
+msgstr "Exibição"
 
 #: blocks/easyappointments/index.js:33
 msgid "CSS value, e.g. 100% or 800px"
-msgstr ""
+msgstr "Valor CSS, por ex. 100% ou 800px"
 
 #: blocks/easyappointments/index.js:39
 msgid "CSS value, e.g. 1000px"
-msgstr ""
+msgstr "Valor CSS, por ex. 1000px"
 
 #: blocks/easyappointments/index.js:44
 msgid "Custom iframe style"
-msgstr ""
+msgstr "Estilo de iframe personalizado"
 
 #: blocks/easyappointments/index.js:45
 msgid "Optional inline CSS for the iframe element."
-msgstr ""
+msgstr "CSS inline opcional para o elemento iframe."
 
 #: blocks/easyappointments/index.js:59
 msgid "Pre-select a provider by their record ID (found in the Easy!Appointments backend)."
-msgstr ""
+msgstr "Pré-selecionar um profissional pelo ID de registro (encontrado no backend do Easy!Appointments)."
 
 #: blocks/easyappointments/index.js:65
 msgid "Pre-select a service by its record ID (found in the Easy!Appointments backend)."
-msgstr ""
+msgstr "Pré-selecionar um serviço pelo ID de registro (encontrado no backend do Easy!Appointments)."
 
 #: blocks/easyappointments/index.js:84
 msgid "Your booking form will appear here. Use the settings panel to configure the block."
-msgstr ""
+msgstr "Seu formulário de agendamento aparecerá aqui. Use o painel de configurações para configurar o bloco."
 
 #: blocks/easyappointments/index.js:91
 msgid "Provider ID: "
-msgstr ""
+msgstr "ID do profissional: "
 
 #: blocks/easyappointments/index.js:94
 msgid "Service ID: "
-msgstr ""
+msgstr "ID do serviço: "

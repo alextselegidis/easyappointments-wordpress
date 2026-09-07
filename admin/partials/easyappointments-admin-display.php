@@ -15,7 +15,7 @@
         <img class="ea-logo" src="<?php echo esc_url( plugins_url( 'img/logo.png', __DIR__ ) ); ?>" alt="Easy!Appointments Logo"/>
         <div class="ea-header-text">
             <h1><?php _e( 'Easy!Appointments', 'easyappointments' ) ?></h1>
-            <p><?php _e( 'Embed professional appointment booking directly into your WordPress site — fast, self-hosted, and fully in your control.', 'easyappointments' ) ?></p>
+            <p><?php _e( 'Embed professional appointment booking directly into your WordPress site. Fast, self-hosted, and fully in your control.', 'easyappointments' ) ?></p>
         </div>
         <img class="ea-loading hidden" src="<?php echo esc_url( admin_url( 'images/wpspin_light-2x.gif' ) ); ?>" alt="Loading">
     </div>
@@ -85,7 +85,7 @@
                         <li><?php printf( __( 'Click the %s button to add a new block.', 'easyappointments' ), '<strong>+</strong>' ) ?></li>
                         <li><?php printf( __( 'Search for %s and select it.', 'easyappointments' ), '<strong>Easy!Appointments</strong>' ) ?></li>
                         <li><?php _e( 'Use the block settings panel on the right to configure the width, height, and optionally pre-select a service or provider.', 'easyappointments' ) ?></li>
-                        <li><?php _e( 'Publish or update the page — the booking form will appear in place of the block.', 'easyappointments' ) ?></li>
+                        <li><?php _e( 'Publish or update the page. The booking form will appear in place of the block.', 'easyappointments' ) ?></li>
                     </ol>
                 </div>
 
@@ -96,7 +96,7 @@
                         <li><?php printf( __( 'In the Elementor widget panel, search for %s.', 'easyappointments' ), '<strong>Easy!Appointments</strong>' ) ?></li>
                         <li><?php _e( 'Drag the widget onto your page layout.', 'easyappointments' ) ?></li>
                         <li><?php _e( 'Configure the width, height, and optional pre-selection in the widget settings panel on the left.', 'easyappointments' ) ?></li>
-                        <li><?php _e( 'Click Publish or Update — the booking form will be displayed on the live page.', 'easyappointments' ) ?></li>
+                        <li><?php _e( 'Click Publish or Update. The booking form will be displayed on the live page.', 'easyappointments' ) ?></li>
                     </ol>
                 </div>
 
@@ -108,15 +108,15 @@
                     <ul class="ea-shortcode-examples">
                         <li>
                             <div class="ea-code-block"><code>[easyappointments width="100%" height="1000px"]</code></div>
-                            &mdash; <?php _e( 'Set the iframe dimensions', 'easyappointments' ) ?>
+                            <?php _e( 'Set the iframe dimensions', 'easyappointments' ) ?>
                         </li>
                         <li>
                             <div class="ea-code-block"><code>[easyappointments service="1" provider="2"]</code></div>
-                            &mdash; <?php _e( 'Pre-select a service and/or provider (use the record IDs from your Easy!Appointments backend)', 'easyappointments' ) ?>
+                            <?php _e( 'Pre-select a service and/or provider (use the record IDs from your Easy!Appointments backend)', 'easyappointments' ) ?>
                         </li>
                         <li>
                             <div class="ea-code-block"><code>[easyappointments style="border: 2px solid #ccc"]</code></div>
-                            &mdash; <?php _e( 'Add custom inline CSS to the iframe', 'easyappointments' ) ?>
+                            <?php _e( 'Add custom inline CSS to the iframe', 'easyappointments' ) ?>
                         </li>
                     </ul>
                 </div>
@@ -129,7 +129,7 @@
     <details class="ea-card ea-collapsible">
         <summary class="ea-card-header ea-collapsible-header">
             <div class="ea-step-badge ea-step-badge--warning">!</div>
-            <h2><?php _e( 'Easy!Appointments 1.6.0 &mdash; Required Configuration', 'easyappointments' ) ?></h2>
+            <h2><?php _e( 'Easy!Appointments 1.6.0: Required Configuration', 'easyappointments' ) ?></h2>
             <span class="ea-collapsible-chevron dashicons dashicons-arrow-down-alt2"></span>
         </summary>
         <div class="ea-card-body">
@@ -149,7 +149,7 @@
                     <div class="ea-code-block"><code>header("X-Frame-Options: ALLOWALL");</code></div>
                 </li>
                 <li>
-                    <?php _e( 'Save the file and reload your WordPress page — the booking form should now embed correctly.', 'easyappointments' ) ?>
+                    <?php _e( 'Save the file and reload your WordPress page. The booking form should now embed correctly.', 'easyappointments' ) ?>
                 </li>
             </ol>
             <p class="description">

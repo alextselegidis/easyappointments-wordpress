@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Easy!Appointments - WordPress Plugin v0.1\n"
-"POT-Creation-Date: 2017-06-13 10:23+0200\n"
+"Report-Msgid-Bugs-To: info@alextselegidis.com\n"
+"POT-Creation-Date: 2026-09-07 18:21+0200\n"
 "PO-Revision-Date: 2017-06-13 10:25+0200\n"
 "Last-Translator: Alex Tselegidis <alextselegidis@gmail.com>\n"
 "Language-Team: Alex Tselegidis <alextselegidis@gmail.com>\n"
@@ -15,303 +16,452 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ../..\n"
 
-#: ../../core/Plugin.php:68
-msgid ""
-"Easy!Appointments files were installed successfully! Navigate to your "
-"installation URL complete the configuration of the application."
-msgstr ""
-"Τα αρχεία του Easy!Appointments εγκαταστάθηκαν επιτυχώς! Πλοηγηθείτε στην "
-"ηλεκτρονική διεύθυνση της εγκατάστασης σας (URL) για να ολοκληρώσετε την "
-"διαμόρφωση της εφαρμογής."
+#: includes/class-easyappointments-elementor-widget.php:20
+#: admin/partials/easyappointments-admin-display.php:17
+msgid "Easy!Appointments"
+msgstr "Easy!Appointments"
 
-#: ../../core/Plugin.php:71
-msgid ""
-"Easy!Appointments installation was linked successfully! You can now use the "
-"[easyappointments] shortcode in your pages."
-msgstr ""
-"Η εγκατάσταση Easy!Appointments συνδέθηκε επιτυχώς! Μπορείτε τώρα να "
-"χρησιμοποιήσετε το [easyappointments] shortcode στις σελίδες σας."
+#: includes/class-easyappointments-elementor-widget.php:43
+msgid "Booking Page"
+msgstr "Σελίδα κρατήσεων"
 
-#: ../../core/Plugin.php:74
-msgid "Easy!Apppointments installation was unlinked successfully!"
-msgstr "Η εγκατάσταση του Easy!Appointments αποσυνδέθηκε επιτυχώς!"
+#: includes/class-easyappointments-elementor-widget.php:51
+msgid "Width"
+msgstr "Πλάτος"
 
-#: ../../core/Plugin.php:76
-msgid ""
-"Easy!Appointments link is active! Use the [easyappointments] shortcode in "
-"your pages/posts."
-msgstr ""
-"Η σύνδεση με το Easy!Appointments είναι ενεργή! Χρησιμοποιήστε το "
-"[easyappointments] shortcode στις σελίδες/δημοσιεύσεις σας."
+#: includes/class-easyappointments-elementor-widget.php:55
+msgid "CSS value, e.g. 100%, 800px."
+msgstr "Τιμή CSS, π.χ. 100%, 800px."
 
-#: ../../core/Plugin.php:78
-msgid ""
-"Easy!Appointments link seems to be broken! Make sure Easy!Appointments files "
-"are located in the target directory."
-msgstr ""
-"Η σύνδεση με το Easy!Appointments φαίνεται να είναι λανθασμένη! "
-"Σιγουρευτείτε ότι τα αρχεία του Easy!Appointments βρίσκονται στο σωστό "
-"κατάλογο."
+#: includes/class-easyappointments-elementor-widget.php:62
+msgid "Height"
+msgstr "Ύψος"
 
-#: ../../core/Plugin.php:80
-msgid "An unexpected error occurred in file %file% (line %line%): %message%"
-msgstr ""
-"Ένα απρόσμενο σφάλμα συνέβη στο αρχείο %file% (γραμμή %line%): %message%"
+#: includes/class-easyappointments-elementor-widget.php:66
+msgid "CSS value, e.g. 600px, 80vh."
+msgstr "Τιμή CSS, π.χ. 600px, 80vh."
 
-#: ../../core/Plugin.php:82
-msgid ""
-"The AJAX request could not be completed due to an unexpected error: %message%"
-msgstr ""
-"Το αίτημα AJAX δεν μπόρεσε να ολοκληρωθεί εξαιτίας ενός απρόσμενου "
-"σφάλματος: %message%"
+#: includes/class-easyappointments-elementor-widget.php:73
+msgid "Custom CSS (iframe)"
+msgstr "Προσαρμοσμένο CSS (iframe)"
 
-#: ../../views/admin.php:27
-msgid ""
-"Integrate the booking form of Easy!Appointments directly into your WordPress "
-"pages. This plugin will  let you create a new Easy!Appointments installation "
-"or use an existing one directly from the WordPress back-end section. Add the "
-"[easyappointments] shortcode into your pages and leverage your conversion "
-"rates."
-msgstr ""
-"Ενσωματώστε την φόρμα κρατήσεων του Easy!Appointments απευθείας στις "
-"WordPress σελίδες. Αυτό το πρόσθετο σας επιτρέπει να δημιουργήσετε μια νέα "
-"εγκατάσταση Easy!Appointments ή να χρησιμοποιήσετε μια υπάρχουσα απευθείας "
-"από το διαχειριστικό τμήμα του WordPress. Προσθέστε το [easyappointments] "
-"shortcode στις σελίδες σας και βελτιώστε τα ποσοστά μετατροπών σας."
+#: includes/class-easyappointments-elementor-widget.php:77
+msgid "Optional inline CSS applied to the iframe element."
+msgstr "Προαιρετικό inline CSS που εφαρμόζεται στο στοιχείο iframe."
 
-#: ../../views/admin.php:34 ../../views/admin.php:36
-msgid "Hints"
-msgstr "Συμβουλές"
+#: includes/class-easyappointments-elementor-widget.php:90
+msgid "Pre-selection"
+msgstr "Προεπιλογή"
 
-#: ../../views/admin.php:38 ../../views/admin.php:40
-msgid "Troubleshooting"
-msgstr "Αντιμετώπιση Προβλημάτων"
+#: includes/class-easyappointments-elementor-widget.php:98
+msgid "Provider ID"
+msgstr "Κωδικός παρόχου"
 
-#: ../../views/admin.php:42 ../../views/admin.php:44
-msgid "About"
-msgstr "Σχετικά"
+#: includes/class-easyappointments-elementor-widget.php:102
+msgid "Pre-select a provider by their numeric ID (optional)."
+msgstr "Προεπιλέξτε έναν πάροχο με βάση τον αριθμητικό του κωδικό (προαιρετικό)."
 
-#: ../../views/admin.php:47
-msgid "Connection Information"
-msgstr "Πληροφορίες Σύνδεσης"
+#: includes/class-easyappointments-elementor-widget.php:109
+msgid "Service ID"
+msgstr "Κωδικός υπηρεσίας"
 
-#: ../../views/admin.php:49
-msgid ""
-"Set the path and URL of your Easy!Appointments installation and press either "
-"the \"Install\" or \"Link\" button to proceed with the operation."
-msgstr ""
-"Συμπληρώστε την διαδρομή (Path) και διεύθυνση (URL) της εγκατάστασης του "
-"Easy!Appointments και πατήστε είτε το κουμπί \"Εγκατάσταση\" ή το κουμπί "
-"\"Σύνδεση\" έτσι ώστε να εκκινήσετε την λειτουργία."
+#: includes/class-easyappointments-elementor-widget.php:113
+msgid "Pre-select a service by its numeric ID (optional)."
+msgstr "Προεπιλέξτε μια υπηρεσία με βάση τον αριθμητικό της κωδικό (προαιρετικό)."
 
-#: ../../views/admin.php:57
-msgid "Path"
-msgstr "Διαδρομή (Path)"
+#: includes/class-easyappointments-elementor-widget.php:130
+#: includes/class-easyappointments-elementor-widget.php:189
+msgid "Easy!Appointments: no booking URL configured. Go to Easy!Appts → Settings to connect your installation."
+msgstr "Easy!Appointments: δεν έχει οριστεί διεύθυνση κρατήσεων. Μεταβείτε στο Easy!Appts → Ρυθμίσεις για να συνδέσετε την εγκατάστασή σας."
 
-#: ../../views/admin.php:62 ../../views/admin.php:76
-msgid "Example"
-msgstr "Παράδειγμα"
+#: admin/class-easyappointments-admin.php:87
+msgid "Easy!Appointments installation was connected successfully! You can now embed the booking form in your pages using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget."
+msgstr "Η εγκατάσταση του Easy!Appointments συνδέθηκε με επιτυχία! Μπορείτε πλέον να ενσωματώσετε τη φόρμα κρατήσεων στις σελίδες σας με το shortcode [easyappointments], το μπλοκ Gutenberg ή το widget του Elementor."
 
-#: ../../views/admin.php:65
-msgid ""
-"* Make sure that the target directory exists on the server and it's writable."
-msgstr ""
-"* Σιγουρευτείτε ότι ο στοχευμένος κατάλογος υπάρχει στον διακομιστή σας και "
-"είναι εγγράψιμος."
+#: admin/class-easyappointments-admin.php:88
+msgid "Easy!Appointments installation was disconnected successfully!"
+msgstr "Η εγκατάσταση του Easy!Appointments αποσυνδέθηκε με επιτυχία!"
 
-#: ../../views/admin.php:71
-msgid "URL"
-msgstr "Διεύθυνση (URL)"
+#: admin/class-easyappointments-admin.php:89
+msgid "Are you sure that you want to disconnect?"
+msgstr "Είστε βέβαιοι ότι θέλετε να αποσυνδεθείτε;"
 
-#: ../../views/admin.php:82 ../../views/admin.php:115
-msgid "Install"
-msgstr "Εγκατάσταση"
+#: admin/class-easyappointments-admin.php:90
+msgid "Easy!Appointments connection is active! Embed the booking form using the [easyappointments] shortcode, the Gutenberg block, or the Elementor widget."
+msgstr "Η σύνδεση με το Easy!Appointments είναι ενεργή! Ενσωματώστε τη φόρμα κρατήσεων με το shortcode [easyappointments], το μπλοκ Gutenberg ή το widget του Elementor."
 
-#: ../../views/admin.php:83 ../../views/admin.php:121
-msgid "Link"
+#: admin/class-easyappointments-admin.php:91
+msgid "Easy!Appointments connection seems to be broken! Make sure Easy!Appointments files are located in the target directory."
+msgstr "Η σύνδεση με το Easy!Appointments φαίνεται προβληματική! Βεβαιωθείτε ότι τα αρχεία του Easy!Appointments βρίσκονται στον κατάλογο προορισμού."
+
+#: admin/class-easyappointments-admin.php:92
+msgid "Something went wrong"
+msgstr "Κάτι πήγε στραβά"
+
+#: admin/class-easyappointments-admin.php:93
+msgid "An unknown error occurred. Please try again."
+msgstr "Παρουσιάστηκε άγνωστο σφάλμα. Δοκιμάστε ξανά."
+
+#: admin/class-easyappointments-admin.php:94
+msgid "Show technical details"
+msgstr "Εμφάνιση τεχνικών λεπτομερειών"
+
+#: admin/class-easyappointments-admin.php:95
+msgid "Please enter a valid URL starting with http:// or https://."
+msgstr "Εισαγάγετε μια έγκυρη διεύθυνση που ξεκινά με http:// ή https://."
+
+#: admin/class-easyappointments-admin.php:96
+msgid "The request could not be completed. Please check your connection and try again."
+msgstr "Το αίτημα δεν ολοκληρώθηκε. Ελέγξτε τη σύνδεσή σας και δοκιμάστε ξανά."
+
+#: admin/class-easyappointments-admin.php:115
+msgid "No URL value provided."
+msgstr "Δεν δόθηκε τιμή διεύθυνσης."
+
+#: admin/class-easyappointments-admin.php:119
+msgid "The provided value is not a valid URL."
+msgstr "Η τιμή που δόθηκε δεν είναι έγκυρη διεύθυνση."
+
+#: admin/class-easyappointments-admin.php:167
+msgid "No URL value available."
+msgstr "Δεν υπάρχει διαθέσιμη τιμή διεύθυνσης."
+
+#: admin/class-easyappointments-admin.php:171
+msgid "Invalid URL value detected."
+msgstr "Εντοπίστηκε μη έγκυρη τιμή διεύθυνσης."
+
+#: admin/class-easyappointments-admin.php:193
+#: admin/class-easyappointments-admin.php:194
+msgid "Easy!Appts"
+msgstr "Easy!Appts"
+
+#: admin/class-easyappointments-admin.php:207
+msgid "Settings"
+msgstr "Ρυθμίσεις"
+
+#: admin/partials/easyappointments-admin-display.php:18
+msgid "Embed professional appointment booking directly into your WordPress site. Fast, self-hosted, and fully in your control."
+msgstr "Ενσωματώστε επαγγελματικό σύστημα κρατήσεων απευθείας στον ιστότοπό σας WordPress. Γρήγορο, self-hosted και πλήρως υπό τον έλεγχό σας."
+
+#: admin/partials/easyappointments-admin-display.php:27
+msgid "Connect Your Easy!Appointments Installation"
+msgstr "Συνδέστε την εγκατάσταση του Easy!Appointments"
+
+#: admin/partials/easyappointments-admin-display.php:30
+msgid "Enter the public root URL of your Easy!Appointments installation and click Connect. The URL will be verified before saving."
+msgstr "Εισαγάγετε τη δημόσια ριζική διεύθυνση της εγκατάστασης Easy!Appointments και πατήστε Σύνδεση. Η διεύθυνση θα ελεγχθεί πριν αποθηκευτεί."
+
+#: admin/partials/easyappointments-admin-display.php:36
+msgid "Connect"
 msgstr "Σύνδεση"
 
-#: ../../views/admin.php:89
-msgid "Remove Easy!Appointments Files"
-msgstr "Διαγραφή Αρχείων του Easy!Appointments"
-
-#: ../../views/admin.php:96
-msgid "Remove Easy!Appointments Database Tables"
-msgstr "Διαγραφή Πινάκων του Easy!Appointments από την Βάση Δεδομένων"
-
-#: ../../views/admin.php:102 ../../views/admin.php:127
-msgid "Unlink"
+#: admin/partials/easyappointments-admin-display.php:39
+msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
-#: ../../views/admin.php:104
-msgid "These actions cannot be undone!"
-msgstr "Αυτές οι ενέργειες δεν μπορούν να αναιρεθούν!"
+#: admin/partials/easyappointments-admin-display.php:43
+#, php-format
+msgid "Example: %s"
+msgstr "Παράδειγμα: %s"
 
-#: ../../views/admin.php:116
-msgid ""
-"This operation will create a new installation by placing and configuring "
-"Easy!Appointments files into the requested directory. You will have to "
-"complete the installation by opening the target URL in your browser."
-msgstr ""
-"Αυτή η λειτουργία θα δημιουργήσει μια νέα εγκατάσταση τοποθετώντας και "
-"διαμορφώνοντας τα αρχεία του Easy!Appointments στην ζητούμενη διαδρομή. Θα "
-"πρέπει να ολοκληρώσετε την εγκατάσταση του Easy!Appointments ακολουθώντας "
-"την διεύθυνση (URL) που καταχωρήσατε."
+#: admin/partials/easyappointments-admin-display.php:52
+msgid "Embed the Booking Form"
+msgstr "Ενσωμάτωση της φόρμας κρατήσεων"
 
-#: ../../views/admin.php:122
-msgid ""
-"This operation will connect an existing Easy!Appointments installation and "
-"your WordPress website. Make sure that you use the correct installation path "
-"and URL of Easy!Appointments."
-msgstr ""
-"Η λειτουργία αυτή θα δημιουργήσει μια \"σύνδεση\" μεταξύ μιας υπάρχουσας "
-"εγκατάστασης Easy!Appointments με την WordPress ιστοσελίδα σας. "
-"Σιγουρευτείτε ότι θα θέσετε την σωστή διαδρομή (Path) και διεύθυνση (URL). "
+#: admin/partials/easyappointments-admin-display.php:55
+msgid "Choose how you want to embed the booking form in your pages and posts:"
+msgstr "Επιλέξτε πώς θέλετε να ενσωματώσετε τη φόρμα κρατήσεων στις σελίδες και τα άρθρα σας:"
 
-#: ../../views/admin.php:128
-msgid ""
-"This operation will unlink an active connection between Easy!Appointments "
-"and your WordPress website. You can remove the files and database tables as "
-"well, even though this is optional."
-msgstr ""
-"Αυτή η λειτουργία θα αποσυνδέσει μια ενεργή σύνδεση μεταξύ του Easy!"
-"Appointments και της WordPress ιστοσελίδας σας. Μπορείτε επίσης να θέσετε "
-"εφόσον θέλετε να διαγραφούν τα αρχεία και οι πίνακες της βάσης δεδομένων, "
-"κάτι το οποίο είναι προαιρετικό."
+#: admin/partials/easyappointments-admin-display.php:61
+msgid "Gutenberg Block"
+msgstr "Μπλοκ Gutenberg"
 
-#: ../../views/admin.php:133
+#: admin/partials/easyappointments-admin-display.php:62
+msgid "Add the booking form natively in the WordPress block editor."
+msgstr "Προσθέστε τη φόρμα κρατήσεων απευθείας στον επεξεργαστή μπλοκ του WordPress."
+
+#: admin/partials/easyappointments-admin-display.php:67
+msgid "Elementor Widget"
+msgstr "Widget Elementor"
+
+#: admin/partials/easyappointments-admin-display.php:68
+msgid "Drag and drop the booking widget into any Elementor page."
+msgstr "Σύρετε το widget κρατήσεων σε οποιαδήποτε σελίδα του Elementor."
+
+#: admin/partials/easyappointments-admin-display.php:73
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: ../../views/admin.php:134
-msgid ""
-"Display the booking form directly in your pages or posts by adding the "
-"[easyappointments] shortcode. This shortcode accepts some optional "
-"attributes that will change its appearance. These attibutes are \"width\", "
-"\"height\", \"style\" and will be applied automatically to the parent "
-"container element (e.g. [easyappointments width=\"500px\" height=\"300px\" "
-"style=\"border: 2px solid black\"])."
-msgstr ""
-"Εάν θέλετε να δείξετε τον οδηγό κράτησης ραντεβου του Easy!Appointments σε "
-"μια σελίδα του ιστότοπου σας θα χρειαστεί να προσθέσετε το "
-"[easyappointments] shortcode. Το shortcode δέχεται προαιρετικά τις εξής "
-"ιδιότητες (attributes): \"width\", \"height\", \"style\" οι οποίες θα "
-"μορφοποιήσουν το iframe στοιχείο στην σελίδα σας (π.χ. [easyappointments "
-"width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
+#: admin/partials/easyappointments-admin-display.php:74
+msgid "Paste a shortcode anywhere in your content or text widget."
+msgstr "Επικολλήστε ένα shortcode οπουδήποτε στο περιεχόμενο ή σε ένα widget κειμένου."
 
-#: ../../views/admin.php:148
-msgid "Permission Problems"
-msgstr "Προβλήματα Δικαιωμάτων (Permissions)"
+#: admin/partials/easyappointments-admin-display.php:82
+msgid "Using the Gutenberg Block"
+msgstr "Χρήση του μπλοκ Gutenberg"
 
-#: ../../views/admin.php:149
-msgid ""
-"Some plugin operations perform various filesystem tasks that might be "
-"interrupted due to lack of permissions. This issues mostly happen in Unix "
-"environments because PHP does not have the required permissions to read/"
-"write/delete files or directories. If you cannot solve the problem try to "
-"continue the operation manually with an FTP user (e.g. if the \"Install\" "
-"operation fails, upload the latest Easy!Appointments version manually and "
-"connect it with WordPress with the \"Link\" operation)."
-msgstr ""
-"Μερικές λειτουργίες του πρόσθετου πραγματοποιούν διάφορες εργασίες στο "
-"σύστημα αρχείων οι οποίες μπορεί να διακοπούν λόγω έλλειψης απαραίτητων "
-"δικαιωμάτων. Αυτά τα προβλήματα είναι πιο πιθανό να συμβούν σε περιβάλλοντα "
-"Unix όπου η PHP δεν έχει τα απαραίτητα δικαιώματα να διαβάσει/γράψει/"
-"διαγράψει αρχεία ή καταλόγους. Εάν δεν μπορέσετε να διορθώσετε το πρόβλημα "
-"προσπαθήστε να πραγματοποιήσετε την λειτουργία χειροκίνητα με τον χρήστη FTP "
-"(π.χ. αν η λειτουργία εγκατάστασης αποτύχει, μεταφορτώστε την τελευταία E!A "
-"έκδοση χειροκίνητα και συνδέστε την με το WP μέσω της λειτουργίας σύνδεσης)."
+#: admin/partials/easyappointments-admin-display.php:84
+msgid "Open the page or post you want to add the booking form to."
+msgstr "Ανοίξτε τη σελίδα ή το άρθρο στο οποίο θέλετε να προσθέσετε τη φόρμα κρατήσεων."
 
-#: ../../views/admin.php:157
-msgid "Broken Connection"
-msgstr "Εσφαλμένη Σύνδεση"
+#: admin/partials/easyappointments-admin-display.php:85
+#, php-format
+msgid "Click the %s button to add a new block."
+msgstr "Πατήστε το κουμπί %s για να προσθέσετε νέο μπλοκ."
 
-#: ../../views/admin.php:158
-msgid ""
-"If this settings page notifies you of a broken Easy!Appointments connection "
-"it could be that the Easy!Appointments files where moved or the installation "
-"URL was changed and the connection couldn't be verified.  \"Unlink\" the "
-"current connection without removing the files or database tables and then "
-"\"Link\" it again with the new information."
-msgstr ""
-"Εάν αυτή η σελίδα σας ενημερώσει για μια εσφαλμένη Easy!Appointments σύνδεση "
-"μπορεί να σημαίνει ότι τα Easy!Appointments αρχεία μετακινήθηκαν ή το URL "
-"της εγκατάστασης έχει αλλάξει και η σύνδεση δεν μπόρεσε να επαληθευτεί. "
-"Αποσυνδέστε την τρέχουσα σύνδεση χωρίς να διαγράψετε τα αρχεία ή τους "
-"πίνακες της βάσης δεδομένων και έπειτα συνδέστε την πάλι με τις νέες "
-"πληροφορίες."
+#: admin/partials/easyappointments-admin-display.php:86
+#, php-format
+msgid "Search for %s and select it."
+msgstr "Αναζητήστε το %s και επιλέξτε το."
 
-#: ../../views/admin.php:164
-msgid "Support Forum"
-msgstr "Φόρουμ Υποστήριξης"
+#: admin/partials/easyappointments-admin-display.php:87
+msgid "Use the block settings panel on the right to configure the width, height, and optionally pre-select a service or provider."
+msgstr "Χρησιμοποιήστε τον πίνακα ρυθμίσεων του μπλοκ στα δεξιά για να ορίσετε πλάτος και ύψος και, προαιρετικά, να προεπιλέξετε υπηρεσία ή πάροχο."
 
-#: ../../views/admin.php:165
-msgid ""
-"If you encounter issues but you do not know what to do visit the official "
-"Easy!Appointments support group where active users help each other solve "
-"their problems."
-msgstr ""
-"Εάν αντιμετωπίσετε προβλήματα αλλά δεν γνωρίζεται τι πρέπει να κάνετε "
-"επισκεφθείτε το επίσημο γκρουπ υποστήριξης του Easy!Appointments όπου όπου "
-"χρήστες βοηθούν ο ένας τον άλλον στην επίλυση των προβλημάτων τους."
+#: admin/partials/easyappointments-admin-display.php:88
+msgid "Publish or update the page. The booking form will appear in place of the block."
+msgstr "Δημοσιεύστε ή ενημερώστε τη σελίδα. Η φόρμα κρατήσεων θα εμφανιστεί στη θέση του μπλοκ."
 
-#: ../../views/admin.php:169
-msgid "Support Group"
-msgstr "Φόρουμ Υποστήριξης"
+#: admin/partials/easyappointments-admin-display.php:93
+msgid "Using the Elementor Widget"
+msgstr "Χρήση του widget Elementor"
 
-#: ../../views/admin.php:181
-msgid "Easy!Appointments - WordPress Plugin"
-msgstr "Easy!Appointments - WordPress Plugin"
+#: admin/partials/easyappointments-admin-display.php:95
+msgid "Open the page you want to edit with Elementor."
+msgstr "Ανοίξτε τη σελίδα που θέλετε να επεξεργαστείτε με το Elementor."
 
-#: ../../views/admin.php:183
-msgid ""
-"Leverage your conversion rates by integrating the booking form directly in "
-"your WordPress pages. Customers will never have to leave your website for "
-"booking an appointment. Take advantage of the scheduling power of Easy!"
-"Appointment which will run smoothly with your WordPress installation.Include "
-"the booking form in your pages with the [easyappointments] shortcode."
-msgstr ""
-"Βελτιώστε τα ποσοστά μετατροπών σας με την ενσωμάτωση της φόρμας κρατήσεων "
-"απευθείας στις WordPress σελίδες σας. Οι πελάτες δεν θα χρειαστεί να φύγουν "
-"από την σελίδας σας για να κλήσουν ένα ραντεβού. Εκμεταλλευτείτε την δύναμη "
-"χρονοπρογραμματισμού του Easy!Appointments το οποίο θα τρέξει χωρίς "
-"προβλήματα με την WordPress εγκατάστασή σας. Προσθέστε την φόρμα κρατήσεων "
-"στις σελίδες σας με το [easyappointments] shortcode."
+#: admin/partials/easyappointments-admin-display.php:96
+#, php-format
+msgid "In the Elementor widget panel, search for %s."
+msgstr "Στον πίνακα widget του Elementor, αναζητήστε το %s."
 
-#: ../../views/admin.php:191
-msgid "Get Involved"
-msgstr "Συμμετοχή"
+#: admin/partials/easyappointments-admin-display.php:97
+msgid "Drag the widget onto your page layout."
+msgstr "Σύρετε το widget στη διάταξη της σελίδας σας."
 
-#: ../../views/admin.php:192
-msgid ""
-"Found a problem or want to add a new feature? Contributors are more than "
-"welcome so feel free to file an issue or make pull requests on the GitHub "
-"page of the plugin."
-msgstr ""
-"Βρήκατε ένα πρόβλημα ή θέλετε να προσθέσετε μια νέα λειτουργία; Οι εισφορείς "
-"είναι παραπάνω από ευπρόσδεκτοι οπότε καταχώρησε ελεύθερα κάποιο πρόβλημα ή "
-"κάνε ένα pull request στην GitHub σελίδα του πρόσθετου."
+#: admin/partials/easyappointments-admin-display.php:98
+msgid "Configure the width, height, and optional pre-selection in the widget settings panel on the left."
+msgstr "Ορίστε πλάτος, ύψος και την προαιρετική προεπιλογή στον πίνακα ρυθμίσεων του widget στα αριστερά."
 
-#: ../../views/admin.php:205
-msgid "For more information visit the official website of the project at "
-msgstr ""
-"Για περισσότερες πληροφορίες επισκεφθείτε την επίσημη ιστοσελίδα του έργου "
+#: admin/partials/easyappointments-admin-display.php:99
+msgid "Click Publish or Update. The booking form will be displayed on the live page."
+msgstr "Πατήστε Δημοσίευση ή Ενημέρωση. Η φόρμα κρατήσεων θα εμφανιστεί στη ζωντανή σελίδα."
 
-#~ msgid ""
-#~ "This plugin aims to bridge Easy!Appointments with WordPress and "
-#~ "facilitate users in the integration of the appointment booking system to "
-#~ "their WP pages. It offers useful functions such as the installation of "
-#~ "Easy!Appointments directly from WordPress' backend, the link of an "
-#~ "existing installation and of course the display of the appointment "
-#~ "booking wizard with the use of a simple shortcode."
-#~ msgstr ""
-#~ "Αυτό το πρόσθετο έχει ως στόχο να γεφυρώσει το Easy!Appointments με το "
-#~ "WordPress και να διευκολύνει τους χρήστες στην ενσωμάτωση του συστήματος "
-#~ "κρατήσεων ραντεβού απευθείας στις WP ιστοσελίδες τους. Προσφέρει χρήσιμες "
-#~ "λειτουργίες όπως η εγκατάσταση του Easy!Appointments απευθείας από το "
-#~ "διαχειριστικό τμήμα του WordPress, η σύνδεση μιας υπάρχουσας εγκατάστασης "
-#~ "και φυσικά την εμφάνιση του οδηγού κράτησης ραντεβού με την χρήση ενός "
-#~ "απλού shortcode."
+#: admin/partials/easyappointments-admin-display.php:104
+msgid "Using the Shortcode"
+msgstr "Χρήση του shortcode"
+
+#: admin/partials/easyappointments-admin-display.php:105
+msgid "Paste the following shortcode into any page, post, or text widget:"
+msgstr "Επικολλήστε το παρακάτω shortcode σε οποιαδήποτε σελίδα, άρθρο ή widget κειμένου:"
+
+#: admin/partials/easyappointments-admin-display.php:107
+msgid "Optional attributes:"
+msgstr "Προαιρετικές παράμετροι:"
+
+#: admin/partials/easyappointments-admin-display.php:111
+msgid "Set the iframe dimensions"
+msgstr "Ορισμός των διαστάσεων του iframe"
+
+#: admin/partials/easyappointments-admin-display.php:115
+msgid "Pre-select a service and/or provider (use the record IDs from your Easy!Appointments backend)"
+msgstr "Προεπιλογή υπηρεσίας ή/και παρόχου (χρησιμοποιήστε τους κωδικούς εγγραφών από το backend του Easy!Appointments)"
+
+#: admin/partials/easyappointments-admin-display.php:119
+msgid "Add custom inline CSS to the iframe"
+msgstr "Προσθήκη προσαρμοσμένου inline CSS στο iframe"
+
+#: admin/partials/easyappointments-admin-display.php:132
+msgid "Easy!Appointments 1.6.0: Required Configuration"
+msgstr "Easy!Appointments 1.6.0: απαιτούμενη ρύθμιση"
+
+#: admin/partials/easyappointments-admin-display.php:137
+msgid "Easy!Appointments <strong>v1.6.0</strong> introduced stricter HTTP security headers that block iframe embedding by default. If your booking form is not loading inside the page, you need to apply the following one-line fix to your Easy!Appointments installation."
+msgstr "Το Easy!Appointments <strong>v1.6.0</strong> εισήγαγε αυστηρότερες κεφαλίδες ασφαλείας HTTP που μπλοκάρουν εξ ορισμού την ενσωμάτωση σε iframe. Αν η φόρμα κρατήσεων δεν φορτώνει μέσα στη σελίδα, πρέπει να εφαρμόσετε την παρακάτω διόρθωση μίας γραμμής στην εγκατάσταση του Easy!Appointments."
+
+#: admin/partials/easyappointments-admin-display.php:141
+msgid "Open the file <code>application/hooks/security_headers.php</code> in your Easy!Appointments installation."
+msgstr "Ανοίξτε το αρχείο <code>application/hooks/security_headers.php</code> στην εγκατάσταση του Easy!Appointments."
+
+#: admin/partials/easyappointments-admin-display.php:144
+msgid "Find the following line:"
+msgstr "Βρείτε την παρακάτω γραμμή:"
+
+#: admin/partials/easyappointments-admin-display.php:148
+msgid "Replace it with:"
+msgstr "Αντικαταστήστε την με:"
+
+#: admin/partials/easyappointments-admin-display.php:152
+msgid "Save the file and reload your WordPress page. The booking form should now embed correctly."
+msgstr "Αποθηκεύστε το αρχείο και ανανεώστε τη σελίδα WordPress. Η φόρμα κρατήσεων θα πρέπει τώρα να ενσωματώνεται σωστά."
+
+#: admin/partials/easyappointments-admin-display.php:156
+msgid "<strong>Note:</strong> This fix is only required if your Easy!Appointments installation is hosted on a <strong>different domain</strong> from your WordPress site (e.g. <code>bookings.example.com</code> vs <code>example.com</code>). If Easy!Appointments lives in a subfolder of the same domain (e.g. <code>example.com/easyappointments</code>), iframe embedding works without this change."
+msgstr "<strong>Σημείωση:</strong> Η διόρθωση απαιτείται μόνο αν η εγκατάσταση του Easy!Appointments φιλοξενείται σε <strong>διαφορετικό domain</strong> από τον ιστότοπό σας WordPress (π.χ. <code>bookings.example.com</code> έναντι <code>example.com</code>). Αν το Easy!Appointments βρίσκεται σε υποφάκελο του ίδιου domain (π.χ. <code>example.com/easyappointments</code>), η ενσωμάτωση σε iframe λειτουργεί χωρίς αυτή την αλλαγή."
+
+#: admin/partials/easyappointments-admin-display.php:162
+msgid "For more information visit the official website:"
+msgstr "Για περισσότερες πληροφορίες επισκεφθείτε τον επίσημο ιστότοπο:"
+
+#: blocks/easyappointments/index.js:28
+msgid "Display"
+msgstr "Εμφάνιση"
+
+#: blocks/easyappointments/index.js:33
+msgid "CSS value, e.g. 100% or 800px"
+msgstr "Τιμή CSS, π.χ. 100% ή 800px"
+
+#: blocks/easyappointments/index.js:39
+msgid "CSS value, e.g. 1000px"
+msgstr "Τιμή CSS, π.χ. 1000px"
+
+#: blocks/easyappointments/index.js:44
+msgid "Custom iframe style"
+msgstr "Προσαρμοσμένο στυλ iframe"
+
+#: blocks/easyappointments/index.js:45
+msgid "Optional inline CSS for the iframe element."
+msgstr "Προαιρετικό inline CSS για το στοιχείο iframe."
+
+#: blocks/easyappointments/index.js:59
+msgid "Pre-select a provider by their record ID (found in the Easy!Appointments backend)."
+msgstr "Προεπιλέξτε πάροχο με βάση τον κωδικό εγγραφής (θα τον βρείτε στο backend του Easy!Appointments)."
+
+#: blocks/easyappointments/index.js:65
+msgid "Pre-select a service by its record ID (found in the Easy!Appointments backend)."
+msgstr "Προεπιλέξτε υπηρεσία με βάση τον κωδικό εγγραφής (θα τον βρείτε στο backend του Easy!Appointments)."
+
+#: blocks/easyappointments/index.js:84
+msgid "Your booking form will appear here. Use the settings panel to configure the block."
+msgstr "Η φόρμα κρατήσεων θα εμφανιστεί εδώ. Χρησιμοποιήστε τον πίνακα ρυθμίσεων για να διαμορφώσετε το μπλοκ."
+
+#: blocks/easyappointments/index.js:91
+msgid "Provider ID: "
+msgstr "Κωδικός παρόχου: "
+
+#: blocks/easyappointments/index.js:94
+msgid "Service ID: "
+msgstr "Κωδικός υπηρεσίας: "
+
+#~ msgid "Easy!Appointments files were installed successfully! Navigate to your installation URL complete the configuration of the application."
+#~ msgstr "Τα αρχεία του Easy!Appointments εγκαταστάθηκαν επιτυχώς! Πλοηγηθείτε στην ηλεκτρονική διεύθυνση της εγκατάστασης σας (URL) για να ολοκληρώσετε την διαμόρφωση της εφαρμογής."
+
+#~ msgid "Easy!Appointments installation was linked successfully! You can now use the [easyappointments] shortcode in your pages."
+#~ msgstr "Η εγκατάσταση Easy!Appointments συνδέθηκε επιτυχώς! Μπορείτε τώρα να χρησιμοποιήσετε το [easyappointments] shortcode στις σελίδες σας."
+
+#~ msgid "Easy!Apppointments installation was unlinked successfully!"
+#~ msgstr "Η εγκατάσταση του Easy!Appointments αποσυνδέθηκε επιτυχώς!"
+
+#~ msgid "Easy!Appointments link is active! Use the [easyappointments] shortcode in your pages/posts."
+#~ msgstr "Η σύνδεση με το Easy!Appointments είναι ενεργή! Χρησιμοποιήστε το [easyappointments] shortcode στις σελίδες/δημοσιεύσεις σας."
+
+#~ msgid "Easy!Appointments link seems to be broken! Make sure Easy!Appointments files are located in the target directory."
+#~ msgstr "Η σύνδεση με το Easy!Appointments φαίνεται να είναι λανθασμένη! Σιγουρευτείτε ότι τα αρχεία του Easy!Appointments βρίσκονται στο σωστό κατάλογο."
+
+#~ msgid "An unexpected error occurred in file %file% (line %line%): %message%"
+#~ msgstr "Ένα απρόσμενο σφάλμα συνέβη στο αρχείο %file% (γραμμή %line%): %message%"
+
+#~ msgid "The AJAX request could not be completed due to an unexpected error: %message%"
+#~ msgstr "Το αίτημα AJAX δεν μπόρεσε να ολοκληρωθεί εξαιτίας ενός απρόσμενου σφάλματος: %message%"
+
+#~ msgid "Integrate the booking form of Easy!Appointments directly into your WordPress pages. This plugin will  let you create a new Easy!Appointments installation or use an existing one directly from the WordPress back-end section. Add the [easyappointments] shortcode into your pages and leverage your conversion rates."
+#~ msgstr "Ενσωματώστε την φόρμα κρατήσεων του Easy!Appointments απευθείας στις WordPress σελίδες. Αυτό το πρόσθετο σας επιτρέπει να δημιουργήσετε μια νέα εγκατάσταση Easy!Appointments ή να χρησιμοποιήσετε μια υπάρχουσα απευθείας από το διαχειριστικό τμήμα του WordPress. Προσθέστε το [easyappointments] shortcode στις σελίδες σας και βελτιώστε τα ποσοστά μετατροπών σας."
+
+#~ msgid "Hints"
+#~ msgstr "Συμβουλές"
+
+#~ msgid "Troubleshooting"
+#~ msgstr "Αντιμετώπιση Προβλημάτων"
+
+#~ msgid "About"
+#~ msgstr "Σχετικά"
+
+#~ msgid "Connection Information"
+#~ msgstr "Πληροφορίες Σύνδεσης"
+
+#~ msgid "Set the path and URL of your Easy!Appointments installation and press either the \"Install\" or \"Link\" button to proceed with the operation."
+#~ msgstr "Συμπληρώστε την διαδρομή (Path) και διεύθυνση (URL) της εγκατάστασης του Easy!Appointments και πατήστε είτε το κουμπί \"Εγκατάσταση\" ή το κουμπί \"Σύνδεση\" έτσι ώστε να εκκινήσετε την λειτουργία."
+
+#~ msgid "Path"
+#~ msgstr "Διαδρομή (Path)"
+
+#~ msgid "Example"
+#~ msgstr "Παράδειγμα"
+
+#~ msgid "* Make sure that the target directory exists on the server and it's writable."
+#~ msgstr "* Σιγουρευτείτε ότι ο στοχευμένος κατάλογος υπάρχει στον διακομιστή σας και είναι εγγράψιμος."
+
+#~ msgid "URL"
+#~ msgstr "Διεύθυνση (URL)"
+
+#~ msgid "Install"
+#~ msgstr "Εγκατάσταση"
+
+#~ msgid "Link"
+#~ msgstr "Σύνδεση"
+
+#~ msgid "Remove Easy!Appointments Files"
+#~ msgstr "Διαγραφή Αρχείων του Easy!Appointments"
+
+#~ msgid "Remove Easy!Appointments Database Tables"
+#~ msgstr "Διαγραφή Πινάκων του Easy!Appointments από την Βάση Δεδομένων"
+
+#~ msgid "Unlink"
+#~ msgstr "Αποσύνδεση"
+
+#~ msgid "These actions cannot be undone!"
+#~ msgstr "Αυτές οι ενέργειες δεν μπορούν να αναιρεθούν!"
+
+#~ msgid "This operation will create a new installation by placing and configuring Easy!Appointments files into the requested directory. You will have to complete the installation by opening the target URL in your browser."
+#~ msgstr "Αυτή η λειτουργία θα δημιουργήσει μια νέα εγκατάσταση τοποθετώντας και διαμορφώνοντας τα αρχεία του Easy!Appointments στην ζητούμενη διαδρομή. Θα πρέπει να ολοκληρώσετε την εγκατάσταση του Easy!Appointments ακολουθώντας την διεύθυνση (URL) που καταχωρήσατε."
+
+#~ msgid "This operation will connect an existing Easy!Appointments installation and your WordPress website. Make sure that you use the correct installation path and URL of Easy!Appointments."
+#~ msgstr "Η λειτουργία αυτή θα δημιουργήσει μια \"σύνδεση\" μεταξύ μιας υπάρχουσας εγκατάστασης Easy!Appointments με την WordPress ιστοσελίδα σας. Σιγουρευτείτε ότι θα θέσετε την σωστή διαδρομή (Path) και διεύθυνση (URL). "
+
+#~ msgid "This operation will unlink an active connection between Easy!Appointments and your WordPress website. You can remove the files and database tables as well, even though this is optional."
+#~ msgstr "Αυτή η λειτουργία θα αποσυνδέσει μια ενεργή σύνδεση μεταξύ του Easy!Appointments και της WordPress ιστοσελίδας σας. Μπορείτε επίσης να θέσετε εφόσον θέλετε να διαγραφούν τα αρχεία και οι πίνακες της βάσης δεδομένων, κάτι το οποίο είναι προαιρετικό."
+
+#~ msgid "Display the booking form directly in your pages or posts by adding the [easyappointments] shortcode. This shortcode accepts some optional attributes that will change its appearance. These attibutes are \"width\", \"height\", \"style\" and will be applied automatically to the parent container element (e.g. [easyappointments width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
+#~ msgstr "Εάν θέλετε να δείξετε τον οδηγό κράτησης ραντεβου του Easy!Appointments σε μια σελίδα του ιστότοπου σας θα χρειαστεί να προσθέσετε το [easyappointments] shortcode. Το shortcode δέχεται προαιρετικά τις εξής ιδιότητες (attributes): \"width\", \"height\", \"style\" οι οποίες θα μορφοποιήσουν το iframe στοιχείο στην σελίδα σας (π.χ. [easyappointments width=\"500px\" height=\"300px\" style=\"border: 2px solid black\"])."
+
+#~ msgid "Permission Problems"
+#~ msgstr "Προβλήματα Δικαιωμάτων (Permissions)"
+
+#~ msgid "Some plugin operations perform various filesystem tasks that might be interrupted due to lack of permissions. This issues mostly happen in Unix environments because PHP does not have the required permissions to read/write/delete files or directories. If you cannot solve the problem try to continue the operation manually with an FTP user (e.g. if the \"Install\" operation fails, upload the latest Easy!Appointments version manually and connect it with WordPress with the \"Link\" operation)."
+#~ msgstr "Μερικές λειτουργίες του πρόσθετου πραγματοποιούν διάφορες εργασίες στο σύστημα αρχείων οι οποίες μπορεί να διακοπούν λόγω έλλειψης απαραίτητων δικαιωμάτων. Αυτά τα προβλήματα είναι πιο πιθανό να συμβούν σε περιβάλλοντα Unix όπου η PHP δεν έχει τα απαραίτητα δικαιώματα να διαβάσει/γράψει/διαγράψει αρχεία ή καταλόγους. Εάν δεν μπορέσετε να διορθώσετε το πρόβλημα προσπαθήστε να πραγματοποιήσετε την λειτουργία χειροκίνητα με τον χρήστη FTP (π.χ. αν η λειτουργία εγκατάστασης αποτύχει, μεταφορτώστε την τελευταία E!A έκδοση χειροκίνητα και συνδέστε την με το WP μέσω της λειτουργίας σύνδεσης)."
+
+#~ msgid "Broken Connection"
+#~ msgstr "Εσφαλμένη Σύνδεση"
+
+#~ msgid "If this settings page notifies you of a broken Easy!Appointments connection it could be that the Easy!Appointments files where moved or the installation URL was changed and the connection couldn't be verified.  \"Unlink\" the current connection without removing the files or database tables and then \"Link\" it again with the new information."
+#~ msgstr "Εάν αυτή η σελίδα σας ενημερώσει για μια εσφαλμένη Easy!Appointments σύνδεση μπορεί να σημαίνει ότι τα Easy!Appointments αρχεία μετακινήθηκαν ή το URL της εγκατάστασης έχει αλλάξει και η σύνδεση δεν μπόρεσε να επαληθευτεί. Αποσυνδέστε την τρέχουσα σύνδεση χωρίς να διαγράψετε τα αρχεία ή τους πίνακες της βάσης δεδομένων και έπειτα συνδέστε την πάλι με τις νέες πληροφορίες."
+
+#~ msgid "Support Forum"
+#~ msgstr "Φόρουμ Υποστήριξης"
+
+#~ msgid "If you encounter issues but you do not know what to do visit the official Easy!Appointments support group where active users help each other solve their problems."
+#~ msgstr "Εάν αντιμετωπίσετε προβλήματα αλλά δεν γνωρίζεται τι πρέπει να κάνετε επισκεφθείτε το επίσημο γκρουπ υποστήριξης του Easy!Appointments όπου όπου χρήστες βοηθούν ο ένας τον άλλον στην επίλυση των προβλημάτων τους."
+
+#~ msgid "Support Group"
+#~ msgstr "Φόρουμ Υποστήριξης"
+
+#~ msgid "Easy!Appointments - WordPress Plugin"
+#~ msgstr "Easy!Appointments - WordPress Plugin"
+
+#~ msgid "Leverage your conversion rates by integrating the booking form directly in your WordPress pages. Customers will never have to leave your website for booking an appointment. Take advantage of the scheduling power of Easy!Appointment which will run smoothly with your WordPress installation.Include the booking form in your pages with the [easyappointments] shortcode."
+#~ msgstr "Βελτιώστε τα ποσοστά μετατροπών σας με την ενσωμάτωση της φόρμας κρατήσεων απευθείας στις WordPress σελίδες σας. Οι πελάτες δεν θα χρειαστεί να φύγουν από την σελίδας σας για να κλήσουν ένα ραντεβού. Εκμεταλλευτείτε την δύναμη χρονοπρογραμματισμού του Easy!Appointments το οποίο θα τρέξει χωρίς προβλήματα με την WordPress εγκατάστασή σας. Προσθέστε την φόρμα κρατήσεων στις σελίδες σας με το [easyappointments] shortcode."
+
+#~ msgid "Get Involved"
+#~ msgstr "Συμμετοχή"
+
+#~ msgid "Found a problem or want to add a new feature? Contributors are more than welcome so feel free to file an issue or make pull requests on the GitHub page of the plugin."
+#~ msgstr "Βρήκατε ένα πρόβλημα ή θέλετε να προσθέσετε μια νέα λειτουργία; Οι εισφορείς είναι παραπάνω από ευπρόσδεκτοι οπότε καταχώρησε ελεύθερα κάποιο πρόβλημα ή κάνε ένα pull request στην GitHub σελίδα του πρόσθετου."
+
+#~ msgid "For more information visit the official website of the project at "
+#~ msgstr "Για περισσότερες πληροφορίες επισκεφθείτε την επίσημη ιστοσελίδα του έργου "
+
+#~ msgid "This plugin aims to bridge Easy!Appointments with WordPress and facilitate users in the integration of the appointment booking system to their WP pages. It offers useful functions such as the installation of Easy!Appointments directly from WordPress' backend, the link of an existing installation and of course the display of the appointment booking wizard with the use of a simple shortcode."
+#~ msgstr "Αυτό το πρόσθετο έχει ως στόχο να γεφυρώσει το Easy!Appointments με το WordPress και να διευκολύνει τους χρήστες στην ενσωμάτωση του συστήματος κρατήσεων ραντεβού απευθείας στις WP ιστοσελίδες τους. Προσφέρει χρήσιμες λειτουργίες όπως η εγκατάσταση του Easy!Appointments απευθείας από το διαχειριστικό τμήμα του WordPress, η σύνδεση μιας υπάρχουσας εγκατάστασης και φυσικά την εμφάνιση του οδηγού κράτησης ραντεβού με την χρήση ενός απλού shortcode."
 
 #~ msgid "Easy!Appointments link seems to be broken."
 #~ msgstr "Η σύνδεση του Easy!Appointments φαίνεται ότι είναι σπασμένη. "
@@ -322,12 +472,5 @@ msgstr ""
 #~ msgid "Bridge"
 #~ msgstr "Σύνδεση"
 
-#~ msgid ""
-#~ "If you want the Easy!Appointments booking wizard to be available in your "
-#~ "website, create a new page and add the [easyappointments] shortcode in "
-#~ "it. When you launch the page you will see the appointment booking wizard."
-#~ msgstr ""
-#~ "Εάν θέλετε ο οδηγός κράτησης ραντεβού του Easy!Appointments να είναι "
-#~ "διαθέσιμος στην σελίδα σας, δημιουργείστε μια νέα σελίδα και προσθέστε το "
-#~ "[easyappointments] shortcode σε αυτήν. Όταν πλοηγηθείτε σε αυτήν την "
-#~ "σελίδα θα δείτε τον οδηγό κράτησης ραντεβού."
+#~ msgid "If you want the Easy!Appointments booking wizard to be available in your website, create a new page and add the [easyappointments] shortcode in it. When you launch the page you will see the appointment booking wizard."
+#~ msgstr "Εάν θέλετε ο οδηγός κράτησης ραντεβού του Easy!Appointments να είναι διαθέσιμος στην σελίδα σας, δημιουργείστε μια νέα σελίδα και προσθέστε το [easyappointments] shortcode σε αυτήν. Όταν πλοηγηθείτε σε αυτήν την σελίδα θα δείτε τον οδηγό κράτησης ραντεβού."
