@@ -97,7 +97,7 @@ Easy!Appointments has been developed in the open since 2014.
 * Confirmation and reminder emails to both sides
 * Google Calendar sync
 * Works on phones, where most bookings come from
-* Runs in nine languages, with more welcome
+* Booking form available in 33 languages, plugin screens in nine
 * Your branding, your domain, your data
 
 = Honest notes =
@@ -194,9 +194,15 @@ Documentation is at https://easyappointments.org/documentation, and there is an 
 
 https://groups.google.com/forum/#!categories/easy-appointments
 
-= Can I change the booking form's language? =
+= What languages are supported? =
 
-Yes. The language is set in your Easy!Appointments installation, and the plugin's own interface is translated too. Contributions of new translations are welcome.
+There are two separate pieces, and they are translated separately.
+
+**The booking form** your customers see is rendered by your Easy!Appointments installation, which ships 33 languages: Arabic, Bulgarian, Catalan, Chinese, Croatian, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hebrew, Hindi, Hungarian, Italian, Japanese, Luxembourgish, Marathi, Persian, Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Spanish, Swedish, Thai and Turkish. You choose which one in your installation's settings.
+
+**This plugin's own screens** in WordPress, meaning the connect page and the block and widget controls, are written in English and translated into nine more: Czech, Dutch, French, German, Greek, Italian, Portuguese (Brazil), Russian and Spanish.
+
+If your language is missing from either list, contributions are very welcome. Write to info@alextselegidis.com or open a pull request.
 
 == Changelog ==
 
