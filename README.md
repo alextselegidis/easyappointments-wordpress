@@ -11,7 +11,7 @@
 <br>
 
 <h4 align="center">
-    Add a full appointment booking system to WordPress — no monthly fees, no per-booking charges, your data on your server.
+    Add a full appointment booking system to WordPress. No monthly fees, no per-booking charges, your data on your server.
 </h4>
 
 <p align="center">
@@ -31,16 +31,16 @@
 
 ## About
 
-**Let customers book appointments on your website, 24/7 — without a monthly subscription or a fee on every booking.**
+**Let customers book appointments on your website, 24/7, without a monthly subscription or a fee on every booking.**
 
 [Easy!Appointments](https://easyappointments.org) is made of two pieces, and it is worth knowing that up front:
 
-1. **Easy!Appointments** — the booking engine. Your calendar, services, staff, working hours and customers live here. Free, open source, installed on your own hosting (PHP + MySQL, same as WordPress).
-2. **This plugin** — the bridge. It puts that booking form onto a page of your WordPress site, on your domain, inside your theme, so customers never get bounced to a different-looking site to book.
+1. **Easy!Appointments**, the booking engine. Your calendar, services, staff, working hours and customers live here. Free, open source, installed on your own hosting (PHP + MySQL, same as WordPress).
+2. **This plugin**, the bridge. It puts that booking form onto a page of your WordPress site, on your domain, inside your theme, so customers never get bounced to a different-looking site to book.
 
 So yes, you need the engine installed before this plugin does anything. Keeping it separate is exactly what makes it free and unlimited: no company in the middle metering your bookings, no third party holding your customer list.
 
-**See it working first:** [demo.easyappointments.org](https://demo.easyappointments.org) — real booking form, real admin calendar, no signup.
+**See it working first:** [demo.easyappointments.org](https://demo.easyappointments.org). Real booking form, real admin calendar, no signup.
 
 Developed in the open since 2014. 4,300+ GitHub stars, used by organisations including NEOM, Doctors Without Borders and Dolce & Gabbana.
 
@@ -50,7 +50,7 @@ Developed in the open since 2014. 4,300+ GitHub stars, used by organisations inc
 
 ### Native Gutenberg Block
 
-Love the WordPress block editor? The **Easy!Appointments block** is a first-class citizen of the block inserter. Search for "Easy!Appointments", drop it in, and configure width, height, styling, and provider/service pre-selection right from the block settings panel — no shortcodes, no code.
+Love the WordPress block editor? The **Easy!Appointments block** is a first-class citizen of the block inserter. Search for "Easy!Appointments", drop it in, and configure width, height, styling, and provider/service pre-selection right from the block settings panel. No shortcodes, no code.
 
 ### Elementor Widget
 
@@ -79,6 +79,17 @@ Install and activate the plugin and navigate to `Easy!Appts` in the WordPress ad
 This plugin uses the **i18n** localization system of WordPress and the translations are po & mo files located in the 
 `languages` directory. Contributions are more than welcome so feel free to make pull requests with your translations or 
 send them directly to [info@alextselegidis.com](mailto:info@alextselegidis.com).
+
+## Get in touch
+
+Easy!Appointments is built and maintained by Alex Tselegidis. If you are weighing it up, stuck on an
+installation, wondering whether it fits an unusual booking workflow, or you need custom work or a
+commercial arrangement around it, write to me directly at
+[info@alextselegidis.com](mailto:info@alextselegidis.com) or via
+[alextselegidis.com](https://alextselegidis.com).
+
+Feature ideas and bug reports are just as welcome. Tell me what you were trying to do and where it
+got in the way.
 
 ## Setup
 

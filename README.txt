@@ -14,7 +14,7 @@ Add a full appointment booking system to your WordPress site. No monthly fees, n
 
 == Description ==
 
-**Let customers book appointments on your website, 24/7 — without paying a monthly subscription or a fee on every booking.**
+**Let customers book appointments on your website, 24/7, without paying a monthly subscription or a fee on every booking.**
 
 Easy!Appointments gives your visitors a proper booking experience: they pick a service, pick a staff member, see the real free slots from your calendar, choose a time, and confirm. You and your customer both get an email. The appointment lands in your calendar. That's it.
 
@@ -28,32 +28,31 @@ Try the real booking form and the real admin calendar, right now, no signup:
 
 That takes about 60 seconds and will tell you more than this page can.
 
-= Please read this bit — it explains the two pieces =
+= Please read this bit: it explains the two pieces =
 
 This is the part most people ask about, so here it is up front and in plain language.
 
 Easy!Appointments is made of **two things**:
 
-1. **Easy!Appointments** — the booking engine. It holds your calendar, services, staff, working hours, holidays, customers and emails. It is free and open source, and you install it on your own hosting (most shared hosts handle it fine — it needs PHP and MySQL, the same as WordPress).
-2. **This plugin** — the bridge. It puts the booking form from that engine straight onto a page of your WordPress site, on your domain, inside your theme, so customers never get bounced off to a different-looking website to book.
+1. **Easy!Appointments**, the booking engine. It holds your calendar, services, staff, working hours, holidays, customers and emails. It is free and open source, and you install it on your own hosting (most shared hosts handle it fine, as it needs PHP and MySQL, the same as WordPress).
+2. **This plugin**, the bridge. It puts the booking form from that engine straight onto a page of your WordPress site, on your domain, inside your theme, so customers never get bounced off to a different-looking website to book.
 
-**So yes — you need Easy!Appointments installed somewhere before this plugin does anything.** We would rather tell you that in the first 30 seconds than have you find out after installing.
+**So yes, you need Easy!Appointments installed somewhere before this plugin does anything.** We would rather tell you that in the first 30 seconds than have you find out after installing.
 
 Why it is built that way: keeping the booking engine separate is exactly what lets it be free, unlimited and fully yours. Nobody can raise your price, change the terms, or lock your customer list behind an upgrade, because nobody else is holding it.
 
 Get the engine here: **https://easyappointments.org**
 
-= What it actually costs =
+= What it costs =
 
-| | Easy!Appointments | Typical hosted booking plugin |
-| --- | --- | --- |
-| Monthly fee | None | ~$10–$80 / month |
-| Fee per booking | None | Common on cheaper tiers |
-| Staff members | Unlimited | Often billed per person |
-| Bookings per month | Unlimited | Often capped by plan |
-| Where customer data lives | Your server | Their servers |
-| If you stop paying | Nothing happens, it keeps running | Booking form stops |
-| Licence | GPL, open source | Proprietary |
+Nothing. There is no paid tier, no trial that runs out, and no feature held back for an upgrade.
+
+* No monthly or yearly subscription
+* No commission or fee on any booking
+* No per-staff or per-user pricing
+* No cap on appointments, services, staff or customers
+
+What it does cost is the hosting you are already paying for, plus the time to install the booking engine once. Because you own that installation, nobody can raise your price, change the terms, or put your customer list behind an upgrade later.
 
 = Setting it up =
 
@@ -71,13 +70,13 @@ Your booking form is live on that page. Bookings appear in your Easy!Appointment
 
 **Elementor.** Search "Easy!Appointments" in the widget panel and drag it onto the canvas. Everything is configured with normal Elementor controls.
 
-**Anything else.** Classic editor, WPBakery, Divi, a theme widget area — the `[easyappointments]` shortcode works wherever shortcodes work.
+**Anything else.** Classic editor, WPBakery, Divi, a theme widget area: the `[easyappointments]` shortcode works wherever shortcodes work.
 
 You can also point a specific page at a specific service or staff member, so "Book a haircut with Maria" is its own page.
 
 = Who this is for =
 
-It was built first for **appointment-based local businesses** — salons, barbershops, spas, nail studios, tattoo studios, physiotherapists, dentists and clinics. Anywhere customers book a named person for a fixed-length slot.
+It was built first for **appointment-based local businesses**: salons, barbershops, spas, nail studios, tattoo studios, physiotherapists, dentists and clinics. Anywhere customers book a named person for a fixed-length slot.
 
 It also gets used well beyond that: consultants and coaches, tutors, driving schools, workshops and repair shops, vets, law and accountancy practices, and university and government departments.
 
@@ -88,7 +87,7 @@ Easy!Appointments has been developed in the open since 2014.
 * 4,300+ stars and 1,500+ forks on GitHub
 * Used by organisations including NEOM, Doctors Without Borders and Dolce & Gabbana
 * Active public support community and issue tracker
-* GPL licensed — you can read every line, fork it, and never be locked out
+* GPL licensed, so you can read every line, fork it, and never be locked out
 
 = What you get =
 
@@ -97,7 +96,7 @@ Easy!Appointments has been developed in the open since 2014.
 * Multiple staff members with their own hours and days off
 * Confirmation and reminder emails to both sides
 * Google Calendar sync
-* Works on phones — most bookings arrive from one
+* Works on phones, where most bookings come from
 * Runs in many languages
 * Your branding, your domain, your data
 
@@ -107,6 +106,14 @@ Easy!Appointments has been developed in the open since 2014.
 * It is a self-hosted, open-source project. That means no bill, and it also means you set up your own email sending and updates. The documentation walks through both.
 * Support comes from the community and the issue tracker rather than a paid helpdesk. Response times vary.
 
+= Get in touch =
+
+Easy!Appointments is built and maintained by Alex Tselegidis. If you are weighing it up, stuck on an installation, wondering whether it fits an unusual booking workflow, or you need custom work or a commercial arrangement around it, write to me directly:
+
+**info@alextselegidis.com** and https://alextselegidis.com
+
+Feature ideas and bug reports are just as welcome. Tell me what you were trying to do and where it got in the way.
+
 Documentation: https://easyappointments.org/documentation
 More about the WordPress integration: https://easyappointments.org/wordpress
 
@@ -114,7 +121,7 @@ More about the WordPress integration: https://easyappointments.org/wordpress
 
 == Installation ==
 
-**Before you start:** you need Easy!Appointments running on your own hosting. It is free — download and setup instructions are at https://easyappointments.org. If you would like to see what you are setting up first, the live demo is at https://demo.easyappointments.org.
+**Before you start:** you need Easy!Appointments running on your own hosting. It is free, and download and setup instructions are at https://easyappointments.org. If you would like to see what you are setting up first, the live demo is at https://demo.easyappointments.org.
 
 Once that is done:
 
@@ -126,24 +133,24 @@ Take a test booking yourself to confirm the confirmation email arrives, then you
 
 == Screenshots ==
 
-1. The whole booking page on a phone, top to bottom — where most of your bookings come from.
-2. The whole booking page on your own site — your domain, your theme, your footer.
+1. The whole booking page on a phone, top to bottom, where most of your bookings come from.
+2. The whole booking page on your own site: your domain, your theme, your footer.
 3. Connecting WordPress to your Easy!Appointments installation. One field, one click.
-4. Placing the booking form on a page with the block editor — width, height and pre-selection, no code.
+4. Placing the booking form on a page with the block editor: width, height and pre-selection, no code.
 5. Where the bookings land: your own calendar, colour-coded by service, one column per day.
-6. Your services, durations and prices — managed in your installation, not on someone else's server.
+6. Your services, durations and prices, managed in your installation, not on someone else's server.
 
 == Frequently Asked Questions ==
 
 = Do I really need a separate Easy!Appointments installation? =
 
-Yes, and it is worth understanding why. Easy!Appointments is the booking engine — your calendar, services, staff and customers live there. This plugin puts that engine's booking form onto your WordPress pages.
+Yes, and it is worth understanding why. Easy!Appointments is the booking engine, and your calendar, services, staff and customers live there. This plugin puts that engine's booking form onto your WordPress pages.
 
 Keeping the engine separate is what makes it free and unlimited: there is no company in the middle metering your bookings. You install it once on your own hosting, at https://easyappointments.org, and it is yours.
 
 = Is installing the engine difficult? =
 
-If you have installed WordPress, you can install this. It needs the same things WordPress does — PHP and MySQL — and it has a web-based setup wizard. Most people put it in a subfolder or subdomain of the same hosting account their WordPress site is on. The documentation covers the common hosts.
+If you have installed WordPress, you can install this. It needs the same things WordPress does, PHP and MySQL, and it has a web-based setup wizard. Most people put it in a subfolder or subdomain of the same hosting account their WordPress site is on. The documentation covers the common hosts.
 
 = Is there a monthly fee, or a fee per booking? =
 
@@ -151,7 +158,7 @@ No, none. There is no subscription, no commission on bookings, no limit on how m
 
 = Can I see it before committing to anything? =
 
-Yes — https://demo.easyappointments.org is a live installation with a working booking form and a working admin calendar. Nothing to sign up for.
+Yes. https://demo.easyappointments.org is a live installation with a working booking form and a working admin calendar. Nothing to sign up for.
 
 = Where do bookings go? =
 
@@ -175,7 +182,7 @@ The booking form is embedded on your page, on your domain, and you can size and 
 
 = Which PHP version do I need? =
 
-This plugin needs PHP 5.6 or newer, though modern PHP is strongly recommended. The Easy!Appointments engine has its own, higher requirement — check the version you are downloading against your host's PHP version before installing, as mismatched PHP versions are the most common cause of setup trouble.
+This plugin needs PHP 5.6 or newer, though modern PHP is strongly recommended. The Easy!Appointments engine has its own, higher requirement, so check the version you are downloading against your host's PHP version before installing, as mismatched PHP versions are the most common cause of setup trouble.
 
 = I have an older Easy!Appointments installation. Will this work with it? =
 
@@ -195,7 +202,7 @@ Yes. The language is set in your Easy!Appointments installation, and the plugin'
 
 = 1.5.2 =
 
-* Fix the booking form being cut off on phones — the iframe now grows to fit the form instead of scrolling inside a fixed height.
+* Fix the booking form being cut off on phones. The iframe now grows to fit the form instead of scrolling inside a fixed height.
 * Fix the auto-resize script never running: it was loaded in the page head, before the booking form existed, so it silently did nothing.
 * Fix a 1000px minimum height that overrode smaller width/height values set on the block, widget or shortcode.
 * Add a taller fallback height on narrow screens for installations served from a different domain, whose content cannot be measured from the page.
